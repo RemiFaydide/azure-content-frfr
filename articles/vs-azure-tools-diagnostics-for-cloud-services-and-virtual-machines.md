@@ -215,7 +215,7 @@ Vous pouvez également capturer des journaux de tout dossier. Spécifiez simplem
 
 ### Journaux de suivi des événements ETW
 
-Si vous utilisez la fonction [Suivi d’événements pour Windows] (https://msdn.microsoft.com/library/windows/desktop/bb968803(v=vs.85).aspx) (ETW) et souhaitez capturer les journaux ETW, sélectionnez la case à cocher **Activer le transfert des journaux ETW**. Vous pouvez augmenter ou réduire le nombre de minutes pendant lesquelles les journaux sont transférés vers votre compte de stockage en modifiant la valeur du champ **Période de transfert (min)**.
+Si vous utilisez la fonction [Suivi d’événements pour Windows](https://msdn.microsoft.com/library/windows/desktop/bb968803(v=vs.85).aspx) (ETW) et souhaitez capturer les journaux ETW, sélectionnez la case à cocher **Activer le transfert des journaux ETW**. Vous pouvez augmenter ou réduire le nombre de minutes pendant lesquelles les journaux sont transférés vers votre compte de stockage en modifiant la valeur du champ **Période de transfert (min)**.
 
 Les événements sont capturés à partir de sources d’événements et de fichiers manifestes d’événements que vous spécifiez. Pour spécifier une source d’événements, entrez un nom dans la section **Sources d’événements**, puis cliquez sur le bouton **Ajouter une source d’événements**. De même, vous pouvez spécifier un manifeste d’événements dans la section **Manifestes d’événements**, puis cliquer sur le bouton **Ajouter un manifeste d’événements**.
 

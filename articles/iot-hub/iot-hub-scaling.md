@@ -13,12 +13,12 @@
  ms.topic="article"
  ms.tgt_pltfrm="na"
  ms.workload="na"
- ms.date="03/14/2016"
+ ms.date="09/19/2016"
  ms.author="elioda"/>
 
 # Mise à l’échelle IoT Hub
 
-Azure IoT Hub peut prendre en charge jusqu’à un million d’appareils connectés simultanément. Pour plus d’informations, consultez la [tarification IoT Hub][lnk-pricing]. Chaque unité IoT Hub autorise également un certain nombre de messages quotidiens.
+Azure IoT Hub peut prendre en charge jusqu’à un million d’appareils connectés simultanément. Pour plus d’informations, consultez la [tarification IoT Hub][lnk-pricing]. Chaque unité IoT Hub autorise un certain nombre de messages quotidiens.
 
 Pour mettre correctement à l’échelle votre solution, étudiez votre utilisation particulière d’IoT Hub. Prenez plus particulièrement en compte le débit maximal requis pour les catégories d’opérations suivantes :
 
@@ -40,8 +40,6 @@ Les messages Appareil vers cloud respectent les recommandations de débit souten
 | S2 | Jusqu’à 16 Mo/minute par unité<br/>(22,8 Go/jour/unité) | Moyenne de 4 167 messages/minute par unité<br/>(6 millions de messages/jour par unité) |
 | S3 | Jusqu’à 814 Mo/minute par unité<br/>(1144,4 Go/jour/unité) | Moyenne de 208 333 messages/minute par unité<br/>(300 millions de messages/jour par unité) |
 
-La performance des échelles des messages Cloud vers appareil, où chaque appareil reçoit jusqu’à 5 messages par minute.
-
 ## Débit des opérations de registre d’identité
 
 Les opérations de registre d’identité IoT Hub ne sont pas censées être des opérations d’exécution, car elles sont principalement liées à la configuration d’appareils.
@@ -59,7 +57,7 @@ Pour explorer davantage les capacités de IoT Hub, consultez :
 - [Guide du développeur][lnk-devguide]
 - [Exploration de la gestion des appareils à l’aide de l’exemple d’interface utilisateur][lnk-dmui]
 - [Simulation d’un appareil avec le Kit de développement logiciel (SDK) Gateway][lnk-gateway]
-- [Utilisation du portail Azure pour gérer IoT Hub][lnk-portal]
+- [Configuration de hubs IoT par le biais du portail Azure][lnk-portal]
 
 [lnk-pricing]: https://azure.microsoft.com/pricing/details/iot-hub
 [quotas et limitations IoT Hub]: iot-hub-devguide.md#throttling
@@ -75,4 +73,4 @@ Pour explorer davantage les capacités de IoT Hub, consultez :
 [lnk-gateway]: iot-hub-linux-gateway-sdk-simulated-device.md
 [lnk-portal]: iot-hub-manage-through-portal.md
 
-<!---HONumber=AcomDC_0713_2016-->
+<!---HONumber=AcomDC_0921_2016-->

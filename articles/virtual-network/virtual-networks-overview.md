@@ -95,4 +95,4 @@ L’utilisation de réseaux virtuels dans Azure ne génère pas de frais supplé
 - En savoir plus sur les [groupes de sécurité réseau](virtual-networks-nsg.md).
 - En savoir plus sur les [Itinéraires définis par l’utilisateur et le transfert IP](virtual-networks-udr-overview.md).
 
-<!---HONumber=AcomDC_0810_2016-->
+<!-----HONumber=AcomDC_0810_2016-->

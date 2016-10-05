@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="cache-redis" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/28/2016" 
+	ms.date="09/15/2016" 
 	ms.author="sdanie"/>
 
 # Création et gestion du cache Redis Azure à l’aide de l’interface de ligne de commande Azure (Azure CLI)
@@ -271,4 +271,4 @@ Pour plus d’informations sur cette commande, exécutez la commande `azure redi
 	help:
 	help:    Current Mode: arm (Azure Resource Management)
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

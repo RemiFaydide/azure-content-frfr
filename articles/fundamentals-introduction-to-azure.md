@@ -22,7 +22,7 @@ Microsoft Azure est la plateforme d'applications de Microsoft pour le cloud publ
 
 **Lecture de cet article**
 
-Azure est en évolution constante, il est donc facile de perdre le fil. Les services de base sont répertoriés en premier dans ce document. Concentrez-vous d'abord sur ces services avant de passer aux services supplémentaires. Si vous le souhaitez, vous pouvez évidemment utiliser les services supplémentaires, mais sachez qu'une application exécutée dans Azure repose sur les services de base.
+Azure est en évolution constante, il est donc facile de perdre le fil. Démarrez avec les services de base, qui sont répertoriés en premier dans cet article, avant de poursuivre avec les services supplémentaires. Si vous le souhaitez, vous pouvez évidemment utiliser les services supplémentaires, mais sachez qu'une application exécutée dans Azure repose sur les services de base.
 
 **Envoyer des commentaires**
 
@@ -33,7 +33,7 @@ Vos commentaires sont très importants pour nous. Cet article a été rédigé p
 
 Azure regroupe les services en catégories sur le portail de gestion et sur différentes aides visuelles telles que cette [infographie sur Microsoft Azure](https://azure.microsoft.com/documentation/infographics/azure/). Le portail de gestion vous permet de gérer la plupart des services dans Azure (mais pas tous).
 
-Ce document repose sur une **organisation différente** afin de présenter les services basés sur des fonctionnalités similaires et d'accéder aux sous-services importants intégrés à des services de plus grande taille.
+Cet article repose sur une **organisation différente** afin de présenter les services basés sur des fonctionnalités similaires et d’accéder aux sous-services importants intégrés à des services de plus grande taille.
 
 ![Composants d’Azure](./media/fundamentals-introduction-to-azure/AzureComponentsIntroNew780.png) *Figure : Azure fournit des services d’application accessibles via Internet, exécutés depuis les centres de données Azure.*
 
@@ -606,4 +606,4 @@ Maintenant que vous connaissez les grandes lignes, la prochaine étape est de cr
 
 [Azure Media Services Poster]: http://azure.microsoft.com/documentation/infographics/media-services/
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

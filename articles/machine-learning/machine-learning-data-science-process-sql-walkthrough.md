@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/19/2016"
 	ms.author="fashah;bradsev"/>
 
 
@@ -76,7 +76,7 @@ Pour configurer votre environnement de science des données Azure :
 
 1. [Créez un compte de stockage](../storage/storage-create-storage-account.md)
 
-2. [Créez un espace de travail Azure Machine Learning](machine-learning-create-workspace.md)
+2. [Création d’un espace de travail Microsoft Azure Machine Learning](machine-learning-create-workspace.md)
 
 3. [Approvisionnez une machine virtuelle de science des données](machine-learning-data-science-setup-sql-server-virtual-machine.md), qui fera office de serveur SQL Server et de serveur Notebook IPython.
 
@@ -620,7 +620,7 @@ Pour démarrer l’exercice de modélisation, connectez-vous à votre espace de 
 Une expérience d’apprentissage classique se déroule comme suit :
 
 1. Création d’une expérience à l’aide du bouton **+NOUVEAU**.
-2. Récupération des données dans Azure Machine Learning.
+2. Transfert des données vers Azure Machine Learning.
 3. Prétraitement, transformation et manipulation des données en fonction des besoins.
 4. Génération des fonctionnalités requises.
 5. Fractionnement des données sous forme de jeux de données d’apprentissage/de validation/de test (ou utilisation de jeux de données distincts pour chacune de ces opérations).
@@ -634,7 +634,7 @@ Dans cet exercice, nous avons déjà exploré et généré les données dans SQL
 
 1. Récupérez les données dans Azure Machine Learning avec le module [Importer les données][import-data], disponible dans la section **Entrée et sortie des données**. Pour plus d’informations, consultez la page de référence du module [Importer les données][import-data].
 
-	![Importer les données Azure ML][17]
+	![Importation de données Azure Machine Learning][17]
 
 2. Dans le panneau **Propriétés**, sélectionnez **Base de données SQL Azure** dans le champ **Source de données**.
 
@@ -650,7 +650,7 @@ Dans cet exercice, nous avons déjà exploré et généré les données dans SQL
 
 La figure ci-après illustre un exemple d’expérience de classification binaire lisant les données directement dans la base de données SQL Server. Vous pouvez créer des expériences similaires pour les problèmes de classification multiclasse et de régression.
 
-![Formation Azure Machine Learning][10]
+![Formation Azure Machine Learning Studio][10]
 
 > [AZURE.IMPORTANT] Dans les exemples de requêtes d’extraction et d’échantillonnage de données de modélisation qui sont fournis aux sections précédentes, **toutes les étiquettes des trois exercices de modélisation sont incluses dans la requête**. Dans chacun des exercices de modélisation, une étape (obligatoire) importante consiste à **exclure** les étiquettes superflues pour les deux autres problèmes, ainsi que toute autre **fuite cible**. Par exemple, si vous avez recours à la classification binaire, utilisez l’étiquette **tipped** et excluez les champs **tip\_class**, **tip\_amount** et **total\_amount**. Les derniers champs sont des fuites cibles, car ils impliquent le pourboire versé.
 >
@@ -719,4 +719,4 @@ Cet exemple de procédure pas à pas et les scripts et notebooks IPython qui lui
 [select-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 [import-data]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

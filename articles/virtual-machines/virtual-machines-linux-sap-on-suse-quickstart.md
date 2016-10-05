@@ -1,20 +1,20 @@
 <properties
    pageTitle="Test de SAP NetWeaver sur les machines virtuelles Microsoft Azure SUSE Linux | Microsoft Azure"
    description="Test de SAP NetWeaver sur les machines virtuelles Microsoft Azure SUSE Linux"
-   services="virtual-machines,virtual-network,storage"
-   documentationCenter="saponazure"
+   services="virtual-machines-linux"
+   documentationCenter=""
    authors="hermanndms"
    manager="timlt"
    editor=""
    tags="azure-resource-manager"
    keywords=""/>
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="NA"
-   ms.topic="campaign-page"
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
-   ms.workload="na"
-   ms.date="09/12/2016"
+   ms.workload="infrastructure-services"
+   ms.date="09/15/2016"
    ms.author="hermannd"/>
 
 # Exécution de SAP NetWeaver sur des machines virtuelles Microsoft Azure SUSE Linux
@@ -173,4 +173,4 @@ Si vous souhaitez utiliser le bureau Gnome pour installer un système complet de
 
 Il existe une restriction de prise en charge d’Oracle sur Linux dans les environnements virtualisés. Bien que ce sujet ne soit pas spécifique d’Azure, il est important de bien le comprendre. SAP ne prend pas en charge Oracle sur SUSE ni Red Hat dans un cloud public comme Azure. Pour discuter de ce sujet, contactez directement Oracle.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

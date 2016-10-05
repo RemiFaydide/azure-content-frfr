@@ -29,11 +29,11 @@ Azure Storage propose un ensemble complet de fonctionnalités de sécurité qui,
 
 SSE fonctionne en chiffrant les données lorsqu’elles sont écrites dans le stockage Azure et peut être utilisé pour les objets blob de blocs, les objets blob de pages et les objets blob d’append. Il fonctionne pour les éléments suivants :
 
-	- General purpose storage accounts and Blob storage accounts
-	- Standard storage and Primary storage 
-	- All redundancy levels (LRS, ZRS, GRS, RA-GRS)
-	- Azure Resource Manager storage accounts (but not classic) 
-	- All regions
+-   Comptes de stockage généraux et comptes de stockage Blob
+-   Stockage Standard et stockage Principal
+-   Tous les niveaux de redondance (LRS, ZRS, GRS, RA-GRS)
+-   Comptes de stockage Azure Resource Manager (non Classic)
+-   Toutes les régions
 
 Cette capture d’écran montre où trouver le paramètre de chiffrement du service de stockage à l’aide du [portail Azure](https://azure.portal.com). Sur cet écran, cliquez sur Chiffrement pour continuer.
 
@@ -195,4 +195,4 @@ R : Contactez [ssediscussions@microsoft.com](mailto:ssediscussions@microsoft.com
 
 Azure Storage propose un ensemble complet de fonctionnalités de sécurité qui, réunies, permettent aux développeurs de créer des applications sécurisées. Pour plus d’informations, consultez notre [guide de sécurité sur Storage](storage-security-guide.md).
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

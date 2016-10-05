@@ -193,4 +193,4 @@ Activer des tables supplémentaires pour Stretch Database. Surveiller la migrati
 [StretchWizardImage8]: ./media/sql-server-stretch-database-wizard/stretchwiz8.png
 [StretchWizardImage9]: ./media/sql-server-stretch-database-wizard/stretchwiz9.png
 
-<!---HONumber=AcomDC_0810_2016-->
+<!-----HONumber=AcomDC_0810_2016-->

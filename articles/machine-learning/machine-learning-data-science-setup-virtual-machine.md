@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/19/2016"
 	ms.author="xibingao;bradsev" />
 
 # Configurer une machine virtuelle Azure comme serveur IPython Notebook pour des analyses avancées
@@ -85,9 +85,9 @@ La variable *&#60;virtual machine DNS name>* correspond au nom DNS de la machine
 
 Vous verrez apparaître un message d’avertissement signalant qu’_il existe un problème avec le certificat de sécurité de ce site web_ (Internet Explorer) ou que _votre connexion n’est pas privée_ (Chrome), comme illustré dans les figures ci-après. Cliquez sur **Poursuivre avec ce site web (non recommandé)** (Internet Explorer) ou sur **Paramètres avancés**, puis sur **Continuer vers le site *Nom DNS*> (dangereux)** (Chrome) pour continuer. Puis entrez le mot de passe que vous avez indiqué précédemment pour accéder à Notebook IPython.
 
-Internet Explorer : ![Create workspace][20]
+**Internet Explorer :** ![Create workspace][20]
 
-Chrome : ![Create workspace][21]
+**Chrome :** ![Create workspace][21]
 
 Une fois que vous êtes connecté à Notebook IPython, le répertoire *DataScienceSamples* s’affiche sur le navigateur. Ce répertoire contient des exemples de notebooks IPython qui sont partagés par Microsoft pour permettre aux utilisateurs d’exécuter des tâches liées à la science des données. Ces exemples de notebooks IPython sont récupérés sur les machines virtuelles à partir du [**dépôt Github**](https://github.com/Azure/Azure-MachineLearning-DataScience/tree/master/Misc/DataScienceProcess/iPythonNotebooks) lors du processus de configuration du serveur Notebook IPython. Microsoft gère ce dépôt et le met régulièrement à jour. Les utilisateurs peuvent se connecter au dépôt Github pour obtenir les derniers exemples de notebooks IPython. ![Create workspace][18]
 
@@ -142,4 +142,4 @@ Les étapes suivantes du processus TDSP (Team Data Science Process) sont présen
 [28]: ./media/machine-learning-data-science-setup-virtual-machine/create-virtual-machine-5.png
 [29]: ./media/machine-learning-data-science-setup-virtual-machine/create-virtual-machine-6.png
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

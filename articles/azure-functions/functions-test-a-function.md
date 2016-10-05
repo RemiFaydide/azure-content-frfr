@@ -172,7 +172,7 @@ Dans la fenêtre **Journaux** du portail, une sortie similaire à la suivante es
 
 Vous pouvez tester une fonction de déclenchement d’objet blob à l’aide de l’[Explorateur de stockage Microsoft Azure](http://storageexplorer.com/).
 
-1. Dans le [Portail Azure] de votre application Functions, créez une nouvelle fonction de déclenchement d’objet blob C# ou Node. Définissez le chemin d’accès à surveiller sur le nom de votre conteneur d’objets blob. Par exemple :
+1. Dans le [portail Azure] de votre application Functions, créez une nouvelle fonction de déclenchement d’objet blob C#, F# ou Node. Définissez le chemin d’accès à surveiller sur le nom de votre conteneur d’objets blob. Par exemple :
 
 		files
 
@@ -439,4 +439,4 @@ Dans la fenêtre du navigateur de la fonction de file d’attente, vous verrez c
 
 [Portail Azure]: https://portal.azure.com
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

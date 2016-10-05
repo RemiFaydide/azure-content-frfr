@@ -33,7 +33,7 @@ Les informations suivantes peuvent vous aider à configurer et utiliser efficace
 
 
 - Enregistrez et fermez les applications RemoteApp quand vous n'en avez plus besoin. Sinon, vous pourriez perdre des données.
-- Validez les applications personnalisées avant de les utiliser dans Azure RemoteApp. Cela implique de vérifier qu'elles fonctionnent sur une plateforme multisession et qu'elles ne consomment pas de ressources inutiles, telles que la mémoire et le processeur, qui pourraient manquer à un autre utilisateur de la même collection. Pour plus d'informations, téléchargez et lisez les [Meilleures pratiques de compatibilité des applications pour les Services Bureau à distance](http://www.microsoft.com/download/details.aspx?id=18704).
+- Validez les applications personnalisées avant de les utiliser dans Azure RemoteApp. Cela implique de vérifier qu'elles fonctionnent sur une plateforme multisession et qu'elles ne consomment pas de ressources inutiles, telles que la mémoire et le processeur, qui pourraient manquer à un autre utilisateur de la même collection. Pour plus d'informations, téléchargez et lisez les [Meilleures pratiques de compatibilité des applications pour les Services Bureau à distance](http://www.dabcc.com/resources/Application%20Compatibility%20Best%20Practices%20for%20Remote%20Desktop%20Services.pdf).
 
 ## Configuration et gestion
 
@@ -46,4 +46,4 @@ Les informations suivantes peuvent vous aider à configurer et utiliser efficace
 	- Configurez les paramètres du système dans l'image de modèle plutôt que dans les machines virtuelles d'un service.
 	- Désactivez les mises à jour logicielles automatiques pour les applications publiées. Appliquez-les plutôt manuellement à l'image de modèle et testez-les avant d'effectuer le déploiement à partir du modèle.
 
-<!---HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0921_2016-->

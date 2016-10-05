@@ -43,11 +43,11 @@ RENAME OBJECT Customer TO CustomerOrig;
 
 ## Tables distribuées
 
-Un nouvel attribut fondamental introduit par les systèmes distribués comme SQL Data Warehouse est la **colonne de distribution**. La colonne de distribution porte bien son nom. C’est la colonne qui détermine comment distribuer ou diviser vos données en arrière-plan. Lorsque vous créez une table sans spécifier la colonne de distribution, la table est automatiquement distribuée à l’aide d’un **tourniquet (round robin)**. Bien que les tables de tourniquet (round robin) puissent être suffisantes dans certains scénarios, la définition des colonnes de distribution peut considérablement réduire le déplacement des données pendant les requêtes, optimisant ainsi les performances. Consultez [Distributing a Table][Distribute] (Distribution d’une table) pour en savoir plus sur la sélection d’une colonne de distribution.
+Un nouvel attribut fondamental introduit par les systèmes distribués comme SQL Data Warehouse est la **colonne de distribution**. La colonne de distribution porte bien son nom. C’est la colonne qui détermine comment distribuer ou diviser vos données en arrière-plan. Lorsque vous créez une table sans spécifier la colonne de distribution, la table est automatiquement distribuée à l’aide d’un **tourniquet (round robin)**. Bien que les tables de tourniquet (round robin) puissent être suffisantes dans certains scénarios, la définition des colonnes de distribution peut considérablement réduire le déplacement des données pendant les requêtes, optimisant ainsi les performances. Consultez [Distributing a Table][Distribute] \(Distribution d’une table) pour en savoir plus sur la sélection d’une colonne de distribution.
 
 ## Indexation et partitionnement des tables
 
-Tandis que vous progressez dans votre utilisation de SQL Data Warehouse et que vous souhaitez optimiser les performances, vous souhaiterez en savoir plus sur la conception de tables. Pour plus d’informations, consultez les articles [Table Data Types][Data Types] (Types de données de table), [Distributing a Table][Distribute] (Distribution d’une table), [Indexing a Table][Index] (Indexation d’une table) et [Partitioning a Table][Partition] (Partitionnement d’une table).
+Tandis que vous progressez dans votre utilisation de SQL Data Warehouse et que vous souhaitez optimiser les performances, vous souhaiterez en savoir plus sur la conception de tables. Pour plus d’informations, consultez les articles [Table Data Types][Data Types] \(Types de données de table), [Distributing a Table][Distribute] \(Distribution d’une table), [Indexing a Table][Index] \(Indexation d’une table) et [Partitioning a Table][Partition] \(Partitionnement d’une table).
 
 ## Statistiques de table
 

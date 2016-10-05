@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/30/2016"
+   ms.date="09/20/2016"
    ms.author="sumukhs"/>
 
 # Configuration de Reliable Actors - KVSActorStateProvider
@@ -42,9 +42,9 @@ Les configurations de réplicateur servent à configurer le réplicateur respons
 |BatchAcknowledgementInterval|Secondes|0\.015|Durée d'attente du réplicateur secondaire après la réception d'une opération et avant de renvoyer un accusé de réception au réplicateur principal. Tous les autres accusés de réception à envoyer pour les opérations traitées durant cet intervalle sont envoyés sous la forme d'une réponse.|
 |ReplicatorEndpoint|N/A|Aucune valeur par défaut (paramètre obligatoire)|Adresse IP et port que le réplicateur principal/secondaire utilise pour communiquer avec d'autres réplicateurs dans le jeu de réplicas. Doit faire référence à un point de terminaison de ressource TCP dans le manifeste de service. Pour en savoir plus sur la définition de ressources de point de terminaison dans le manifeste de service, consultez [Ressources du manifeste de service](service-fabric-service-manifest-resources.md). |
 |RetryInterval|Secondes|5|Période après laquelle le réplicateur retransmet un message s'il ne reçoit aucun accusé de réception pour une opération.|
-|MaxReplicationMessageSize|Octets|50 Mo|Taille maximale des données de réplication pouvant être transmises dans un même message.|
-|MaxPrimaryReplicationQueueSize|Nombre d'opérations|1 024|Nombre maximal d'opérations dans la file d'attente principale. Une opération est libérée quand le réplicateur principal reçoit un accusé de réception de tous les réplicateurs secondaires. Cette valeur doit être supérieure à 64 et être une puissance de 2.|
-|MaxSecondaryReplicationQueueSize|Nombre d'opérations|2 048|Nombre maximal d'opérations dans la file d'attente secondaire. Une opération est libérée une fois son état devenu hautement disponible grâce à la persistance. Cette valeur doit être supérieure à 64 et être une puissance de 2.|
+|MaxReplicationMessageSize|Octets|50 Mo|Taille maximale des données de réplication pouvant être transmises dans un même message.|
+|MaxPrimaryReplicationQueueSize|Nombre d'opérations|1 024|Nombre maximal d'opérations dans la file d'attente principale. Une opération est libérée quand le réplicateur principal reçoit un accusé de réception de tous les réplicateurs secondaires. Cette valeur doit être supérieure à 64 et être une puissance de 2.|
+|MaxSecondaryReplicationQueueSize|Nombre d'opérations|2 048|Nombre maximal d'opérations dans la file d'attente secondaire. Une opération est libérée une fois son état devenu hautement disponible grâce à la persistance. Cette valeur doit être supérieure à 64 et être une puissance de 2.|
 
 ## Configuration du magasin
 Les configurations de magasin permettent de configurer le magasin local utilisé pour conserver l’état en cours de réplication. La configuration par défaut est générée par le modèle Visual Studio et devrait suffire. Cette section décrit les configurations supplémentaires disponibles pour paramétrer le magasin local.
@@ -57,7 +57,7 @@ Les configurations de magasin permettent de configurer le magasin local utilisé
 |Nom|Unité|Valeur par défaut|Remarques|
 |----|----|-------------|-------|
 |MaxAsyncCommitDelayInMilliseconds|Millisecondes|200|Définit l'intervalle maximal de traitement par lot pour les validations de magasin local durables.|
-|MaxVerPages|Nombre de pages|16 384|Nombre maximal de pages de version dans la base de données du magasin local. Il détermine le nombre maximal de transactions en attente.|
+|MaxVerPages|Nombre de pages|16 384|Nombre maximal de pages de version dans la base de données du magasin local. Il détermine le nombre maximal de transactions en attente.|
 
 ## Exemple de fichier de configuration
 
@@ -84,6 +84,6 @@ Les configurations de magasin permettent de configurer le magasin local utilisé
 ```
 ## Remarques
 
-Le paramètre BatchAcknowledgementInterval contrôle la latence de la réplication. La valeur « 0 » entraîne la latence la plus faible possible, au détriment du débit (car davantage de messages d'accusé de réception doivent être envoyés et traités, chacun contenant moins d'accusés de réception). Plus la valeur de BatchAcknowledgementInterval est élevée, plus le débit de réplication général est élevé, au détriment d'une plus grande latence de l'opération. Cela se traduit directement par une latence dans la validation des transactions.
+Le paramètre BatchAcknowledgementInterval contrôle la latence de la réplication. La valeur « 0 » entraîne la latence la plus faible possible, au détriment du débit (car davantage de messages d'accusé de réception doivent être envoyés et traités, chacun contenant moins d'accusés de réception). Plus la valeur de BatchAcknowledgementInterval est élevée, plus le débit de réplication général est élevé, au détriment d'une plus grande latence de l'opération. Cela se traduit directement par une latence dans la validation des transactions.
 
-<!---HONumber=AcomDC_0720_2016-->
+<!---HONumber=AcomDC_0921_2016-->

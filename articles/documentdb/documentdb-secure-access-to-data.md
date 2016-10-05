@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="03/30/2016" 
+	ms.date="09/19/2016" 
 	ms.author="kipandya"/>
 
 # Sécurisation de l'accès aux données DocumentDB
@@ -29,7 +29,7 @@ Après avoir lu cette présentation, vous serez en mesure de répondre aux quest
 
 ## Concepts du contrôle d'accès DocumentDB
 
-DocumentDB fournit des concepts de premier ordre pour contrôler l'accès aux ressources DocumentDB. Dans le cadre de cette rubrique, les ressources DocumentDB sont réparties en deux catégories :
+DocumentDB fournit des concepts de premier ordre pour contrôler l'accès aux ressources DocumentDB. Aux fins de cette rubrique, les ressources DocumentDB sont divisées en deux catégories :
 
 - Ressources d'administration
 	- Compte
@@ -38,6 +38,7 @@ DocumentDB fournit des concepts de premier ordre pour contrôler l'accès aux re
 	- Autorisation
 - Ressources d'application
 	- Collection
+	- Offer
 	- Document
 	- Pièce jointe
 	- Procédure stockée
@@ -47,7 +48,7 @@ DocumentDB fournit des concepts de premier ordre pour contrôler l'accès aux re
 Dans le cadre de ces deux catégories, DocumentDB prend en charge trois types de rôle de contrôle d'accès : administrateur de compte, administrateur en lecture seule et utilisateur de base de données. Les droits pour chaque rôle de contrôle d'accès sont les suivants :
  
 - Administrateur de compte : accès complet à toutes les ressources (d’administration et d’application) au sein d’un compte DocumentDB donné.
-- Administrateur en lecture seule : accès en lecture seule à toutes les ressources (d’administration et d’application) au sein d’un compte DocumentDB donné. 
+- Administrateur en lecture seule : accès en lecture seule à toutes les ressources (d’administration et d’application) au sein d’un compte DocumentDB donné.
 - Utilisateur de la base de données : ressources utilisateur DocumentDB associées à un ensemble spécifique de ressources de base de données DocumentDB (collections, documents, scripts, etc.). Une ou plusieurs ressources utilisateur peuvent être associées à une base de données et chaque ressource utilisateur peut avoir une ou plusieurs autorisations associées.
 
 Le modèle de contrôle d'accès DocumentDB définit trois types de construction d'accès en prenant en compte les catégories et les ressources susmentionnées :
@@ -91,17 +92,17 @@ Vous pouvez utiliser un jeton de ressource (en créant des utilisateurs et des a
 
 De même, les clés en lecture seule DocumentDB fournissent un accès en lecture à toutes les ressources (à l'exception des ressources d'autorisation, bien sûr) au sein d'un compte DocumentDB et ne peuvent être utilisées pour fournir un accès plus granulaire à des ressources DocumentDB spécifiques.
 
-Les jetons de ressource DocumentDB offrent une alternative sûre qui permet aux clients de lire, d’écrire et de supprimer des ressources dans votre compte DocumentDB en fonction des autorisations que vous avez octroyées, sans avoir besoin d'une clé principale ou en lecture seule.
+Les jetons de ressource DocumentDB offrent une alternative sûre qui permet aux clients de lire, d’écrire et de supprimer des ressources dans votre compte DocumentDB en fonction des autorisations que vous avez octroyées, sans avoir besoin d’une clé principale ou en lecture seule.
 
 Voici un modèle de conception standard dans le cadre duquel des jetons de ressource peuvent être demandés, générés et fournis aux clients :
 
 1. Un service de niveau intermédiaire est configuré pour servir une application mobile pour partager les photos de l'utilisateur.
 2. Le service de niveau intermédiaire dispose de la clé principale du compte DocumentDB.
-3. L'application photo est installée sur les appareils mobiles des utilisateurs finaux. 
+3. L'application photo est installée sur les appareils mobiles des utilisateurs finaux.
 4. Lors de la connexion, l'application photo établit l'identité de l'utilisateur avec le service de niveau intermédiaire. Ce mécanisme d'identification dépend totalement de l'application.
 5. Une fois l'identité établie, le service de niveau intermédiaire demande des autorisations en fonction de l'identité.
 6. Le service de niveau intermédiaire renvoie un jeton de ressource à l'application du téléphone.
-7. Cette dernière peut continuer à utiliser le jeton de ressource pour accéder directement aux ressources DocumentDB avec les autorisations définies et pendant l'intervalle autorisé. 
+7. Cette dernière peut continuer à utiliser le jeton de ressource pour accéder directement aux ressources DocumentDB avec les autorisations définies et pendant l'intervalle autorisé.
 8. À expiration du jeton de ressource, les demandes suivantes reçoivent une exception non autorisée 401. L'application du téléphone établit alors de nouveau l'identité de l'utilisateur et demande un nouveau jeton de ressource.
 
 ![Flux de travail des jetons de ressource DocumentDB](./media/documentdb-secure-access-to-data/resourcekeyworkflow.png)
@@ -128,7 +129,7 @@ Une ressource d'autorisation DocumentDB est associée à un utilisateur Document
 > [AZURE.NOTE] Pour exécuter les procédures stockées DocumentDB, l'utilisateur doit disposer de toutes les autorisations sur la collection dans laquelle la procédure stockée sera exécutée.
 
 
-L'extrait de code suivant indique comment créer une ressource d'autorisation, lire le jeton de ressource (jeton) de la ressource d'autorisation et associer les autorisations à l'utilisateur créé ci-dessus.
+L’extrait de code suivant indique comment créer une ressource d’autorisation, lire le jeton de ressource de la ressource d’autorisation et associer les autorisations à l’utilisateur créé ci-dessus.
 
     // Create a permission.
     Permission docPermission = new Permission
@@ -166,4 +167,4 @@ Pour obtenir facilement toutes les ressources d'autorisation associées à un ut
 - Pour en savoir plus sur la construction des jetons d’autorisation DocumentDB, cliquez [ici](https://msdn.microsoft.com/library/azure/dn783368.aspx).
  
 
-<!---HONumber=AcomDC_0511_2016-->
+<!---HONumber=AcomDC_0921_2016-->

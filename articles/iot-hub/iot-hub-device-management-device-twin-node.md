@@ -102,7 +102,7 @@ Vous ne pouvez pas effectuer une lecture approfondie des propriétés ou balises
 
 ### Écriture approfondie
 
-Si vous souhaitez modifier une propriété d’appareil accessible en écriture, vous pouvez le faire avec une écriture approfondie qui démarre un travail de l’appareil pour écrire la valeur sur l’appareil physique. Toutes les propriétés de l’appareil ne sont pas accessibles en écriture. Pour obtenir une liste complète, consultez l’annexe A de [Introducing the Azure IoT Hub device management client library][lnk-dm-library] (Présentation de la bibliothèque cliente de gestion des appareils Azure IoT Hub).
+Si vous souhaitez modifier une propriété d’appareil accessible en écriture, vous pouvez le faire avec une écriture approfondie qui démarre un travail de l’appareil pour écrire la valeur sur l’appareil physique. Toutes les propriétés de l’appareil ne sont pas accessibles en écriture. Pour obtenir une liste complète, consultez l’annexe A de [Introducing the Azure IoT Hub device management client library][lnk-dm-library] \(Présentation de la bibliothèque cliente de gestion des appareils Azure IoT Hub).
 
 Le travail envoie un message vers l’appareil physique pour mettre à jour la propriété spécifiée. La représentation d’appareil n’est pas immédiatement mise à jour lorsque le travail est terminé. Vous devez attendre jusqu’au prochain intervalle de notification. Lors de la synchronisation, vous pouvez voir la modification dans la représentation d’appareil avec une lecture partielle.
 
@@ -121,7 +121,7 @@ int level = get_batterylevel();  // call to platform specific code
 set_device_batterylevel(0, level);
 ```
 
-Au lieu d’utiliser la méthode set, vous pouvez implémenter un rappel. Pour plus d’informations sur cette option, consultez la page [Introducing the Azure IoT Hub device management library][lnk-dm-library] (Présentation de la bibliothèque de gestion des appareils Azure IoT Hub).
+Au lieu d’utiliser la méthode set, vous pouvez implémenter un rappel. Pour plus d’informations sur cette option, consultez la page [Introducing the Azure IoT Hub device management library][lnk-dm-library] \(Présentation de la bibliothèque de gestion des appareils Azure IoT Hub).
 
 ## Étapes suivantes
 

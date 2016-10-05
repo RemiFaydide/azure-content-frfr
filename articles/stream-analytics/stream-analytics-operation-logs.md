@@ -5,7 +5,7 @@
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
@@ -49,7 +49,7 @@ Pour rechercher des journaux d’opérations pour votre tâche Stream Analytics 
 
   ![Sélection Stream Analytics dans le portail Azure](./media/stream-analytics-operation-logs/06-stream-analytics-operation-logs.png)
 
-Cette action ouvre un panneau répertoriant les événements survenus au cours des 7 derniers jours pour toutes les ressources de votre abonnement. Vous pouvez filtrer ces informations pour afficher les événements d’un type ou d’un intervalle de temps spécifique en cliquant sur la commande **Filtrer**.
+Cette action ouvre un panneau répertoriant les événements survenus au cours des sept derniers jours pour toutes les ressources de votre abonnement. Vous pouvez filtrer ces informations pour afficher les événements d’un type ou d’un intervalle de temps spécifique en cliquant sur la commande **Filtrer**.
 
   ![Sélection Stream Analytics dans le portail Azure](./media/stream-analytics-operation-logs/07-stream-analytics-operation-logs.png)
 
@@ -85,7 +85,7 @@ Vous pouvez sélectionner l’une des erreurs et cliquer sur **Détails** pour o
 
 Si vous devez contacter le [support technique](https://azure.microsoft.com/support/options/) ou fournir des informations à l’équipe par le biais du [forum MSDN](https://social.msdn.microsoft.com/Forums/fr-FR/home?forum=AzureStreamAnalytics), notez les détails de l’opération, en particulier l’**ID de corrélation**.
 
-## Obtenir de l'aide
+## Obtenir de l’aide
 Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/fr-FR/home?forum=AzureStreamAnalytics)
 
 ## Étapes suivantes
@@ -96,4 +96,4 @@ Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https:
 - [Références sur le langage des requêtes d'Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Références sur l’API REST de gestion d’Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

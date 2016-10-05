@@ -59,15 +59,17 @@ Si vous n’avez pas déjà utilisé Azure CLI avec Azure Resource Manager, cons
 
         azure account set <YourSubscriptionNameOrId>
 
-3. Basculez vers le module Azure Resource Manager. Vous recevrez la confirmation du nouveau mode.
+3. Basculez vers le module Azure Resource Manager. Vous recevez la confirmation du nouveau mode.
 
         azure config mode arm
    
         info:     New mode is arm
 
-4. Si vous n’avez pas de groupe de ressources, créez-en un. Indiquez le nom du groupe de ressources et l'emplacement dont vous avez besoin pour votre solution. Un résumé du nouveau groupe de ressources est retourné.
+4. Si vous n’avez pas de groupe de ressources, créez-en un. Indiquez le nom du groupe de ressources et l'emplacement dont vous avez besoin pour votre solution. Vous devez fournir un emplacement pour le groupe de ressources, car celui-ci stocke des métadonnées sur les ressources. Pour des raisons de conformité, vous souhaiterez peut-être indiquer où sont stockées métadonnées. En règle générale, nous vous recommandons de spécifier l’emplacement où réside la plupart de vos ressources. L’utilisation du même emplacement permet de simplifier votre modèle.
 
         azure group create -n ExampleResourceGroup -l "West US"
+
+     Un résumé du nouveau groupe de ressources est retourné.
    
         info:    Executing command group create
         + Getting resource group ExampleResourceGroup
@@ -85,7 +87,7 @@ Si vous n’avez pas déjà utilisé Azure CLI avec Azure Resource Manager, cons
 
         azure group template validate -f <PathToTemplate> -p "{"ParameterName":{"value":"ParameterValue"}}" -g ExampleResourceGroup
 
-5. Pour déployer des ressources vers votre groupe de ressources, exécutez la commande suivante et indiquez les paramètres nécessaires. Les paramètres comprennent un nom pour votre déploiement, le nom de votre groupe de ressources, le chemin d’accès ou l’URL du modèle que vous avez créé et tous les autres paramètres nécessaires à votre scénario.
+5. Pour déployer des ressources vers votre groupe de ressources, exécutez la commande suivante et indiquez les paramètres nécessaires. Les paramètres comprennent un nom pour votre déploiement, le nom de votre groupe de ressources, le chemin d’accès ou l’URL du modèle et tous les autres paramètres nécessaires à votre scénario.
    
      Vous disposez des trois options suivantes pour fournir les valeurs des paramètres :
 
@@ -171,4 +173,4 @@ Pour accéder à un exemple d’utilisation d’un jeton SAP avec des modèles l
 - Pour obtenir des instructions sur le déploiement de votre solution dans différents environnements, consultez [Environnements de développement et de test dans Microsoft Azure](solution-dev-test-environments.md).
 - Pour plus d’informations sur l’utilisation d’une référence Key Vault pour transmettre des valeurs sécurisées, consultez [Transmettre des valeurs sécurisées pendant le déploiement](resource-manager-keyvault-parameter.md).
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

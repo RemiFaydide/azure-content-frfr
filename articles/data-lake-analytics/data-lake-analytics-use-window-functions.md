@@ -672,7 +672,7 @@ Ces deux fonctions calculent un centile basé sur une distribution continue ou d
 
 **Syntaxe**
 
-    [PERCENTILE_CONT | PERCENTILE_DISC] ( numeric_literal ) 
+    [PERCENTILE_CONT | PERCENTILE_DISC] \( numeric_literal ) 
         WITHIN GROUP ( ORDER BY <identifier> [ ASC | DESC ] )
         OVER ( [ PARTITION BY <identifier,>…[n] ] ) AS <alias>
 

@@ -13,10 +13,15 @@
 	ms.tgt_pltfrm="mobile-ios"
 	ms.devlang="objective-c"
 	ms.topic="article"
-	ms.date="06/30/2016"
+	ms.date="09/12/2016"
 	ms.author="piyushjo" />
 
 #Notes de publication du Kit de développement logiciel (SDK) Azure Mobile Engagement pour iOS
+
+##4\.0.0 (09/12/2016)
+
+-   Résolution de la notification non affichée sur les appareils iOS 10.
+-   Utilisation de XCode 7 déconseillée.
 
 ##3\.2.4 (30/06/2016)
 
@@ -71,4 +76,4 @@
 -   Améliorations de sécurité.
 -   Suppression du suivi SmartAd.
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

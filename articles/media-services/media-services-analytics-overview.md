@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/27/2016"   
+	ms.date="09/14/2016"   
 	ms.author="milanga;juliako;johndeu"/>
 
-# Vue d’ensemble d’Azure Media Services Analytics
+# Vue d’ensemble d’Azure Media Services Analytics | Microsoft Azure
 
-##Vue d’ensemble
+##Vue d'ensemble
 
 Les organisations et les entreprises sont de plus en plus nombreuses à privilégier les supports vidéo pour former leurs employés, susciter l’intérêt de leurs clients et présenter leurs activités commerciales. Le cloud computing facilite le stockage, la diffusion et l’utilisation de ces fichiers multimédias volumineux. Toutefois, face à la croissance continue de leur bibliothèque de contenus vidéo, les entreprises ont besoin d’outils tout aussi efficaces pour créer des vidéos personnalisées et plus adaptées à leurs audiences et pour développer leur activité.
 
@@ -45,6 +45,8 @@ Le diagramme suivant montre **Media Analytics** et d’autres parties principale
 
 - **Reconnaissance optique de caractères** - Azure Media Analytics OCR (reconnaissance optique de caractères) vous permet de convertir le contenu texte de fichiers vidéo en un texte numérique modifiable et pouvant faire l’objet d’une recherche. Vous pouvez ainsi automatiser l’extraction de métadonnées explicites à partir du signal vidéo de votre contenu multimédia.
  
+- **Rédaction de face évolutive** - **Azure Media Redactor** est un processeur multimédia Azure Media Analytics qui offre la rédaction de face évolutive dans le cloud. La rédaction de face vous permet de modifier votre vidéo afin de flouter les visages des individus sélectionnés. Vous souhaitez peut-être utiliser le service de rédaction de face dans des scénarios de média et de sécurité publics. Quelques minutes de séquences vidéo contenant plusieurs visages peuvent nécessiter des heures de traitement manuel, mais avec ce service, le processus de rédaction de face ne nécessitera que quelques étapes simples. Pour plus d’informations, consultez [cet](media-services-face-redaction.md) article.
+
  
 ## Scénarios courants
 
@@ -127,7 +129,9 @@ Réponse :
 
 [Démonstrations Azure Media Analytics](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-##Parcours d’apprentissage de Media Services
+##Étape suivante
+
+Consultez les parcours d’apprentissage de Media Services.
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
@@ -144,4 +148,4 @@ Réponse :
 
 [overview]: ./media/media-services-video-on-demand-workflow/media-services-video-on-demand.png
 
-<!---HONumber=AcomDC_0713_2016-->
+<!---HONumber=AcomDC_0921_2016-->

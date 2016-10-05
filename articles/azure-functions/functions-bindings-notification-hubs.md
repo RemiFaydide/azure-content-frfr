@@ -87,6 +87,13 @@ Cet exemple envoie une notification pour une [inscription de modèles](../notifi
 	    context.done();
 	};
 
+## Exemple de code de concentrateur de notification Azure pour un déclencheur de minuteur F#
+
+Cet exemple envoie une notification pour une [inscription de modèles](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md) contenant `location` et `message`.
+
+	let Run(myTimer: TimerInfo, notification: byref<IDictionary<string, string>>) =
+	    notification = dict [("location", "Redmond"); ("message", "Hello from F#!")]
+
 ## Exemple de code de concentrateur de notification Azure pour un déclencheur de file d’attente C#
 
 Cet exemple envoie une notification pour une [inscription de modèles](../notification-hubs/notification-hubs-templates-cross-platform-push-messages.md) contenant `message`.
@@ -157,4 +164,4 @@ Exemple de code :
 
 [AZURE.INCLUDE [Étapes suivantes](../../includes/functions-bindings-next-steps.md)]
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

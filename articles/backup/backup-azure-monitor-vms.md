@@ -74,10 +74,16 @@ Pour configurer des notifications par e-mail pour les alertes
 5. Dans la boîte de dialogue **Gravité**, sélectionnez un ou plusieurs niveaux pour lesquels vous voulez envoyer des notifications par e-mail.
 
 6. Cliquez sur **Save**.
+### Quels sont les types d’alertes disponibles pour la sauvegarde des machines virtuelles Azure IaaS ?
+| Niveau d’alerte | Alertes envoyées |
+| ------------- | ------------- |
+| Critique | Échec de sauvegarde, échec de récupération |
+| Avertissement | Aucun |
+| Informations | Aucun | 
 
 ### Existe-t-il des situations lors desquelles un e-mail n’est pas envoyé même si les notifications sont configurées ?
 
-Il existe des situations lors desquelles une alerte n’est pas envoyée, même si les notifications ont été correctement configurées, elles sont répertoriées ci-dessous :
+Il existe des situations lors desquelles une alerte n’est pas envoyée, même si les notifications ont été correctement configurées, afin de réduire le nombre d’alertes. Ces situations sont les suivantes :
 
 - Si les notifications sont configurées sur une base horaire et qu’une alerte est déclenchée et résolue dans l’heure.
 - Si le travail est annulé.
@@ -231,4 +237,4 @@ Pour une explication générale des événements, des opérations et des journau
 
 Pour plus d’informations sur la manière de recréer une machine virtuelle à partir d’un point de récupération, consultez [Restauration de machines virtuelles dans Azure](backup-azure-restore-vms.md). Pour plus d’informations sur la protection de vos machines virtuelles, consultez [Premier aperçu : sauvegarder les machines virtuelles ARM dans un archivage de Recovery Services](backup-azure-vms-first-look-arm.md). Apprenez-en plus sur les tâches de gestion pour les sauvegardes de machines virtuelles dans l’article [Gérer les sauvegardes des machines virtuelles Azure](backup-azure-manage-vms.md).
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

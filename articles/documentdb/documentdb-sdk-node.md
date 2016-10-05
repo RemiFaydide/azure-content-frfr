@@ -34,7 +34,7 @@
 <tr><td>**Instructions d’installation du Kit de développement logiciel (SDK)**</td><td>[Instructions d'installation](http://azure.github.io/azure-documentdb-node/)</td></tr>
 <tr><td>**Contribution au Kit de développement logiciel (SDK)**</td><td>[GitHub](https://github.com/Azure/azure-documentdb-node/tree/master/source)</td></tr>
 <tr><td>**Exemples**</td><td>[Exemples de codes Node.js](documentdb-nodejs-samples.md)</td></tr>
-<tr><td>**Didacticiel de prise en main**</td><td>[Prise en main du SDK Node.js] (documentdb-nodejs-get-started.md)</td></tr>
+<tr><td>**Didacticiel de prise en main**</td><td>[Prise en main du SDK Node.js](documentdb-nodejs-get-started.md)</td></tr>
 <tr><td>** Didacticiel d’application web **</td><td>[Créer une application web Node.js à l'aide de DocumentDB](documentdb-nodejs-application.md)</td></tr>
 <tr><td>**Plateforme actuellement prise en charge**</td><td>[Node.js v0.10](https://nodejs.org/en/blog/release/v0.10.0/)<br/>[Node.js v0.12](https://nodejs.org/en/blog/release/v0.12.0/)<br/>[Node.js v4.2.0](https://nodejs.org/en/blog/release/v4.2.0/)</td></tr>
 </table></br>

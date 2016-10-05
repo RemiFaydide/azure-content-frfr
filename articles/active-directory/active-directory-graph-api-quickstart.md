@@ -15,7 +15,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="identity"
-      ms.date="03/28/2016"
+      ms.date="09/16/2016"
       ms.author="v-jibran@microsoft.com"/>
 
 # Démarrage rapide pour l'API Graph Azure AD
@@ -59,7 +59,7 @@ Voici la sortie que vous pouvez voir si vous accédez à l'explorateur graphique
 
 ![explorateur api graph Azure AD](./media/active-directory-graph-api-quickstart/graph_explorer.png)
 
-**Charger l'explorateur graphique** : pour charger l'outil, accédez à [https://graphexplorer.cloudapp.net/](https://graphexplorer.cloudapp.net/). Cliquez sur **Utiliser la société de démonstration** pour exécuter l'explorateur graphique sur les données d'un exemple de locataire. Vous n'avez pas besoin d'informations d'identification pour utiliser la société de démonstration. Vous pouvez également cliquer sur **Connexion** pour vous connecter avec vos informations d'identification de compte Azure AD afin d'exécuter l'explorateur graphique sur votre locataire. Si vous exécutez l'explorateur graphique sur votre propre client, vous ou votre administrateur devrez donner votre consentement lors de la connexion. Si vous avez un abonnement à Office 365, vous disposez automatiquement d'un client Azure AD. Les informations d'identification que vous utilisez pour vous connecter à Office 365 sont, en fait, des comptes Azure AD. Vous pouvez les utiliser avec l'explorateur graphique.
+**Charger l'explorateur graphique** : pour charger l'outil, accédez à [https://graphexplorer.cloudapp.net/](https://graphexplorer.cloudapp.net/). Cliquez sur **Utiliser la société de démonstration** pour exécuter l'explorateur graphique sur les données d'un exemple de locataire. Vous n'avez pas besoin d'informations d'identification pour utiliser la société de démonstration. Vous pouvez également cliquer sur **Connexion** pour vous connecter avec vos informations d'identification de compte Azure AD afin d'exécuter l'explorateur graphique sur votre locataire. Si vous exécutez l'explorateur graphique sur votre propre client, vous ou votre administrateur devrez donner votre consentement lors de la connexion. Si vous avez un abonnement à Office 365, vous disposez automatiquement d’un client Azure AD. Les informations d'identification que vous utilisez pour vous connecter à Office 365 sont, en fait, des comptes Azure AD. Vous pouvez les utiliser avec l'explorateur graphique.
 
 **Exécuter une requête** : pour exécuter une requête, entrez votre requête dans la zone de texte de requête, puis cliquez sur **GET** ou sur la touche **Entrée**. Les résultats s’affichent dans la zone de réponse. Par exemple, `https://graph.windows.net/graphdir1.onmicrosoft.com /groups?api-version=1.6` affiche la liste de tous les objets de groupe figurant dans l'annuaire de démonstration.
 
@@ -120,4 +120,4 @@ Pour plus d'informations sur les entités et les types Azure AD exposés par Gr
 - En savoir plus sur l’[API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog).
 - En savoir plus sur les [Étendues d’autorisation de l’API Graph Azure AD](https://msdn.microsoft.com/Library/Azure/Ad/Graph/howto/azure-ad-graph-api-permission-scopes)
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

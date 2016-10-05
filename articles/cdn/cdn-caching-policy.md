@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Stratégie de mise en cache CDN dans l'extension Media Services"
-	description="Cette rubrique offre une vue d’ensemble d’une stratégie de mise cache CDN dans l’extension Media Services."
+	description="Cette rubrique offre une vue d’ensemble d’une stratégie de mise en cache CDN dans l’extension Media Services."
 	services="media-services,cdn"
 	documentationCenter=".NET"
 	authors="juliako"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/25/2016"
+	ms.date="09/19/2016"
 	ms.author="juliako"/>
  
 #Stratégie de mise en cache CDN dans l'extension Media Services
@@ -34,7 +34,7 @@ Azure Media Services propose un [CDN intégré](https://azure.microsoft.com/upda
 
 Vous pouvez utiliser le portail de gestion Azure ou des API d’Azure Media Services pour configurer les valeurs des en-têtes de cache.
 
-1. Pour configurer les en-têtes de cache à l'aide du portail de gestion, reportez-vous à la section [Gestion des points de terminaison de diffusion en continu](../media-services/media-services-manage-origins.md) de la page relative à la configuration du point de terminaison de diffusion en continu.
+1. Pour configurer les en-têtes de cache à l'aide du portail de gestion, reportez-vous à la section [Gestion des points de terminaison de diffusion en continu](../media-services/media-services-portal-manage-streaming-endpoints.md) de la page relative à la configuration du point de terminaison de diffusion en continu.
 2. API REST d'Azure Media Services, [StreamingEndpoint](https://msdn.microsoft.com/library/azure/dn783468.aspx#StreamingEndpointCacheControl).
 3. Kit de développement logiciel (SDK) .NET Azure Media Services, [Propriétés StreamingEndpointCacheControl](http://go.microsoft.com/fwlink/?LinkId=615302).
 
@@ -44,4 +44,4 @@ Vous pouvez utiliser le portail de gestion Azure ou des API d’Azure Media Se
 2. S'il n'existe aucune configuration manuelle, les valeurs par défaut s'appliquent.
 3. Des en-têtes de cache de 2 secondes s’appliquent par défaut aux fichiers manifestes de diffusion en continu en direct (ou sélections) quelle que soit la configuration d'Azure Media ou d’Azure Storage, et elles sont irremplaçables.
 
-<!---HONumber=AcomDC_0518_2016-->
+<!---HONumber=AcomDC_0921_2016-->

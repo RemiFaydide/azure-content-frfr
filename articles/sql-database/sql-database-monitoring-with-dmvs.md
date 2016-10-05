@@ -14,12 +14,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="data-management"
-   ms.date="07/05/2016"
+   ms.date="09/20/2016"
    ms.author="carlrab"/>
 
 # Analyse d’une base de données SQL Azure à l’aide de vues de gestion dynamique
 
-La Base de données SQL Microsoft Azure active un sous-ensemble de vues de gestion dynamique permettant de diagnostiquer des problèmes de performances qui peuvent être causés par des requêtes bloquées ou longues, des goulots d’étranglement des ressources, des plans de requête médiocres, et ainsi de suite. Cette rubrique fournit des informations sur la façon de détecter des problèmes de performances courants à l’aide de vues de gestion dynamique.
+La Base de données SQL Microsoft Azure active un sous-ensemble de vues de gestion dynamique permettant de diagnostiquer des problèmes de performances qui peuvent être causés par des requêtes bloquées ou longues, des goulots d’étranglement des ressources, des plans de requête médiocres, et ainsi de suite. Cette rubrique fournit des informations sur la façon de détecter des problèmes de performances courants à l’aide des vues de gestion dynamique.
 
 La base de données SQL prend partiellement en charge trois catégories de vues de gestion dynamique :
 
@@ -33,7 +33,7 @@ Pour plus d’informations sur les vues de gestion dynamique, voir [Fonctions et
 
 Dans la base de données SQL, l’interrogation d’une vue de gestion dynamique nécessite des autorisations **AFFICHER L'ÉTAT DE LA BASE DE DONNÉES**. L’autorisation **AFFICHER L'ÉTAT DE LA BASE DE DONNÉES** renvoie des informations sur tous les objets de la base de données active. Pour accorder l’autorisation **AFFICHER L'ÉTAT DE LA BASE DE DONNÉES** à un utilisateur de base de données spécifique, exécutez la requête suivante :
 
-```GRANT VIEW DATABASE STATE TO database_user; ```
+```GRANT VIEW DATABASE STATE TO database_user;```
 
 Dans une instance de SQL Server local, des vues de gestion dynamiques renvoient des informations sur l’état du serveur. Dans Base de données SQL, elles renvoient des informations relatives à votre base de données logique actuelle.
 
@@ -76,7 +76,7 @@ JOIN sys.dm_exec_sessions AS s
 WHERE c.session_id = @@SPID;
 ```
 
-> [AZURE.NOTE] Lors de l’exécution de **sys.dm\_exec\_requests** et **vues sys.dm\_exec\_sessions**, si l’utilisateur dispose d’une autorisation **AFFICHER L’ÉTAT DE LA BASE DE DONNÉES** sur la base de données, l’utilisateur voit toutes les sessions en cours d’exécution sur la base de données. Sinon, il voit uniquement la session en cours.
+> [AZURE.NOTE] Lorsque vous exécutez **sys.dm\_exec\_requests** et **sys.dm\_exec\_sessions views**, si vous disposez d’une autorisation **AFFICHER L’ÉTAT DE LA BASE DE DONNÉES** sur la base de données, vous voyez toutes les sessions en cours d’exécution sur la base de données. Sinon, vous voyez uniquement la session en cours.
 
 ## Analyse des performances des requêtes
 
@@ -135,4 +135,4 @@ ORDER BY highest_cpu_queries.total_worker_time DESC;
 
 [Présentation de la base de données SQL](sql-database-technical-overview.md)
 
-<!---HONumber=AcomDC_0803_2016-->
+<!---HONumber=AcomDC_0921_2016-->

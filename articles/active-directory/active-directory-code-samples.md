@@ -13,14 +13,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="05/16/2016"
+   ms.date="09/16/2016"
    ms.author="mbaldwin"/>
 
 # Exemples de code Azure Active Directory
 
 [AZURE.INCLUDE [active-directory-devguide](../../includes/active-directory-devguide.md)]
 
-Vous pouvez utiliser Microsoft Azure Active Directory (Azure AD) pour ajouter l'authentification et l'autorisation à vos applications web et API web. Cette section vous renvoie à des exemples de code qui vous montrent comment procéder et à des extraits de code que vous pouvez utiliser dans vos applications. Sur la page d'exemples de code, vous trouverez des rubriques Lisez-moi qui offrent une aide relative à la configuration requise, à l'installation et à la configuration. Le code est également accompagné de commentaires pour vous aider à comprendre les sections critiques.
+Vous pouvez utiliser Microsoft Azure Active Directory (Azure AD) pour ajouter l'authentification et l'autorisation à vos applications web et API web. Cette section vous renvoie à des exemples de code qui vous montrent comment procéder et à des extraits de code que vous pouvez utiliser dans vos applications. Sur la page d’exemples de code, vous trouverez des rubriques Lisez-moi qui offrent une aide relative à la configuration requise, à l’installation et à la configuration. Le code est également accompagné de commentaires pour vous aider à comprendre les sections critiques.
 
 Pour comprendre le scénario de base de chaque type d'exemple, consultez les scénarios d'authentification pour Azure AD.
 
@@ -151,4 +151,4 @@ PHP | [Exemple d’application PHP pour l’API Azure AD Graph](http://code.msdn
 
 [Bibliothèque d’assistance de l’API Azure AD Graph](https://www.nuget.org/packages/Microsoft.Azure.ActiveDirectory.GraphClient)
 
-<!---HONumber=AcomDC_0518_2016-->
+<!---HONumber=AcomDC_0921_2016-->

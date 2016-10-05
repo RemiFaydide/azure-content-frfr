@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/25/2016"
-	ms.author="tamram;aungoo-msft"/>
+	ms.date="09/20/2016"
+	ms.author="tamram;aungoo"/>
 
 
 # Sauvegarde des disques de machine virtuelle Azure avec des instantanés incrémentiels
 
-## Vue d’ensemble 
+## Vue d'ensemble
 
 Azure Storage offre la possibilité de prendre des instantanés d’objets blob. Les instantanés capturent l’état de l’objet blob à un instant précis. Dans cet article, nous allons décrire comment gérer des sauvegardes de disques de machine virtuelle à l’aide d’instantanés. Vous pouvez utiliser cette méthode comme une alternative à Azure Backup et Recovery Service et si vous voulez créer une stratégie de sauvegarde personnalisée pour vos disques de machine virtuelle.
 
@@ -128,4 +128,4 @@ Apprenez-en plus sur la création d’instantanés d’un objet blob et la plani
 - [Création d’un instantané d’objet blob](https://msdn.microsoft.com/library/azure/hh488361.aspx)
 - [Planification de votre infrastructure de sauvegarde de machines virtuelles](../backup/backup-azure-vms-introduction.md)
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

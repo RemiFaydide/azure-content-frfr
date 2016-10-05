@@ -36,8 +36,6 @@ Chaque réseau virtuel ne peut posséder qu’une seule passerelle de réseau vi
 
 [AZURE.INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)]
 
-###  <a name="skugw"></a>Débit agrégé estimé par type de SKU et de passerelle
-
 Le tableau ci-dessous présente les types de passerelle et le débit total estimé. Cette table s’applique aux modèles de déploiement classique et Resource Manager.
 
 [AZURE.INCLUDE [vpn-gateway-table-gwtype-aggthroughput](../../includes/vpn-gateway-table-gwtype-aggtput-include.md)]
@@ -95,7 +93,7 @@ Azure propose actuellement deux modèles de déploiement : le modèle classique 
 
 #### Homologation de réseaux virtuels
 
-Vous pouvez utiliser l’homologation de réseau virtuel pour créer votre connexion, tant que votre réseau virtuel répond à certaines exigences. L’homologation de réseau virtuel n’utilise pas de passerelle de réseau virtuel. [L’homologation de réseau virtuel](../virtual-network/virtual-network-peering-overview.md) est actuellement proposée dans sa version préliminaire.
+Vous pouvez utiliser l’homologation de réseau virtuel pour créer votre connexion, tant que votre réseau virtuel répond à certaines exigences. L’homologation de réseau virtuel n’utilise pas de passerelle de réseau virtuel. Pour plus d’informations, consultez l’article [Homologation de réseaux virtuels](../virtual-network/virtual-network-peering-overview.md).
 
 
 ### Modèles et méthodes de déploiement pour les connexions de réseau virtuel à réseau virtuel
@@ -150,4 +148,4 @@ Planifiez votre configuration de passerelle VPN. Consultez la page [Planificatio
 
  
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

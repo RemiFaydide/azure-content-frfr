@@ -92,8 +92,8 @@ Cet exemple crée les éléments suivants :
 
 - Une règle NAT pour transférer l’ensemble du trafic sur le port 3441 vers le port 3389
 - Une règle NAT pour transférer l’ensemble du trafic sur le port 3442 vers le port 3389
-- Une règle d’équilibreur de charge pour équilibrer tout le trafic entrant sur le port 80 vers le port 80 des adresses du pool principal
 - Une règle de sonde qui vérifie l’intégrité dans une page nommée **HealthProbe.aspx**
+- Une règle d’équilibreur de charge pour équilibrer tout le trafic entrant sur le port 80 vers le port 80 des adresses du pool principal
 - Un équilibreur de charge qui utilise tous les objets ci-dessus
 
 Suivez ces étapes :
@@ -104,11 +104,7 @@ Suivez ces étapes :
 
         $inboundNATRule2= New-AzureRmLoadBalancerInboundNatRuleConfig -Name RDP2 -FrontendIpConfiguration $frontendIP -Protocol TCP -FrontendPort 3442 -BackendPort 3389
 
-2. Créez une règle d’équilibreur de charge.
-
-        $lbrule = New-AzureRmLoadBalancerRuleConfig -Name HTTP -FrontendIpConfiguration $frontendIP -BackendAddressPool  $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
-
-3. Créer une sonde d’intégrité. Il existe deux façons de configurer une sonde :
+2. Créer une sonde d’intégrité. Il existe deux façons de configurer une sonde :
 
     Sonde HTTP
 
@@ -117,6 +113,10 @@ Suivez ces étapes :
     Sonde TCP
 
         $healthProbe = New-AzureRmLoadBalancerProbeConfig -Name HealthProbe -Protocol Tcp -Port 80 -IntervalInSeconds 15 -ProbeCount 2
+
+3. Créez une règle d’équilibreur de charge.
+
+        $lbrule = New-AzureRmLoadBalancerRuleConfig -Name HTTP -FrontendIpConfiguration $frontendIP -BackendAddressPool  $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
 
 4. Créez l’équilibrage de charge en utilisant les objets créés précédemment.
 
@@ -150,16 +150,22 @@ Créez des interfaces réseau (ou modifiez des interfaces existantes), puis asso
         Location             : westus
         Id                   : /subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be
         Etag                 : W/"d448256a-e1df-413a-9103-a137e07276d1"
+        ResourceGuid         : 896cac4f-152a-40b9-b079-3e2201a5906e
         ProvisioningState    : Succeeded
         Tags                 :
         VirtualMachine       : null
         IpConfigurations     : [
                             {
+                            "Name": "ipconfig1",
+                            "Etag": "W/"d448256a-e1df-413a-9103-a137e07276d1"",
+                            "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1",
                             "PrivateIpAddress": "10.0.2.6",
                             "PrivateIpAllocationMethod": "Static",
                             "Subnet": {
                                 "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/virtualNetworks/NRPVNet/subnets/LB-Subnet-BE"
                             },
+                            "ProvisioningState": "Succeeded",
+                            "PrivateIpAddressVersion": "IPv4",
                             "PublicIpAddress": {
                                 "Id": null
                             },
@@ -173,19 +179,18 @@ Créez des interfaces réseau (ou modifiez des interfaces existantes), puis asso
                                 "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/loadBalancers/NRPlb/inboundNatRules/RDP1"
                                 }
                             ],
-                            "ProvisioningState": "Succeeded",
-                            "Name": "ipconfig1",
-                            "Etag": "W/"d448256a-e1df-413a-9103-a137e07276d1"",
-                            "Id": "/subscriptions/f50504a2-1865-4541-823a-b32842e3e0ee/resourceGroups/NRP-RG/providers/Microsoft.Network/networkInterfaces/lb-nic1-be/ipConfigurations/ipconfig1"
+                            "Primary": true,
+                            "ApplicationGatewayBackendAddressPools": []
                             }
                         ]
         DnsSettings          : {
                             "DnsServers": [],
-                            "AppliedDnsServers": []
+                            "AppliedDnsServers": [],
+                            "InternalDomainNameSuffix": "prcwibzcuvie5hnxav0yjks2cd.dx.internal.cloudapp.net"
                         }
-        AppliedDnsSettings   :
+        EnableIPForwarding   : False
         NetworkSecurityGroup : null
-        Primary              : False
+        Primary              : 
 
 5. Utilisez l'applet de commande `Add-AzureRmVMNetworkInterface` pour affecter les cartes réseau aux différentes machines virtuelles.
 
@@ -249,4 +254,4 @@ Utilisez la commande `Remove-AzureLoadBalancer` pour supprimer un équilibreur d
 
 [Configuration des paramètres du délai d’expiration TCP inactif pour votre équilibrage de charge](load-balancer-tcp-idle-timeout.md)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!----HONumber=AcomDC_0921_2016-->

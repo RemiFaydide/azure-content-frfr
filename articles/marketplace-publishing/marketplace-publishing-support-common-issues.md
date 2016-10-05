@@ -13,7 +13,7 @@
       ms.topic="article"
       ms.tgt_pltfrm="na"
       ms.workload="na"
-      ms.date="08/03/2016"
+      ms.date="09/21/2016"
       ms.author="v-jeana; hascipio; v-dabosl"/>
 
 # Comment résoudre les problèmes courants de publication dans Azure Marketplace
@@ -120,4 +120,4 @@ Pour les problèmes suivants, créez une demande de support sur le site [http://
 [7]: ./media/marketplace-publishing-support-common-issues/acctdetails.png
 [8]: ./media/marketplace-publishing-support-common-issues/manageadmins.png
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

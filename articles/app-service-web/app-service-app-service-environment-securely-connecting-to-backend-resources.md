@@ -46,7 +46,7 @@ Une configuration courante de SQL Server comprend un point de terminaison qui �
 Pour limiter le trafic sur ce point de terminaison, vous avez le choix entre deux approches :
 
 
-- [Listes de contrôle d'accès réseau][NetworkAccessControlLists] (ACL réseau)
+- [Listes de contrôle d'accès réseau][NetworkAccessControlLists] \(ACL réseau)
 
 - [Groupes de sécurité réseau][NetworkSecurityGroups]
 

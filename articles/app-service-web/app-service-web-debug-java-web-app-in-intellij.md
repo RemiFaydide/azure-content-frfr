@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="Java" 
 	ms.topic="article" 
-	ms.date="07/07/2016" 
+	ms.date="09/20/2016" 
 	ms.author="asirveda;robmcm"/>
 
 # Débogage d’une application web Java sur Azure dans IntelliJ
@@ -24,18 +24,18 @@ Ce didacticiel explique comment déboguer une application web Java s’exécutan
 
 ![][01]
  
-## Configuration requise
+## Composants requis
 
-* JDK (Java Development Kit) version 1.8 ou ultérieure.
+* JDK (Java Development Kit) version 1.8 ou ultérieure.
 * IntelliJ IDEA édition Ultimate. Vous pouvez le télécharger à partir de <https://www.jetbrains.com/idea/download/index.html>.
 * Une distribution d’un serveur web ou d’un serveur d’applications basé sur Java, comme Apache Tomcat ou Jetty.
 * Un abonnement à Azure, pouvant être souscrit à l’adresse <https://azure.microsoft.com/free/> ou <http://azure.microsoft.com/pricing/purchase-options/>.
 * Le Kit de ressources Azure pour IntelliJ. Pour plus d’informations, consultez [Installing the Azure Toolkit for IntelliJ] \(Installation du kit de ressources Azure pour IntelliJ).
-* Un projet web dynamique créé et déployé sur Azure App Service ; par exemple, consultez [Créer une application web « Hello World » pour Azure dans IntelliJ].
+* Un projet web dynamique créé et déployé sur Azure App Service ; par exemple, consultez [Créer une application web « Hello World » pour Azure dans IntelliJ].
 
 ## Pour déboguer une application web Java sur Azure
 
-Pour effectuer les étapes de cette section, vous pouvez utiliser un projet web dynamique existant que vous avez déjà déployé comme application web Java sur Azure, vous téléchargez un [exemple de projet web dynamique] et suivez les étapes indiquées dans [Créer une application web « Hello World » pour Azure dans IntelliJ] pour le déployer sur Azure.
+Pour effectuer les étapes de cette section, vous pouvez utiliser un projet web dynamique existant que vous avez déjà déployé comme application web Java sur Azure, vous téléchargez un [exemple de projet web dynamique] et suivez les étapes indiquées dans [Créer une application web « Hello World » pour Azure dans IntelliJ] pour le déployer sur Azure.
 
 1. Ouvrez le projet d’application web Java que vous avez déployé sur Azure dans IntelliJ.
 
@@ -43,7 +43,7 @@ Pour effectuer les étapes de cette section, vous pouvez utiliser un projet web 
 
     ![][02]
 
-1. Lorsque la boîte de dialogue **Run/Debug Configurations** (Exécuter/Déboguer les configurations) s’affiche :
+1. Lorsque la boîte de dialogue **Run/Debug Configurations** (Exécuter/Déboguer les configurations) s’affiche :
 
     1. Sélectionnez **Azure Web App**.
     1. Cliquez sur **+** pour ajouter une nouvelle configuration.
@@ -56,7 +56,7 @@ Pour effectuer les étapes de cette section, vous pouvez utiliser un projet web 
 
     ![][04]
 
-1. À l’invite **Enable remote debugging in the remote Web App now?** (Activer le débogage à distance sur l’application web à distance maintenant ?), cliquez sur **OK**.
+1. À l’invite **Enable remote debugging in the remote Web App now?** (Activer le débogage à distance sur l’application web à distance maintenant ?), cliquez sur **OK**.
 
 1. À l’invite **Your web app is now ready for remote debugging** (Votre application web est maintenant prête pour le débogage à distance), cliquez sur **OK**.
 
@@ -68,7 +68,7 @@ Pour effectuer les étapes de cette section, vous pouvez utiliser un projet web 
 
     ![][06]
 
-1. Insérez un point d’arrêt dans votre page JSP, puis ouvrez l’URL de votre application web Java dans un navigateur :
+1. Insérez un point d’arrêt dans votre page JSP, puis ouvrez l’URL de votre application web Java dans un navigateur :
 
     1. Ouvrez **Azure Explorer** dans IntelliJ.
     1. Accédez à **Web Apps** et à l’application web Java à déboguer.
@@ -89,7 +89,7 @@ Pour plus d’informations sur la création d’Azure Web Apps, consultez la [Vu
 [Kit de ressources Azure pour IntelliJ]: ../azure-toolkit-for-intellij.md
 [Installing the Azure Toolkit for IntelliJ]: ../azure-toolkit-for-intellij-installation.md
 [Créer une application web « Hello World » pour Azure dans IntelliJ]: ./app-service-web-intellij-create-hello-world-web-app.md
-[Créer une application web « Hello World » pour Azure dans IntelliJ]: ./app-service-web-intellij-create-hello-world-web-app.md
+[Créer une application web « Hello World » pour Azure dans IntelliJ]: ./app-service-web-intellij-create-hello-world-web-app.md
 [exemple de projet web dynamique]: http://go.microsoft.com/fwlink/?LinkId=817337
 
 [Centre de développement Java pour Azure]: https://azure.microsoft.com/develop/java/
@@ -104,4 +104,4 @@ Pour plus d’informations sur la création d’Azure Web Apps, consultez la [Vu
 [05]: ./media/app-service-web-debug-java-web-app-in-intellij/05-ready-for-remote-debugging.png
 [06]: ./media/app-service-web-debug-java-web-app-in-intellij/06-windows-command-prompt-connection-successful-to-remote.png
 
-<!---HONumber=AcomDC_0720_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -4,7 +4,7 @@
 	keywords="flux de données, cache redis, file d’attente Service Bus"
 	services="stream-analytics"
 	authors="ryancrawcour"
-	manager="paulettm"
+	manager="jhubbard"
     documentationCenter=""
 	/>
 
@@ -79,7 +79,7 @@ Suivez le didacticiel [Créer votre première fonction Azure][functions-getstart
 1. Dans le portail, sélectionnez App Services dans le volet de navigation gauche, puis cliquez sur le nom de votre application de fonction Azure pour accéder au site Web de l’application de fonction. ![Capture d’écran de la liste des applications App Services](./media/stream-analytics-functions-redis/app-services-function-list.png)
 
 2. Cliquez sur **Nouvelle fonction > ServiceBusQueueTrigger – C#**. Pour les champs suivants, suivez les instructions ci-dessous :
-	- **Nom de la file d’attente** : le même nom que le nom que vous avez entré lorsque vous avez créé la file d’attente dans [Prise en main des files d’attente Service Bus][servicebus-getstarted] (pas le nom du service bus). Vérifiez que vous utilisez la file d’attente qui est connectée à la sortie Stream Analytics.
+	- **Nom de la file d’attente** : le même nom que le nom que vous avez entré lorsque vous avez créé la file d’attente dans [Prise en main des files d’attente Service Bus][servicebus-getstarted] \(pas le nom du service bus). Vérifiez que vous utilisez la file d’attente qui est connectée à la sortie Stream Analytics.
 	- **Connexion Service Bus**: sélectionnez **Ajouter une chaîne de connexion**. Pour rechercher la chaîne de connexion, accédez au portail Classic, sélectionnez **Service Bus**, le bus de service que vous avez créé, et **INFORMATIONS DE CONNEXION** en bas de l’écran. Assurez-vous que vous êtes dans l’écran principal de cette page. Copiez et collez la chaîne de connexion. N’hésitez pas à entrer un nom de connexion.
 	
 		![Capture d’écran de la connexion Service Bus](./media/stream-analytics-functions-redis/servicebus-connection.png)
@@ -202,6 +202,7 @@ Vous pouvez également vous référer aux ressources suivantes :
 
 - [Informations de référence pour les développeurs sur Azure Functions](../azure-functions/functions-reference.md)
 - [Informations de référence pour les développeurs C# sur Azure Functions](../azure-functions/functions-reference-csharp.md)
+- [Informations de référence pour les développeurs F# sur Azure Functions](../azure-functions/functions-reference-fsharp.md)
 - [Azure Functions NodeJS developer reference (Référence pour les développeurs NodeJS Azure Functions)](../azure-functions/functions-reference.md)
 - [Déclencheurs et liaisons Azure Functions](../azure-functions/functions-triggers-bindings.md)
 - [Surveillance du cache Redis Azure](../redis-cache/cache-how-to-monitor.md)
@@ -214,4 +215,4 @@ Pour vous tenir informé des dernières nouveautés et fonctionnalités, suivez 
 [use-rediscache]: ../redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md
 [functions-getstarted]: ../azure-functions/functions-create-first-azure-function.md
 
-<!---HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0921_2016-->

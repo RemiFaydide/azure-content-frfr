@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="04/26/2016"
+	ms.date="09/16/2016"
 	ms.author="dastrock"/>
 
 # Connecter les utilisateurs de compte Microsoft et d’Azure AD dans une même application
@@ -61,4 +61,4 @@ Les liens ci-dessous vous seront utiles pour explorer la plateforme en profondeu
   - [Client OAuth2 Android](https://github.com/wuman/android-oauth-client)
   - [Client OpenID Connect Android](https://github.com/kalemontes/OIDCAndroidLib)
 
-<!---HONumber=AcomDC_0504_2016-->
+<!---HONumber=AcomDC_0921_2016-->

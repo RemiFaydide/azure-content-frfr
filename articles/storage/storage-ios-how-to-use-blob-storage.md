@@ -4,16 +4,17 @@
     services="storage"
     documentationCenter="ios"
     authors="micurd"
-    manager="jahogg"/>
+    manager="jahogg"
+    editor="tysonn"/>
 
 <tags
     ms.service="storage"
     ms.workload="storage"
     ms.tgt_pltfrm="na"
-    ms.devlang="Objective-C"
+    ms.devlang="objective-c"
     ms.topic="article"
-    ms.date="07/27/2016"
-    ms.author="micurd"/>
+    ms.date="09/20/2016"
+    ms.author="micurd;tamram"/>
 
 # Utilisation du stockage d’objets blob à partir d’iOS
 
@@ -371,4 +372,4 @@ Maintenant que vous avez appris à utiliser le stockage d’objets blob d’iOS,
 
 Si vous avez des questions concernant cette bibliothèque, n’hésitez pas à les publier sur notre [forum MSDN Azure](http://social.msdn.microsoft.com/Forums/windowsazure/home?forum=windowsazuredata) ou sur [Stack Overflow](http://stackoverflow.com/questions/tagged/windows-azure-storage+or+windows-azure-storage+or+azure-storage-blobs+or+azure-storage-tables+or+azure-table-storage+or+windows-azure-queues+or+azure-storage-queues+or+azure-storage-emulator+or+azure-storage-files). Si vous avez des suggestions de fonctionnalités pour le stockage Azure, envoyez un message sur [Commentaires sur le stockage Azure](https://feedback.azure.com/forums/217298-storage/).
 
-<!---HONumber=AcomDC_0907_2016-->
+<!---HONumber=AcomDC_0921_2016-->

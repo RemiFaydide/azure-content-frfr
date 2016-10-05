@@ -4,7 +4,7 @@
    services="HDInsight"
    documentationCenter=""
    authors="jeffstokes72"
-   manager="paulettem"
+   manager="jhubbard"
    editor="cgronlun"
 />
 
@@ -410,4 +410,4 @@ Les deux modèles créent un cluster HDInsight et un compte de stockage associé
 
 Pour obtenir des informations générales sur l’utilisation des modèles Azure Resource Manager, consultez la section [Création de clusters Hadoop basés sur Linux dans HDInsight à l’aide de modèles Azure Resource Manager](hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

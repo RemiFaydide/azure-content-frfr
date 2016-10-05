@@ -9,12 +9,12 @@ editor=""
 tags="connectors"/>
 
 <tags
-ms.service="multiple"
+ms.service="logic-apps"
 ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
-ms.workload="na"
-ms.date="05/18/2016"
+ms.workload="integration"
+ms.date="09/19/2016"
 ms.author="mandia"/>
 
 # Prise en main du connecteur Twilio
@@ -25,8 +25,8 @@ Connectez-vous à Twilio pour envoyer et recevoir des SMS, des MMS, et des adres
 
 Avec Twilio, vous pouvez :
 
-- Créer votre flux d'activité en fonction des données que vous obtenez de Twilio. 
-- Utiliser des actions pour obtenir un message, répertorier les messages, et plus encore. Ces actions obtiennent une réponse, puis mettent la sortie à la disposition d'autres actions. Par exemple, lorsque vous recevez un nouveau message Twilio, vous pouvez prendre ce message et l’utiliser comme flux de travail Service Bus. 
+- Créer votre flux d'activité en fonction des données que vous obtenez de Twilio.
+- Utiliser des actions pour obtenir un message, répertorier les messages, et plus encore. Ces actions obtiennent une réponse, puis mettent la sortie à la disposition d’autres actions. Par exemple, lorsque vous recevez un nouveau message Twilio, vous pouvez prendre ce message et l’utiliser comme flux de travail Service Bus.
 
 Pour ajouter une opération aux applications logiques, consultez [Créer une application logique](../app-service-logic/app-service-logic-create-a-logic-app.md).
 
@@ -64,8 +64,8 @@ Retourne un message unique spécifié par l’ID du message fourni. ```GET: /Mes
 | ---|---|---|---|---|---|
 |MessageId|string|yes|path|(aucun)|ID de message|
 
-### Response
-|Nom|Description|
+### Réponse
+|Name|Description|
 |---|---|
 |200|L’opération a réussi|
 |400|Demande incorrecte|
@@ -80,13 +80,13 @@ Retourne une liste de messages associés à votre compte. ```GET: /Messages.json
 | Nom| Type de données|Requis|Emplacement|Valeur par défaut|Description|
 | ---|---|---|---|---|---|
 |À|string|no|query|(aucun)|Vers le numéro de téléphone|
-|À partir|string|no|query|(aucun)|À partir du numéro de téléphone|
+|À partir d'une base|string|no|query|(aucun)|À partir du numéro de téléphone|
 |DateSent|string|no|query|(aucun)|Afficher uniquement les messages envoyés à cette date (au format GMT), sous la forme AAAA-MM-JJ. Exemple : DateSent=2009-07-06. Vous pouvez également spécifier une inégalité, par exemple DateSent<=AAAA-MM-JJ pour les messages envoyés avant minuit à une certaine date, puis DateSent>=AAAA-MM-JJ pour les messages envoyés minuit à une certaine date.|
 |PageSize|integer|no|query|50|Nombre de ressources à retourner dans chaque page de la liste. 50 par défaut.|
 |Page|integer|no|query|0|Nombre de page. La valeur par défaut est 0.|
 
-### Response
-|Nom|Description|
+### Réponse
+|Name|Description|
 |---|---|
 |200|L’opération a réussi|
 |400|Demande incorrecte|
@@ -102,8 +102,8 @@ Envoie un nouveau message à un numéro de mobile. ```POST: /Messages.json```
 | ---|---|---|---|---|---|
 |sendMessageRequest| |yes|body|(aucun)|Message à envoyer|
 
-### Response
-|Nom|Description|
+### Réponse
+|Name|Description|
 |---|---|
 |200|L’opération a réussi|
 |400|Demande incorrecte|
@@ -111,7 +111,7 @@ Envoie un nouveau message à un numéro de mobile. ```POST: /Messages.json```
 |default|L’opération a échoué.|
 
 
-## Définitions d'objet
+## Définitions d’objet
 
 #### SendMessageRequest : modèle de demande pour l'opération d'envoi de message
 
@@ -248,4 +248,4 @@ Envoie un nouveau message à un numéro de mobile. ```POST: /Messages.json```
 ## Étapes suivantes
 [Créer une application logique](../app-service-logic/app-service-logic-create-a-logic-app.md)
 
-<!------HONumber=AcomDC_0525_2016-->
+<!---HONumber=AcomDC_0921_2016-->

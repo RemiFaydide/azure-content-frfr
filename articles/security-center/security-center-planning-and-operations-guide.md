@@ -13,7 +13,7 @@
    ms.devlang="na"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/11/2016"
+   ms.date="09/22/2016"
    ms.author="yurid"/>
 
 # Guide des opérations et de planification du Centre de sécurité Azure
@@ -159,11 +159,11 @@ Si, à un moment donné, vous souhaitez désactiver la collecte de données, vou
 
 Pour chaque région où s’exécutent des machines virtuelles, vous devez choisir le compte de stockage où doivent être stockées les données collectées à partir de ces machines virtuelles. Si vous ne choisissez pas un compte de stockage pour chaque région, un compte sera créé. Vous pouvez choisir un emplacement de stockage par région ou stocker toutes les informations dans un emplacement central. S’il est possible de configurer les stratégies de sécurité au niveau du groupe de ressources et de l’abonnement Azure, le choix de la région du compte de stockage ne s’effectue que dans l’abonnement.
 
-Si vous utilisez un compte de stockage partagé entre différentes ressources Azure, lisez l’article [Objectifs de performance et évolutivité d’Azure Storage](../storage/storage-scalability-targets.md) pour en savoir plus sur les contraintes et limites de taille. Votre abonnement présente également des limites concernant le compte de stockage. Pour mieux comprendre ces limites, voir [Abonnement Azure et limites, quotas et contraintes du service](../azure-subscription-service-limits.md).
+Si vous utilisez un compte de stockage partagé entre différentes ressources Azure, lisez l’article [Objectifs de performance et évolutivité de Stockage Azure](../storage/storage-scalability-targets.md) pour en savoir plus sur les contraintes et limites de taille. Votre abonnement présente également des limites concernant le compte de stockage. Pour mieux comprendre ces limites, voir [Abonnement Azure et limites, quotas et contraintes du service](../azure-subscription-service-limits.md).
 
-> [AZURE.NOTE] Les coûts associés à ce stockage ne sont pas inclus dans le prix du service du Centre de sécurité. Ils sont facturés séparément au [tarif normal d’Azure Storage](https://azure.microsoft.com/pricing/details/storage/).
+> [AZURE.NOTE] Les coûts associés à ce stockage ne sont pas inclus dans le prix du service du Centre de sécurité. Ils sont facturés séparément au [tarif normal de Stockage Azure](https://azure.microsoft.com/pricing/details/storage/).
 
-Des critères de performances et d’évolutivité sont également à prendre en compte en fonction de la taille de votre environnement Azure et des ressources qui utilisent votre compte de stockage. Pour plus d’informations, voir [Liste de contrôle des performances et de l’extensibilité de Microsoft Azure Storage](../storage/storage-performance-checklist.md).
+Des critères de performances et d’évolutivité sont également à prendre en compte en fonction de la taille de votre environnement Azure et des ressources qui utilisent votre compte de stockage. Pour plus d’informations, voir [Liste de contrôle des performances et de l’extensibilité de Stockage Azure Microsoft](../storage/storage-performance-checklist.md).
 
 ## Surveillance continue de la sécurité
 
@@ -231,7 +231,9 @@ L’exemple suivant montre une activité RDP suspecte :
 
 Comme vous pouvez le constater, ce panneau affiche des informations sur l’heure de l’attaque, le nom d’hôte source, la machine virtuelle cible, et détaille une procédure recommandée. Parfois, aucune information ne sera disponible concernant la source de l’attaque. Pour plus d’informations sur ce type de comportement, voir [Missing Source Information in Azure Security Center Alerts](https://blogs.msdn.microsoft.com/azuresecurity/2016/03/25/missing-source-information-in-azure-security-center-alerts/) (Informations sur la source manquantes dans les alertes Azure Security Center).
 
-> [AZURE.NOTE] La vidéo [How to Leverage the Azure Security Center & Microsoft Operations Management Suite for an Incident Response](https://channel9.msdn.com/Blogs/Taste-of-Premier/ToP1703) (Comment tirer profit d’Azure Security Center et de Microsoft Operations Management Suite pour répondre aux incidents) présente des démonstrations pouvant vous aider à comprendre comment le Centre de sécurité peut être utilisé dans chacune de ces étapes.
+La vidéo [How to Leverage the Azure Security Center & Microsoft Operations Management Suite for an Incident Response](https://channel9.msdn.com/Blogs/Taste-of-Premier/ToP1703) (Comment tirer profit d’Azure Security Center et de Microsoft Operations Management Suite pour répondre aux incidents) présente des démonstrations pouvant vous aider à comprendre comment le Centre de sécurité peut être utilisé dans chacune de ces étapes.
+
+> [AZURE.NOTE] Consultez l’article [Utilisation d’Azure Security Center pour la réponse aux incidents](security-center-incident-response.md) pour plus d’informations sur l’utilisation des fonctionnalités d’Azure Security Center afin de vous aider lors du processus de réponse aux incidents.
 
 ## Voir aussi
 Dans ce document, vous avez vu comment planifier l’adoption du Centre de sécurité. Pour plus d’informations sur le Centre de sécurité, consultez les rubriques suivantes :
@@ -242,4 +244,4 @@ Dans ce document, vous avez vu comment planifier l’adoption du Centre de sécu
 - [FAQ d’Azure Security Center](security-center-faq.md) : découvrez les réponses aux questions les plus souvent posées à propos de l’utilisation de ce service.
 - [Blog sur la sécurité Azure](http://blogs.msdn.com/b/azuresecurity/) : accédez à des billets de blog sur la sécurité et la conformité Azure.
 
-<!----HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0928_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/13/2016"
+   ms.date="09/14/2016"
    ms.author="subramar"/>
 
 
@@ -21,7 +21,7 @@
 
 # Mise à niveau d’applications Service Fabric à l’aide de PowerShell
 
-L'approche de la mise à niveau la plus fréquemment utilisée et recommandée est la mise à niveau propagée surveillée. Azure Service Fabric surveille l’intégrité de l’application en cours de mise à niveau sur la base d’un ensemble de stratégies de contrôle d’intégrité. Une fois que les applications figurant dans un domaine de mise à jour ont été mises à niveau, Service Fabric évalue leur intégrité et détermine sur la base des stratégies de contrôle d’intégrité s’il convient de passer au domaine de mise à jour suivant ou s’il est préférable de faire échouer la mise à niveau.
+L'approche de la mise à niveau la plus fréquemment utilisée et recommandée est la mise à niveau propagée surveillée. Azure Service Fabric surveille l’intégrité de l’application en cours de mise à niveau sur la base d’un ensemble de stratégies de contrôle d’intégrité. Une fois qu’un domaine de mise à jour a été mis à niveau, Service Fabric évalue l’intégrité de l’application et passe au domaine de mise à jour suivant ou fait échouer la mise à niveau, en fonction des stratégies de contrôle d’intégrité.
 
 Une mise à niveau surveillée des applications peut être effectuée à l'aide des API managées ou natives, PowerShell ou REST. Pour obtenir des instructions sur l’exécution d’une mise à niveau à l’aide de Visual Studio, consultez [Mise à niveau de votre application à l’aide de Visual Studio](service-fabric-application-upgrade-tutorial.md).
 
@@ -30,11 +30,11 @@ Grâce à la mise à niveau propagée surveillée de Service Fabric, l’adminis
 ## Étape 1 : Créer et déployer l'exemple Visual Objects
 
 
-Générez et publiez l’application en cliquant avec le bouton droit sur le projet d’application, **VisualObjectsApplication** et en sélectionnant la commande **Publier** dans l’élément de menu Service Fabric, comme ci-après. Pour plus d’informations, consultez le [didacticiel sur la mise à niveau d’une application Service Fabric](service-fabric-application-upgrade-tutorial.md). Vous pouvez également utiliser PowerShell pour déployer votre application.
+Générez et publiez l’application en cliquant avec le bouton droit sur le projet d’application, **VisualObjectsApplication** et en sélectionnant la commande **Publier**. Pour plus d’informations, consultez le [didacticiel sur la mise à niveau d’une application Service Fabric](service-fabric-application-upgrade-tutorial.md). Vous pouvez également utiliser PowerShell pour déployer votre application.
 
 > [AZURE.NOTE] Avant d’utiliser les commandes Service Fabric dans PowerShell, vous devez vous connecter au cluster en utilisant l’applet de commande `Connect-ServiceFabricCluster`. De même, cela suppose que le cluster a déjà été configuré sur votre ordinateur local. Consultez l'article sur la [configuration de votre environnement de développement Service Fabric](service-fabric-get-started.md).
 
-Après avoir généré le projet dans Visual Studio, vous pouvez utiliser la commande PowerShell **Copy-ServiceFabricApplicationPackage** pour copier le package d’application dans le magasin d’images. Cette étape est suivie de l’inscription de l’application au runtime Service Fabric à l’aide de l’applet de commande **Register-ServiceFabricApplicationPackage**. La dernière étape consiste à démarrer une instance de l’application à l’aide de l’applet de commande **New-ServiceFabricApplication**. Ces trois étapes sont analogues à l’utilisation de l’élément de menu **Déployer** dans Visual Studio.
+Après avoir généré le projet dans Visual Studio, vous pouvez utiliser la commande PowerShell **Copy-ServiceFabricApplicationPackage** pour copier le package d’application dans le magasin d’images. L’étape suivante consiste à inscrire l’application au runtime Service Fabric à l’aide de l’applet de commande **Register-ServiceFabricApplicationPackage**. La dernière étape consiste à démarrer une instance de l’application à l’aide de l’applet de commande **New-ServiceFabricApplication**. Ces trois étapes sont analogues à l’utilisation de l’élément de menu **Déployer** dans Visual Studio.
 
 À présent, vous pouvez utiliser l'[Explorateur de Service Fabric pour afficher le cluster et l'application](service-fabric-visualizing-your-cluster.md). L'application possède un service web accessible dans Internet Explorer en tapant [http://localhost:8081/visualobjects](http://localhost:8081/visualobjects) dans la barre d'adresse. Vous devez normalement voir des objets visuels flottants en rotation à l'écran. En outre, vous pouvez utiliser **Get-ServiceFabricApplication** pour vérifier l’état de l’application.
 
@@ -55,7 +55,7 @@ Une fois les modifications effectuées, le manifeste doit se présenter comme su
 <CodePackageName="Code" Version="2.0">
 ```
 
-À présent, nous allons mettre à jour le fichier *ApplicationManifest.xml* (situé sous le projet **VisualObjects**, sous la solution **VisualObjects**) pour utiliser la version 2.0 du projet **VisualObjects.ActorService**, et également mettre à jour la version de l’application de 1.0.0.0 vers 2.0.0.0. Désormais, les lignes correspondantes dans le fichier *ApplicationManifest.xml* doivent être comme suit :
+À présent, le fichier *ApplicationManifest.xml* (situé sous le projet **VisualObjects**, sous la solution **VisualObjects**) est mis à niveau sur la version 2.0 du projet **VisualObjects.ActorService**. En outre, la version de l’application est mise à jour de 1.0.0.0 vers 2.0.0.0. Le fichier *ApplicationManifest.xml* doit ressembler à l’extrait de code suivant :
 
 ```xml
 <ApplicationManifestxmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="VisualObjects" ApplicationTypeVersion="2.0.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
@@ -64,16 +64,16 @@ Une fois les modifications effectuées, le manifeste doit se présenter comme su
 ```
 
 
-À présent, générez le projet en sélectionnant uniquement le projet **ActorService**, puis en effectuant un clic droit et en sélectionnant **Générer** dans Visual Studio. (Si vous sélectionnez **Régénérer tout**, vous devrez peut-être mettre à jour les versions pour les autres projets dans *ServiceManifest.xml* et dans *ApplicationManifest.xml*, étant donné que le code aura changé). Nous allons maintenant empaqueter l’application mise à jour en cliquant avec le bouton droit sur ***VisualObjectsApplication***, en sélectionnant le menu Service Fabric et en choisissant **Package**. Cette action doit créer un package d'application susceptible d'être déployé. Votre application mise à jour est prête à être déployée dès maintenant.
+À présent, générez le projet en sélectionnant uniquement le projet **ActorService**, puis en effectuant un clic droit et en sélectionnant l’option **Générer** dans Visual Studio. Si vous sélectionnez **Régénérer tout**, vous devez mettre à jour les versions pour tous les projets, étant donné que le code aura été modifié. Nous allons maintenant empaqueter l’application mise à jour en cliquant avec le bouton droit sur ***VisualObjectsApplication***, en sélectionnant le menu Service Fabric et en choisissant **Package**. Cette action crée un package d’application qui peut être déployé. Votre application mise à jour est prête à être déployée.
 
 
 ## Étape 3 : Décider des stratégies de contrôle d'intégrité et des paramètres de mise à niveau
 
-Vous devez vous familiariser avec les [paramètres de mise à niveau d’application](service-fabric-application-upgrade-parameters.md) et le [processus de mise à niveau](service-fabric-application-upgrade.md) pour bien comprendre les différents paramètres de mise à niveau, délais d’attente et critères d’intégrité appliqués. Pour cette procédure pas à pas, nous allons conserver les valeurs par défaut (et recommandées) pour le critère d’évaluation d’intégrité de service, ce qui signifie que tous les services et instances doivent être _sains_ après la mise à niveau.
+Familiarisez-vous avec les [paramètres de mise à niveau d’application](service-fabric-application-upgrade-parameters.md) et le [processus de mise à niveau](service-fabric-application-upgrade.md) pour bien comprendre les différents paramètres de mise à niveau, délais d’attente et critères d’intégrité appliqués. Pour cette procédure pas à pas, le critère d’évaluation d’intégrité du service est défini sur la valeur par défaut (recommandé), ce qui signifie que tous les services et instances doivent être _sains_ après la mise à niveau.
 
-Nous allons augmenter toutefois le paramètre *HealthCheckStableDuration* pour spécifier 60 secondes (afin que les services soient sains pendant au moins 20 secondes avant que la mise à niveau passe au domaine de mise à jour suivant). Nous allons également définir *UpgradeDomainTimeout* sur 1200 secondes et *UpgradeTimeout* sur 3000 secondes.
+Toutefois, nous allons augmenter le paramètre *HealthCheckStableDuration* pour spécifier 60 secondes (afin que les services soient sains pendant au moins 20 secondes avant que la mise à niveau passe au domaine de mise à jour suivant). Nous allons également définir *UpgradeDomainTimeout* sur 1200 secondes et *UpgradeTimeout* sur 3000 secondes.
 
-Enfin, définissons aussi *UpgradeFailureAction* de manière à restaurer, pour demander ainsi à Service Fabric de restaurer l’application à la version précédente en cas de problème quelconque pendant la mise à niveau. Ainsi, les paramètres de mise à niveau que nous spécifierons au démarrage de la mise à niveau (à l’étape 4) seront les suivants :
+Enfin, nous allons également définir *UpgradeFailureAction* sur la restauration. Cette option nécessite que Service Fabric restaure l’application sur la version précédente en cas de problèmes lors de la mise à niveau. Par conséquent, lors du démarrage de la mise à niveau (à l’étape 4), les paramètres suivants sont spécifiés :
 
 FailureAction = Rollback
 
@@ -114,25 +114,25 @@ Start-ServiceFabricApplicationUpgrade -ApplicationName fabric:/VisualObjects -Ap
 ```
 
 
-Notez que le nom de l’application est tel qu’il a été décrit dans le fichier *ApplicationManifest.xml*. Service Fabric utilise ce nom pour identifier l'application à mettre à niveau. Si vous définissez des délais d’attente trop courts, vous pouvez recevoir un message d’échec stipulant le problème. Reportez-vous à la section de résolution des problèmes ou augmentez les délais d’attente.
+Le nom de l’application est tel qu’il a été décrit dans le fichier *ApplicationManifest.xml*. Service Fabric utilise ce nom pour identifier l'application à mettre à niveau. Si vous définissez des délais d’attente trop courts, vous pouvez recevoir un message d’échec stipulant le problème. Reportez-vous à la section de résolution des problèmes ou augmentez les délais d’attente.
 
 Vous pouvez désormais surveiller la progression de la mise à niveau de l’application à l’aide de Service Fabric Explorer ou à l’aide de la commande PowerShell suivante : **Get-ServiceFabricApplicationUpgrade fabric:/VisualObjects**.
 
 Après quelques minutes, l’état issu de la commande PowerShell ci-dessus doit indiquer que tous les domaines de mise à jour ont été mis à niveau (terminés). De plus, vous pouvez normalement noter que les objets visuels sont désormais en rotation dans la fenêtre de votre navigateur.
 
-Vous souhaiterez peut-être essayer de modifier les versions et de passer de la version 2 à la version 3 en guise d'exercice, voire même de revenir de la version 2 à la version 1 (oui, vous pouvez effectuer une mise à niveau de v2 à v1). Amusez-vous avec les délais d'attente et les stratégies de contrôle d'intégrité pour vous familiariser avec ceux-ci. Quand vous effectuez un déploiement vers un cluster Azure, les paramètres utilisés sont différents de ceux employés pendant le déploiement vers un cluster local. Il est donc judicieux de définir les délais d’attente de manière prudente.
+Vous pouvez essayer de mettre à niveau de la version 2 à la version 3, ou de la version 2 à la version 1 en guise d’exercice. Le passage de la version 2 à la version 1 est également considéré comme une mise à niveau. Amusez-vous avec les délais d'attente et les stratégies de contrôle d'intégrité pour vous familiariser avec ceux-ci. Lorsque vous déployez sur un cluster Azure, les paramètres doivent être définis correctement. Nous vous recommandons de définir les délais d’attente de manière plus restrictive.
 
 
 ## Étapes suivantes
 
 La [mise à niveau de votre application à l’aide de Visual Studio](service-fabric-application-upgrade-tutorial.md) vous guide à travers une mise à niveau de l’application à l’aide de Visual Studio.
 
-Contrôlez les mises à niveau de votre application à l’aide des [Paramètres de mise à niveau](service-fabric-application-upgrade-parameters.md).
+Contrôlez les mises à niveau de votre application à l’aide des [paramètres de mise à niveau](service-fabric-application-upgrade-parameters.md).
 
-Rendez les mises à niveau de votre application compatibles en apprenant à utilisez la [Sérialisation des données](service-fabric-application-upgrade-data-serialization.md).
+Rendez les mises à niveau de votre application compatibles en apprenant à utiliser la [sérialisation des données](service-fabric-application-upgrade-data-serialization.md).
 
 Apprenez à utiliser les fonctionnalités avancées lors de la mise à niveau de votre application en consultant les [Rubriques avancées](service-fabric-application-upgrade-advanced.md).
 
 Résolvez les problèmes courants de mise à niveau de l’application en vous reportant aux étapes de [Résolution des problèmes de mise à niveau des applications](service-fabric-application-upgrade-troubleshooting.md).
 
-<!---HONumber=AcomDC_0615_2016-->
+<!---HONumber=AcomDC_0921_2016-->

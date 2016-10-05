@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="big-data"
-   ms.date="07/19/2016"
+   ms.date="09/20/2016"
    ms.author="larryfr"/>
 
 # Exécution de requêtes Hive à l'aide de la console de requêtes
@@ -23,7 +23,7 @@
 
 Dans cet article, vous découvrirez comment utiliser la console de requêtes HDInsight pour exécuter des requêtes Hive sur un cluster Hadoop HDInsight à partir de votre navigateur.
 
-> [AZURE.NOTE] La console de requêtes n'est disponible que sur les clusters HDInsight Windows.
+> [AZURE.IMPORTANT] La console de requêtes HDInsight n’est disponible que sur les clusters HDInsight Windows. Si vous utilisez un cluster HDInsight Linux, consultez [Utilisez la vue Hive avec Hadoop dans HDInsight](hdinsight-hadoop-use-hive-ambari-view.md).
 
 
 ##<a id="prereq"></a>Configuration requise
@@ -128,4 +128,4 @@ Si vous utilisez Tez avec Hive, consultez les documents suivants pour les inform
 
 [img-hdi-hive-powershell-output]: ./media/hdinsight-use-hive/HDI.Hive.PowerShell.Output.png
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

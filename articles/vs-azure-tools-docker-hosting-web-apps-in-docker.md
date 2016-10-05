@@ -3,7 +3,7 @@
    description="Découvrez comment utiliser Visual Studio Tools pour Docker pour déployer une application web ASP.NET Core dans un conteneur Docker fonctionnant sur une machine virtuelle hôte Azure Docker"   
    services="azure-container-service"
    documentationCenter=".net"
-   authors="allclark"
+   authors="mlearned"
    manager="douge"
    editor=""/>
 
@@ -14,7 +14,7 @@
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
    ms.date="06/08/2016"
-   ms.author="allclark;stevelas"/>
+   ms.author="mlearned"/>
 
 # Déployer un conteneur ASP.NET sur un hôte Docker distant
 
@@ -25,11 +25,12 @@ Docker est un moteur de conteneur léger, semblable à certains égards à une m
 Les éléments suivants sont nécessaires pour suivre ce didacticiel :
 
 - Créer une machine virtuelle hôte Azure Docker, comme le décrit la rubrique [How to use docker-machine with Azure](./virtual-machines/virtual-machines-linux-docker-machine.md) (Comment utiliser docker-machine avec Azure)
-- Installez [Visual Studio 2015 Update 2](https://go.microsoft.com/fwlink/?LinkId=691978)
+- Installez [Visual Studio 2015 Update 3](https://go.microsoft.com/fwlink/?LinkId=691129)
+- [Kit de développement logiciel (SDK) Microsoft ASP.NET Core 1.0](https://go.microsoft.com/fwlink/?LinkID=809122)
 - Installez [Visual Studio 2015 Tools pour Docker - Version préliminaire](http://aka.ms/DockerToolsForVS)
 
-## 1\. Créer une application web ASP.NET 5
-La procédure suivante vous guidera dans la création d'une application ASP.NET 5 de base qui sera utilisée dans ce didacticiel.
+## 1\. Créez une application web ASP.NET Core
+La procédure suivante vous guidera dans la création d’une application ASP.NET 5 Core qui sera utilisée dans ce didacticiel.
 
 [AZURE.INCLUDE [create-aspnet5-app](../includes/create-aspnet5-app.md)]
 
@@ -89,4 +90,4 @@ La procédure suivante vous guidera dans la création d'une application ASP.NET 
 [2]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/launch-application.png
 [3]: ./media/vs-azure-tools-docker-hosting-web-apps-in-docker/view-application.png
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

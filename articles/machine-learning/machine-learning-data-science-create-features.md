@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/19/2016"
 	ms.author="zhangya;bradsev" />
 
 
@@ -25,8 +25,10 @@ Cette rubrique explique les finalités de la conception de fonctionnalités et f
 
 Ce **menu** pointe vers des rubriques qui expliquent comment créer des fonctionnalités pour les données dans différents environnements. Cette tâche est une étape du [processus TDSP (Team Data Science Process)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
 
-La conception de fonctionnalités tente d'augmenter la puissance prédictive des algorithmes d'apprentissage en créant des fonctionnalités à partir de données brutes qui facilitent le processus d'apprentissage. La conception et la sélection de fonctionnalités constituent une partie du processus TDSP présenté dans [Qu'est ce que le processus TDSP (Team Data Science Process) ?](data-science-process-overview.md) La conception et la sélection de fonctionnalités sont des parties de l’étape de **développement de fonctionnalités** du processus CAP.
+La conception de fonctionnalités tente d'augmenter la puissance prédictive des algorithmes d'apprentissage en créant des fonctionnalités à partir de données brutes qui facilitent le processus d'apprentissage. La conception et la sélection de fonctionnalités constituent une partie du processus TDSP présenté dans [Qu'est ce que le processus TDSP (Team Data Science Process) ?](data-science-process-overview.md) La conception et la sélection de fonctionnalités sont des parties de l’étape de **développement de fonctionnalités** du processus TDSP.
+
 * La **conception de fonctionnalités** : ce processus tente de créer des fonctionnalités supplémentaires pertinentes à partir de fonctionnalités brutes existantes dans les données et d’augmenter la performance de prédiction de l’algorithme d’apprentissage.
+
 * La **sélection de caractéristiques** : ce processus sélectionne le sous-ensemble clé des caractéristiques de données d'origine afin de réduire la dimensionnalité du problème d'apprentissage.
 
 En général, la **conception de fonctionnalités** s’applique d’abord à la génération de fonctionnalités supplémentaires. L’étape de **sélection de fonctionnalités** est alors effectuée pour éliminer les fonctionnalités inutiles, redondantes ou fortement corrélées.
@@ -95,4 +97,4 @@ L'ingénierie et la sélection de caractéristiques augmentent l'efficacité du 
 Notez qu'il n'est pas toujours nécessaire d'effectuer l'ingénierie de caractéristiques ou la sélection des caractéristiques. Que cela soit nécessaire ou non dépend des données que l'on a à disposition ou qui sont collectées, de l'algorithme choisi et des objectifs de l'expérience.
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

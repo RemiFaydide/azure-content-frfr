@@ -18,7 +18,7 @@
 
 # Exporter un modèle Azure Resource Manager à partir de ressources existantes
 
-Resource Manager vous permet d’exporter un modèle Resource Manager à partir de ressources existantes dans votre abonnement. Vous pouvez utiliser le modèle généré pour découvrir la syntaxe du modèle, ou pour automatiser le redéploiement de votre solution en fonction des besoins.
+Resource Manager vous permet d’exporter un modèle Resource Manager à partir de ressources existantes de votre abonnement. Vous pouvez utiliser le modèle généré pour découvrir la syntaxe du modèle, ou pour automatiser le redéploiement de votre solution en fonction des besoins.
 
 Il est important de noter qu’il existe deux façons différentes d’exporter un modèle :
 
@@ -144,6 +144,8 @@ Il est généralement recommandé de travailler avec un modèle qui déploie l�
 
 Bien que chaque déploiement affiche seulement les modifications apportées à votre groupe de ressources, vous pouvez à tout moment exporter un modèle pour afficher les attributs de votre groupe de ressources complet.
 
+> [AZURE.NOTE] Vous ne pouvez pas exporter un modèle pour un groupe de ressources qui contient plus de 200 ressources.
+
 1. Pour afficher le modèle pour un groupe de ressources, sélectionnez **Script d’automatisation**.
 
       ![exporter un groupe de ressources](./media/resource-manager-export-template/export-resource-group.png)
@@ -193,7 +195,7 @@ La sélection du message vous montre exactement les types de ressources qui n’
      
 ![show error](./media/resource-manager-export-template/show-error-details.png)
 
-Cette rubrique explique les correctifs courants suivants. Pour implémenter ces ressources, vous devez ajouter des paramètres au modèle. Consultez [Personnaliser et redéployer le modèle exporté](resource-manager-customize-template.md) pour en savoir plus.
+Cette rubrique présente les correctifs courants suivants. Pour implémenter ces ressources, vous devez ajouter des paramètres au modèle. Consultez [Personnaliser et redéployer le modèle exporté](resource-manager-customize-template.md) pour en savoir plus.
 
 ### Chaîne de connexion
 
@@ -343,4 +345,4 @@ Félicitations ! Vous avez appris comment exporter un modèle à partir des res
 - Pour savoir comment exporter un modèle via PowerShell, consultez [Utilisation d’Azure PowerShell avec Azure Resource Manager](powershell-azure-resource-manager.md).
 - Pour savoir comment exporter un modèle via l’interface de ligne de commande Azure, consultez [Utiliser l’interface de ligne de commande Azure pour Mac, Linux et Windows avec Azure Resource Manager](xplat-cli-azure-resource-manager.md).
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0928_2016-->

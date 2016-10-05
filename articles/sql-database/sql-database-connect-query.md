@@ -102,4 +102,4 @@ Vous voici connecté à la base de données. Consultez à présent les étapes s
 - L’ouverture des bases de données SQL dans Visual Studio se fait à l’aide de SQL Server Data Tools. Pour plus d’informations, consultez [SQL Server Data Tools](https://msdn.microsoft.com/library/hh272686.aspx).
 - Pour vous connecter à une base de données SQL à l’aide d’un code, consultez [Connexion à SQL Database à l’aide de .NET (C#))](sql-database-develop-dotnet-simple.md).
 
-<!---HONumber=AcomDC_0824_2016-->
+<!-----HONumber=AcomDC_0824_2016-->

@@ -13,7 +13,7 @@
   ms.tgt_pltfrm="na"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="05/31/2016"
+	ms.date="09/16/2016"
 	ms.author="brandwe"/>
 
 
@@ -312,7 +312,7 @@ Cette opération redirige simplement vers une page sécurisée qui est protégé
 </html>
 ```
 
-- Enfin, créons la page web sécurisée que nous souhaitons en créant un dossier sous `\webapp` appelé `\secure` afin que le répertoire soit désormais `\webapp\secure`. 
+- Enfin, créons la page web sécurisée que nous souhaitons en créant un dossier sous `\webapp` appelé `\secure` afin que le répertoire soit désormais `\webapp\secure`.
 
 - Dans ce répertoire, nous allons ensuite créer un fichier `aad.jsp` et couper/coller les éléments suivants :
 
@@ -359,7 +359,7 @@ Pour obtenir les données relatives à l’utilisateur, nous devons utiliser l�
 
 Nous allons écrire des fichiers Java afin qu’ils effectuent ce travail pour nous :
 
-1. Créez un dossier dans votre répertoire racine appelé « adal4jsample » pour stocker l’ensemble de nos fichiers Java. 
+1. Créez un dossier dans votre répertoire racine appelé « adal4jsample » pour stocker l’ensemble de nos fichiers Java.
 
 Nous allons utiliser l’espace de noms `com.microsoft.aad.adal4jsample` dans nos fichiers Java. Pour ce faire, la plupart des environnements IDE créent une structure de dossiers imbriqués (p. ex., `/com/microsoft/aad/adal4jsample`). Vous êtes libre de le faire, mais cela n’est pas nécessaire.
 
@@ -1750,4 +1750,4 @@ Pour référence, l’exemple terminé (sans vos valeurs de configuration) [est 
 
 ```git clone --branch complete https://github.com/Azure-Samples/active-directory-java-webapp-openidconnect.git```
 
-<!---HONumber=AcomDC_0608_2016-->
+<!---HONumber=AcomDC_0921_2016-->

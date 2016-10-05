@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Version préliminaire des services de domaine Azure Active Directory : guide d’administration | Microsoft Azure"
+	pageTitle="Azure Active Directory Domain Services : guide d’administration | Microsoft Azure"
 	description="Joignez une machine virtuelle Windows à un domaine géré avec Azure PowerShell et le modèle de déploiement classique."
 	services="active-directory-ds"
 	documentationCenter=""
@@ -13,11 +13,11 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/06/2016"
+	ms.date="09/20/2016"
 	ms.author="maheshu"/>
 
 
-# Créer des machines virtuelles Windows avec PowerShell et le modèle de déploiement classique
+# Joindre une machine virtuelle Windows Server à un domaine géré à l’aide de PowerShell
 
 > [AZURE.SELECTOR]
 - [Portail Azure Classic - Windows](active-directory-ds-admin-guide-join-windows-vm.md)
@@ -29,7 +29,7 @@
 
 Ces étapes vous montrent comment personnaliser un jeu de commandes Azure PowerShell en vue de créer et de préconfigurer une machine virtuelle Azure basée sur Windows à l'aide d'une approche modulaire. Ces étapes peuvent vous aider à créer une machine virtuelle Azure Windows et à la joindre à un domaine géré de services de domaine Azure AD.
 
-Ces étapes utilisent une méthode de cases à remplir pour créer des jeux de commandes Azure PowerShell. Cette méthode peut être utile si vous découvrez PowerShell ou simplement si vous souhaitez connaître les valeurs à indiquer pour une configuration réussie. Les utilisateurs avancés de PowerShell peuvent prendre les commandes et indiquer leurs propres valeurs pour les variables (lignes commençant par « $ »).
+Ces étapes utilisent une méthode de cases à remplir pour créer des jeux de commandes Azure PowerShell. Cette méthode peut être utile si vous découvrez PowerShell ou souhaitez connaître les valeurs à indiquer pour une configuration réussie. Les utilisateurs avancés de PowerShell peuvent prendre les commandes et indiquer leurs propres valeurs pour les variables (lignes commençant par « $ »).
 
 Si ce n’est pas encore fait, installez Azure PowerShell sur votre ordinateur local à l’aide des instructions décrites dans [Installation et configuration d’Azure PowerShell](../powershell-install-configure.md). Puis ouvrez une invite de commandes Windows PowerShell.
 
@@ -40,7 +40,7 @@ Si ce n’est pas encore fait, installez Azure PowerShell sur votre ordinateur l
 3. Tapez le mot de passe de votre compte.
 4. Cliquez sur **Se connecter**.
 
-## Étape 2 : configurer votre abonnement et votre compte de stockage
+## Étape 2 : Configurer votre abonnement et votre compte de stockage
 
 Pour configurer votre abonnement et votre compte de stockage Azure, exécutez ces commandes à l’invite de commandes Windows PowerShell. Remplacez tous les éléments entre guillemets, y compris les caractères < et >, par les noms appropriés.
 
@@ -111,7 +111,7 @@ Maintenant, approvisionnez la machine virtuelle Windows jointe à un domaine.
 <br>
 
 ## Script pour approvisionner une machine virtuelle Windows et la joindre automatiquement à un domaine géré de services de domaine AAD
-Cette commande PowerShell crée une machine virtuelle pour un serveur métier qui :
+Cette commande PowerShell crée une machine virtuelle pour un serveur métier qui :
 
 - utilise l'image Windows Server 2012 R2 Datacenter
 - est une machine virtuelle très petite
@@ -147,4 +147,11 @@ Voici l'exemple de script complet pour créer la machine virtuelle Windows et la
 
     New-AzureVM –ServiceName $svcname -VMs $vm1 -VNetName $vnetname -Location "Central US" -DnsSettings $dns
 
-<!---HONumber=AcomDC_0706_2016-->
+<br>
+
+## Contenu connexe
+- [Services de domaine Azure AD : guide de mise en route](./active-directory-ds-getting-started.md)
+
+- [Administrer un domaine géré par les services de domaine Azure Active Directory](./active-directory-ds-admin-guide-administer-domain.md)
+
+<!---HONumber=AcomDC_0921_2016-->

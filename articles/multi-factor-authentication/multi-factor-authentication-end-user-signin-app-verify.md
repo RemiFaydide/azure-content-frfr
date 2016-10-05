@@ -1,21 +1,21 @@
 
-<properties 
-	pageTitle="Connexion à l'application mobile par code de vérification avec Azure Multi-Factor Authentication" 
-	description="Cette page décrit comment un utilisateur peut se connecter à l'aide du code de vérification de l'application mobile avec Azure MFA." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+<properties
+	pageTitle="Connexion à l'application mobile par code de vérification avec Azure Multi-Factor Authentication"
+	description="Cette page décrit comment un utilisateur peut se connecter à l'aide du code de vérification de l'application mobile avec Azure MFA."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="kgremban"
+	manager="femila"
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2016" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2016"
+	ms.author="kgremban"/>
 
 # Connexion à l'application mobile par code de vérification avec Azure Multi-Factor Authentication
 
@@ -39,7 +39,4 @@ Les informations suivantes décrivent l'utilisation de l'authentification multif
 
 <li>Vous devez maintenant être connecté.</li>
 
-
- 
-
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

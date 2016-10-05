@@ -68,7 +68,7 @@ Vous pouvez télécharger le serveur Azure Multi-Factor Authentication de deux
 
 
 ## Installation et configuration du serveur Azure Multi-Factor Authentication
-Maintenant que vous avez téléchargé le serveur, vous pouvez l'installer et le configurer. Assurez-vous que le serveur que vous installez répond aux exigences suivantes :
+Maintenant que vous avez téléchargé le serveur, vous pouvez l’installer et le configurer. Assurez-vous que le serveur que vous installez répond aux exigences suivantes :
 
 
 
@@ -190,4 +190,4 @@ Méthode|Description
 [Synchronisation avec Windows Server Active Directory](multi-factor-authentication-get-started-server-dirint.md)|Informations sur l’installation et la configuration de la synchronisation entre Active Directory et le serveur Azure MFA.
 [Déploiement du service Web de l’application mobile du serveur Azure Multi-Factor Authentication](multi-factor-authentication-get-started-server-webservice.md)|Informations sur l'installation et la configuration du service Web du serveur Azure MFA.
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

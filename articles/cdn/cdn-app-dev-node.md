@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/28/2016"
+	ms.date="09/15/2016"
 	ms.author="casoper"/>
 
 # Prise en main du développement Azure CDN
 
 > [AZURE.SELECTOR]
-- [.NET](cdn-app-dev-net.md)
 - [Node.JS](cdn-app-dev-node.md)
+- [.NET](cdn-app-dev-net.md)
 
 Vous pouvez utiliser le [kit de développement logiciel Azure CDN pour Node.js](https://www.npmjs.com/package/azure-arm-cdn) pour automatiser la création et la gestion des points de terminaison et profils CDN. Ce didacticiel présente la création d’une application console Node.js simple, qui exécute plusieurs des opérations disponibles. Il n’a pas vocation à décrire en détail tous les aspects du kit de développement logiciel Azure CDN pour Node.js.
 
@@ -369,4 +369,4 @@ Pour rechercher une documentation supplémentaire sur le kit de développement l
 
 Gérez vos ressources CDN avec [PowerShell](./cdn-manage-powershell.md).
 
-<!---HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0921_2016-->

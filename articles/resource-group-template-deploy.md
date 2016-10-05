@@ -60,9 +60,9 @@ Pour en savoir plus sur les options de déploiement mieux adaptées à votre sc�
 
         Set-AzureRmContext -SubscriptionID <YourSubscriptionId>
 
-3. En règle générale, lors du déploiement d’un nouveau modèle, vous souhaitez créer un groupe de ressources contenant les ressources. Si vous disposez déjà d’un groupe de ressources sur lequel vous souhaitez effectuer le déploiement, vous pouvez ignorer cette étape et utiliser simplement ce groupe de ressources.
+3. En règle générale, lors du déploiement d’un nouveau modèle, vous souhaitez créer un groupe de ressources contenant les ressources. Si vous disposez déjà d’un groupe de ressources sur lequel vous souhaitez effectuer le déploiement, vous pouvez ignorer cette étape et utiliser ce groupe de ressources.
 
-     Afin de créer un groupe de ressources, fournissez un nom et un emplacement pour votre groupe de ressources.
+     Afin de créer un groupe de ressources, fournissez un nom et un emplacement pour votre groupe de ressources. Vous devez fournir un emplacement pour le groupe de ressources, car celui-ci stocke des métadonnées sur les ressources. Pour des raisons de conformité, vous souhaiterez peut-être indiquer où sont stockées métadonnées. En règle générale, nous vous recommandons de spécifier l’emplacement où réside la plupart de vos ressources. L’utilisation du même emplacement permet de simplifier votre modèle.
 
         New-AzureRmResourceGroup -Name ExampleResourceGroup -Location "West US"
    
@@ -193,4 +193,4 @@ Pour plus d’informations sur l’utilisation d’une référence KeyVault afin
 - Pour définir des paramètres dans le modèle, consultez [Création de modèles](resource-group-authoring-templates.md#parameters).
 - Pour obtenir des instructions sur le déploiement de votre solution dans des environnements différents, consultez [Environnements de développement et de test dans Microsoft Azure](solution-dev-test-environments.md).
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

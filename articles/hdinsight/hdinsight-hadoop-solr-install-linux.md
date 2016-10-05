@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/27/2016"
+	ms.date="09/13/2016"
 	ms.author="larryfr"/>
 
 # Installation et utilisation de Solr sur des clusters HDInsight Hadoop
@@ -166,13 +166,25 @@ Le tableau de bord Solr est une interface utilisateur web qui permet de travaill
 
 Une fois que vous avez établi un tunnel SSH, procédez comme suit pour utiliser le tableau de bord Solr :
 
-1. Déterminez le nom d’hôte du nœud principal :
+1. Déterminez le nom d’hôte du nœud principal primaire :
 
-    1. Dans un navigateur, accédez à https://CLUSTERNAME.azurehdinsight.net. À l’invite, utilisez le nom d’utilisateur et le mot de passe Admin pour vous authentifier auprès du site.
+    1. Utilisez SSH pour vous connecter au cluster sur le port 22. Par exemple, `ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.net` où __USERNAME__ est votre nom d’utilisateur SSH et __CLUSTERNAME__ est le nom de votre cluster.
+
+        Pour plus d’informations sur l’utilisation de SSH, consultez les documents suivants :
+
+        * [Utilisation de SSH avec Hadoop Linux sur HDInsight depuis Linux, Unix ou OS X](hdinsight-hadoop-linux-use-ssh-unix.md)
+
+        * [Utilisation de SSH avec Hadoop Linux sur HDInsight depuis Windows](hdinsight-hadoop-linux-use-ssh-windows.md)
     
-    2. Dans le menu situé en haut de la page, sélectionnez __Hôtes__.
+    3. Utilisez la commande suivante pour obtenir le nom d’hôte complet :
+
+            hostname -f
+
+        Cette commande renvoie un nom similaire à ce qui suit :
+
+            hn0-myhdi-nfebtpfdv1nubcidphpap2eq2b.ex.internal.cloudapp.net
     
-    3. Sélectionnez l’entrée qui commence par __hn0__. Quand la page s’ouvre, le nom d’hôte apparaît en haut. Le format du nom d’hôte est __hn0-PARTOFCLUSTERNAME.randomcharacters.cx.internal.cloudapp.net__. Il s’agit du nom d’hôte que vous devez utiliser quand vous vous connectez au tableau de bord Solr.
+        Il s’agit du nom d’hôte qui doit être utilisé dans les étapes suivantes.
     
 1. Dans votre navigateur, connectez-vous à __http://HOSTNAME:8983/solr/#/__, où __HOSTNAME\_\_ correspond au nom que vous avez déterminé aux étapes précédentes.
 
@@ -311,4 +323,4 @@ Pour plus d’informations sur l’utilisation de sauvegardes et de restauration
 [hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-linux.md
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

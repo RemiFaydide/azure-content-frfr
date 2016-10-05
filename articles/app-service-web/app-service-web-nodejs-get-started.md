@@ -20,16 +20,16 @@
 
 [AZURE.INCLUDE [onglets](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-Ce didacticiel explique comment créer une application [Node.js][NODEJS] simple et la déployer dans une [application web] sur [Azure App Service] à partir d’un environnement de ligne de commande comme cmd.exe ou bash. Les instructions de ce didacticiel s’appliquent à tous les systèmes d’exploitation pouvant exécuter Node.js.
+Ce didacticiel explique comment créer une application [Node.js] simple et la déployer dans [Azure App Service] à partir d’un environnement de ligne de commande comme cmd.exe ou bash. Les instructions de ce didacticiel s’appliquent à tous les systèmes d’exploitation pouvant exécuter Node.js.
 
 <a name="prereq"></a>
 ## Composants requis
 
-- **Node.js** ([cliquez ici pour l’installer][NODEJS])
-- **Bower** ([cliquez ici pour l’installer][BOWER])
-- **Yeoman** ([cliquez ici pour l’installer][YEOMAN])
-- **Git** ([cliquez ici pour l’installer][GIT])
-- **Interface de ligne de commande Azure** ([cliquez ici pour l’installer][Azure CLI])
+- [Node.JS]
+- [Bower]
+- [Yeoman]
+- [Git]
+- [Interface de ligne de commande Azure]
 - Un compte Microsoft Azure Si vous ne possédez pas de compte, vous pouvez [vous inscrire à un essai gratuit] ou [activer les avantages de votre abonnement Visual Studio].
 
 ## Création et déploiement d’une application Node.js simple
@@ -52,20 +52,20 @@ Ce didacticiel explique comment créer une application [Node.js][NODEJS] simple 
 
     Dans votre navigateur, accédez à <http://localhost:3000> pour vérifier que la page d’accueil Express s’affiche. Une fois que vous êtes sûr que votre application s’exécute correctement, utilisez la commande `Ctrl-C` pour l’arrêter.
     
-1. Passez en mode ASM et connectez-vous à Azure (vous avez besoin de [l’interface de ligne de commande Azure](#prereq) pour cela) :
+1. Passez en mode ASM et connectez-vous à Azure (vous avez besoin de [l’interface de ligne de commande Azure](#prereq)) :
 
         azure config mode asm
         azure login
 
     Suivez les instructions de l’invite pour poursuivre la connexion à un compte Microsoft associé à votre abonnement Azure.
 
-2. Assurez-vous que vous vous trouvez toujours dans le répertoire racine de votre application, puis créez la ressource d’application d’App Service dans Azure avec un nom d’application unique à l’aide de la commande suivante, par exemple : http://{appname}.azurewebsites.net
+2. Assurez-vous que vous vous trouvez toujours dans le répertoire racine de votre application, puis créez la ressource d’application App Service dans Azure avec un nom d’application unique à l’aide de la commande suivante. Par exemple : http://{appname}.azurewebsites.net
 
         azure site create --git {appname}
 
     Suivez les instructions pour sélectionner une région Azure vers laquelle effectuer le déploiement. Si vous n’avez jamais configuré les informations d’identification de déploiement Git/FTP pour votre abonnement Azure, vous êtes invité à les créer.
 
-3. Ouvrez le fichier ./config/config.js à partir de la racine de votre application, et définissez le port de production sur `process.env.port` ; votre propriété `production` de l’objet `config` doit ressembler à l’exemple suivant.
+3. Ouvrez le fichier ./config/config.js à partir de la racine de votre application, et définissez le port de production sur `process.env.port` ; votre propriété `production` de l’objet `config` doit ressembler à l’exemple suivant :
 
         production: {
             root: rootPath,
@@ -77,13 +77,19 @@ Ce didacticiel explique comment créer une application [Node.js][NODEJS] simple 
 
     Cela permet à votre application Node.js de répondre aux demandes Web sur le port par défaut sur lequel iisnode écoute.
     
+4. Ouvrez ./package.json et ajoutez la propriété `engines` pour [spécifier la version de Node.js](#version).
+
+        "engines": {
+            "node": "6.6.0"
+        }, 
+
 4. Enregistrez vos modifications, puis utiliser git pour déployer votre application dans Azure :
 
         git add .
         git commit -m "{your commit message}"
         git push azure master
 
-    Le générateur Express fournit un fichier .gitignore, pour que votre commande `git push` ne consomme pas de bande passante en tentant de charger le répertoire node\_modules/.
+    Le générateur Express fournit un fichier .gitignore, de sorte que votre commande `git push` ne consomme pas de bande passante en tentant de charger le répertoire node\_modules/.
 
 5. Pour terminer, lancez votre application Azure en direct dans le navigateur :
 
@@ -118,12 +124,13 @@ Consultez les didacticiels suivant pour savoir comment utiliser une infrastructu
 - [Créer une application de conversation instantanée Node.js avec Socket.IO dans Azure App Service]
 - [Utilisation de io.js avec Azure App Service Web Apps]
 
+<a name="version"></a>
 ## Utilisation d’un moteur Node.js spécifique
 
-Dans votre flux de travail classique, vous pouvez demander à App Service d’utiliser un moteur Node.js spécifique de la même manière que dans le fichier package.json. Par exemple :
+Dans votre flux de travail classique, vous demandez à App Service d’utiliser un moteur Node.js spécifique de la même manière que dans le fichier package.json. Par exemple :
 
     "engines": {
-        "node": "5.5.0"
+        "node": "6.6.0"
     }, 
 
 Le moteur de déploiement Kudu détermine le moteur Node.js à utiliser dans l’ordre suivant :
@@ -132,10 +139,12 @@ Le moteur de déploiement Kudu détermine le moteur Node.js à utiliser dans l�
 - Ensuite, examinons le fichier package.json pour voir si `"node": "..."` est spécifié dans l’objet `engines`. Si tel est le cas, vous pouvez l’utiliser.
 - Par défaut, choisissez une version de Node.js par défaut.
 
+>[AZURE.NOTE] Il est recommandé de définir explicitement le moteur Node.js souhaité. La version de Node.js par défaut peut changer, et vous pouvez obtenir des erreurs dans votre application web Azure, car la version de Node.js par défaut ne convient pas à votre application.
+
 <a name="iisnodelog"></a>
 ## Obtenir des journaux stdout et stderr à partir d’iisnode
 
-Pour lire les journaux iisnode, procédez comme suit.
+Pour lire les journaux iisnode, suivez les étapes ci-après.
 
 > [AZURE.NOTE] Après ces étapes, il se peut que les fichiers journaux ne soient générés que lorsqu’une erreur se produit.
 
@@ -154,13 +163,13 @@ Pour lire les journaux iisnode, procédez comme suit.
         git commit -m "{your commit message}"
         git push azure master
    
-   iisnode est désormais configuré. Les étapes suivantes vous montrent comment accéder à ces journaux.
+    iisnode est désormais configuré. Les étapes suivantes vous montrent comment accéder à ces journaux.
      
 4. Dans votre navigateur, accédez à la console de débogage Kudu correspondant à votre application, c’est-à-dire :
 
         https://{appname}.scm.azurewebsites.net/DebugConsole 
 
-    Notez que cette URL diffère de celle de l’application web par l’ajout de « *.scm.* » au nom DNS. Si vous omettez cet ajout à l’URL, vous obtiendrez une erreur 404.
+    Cette URL diffère de celle de l’application web par l’ajout de « *.scm.* » au nom DNS. Si vous omettez cet ajout à l’URL, vous obtiendrez une erreur 404.
 
 5. Accédez à D:\\home\\site\\wwwroot\\iisnode
 
@@ -212,23 +221,23 @@ Pour activer Node-Inspector, procédez comme suit :
 
 <!-- URL List -->
 
-[Azure CLI]: ../xplat-cli-install.md
+[Interface de ligne de commande Azure]: ../xplat-cli-install.md
 [Azure App Service]: ../app-service/app-service-value-prop-what-is.md
 [activer les avantages de votre abonnement Visual Studio]: http://go.microsoft.com/fwlink/?LinkId=623901
-[BOWER]: http://bower.io/
+[Bower]: http://bower.io/
 [Créer une application de conversation instantanée Node.js avec Socket.IO dans Azure App Service]: ./web-sites-nodejs-chat-app-socketio.md
 [Deploy a Sails.js web app to Azure App Service (Déployer une application web Sails.js dans Azure App Service)]: ./app-service-web-nodejs-sails.md
 [Exploring the Super Secret Kudu Debug Console (Exploration de la console de débogage Kudu Super Secret)]: /documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/
 [générateur Express pour Yeoman]: https://github.com/petecoop/generator-express
-[GIT]: http://www.git-scm.com/downloads
+[Git]: http://www.git-scm.com/downloads
 [Utilisation de io.js avec Azure App Service Web Apps]: ./web-sites-nodejs-iojs.md
 [iisnode]: https://github.com/tjanczuk/iisnode/wiki
 [MEANJS]: http://meanjs.org/
-[NODEJS]: http://nodejs.org
+[Node.js]: http://nodejs.org
 [SAILSJS]: http://sailsjs.org/
 [vous inscrire à un essai gratuit]: http://go.microsoft.com/fwlink/?LinkId=623901
-[application web]: ./app-service-web-overview.md
-[YEOMAN]: http://yeoman.io/
+[web app]: ./app-service-web-overview.md
+[Yeoman]: http://yeoman.io/
 
 <!-- IMG List -->
 
@@ -237,4 +246,4 @@ Pour activer Node-Inspector, procédez comme suit :
 [iislog-kudu-console-open]: ./media/app-service-web-nodejs-get-started/iislog-kudu-console-open.png
 [iislog-kudu-console-read]: ./media/app-service-web-nodejs-get-started/iislog-kudu-console-read.png
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0928_2016-->

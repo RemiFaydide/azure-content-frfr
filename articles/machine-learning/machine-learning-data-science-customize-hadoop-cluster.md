@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/14/2016" 
+	ms.date="09/19/2016" 
 	ms.author="hangzh;bradsev" />
 
 # Personnalisation des clusters Azure HDInsight Hadoop pour le processus TDSP (Team Data Science Process) 
 
 Cet article montre comment personnaliser un cluster Hadoop HDInsight en installant Anaconda 64 bits (Python 2.7) sur chaque nœud quand le cluster est approvisionné en tant que service HDInsight. Il indique également comment accéder au nœud principal pour soumettre des tâches personnalisées au cluster. Cette personnalisation permet de mettre à disposition de nombreux modules Python populaires, inclus dans Anaconda, à des fins d’utilisation dans les fonctions définies par l’utilisateur (UDF) qui sont conçues pour traiter les enregistrements de ruche dans le cluster. Pour obtenir des instructions sur les procédures utilisées dans ce scénario, consultez [Envoi de requêtes Hive](machine-learning-data-science-move-hive-tables.md#submit).
 
-Le menu ci-dessous pointe vers des rubriques qui décrivent comment configurer les différents environnements de science de données utilisés par le processus TDSP (Team Data Science Process).
+Le menu ci-dessous pointe vers des rubriques qui décrivent comment configurer les différents environnements de science de données utilisés par le processus [TDSP (Team Data Science Process)](data-science-process-overview.md).
 
 [AZURE.INCLUDE [data-science-environment-setup](../../includes/cap-setup-environments.md)]
 
@@ -86,4 +86,4 @@ Pour savoir comment accéder aux modules Python inclus dans Anaconda à partir d
 
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

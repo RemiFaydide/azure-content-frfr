@@ -28,7 +28,7 @@ Dans un Service Fabric, les microservices s’exécutent généralement sur un s
 2. Connectez-vous au service.
 3. Déterminez la cause des échecs de connexion et résolvez à nouveau l’emplacement du service, le cas échéant.
 
-Ce processus implique généralement l’encapsulage des bibliothèques de communications côté client dans une boucle de nouvelle tentative, qui implémente les règles de nouvelle tentative et de résolution de service. Pour en savoir plus sur ce sujet, voir [Se connecter aux services et communiquer avec eux dans Service Fabric](service-fabric-connect-and-communicate-with-services.md).
+Ce processus implique généralement l’encapsulage des bibliothèques de communications côté client dans une boucle de nouvelle tentative, qui implémente les règles de nouvelle tentative et de résolution de service. Pour en savoir plus sur ce sujet, consultez [Communication avec les services](service-fabric-connect-and-communicate-with-services.md).
 
 ### Communication via un proxy inverse de Service Fabric
 Le proxy inversé Service Fabric s’exécute sur tous les nœuds du cluster. Il exécute l’ensemble du processus de résolution de service pour un client, puis transmet la requête du client. Par conséquent, les clients en cours d’exécution sur le cluster peuvent utiliser n’importe quelle bibliothèque de communications HTTP côté client pour interagir avec le service cible, via le proxy inversé Service Fabric exécuté en local sur le même nœud.
@@ -56,7 +56,7 @@ http(s)://<Cluster FQDN | internal IP>:Port/<ServiceInstanceName>/<Suffix path>?
 ```
 
  - **http(s) :** le proxy inverse peut être configuré pour accepter le trafic HTTP ou HTTPS. En cas de trafic HTTPS, une terminaison SSL se produit au niveau du proxy inverse. Les requêtes qui sont transférées par le proxy inverse aux services du cluster transitent via le protocole HTTP.
- - **Passerelle FQDN | adresse IP interne :** pour les clients externes, le proxy inverse peut être configuré afin qu’il soit accessible via le domaine du cluster (par exemple, mycluster.eastus.cloudapp.azure.com). Par défaut, le proxy inverse s’exécutant sur chaque nœud, il est donc accessible pour le trafic interne sur l’hôte local ou sur n’importe quelle adresse IP de nœud interne (par exemple, 10.0.0.1).
+ - **Nom de domaine complet du cluster| internal IP:** For external clients, the reverse proxy can be configured so that it is reachable through the cluster domain (e.g., mycluster.eastus.cloudapp.azure.com). By default the reverse proxy runs on every node, so for internal traffic it can be reached on localhost or on any internal node IP (e.g., 10.0.0.1).
  - **Port :** port spécifié pour le proxy inverse. Exemple : 19008.
  - **ServiceInstanceName :** nom complet de l’instance de service déployée associée au service que vous tentez d’atteindre sans le schéma "fabric:/". Par exemple, pour atteindre le service *fabric:/myapp/myservice/*, vous pouvez utiliser *myapp/myservice*.
  - **Chemin d’accès au suffixe :** chemin d’accès réel à l’URL associée au service auquel vous souhaitez vous connecter. Exemple : *myapi/values/add/3*
@@ -205,7 +205,7 @@ Une fois que vous disposez du modèle associé au cluster à déployer (à parti
         ]
     }
     ```
-4. Pour configurer des certificats SSL sur le port du proxy inverse, ajoutez le certificat à la propriété httpApplicationGatewayCertificate dans la [section de type de ressource](../resource-group-authoring-templates.md) du **Cluster**.
+4. Pour configurer des certificats SSL sur le port du proxy inverse, ajoutez le certificat à la propriété httpApplicationGatewayCertificate dans la [section de type de ressource](../resource-group-authoring-templates.md) du **Cluster**
 
     ```json
     {
@@ -241,4 +241,4 @@ Une fois que vous disposez du modèle associé au cluster à déployer (à parti
 [0]: ./media/service-fabric-reverseproxy/external-communication.png
 [1]: ./media/service-fabric-reverseproxy/internal-communication.png
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

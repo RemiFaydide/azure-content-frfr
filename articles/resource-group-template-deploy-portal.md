@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/30/2016" 
+	ms.date="09/15/2016" 
 	ms.author="tomfitz"/>
 
 # Déployer des ressources à l’aide de modèles Resource Manager et du Portail Azure
@@ -34,7 +34,7 @@ Actuellement, certains services ne prennent pas en charge le portail ou Resource
 
     ![créer un groupe de ressources vide](./media/resource-group-template-deploy-portal/create-empty-group.png)
 
-2. Spécifiez un nom et un emplacement, puis, si nécessaire, sélectionnez un abonnement.
+2. Spécifiez un nom et un emplacement, puis, si nécessaire, sélectionnez un abonnement. Vous devez fournir un emplacement pour le groupe de ressources, car celui-ci stocke des métadonnées sur les ressources. Pour des raisons de conformité, vous souhaiterez peut-être indiquer où sont stockées métadonnées. En règle générale, nous vous recommandons de spécifier l’emplacement où réside la plupart de vos ressources. L’utilisation du même emplacement permet de simplifier votre modèle.
 
     ![définir les valeurs d’un groupe](./media/resource-group-template-deploy-portal/set-group-properties.png)
 
@@ -118,4 +118,4 @@ Le portail vous permet d’enregistrer un modèle dans votre compte Azure et de 
 - Pour résoudre les erreurs de déploiement, voir [Résolution des problèmes liés aux déploiements de groupes de ressources avec le Portail Azure](resource-manager-troubleshoot-deployments-portal.md).
 - Pour récupérer un modèle à partir d’un déploiement ou d’un groupe de ressources, consultez [Exporter un modèle Azure Resource Manager à partir de ressources existantes](resource-manager-export-template.md).
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

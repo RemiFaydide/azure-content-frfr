@@ -13,7 +13,7 @@ ms.devlang="na"
 ms.topic="article"
 ms.tgt_pltfrm="na"
 ms.workload="big-data"
-ms.date="08/30/2016"
+ms.date="09/13/2016"
 ms.author="larryfr"/>
 
 # Ports et URI utilisés par HDInsight
@@ -36,9 +36,9 @@ Tous les nœuds dans un cluster HDInsight se trouvent dans un réseau virtuel Az
 
 | de diffusion en continu | Port | Protocole | Description |
 | ---- | ---------- | -------- | ----------- | ----------- |
-| sshd | 22 | SSH | Connecte les clients à sshd sur le nœud principal 0. Consultez la page [Utilisation de SSH avec HDInsight Linux](hdinsight-hadoop-linux-use-ssh-windows.md) |
+| sshd | 22 | SSH | Connecte les clients à sshd sur le nœud principal primaire. Consultez la page [Utilisation de SSH avec HDInsight Linux](hdinsight-hadoop-linux-use-ssh-windows.md) |
 | sshd | 22 | SSH | Connecte les clients à sshd sur le nœud de périmètre (HDInsight Premium uniquement). Consultez la page [Commencer à utiliser R Server sur HDInsight](hdinsight-hadoop-r-server-get-started.md) |
-| sshd | 23 | SSH | Connecte les clients à sshd sur le nœud principal 1. Consultez la page [Utilisation de SSH avec HDInsight Linux](hdinsight-hadoop-linux-use-ssh-windows.md) |
+| sshd | 23 | SSH | Connecte les clients à sshd sur le nœud principal secondaire. Consultez la page [Utilisation de SSH avec HDInsight Linux](hdinsight-hadoop-linux-use-ssh-windows.md) |
 | Ambari | 443 | HTTPS | Interface utilisateur web d’Ambari. Consultez [Gérer des clusters HDInsight à l’aide de l’interface utilisateur web d’Ambari](hdinsight-hadoop-manage-ambari.md) |
 | Ambari | 443 | HTTPS | API Ambari REST. Consultez la page [Gérer des clusters HDInsight à l’aide de l’API REST d’Ambari](hdinsight-hadoop-manage-ambari-rest-api.md) |
 | WebHCat, | 443 | HTTPS | API REST HCatalog. Consultez les pages [Utilisation de Hive avec Curl](hdinsight-hadoop-use-Pig-curl.md), [Utilisation de Pig avec Curl](hdinsight-hadoop-use-Pig-curl.md), [Utilisation de MapReduce avec Curl](hdinsight-hadoop-use-mapreduce-curl.md) |
@@ -143,4 +143,4 @@ Tous les services exposés publiquement sur Internet doivent être authentifiés
 | Service Broker | Nœuds de travail | 9092 | [Protocole Kafka](http://kafka.apache.org/protocol.html) | Utilisé pour la communication client |
 | &nbsp; | Nœuds Zookeeper | 2181 | &nbsp; | Le port que les clients utilisent pour se connecter à ZooKeeper |
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

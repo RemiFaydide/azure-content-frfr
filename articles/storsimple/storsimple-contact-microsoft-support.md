@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="06/20/2016"
+   ms.date="09/21/2016"
    ms.author="alkohli" />
 
 # Contacter le support Microsoft
@@ -45,7 +45,7 @@ Procédez comme suit pour créer une demande de support.
 3. Dans la boîte de dialogue **Bases**, procédez comme suit :
 	1. Dans la liste déroulante **Type de problème**, sélectionnez **Technique**.
 	2. Sélectionnez un **Abonnement** dans la liste déroulante.
-	3. Dans la liste déroulante **Service**, sélectionnez **StorSimple**. 
+	3. Dans la liste déroulante **Service**, sélectionnez **StorSimple**.
 	4. Sélectionnez un **Plan de support** dans la liste déroulante. Vous avez besoin d'un plan de support payant pour bénéficier du support technique.
 
 4. Cliquez sur **Next**. La boîte de dialogue **Problème** s'affiche.
@@ -56,13 +56,13 @@ Procédez comme suit pour créer une demande de support.
 
     1.  Sélectionnez un niveau de **Gravité** dans la liste déroulante.
     2.  Sélectionnez un **Type de problème** dans la liste déroulante.
-    3.  Sélectionnez une **Catégorie** dans la liste déroulante. 
+    3.  Sélectionnez une **Catégorie** dans la liste déroulante.
     4.  Dans la zone **Détails**, décrivez en quelques mots votre problème.
     5.  Dans la zone **Date**, indiquez la date, l’heure et le fuseau horaire correspondant à la dernière occurrence de votre problème.
     6.  Sous **Téléchargement du fichier**, cliquez sur l'icône du dossier pour accéder à votre package de support.
     7.  Cochez la case **Partager les informations de diagnostic**.
 
-6. Cliquez sur **Next**. La boîte de dialogue **Coordonnées** s'affiche.
+6. Cliquez sur **Suivant**. La boîte de dialogue **Coordonnées** s'affiche.
 
 	![Volet Nouvelle demande de support](./media/storsimple-contact-microsoft-support/Ibiza6a.png)
 
@@ -102,4 +102,4 @@ Procédez comme suit pour démarrer une session de support :
 
 > [AZURE.IMPORTANT] Vous pouvez désactiver l’accès au support en exécutant `Disable-HcsSupportAccess`. L’appareil StorSimple tentera également de désactiver l'accès au support 8 heures après le début de la session. Il est recommandé de modifier vos informations d'identification de l’appareil StorSimple après le lancement d'une session de support.
 
-<!---HONumber=AcomDC_0622_2016-->
+<!---HONumber=AcomDC_0921_2016-->

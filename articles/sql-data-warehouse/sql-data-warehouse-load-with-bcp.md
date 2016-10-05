@@ -75,7 +75,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 "
 ```
 
->[AZURE.NOTE] Consultez la page [Table Overview][] (Vue d’ensemble des tables dans SQL Data Warehouse) ou la syntaxe [CREATE TABLE][] pour plus d’informations sur la création d’une table dans SQL Data Warehouse et les options disponibles dans la clause WITH.
+>[AZURE.NOTE] Consultez la page [Table Overview][] \(Vue d’ensemble des tables dans SQL Data Warehouse) ou la syntaxe [CREATE TABLE][] pour plus d’informations sur la création d’une table dans SQL Data Warehouse et les options disponibles dans la clause WITH.
 
 ### Étape 2 : Créer un fichier de données source
 

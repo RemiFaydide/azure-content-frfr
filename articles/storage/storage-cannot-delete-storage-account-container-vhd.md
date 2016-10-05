@@ -5,7 +5,7 @@
 	documentationCenter=""
 	authors="genlin"
 	manager="felixwu"
-	editor=""
+	editor="tysonn"
 	tags="storage"/>
 
 <tags
@@ -14,8 +14,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="08/24/2016"
-	ms.author="genli"/>
+	ms.date="09/20/2016"
+	ms.author="minet;genli;robinsh"/>
 
 # Résoudre les problèmes de suppression de comptes de stockage Azure, de conteneurs ou de disques durs virtuels
 
@@ -58,7 +58,7 @@ La section suivante répertorie les erreurs courantes que vous pourriez recevoir
 
 Lorsque vous accédez au compte de stockage dans le [portail Azure](https://portal.azure.com/) ou dans le [portail Azure Classic](https://manage.windowsazure.com/) et que vous sélectionnez **Supprimer**, le message d'erreur suivant peut s’afficher :
 
-**Dans le portail Azure**:
+**Dans le portail Azure **:
 
 *Échec de suppression du compte de stockage <vm-storage-account-name>. Impossible de supprimer le compte de stockage <vm-storage-account-name> : Storage account <vm-storage-account-name> contient des images et/ou des disques actifs. Supprimez ces images et/ou disques avant de supprimer ce compte de stockage. ».*
 
@@ -108,4 +108,4 @@ Le statut « Arrêté (désalloué) » libère les ressources de l'ordinateur (p
 - [Suppression d'un compte de stockage](storage-create-storage-account.md#delete-a-storage-account)
 - [How to break the locked lease of blob storage in Microsoft Azure (PowerShell) (Interruption du bail verrouillé du stockage d’objets blob dans Microsoft Azure (PowerShell))](https://gallery.technet.microsoft.com/scriptcenter/How-to-break-the-locked-c2cd6492)
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

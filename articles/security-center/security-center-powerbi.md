@@ -13,20 +13,20 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/11/2016"
+   ms.date="09/22/2016"
    ms.author="yurid"/>
 
 # Obtenir des informations à partir des données du Centre de sécurité Azure à l’aide de Power BI
 Le [tableau de bord Power BI](http://aka.ms/azure-security-center-power-bi) du Centre de sécurité Azure vous permet de visualiser, analyser et filtrer des recommandations ainsi que des alertes de sécurité depuis n’importe quelle plate-forme, y compris un appareil mobile. Vous pouvez utiliser cet outil pour identifier les tendances et schémas d’attaque, avec la possibilité d’afficher des alertes de sécurité par ressource ou par adresse IP source, mais également visualiser par ressource ou par âge les risques de sécurité qui n’ont pas fait l’objet d’un correctif.
 
-Vous pouvez par ailleurs combiner de diverses manières les recommandations et alertes de sécurité du Centre de sécurité avec d’autres données, par exemple en utilisant les données des [journaux d’audit Azure](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) et d’[audit de base de données SQL Azure](https://powerbi.microsoft.com/blog/monitor-your-azure-sql-database-auditing-activity-with-power-bi/). Ils intègrent tous les deux des tableaux de bord Power BI et vous avez également la possibilité d’exporter ces données vers Excel afin de générer facilement des rapports sur l’état de sécurité de vos ressources cloud.
+Vous pouvez par ailleurs combiner de diverses manières les recommandations et alertes de sécurité du Centre de sécurité avec d’autres données, par exemple en utilisant les données des [journaux d’audit Azure](https://powerbi.microsoft.com/blog/monitor-azure-audit-logs-with-power-bi/) et d’[audit de base de données Azure SQL Database](https://powerbi.microsoft.com/blog/monitor-your-azure-sql-database-auditing-activity-with-power-bi/). Ils intègrent tous les deux des tableaux de bord Power BI et vous avez également la possibilité d’exporter ces données vers Excel afin de générer facilement des rapports sur l’état de sécurité de vos ressources cloud.
 
 ##Accéder à Power BI à l’aide du tableau de bord du Centre de sécurité Azure
 Vous pouvez également utiliser le tableau de bord du Centre de sécurité Azure pour accéder aux rapports Power BI. Pour ce faire, procédez comme suit :
 
 1. Dans le tableau de bord du **Centre de sécurité Azure**, cliquez sur le bouton **Explorer dans Power BI**.
 
-	![Se connecter au Centre de sécurité Azure à l’aide de Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new1.png)
+	![Se connecter au Centre de sécurité Azure à l’aide de Power BI](./media/security-center-powerbi/security-center-powerbi-fig1-new10.png)
 
 2. Le panneau **Explorer dans Power BI** s’ouvre sur la droite, comme illustré dans l’écran suivant :
 
@@ -53,7 +53,7 @@ Vous pouvez également utiliser le tableau de bord du Centre de sécurité Azure
 
 > [AZURE.NOTE] Une actualisation quotidienne du rapport est planifiée. Si vous rencontrez des problèmes liés à cette actualisation, lisez l’article [Problèmes potentiels d’actualisation avec Azure Security Center Power BI](https://blogs.msdn.microsoft.com/azuresecurity/2016/04/07/azure-security-center-power-bi-refresh-fails/) pour plus d’informations sur la manière de les résoudre.
 
-Vous pouvez voir ici le nombre d’alertes et de recommandations de sécurité, ainsi que le nombre de machines virtuelles, de bases de données SQL Azure et de ressources réseau surveillées par le Centre de sécurité Azure.
+Vous pouvez voir ici le nombre d’alertes et de recommandations de sécurité, ainsi que le nombre de machines virtuelles, de bases de données Azure SQL Database et de ressources réseau surveillées par le Centre de sécurité Azure.
 
 Un lien vers le Centre de sécurité Azure vous redirige vers le portail Azure. Les graphiques vous permettent de visualiser facilement les informations relatives aux recommandations et alertes de sécurité, notamment :
 
@@ -115,4 +115,4 @@ Dans ce document, vous avez vu comment utiliser le service Power BI depuis le C
 - [FAQ d’Azure Security Center](security-center-faq.md) : découvrez les réponses aux questions les plus souvent posées à propos de l’utilisation de ce service
 - [Blog sur la sécurité Azure](http://blogs.msdn.com/b/azuresecurity/) : accédez à des billets de blog sur la sécurité et la conformité Azure
 
-<!----HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0928_2016-->

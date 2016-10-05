@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/31/2016"
+	ms.date="09/16/2016"
 	ms.author="dastrock"/>
 
 # Types de point de terminaison v2.0
@@ -63,7 +63,7 @@ La validation du jeton id\_token à l’aide d’une clé de signature publique 
 
 Pour voir ce scénario en action, exécutez l’un des exemples de code de connexion d’application Web de la section [Prise en main](active-directory-appmodel-v2-overview.md#getting-started).
 
-En plus de la connexion simple, une application de serveur Web peut également nécessiter l’accès à d’autres services Web, comme une API REST. Dans ce cas, l’application de serveur Web peut s’engager dans un flux OpenID Connect et OAuth 2.0, à l’aide du [flux de code d’autorisation OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow). Ce scénario est abordé ci-dessous dans la [rubrique de Prise en main des applications Web-API Web](active-directory-v2-devquickstarts-webapp-webapi-dotnet.md).
+En plus de la connexion simple, une application de serveur Web peut également nécessiter l’accès à d’autres services Web, comme une API REST. Dans ce cas, l’application de serveur Web peut s’engager dans un flux OpenID Connect et OAuth 2.0, à l’aide du [flux de code d’autorisation OAuth 2.0](active-directory-v2-protocols.md#oauth2-authorization-code-flow). Ce scénario est abordé ci-dessous dans la [rubrique de prise en main des applications Web-API Web](active-directory-v2-devquickstarts-webapp-webapi-dotnet.md).
 
 ## API Web
 Vous pouvez utiliser le point de terminaison v2.0 pour sécuriser également les services Web, comme l’API Web RESTful de votre application. En lieu et place des jetons id\_token et des cookies de session, les API Web utilisent les jetons d’accès OAuth 2.0 pour sécuriser les données et authentifier les requêtes entrantes. L’appelant d’une API Web ajoute un jeton d’accès dans l’en-tête d’autorisation d’une requête HTTP :
@@ -118,4 +118,4 @@ De nombreuses architectures incluent une API Web qui doit appeler une autre API
 
 Ce scénario d’API Web chaînée peut être pris en charge à l’aide de la concession des informations d’identification du porteur OAuth 2.0 Jwt, également appelé [flux On-Behalf-Of](active-directory-v2-protocols.md#oauth2-on-behalf-of-flow). Toutefois, le flux On-Behalf-Of n’est pas actuellement implémenté dans le point de terminaison v2.0. Pour observer le fonctionnement de ce flux dans le service Azure AD disponible généralement, consultez l’[’exemple de code On-Behalf-Of sur GitHub](https://github.com/AzureADSamples/WebAPI-OnBehalfOf-DotNet).
 
-<!---HONumber=AcomDC_0608_2016-->
+<!---HONumber=AcomDC_0921_2016-->

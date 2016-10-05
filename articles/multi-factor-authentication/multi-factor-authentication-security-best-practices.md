@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Meilleures pratiques pour l’utilisation d’Azure MFA" 
-	description="Ce document propose de meilleures pratiques à l’aide de l’authentification Multifacteur Azure avec des comptes Azure" 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+	pageTitle="Meilleures pratiques pour l’utilisation d’Azure MFA"
+	description="Ce document propose de meilleures pratiques à l’aide de l’authentification Multifacteur Azure avec des comptes Azure"
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="kgremban"
+	manager="femila"
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2016" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2016"
+	ms.author="kgremban"/>
 
 # Meilleures pratiques pour l’utilisation de l’authentification multifacteur Azure avec des comptes Azure AD
 
@@ -31,7 +31,7 @@ Pour fournir à tous vos utilisateurs des fonctions d’authentification multifa
 ![EMS](./media/multi-factor-authentication-security-best-practices/ems.png)
 
 La première étape recommandée pour l’adoption d’Azure MFA dans le cloud en utilisant Azure AD Premium ou Enterprise Mobility Suite consiste à attribuer des licences à vos utilisateurs. L’authentification multifacteur Azure fait partie de ces suites, et par conséquent votre organisation n’a pas besoin d’étendre la fonctionnalité d’authentification multifacteur à tous les utilisateurs.
- 
+
 Lors de la configuration de l’authentification multifacteur, prenez en compte les éléments suivants :
 
 - Vous n’avez pas à créer de fournisseur d’authentification multifacteur. Azure Multi-Factor Authentication Azure AD Premium et Enterprise Mobility Suite sont intégrés à l’authentification multifacteurs Azure. Si vous créez un fournisseur d’authentification, vous pouvez être facturé deux fois.
@@ -102,7 +102,7 @@ Si votre organisation est fédérée (SSO) avec Azure AD et que vous vous appr�
 Utilisez la liste ci-dessous pour connaître certaines considérations supplémentaires, et les meilleures pratiques pour chaque composant qui sera déployé sur site :
 
 Méthode|Description
-:------------- | :------------- | 
+:------------- | :------------- |
 [Active Directory Federation Service](multi-factor-authentication-get-started-adfs.md)|Informations sur la configuration d'Azure Multi-Factor Authentication avec AD FS.
 [Authentification RADIUS](multi-factor-authentication-get-started-server-radius.md)| Informations sur l'installation et la configuration du serveur Azure MFA avec RADIUS.
 [Authentification IIS](multi-factor-authentication-get-started-server-iis.md)|Informations sur l'installation et la configuration du serveur Azure MFA avec IIS.
@@ -111,7 +111,7 @@ Méthode|Description
 [Passerelle des services Bureau à distance et serveur Azure Multi-Factor Authentication avec RADIUS](multi-factor-authentication-get-started-server-rdg.md)| Informations sur l'installation et la configuration du serveur Azure MFA avec Passerelle des services Bureau à distance et RADIUS.
 [Synchronisation avec Windows Server Active Directory](multi-factor-authentication-get-started-server-dirint.md)|Informations sur l’installation et la configuration de la synchronisation entre Active Directory et le serveur Azure MFA.
 [Déploiement du service Web de l’application mobile du serveur Azure Multi-Factor Authentication](multi-factor-authentication-get-started-server-webservice.md)|Informations sur l'installation et la configuration du service Web du serveur Azure MFA.
-[Configuration VPN avancée avec l’authentification multifacteurs Azure](multi-factor-authentication-advanced-vpn-configurations.md)|Informations sur la configuration d’appareils itrix Netscaler et Juniper/Pulse Secure VPN. 
+[Configuration VPN avancée avec l’authentification multifacteurs Azure](multi-factor-authentication-advanced-vpn-configurations.md)|Informations sur la configuration d’appareils itrix Netscaler et Juniper/Pulse Secure VPN.
 
 
 ## Ressources supplémentaires
@@ -121,4 +121,4 @@ Bien que cet article mette en évidence quelques-unes des meilleures pratiques d
 - [Configuration de l’expérience Azure Multi-Factor Authentication](multi-factor-authentication-end-user-first-time.md)
 - [Forum Aux Questions d’Azure Multi-Factor Authentication](multi-factor-authentication-faq.md)
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

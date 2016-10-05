@@ -10,7 +10,7 @@
 <tags
 	ms.service="sql-database"
 	ms.devlang="NA"
-	ms.date="06/16/2016"
+	ms.date="09/19/2016"
 	ms.author="sstein"
 	ms.workload="data-management"
 	ms.topic="article"
@@ -26,34 +26,35 @@
 - [PowerShell](sql-database-copy-powershell.md)
 - [T-SQL](sql-database-copy-transact-sql.md)
 
-Les étapes suivantes vous montrent comment copier une base de données SQL avec le [portail Azure](https://portal.azure.com) sur le même serveur ou un serveur différent.
+Les étapes suivantes vous montrent comment copier une base de données SQL avec le [Portail Azure](https://portal.azure.com) sur le même serveur ou un serveur différent.
 
 Pour copier une base de données SQL, vous avez besoin des éléments suivants :
 
-- Un abonnement Azure. Si vous avez besoin d'un abonnement Azure, cliquez simplement sur **VERSION D'ÉVALUATION GRATUITE** en haut de cette page, puis continuez la lecture de cet article.
+- Un abonnement Azure. Si vous avez besoin d’un abonnement Azure, cliquez simplement sur **VERSION D’ÉVALUATION GRATUITE** en haut de cette page, puis continuez la lecture de cet article.
 - Une base de données SQL à copier. Si vous n’avez pas de base de données SQL, créez-en une en suivant les étapes figurant dans cet article : [Créer votre première base de données SQL Azure](sql-database-get-started.md).
 
 
 ## Copie de votre base de données SQL
 
-Ouvrez le panneau SQL Database de la base de données que vous voulez copier :
+Ouvrez la page de la base de données SQL que vous voulez copier :
 
 1.	Accédez au [portail Azure](https://portal.azure.com).
-2.	Accédez à la base de données que vous souhaitez copier : Parcourir > Bases de données SQL
-3.	Dans le panneau de la base de données SQL, cliquez sur **Copier** pour ouvrir le panneau **Copier** :
+2.	Cliquez sur **Autres services** > **Bases de données SQL**, puis sur la base de données souhaitée.
+3.	Sur la page de la base de données SQL, cliquez sur **Copie** :
 
-    ![copier une base de données][1]
+    ![Base de données SQL](./media/sql-database-copy-portal/sql-database-copy.png)
 
-1.  Entrez un nom pour la copie de la base de données. Un nom par défaut est fourni, mais vous pouvez le modifier si vous le souhaitez.
-2.  Sélectionner un **serveur cible**. Le serveur cible est celui où la copie de la base de données sera créée. Vous pouvez créer un nouveau serveur ou sélectionnez un serveur existant dans la liste.
+1.  Sur la page **Copie**, un nom est fourni par défaut pour la base de données. Tapez un autre nom si vous le souhaitez (toutes les bases de données d’un serveur doivent avoir un nom unique).
+2.  Sélectionner un **serveur cible**. Le serveur cible est celui où est créée la copie de la base de données. Vous pouvez copier la base de données sur le même serveur ou sur un autre serveur. Vous pouvez créer un serveur ou sélectionner un serveur existant dans la liste.
+3.  Une fois le **Serveur cible** sélectionné, les options **Pool de base de données élastique** et **Niveau tarifaire** sont activées. Si le serveur dispose d’un pool, vous pouvez y copier la base de données.
 3.  Cliquez sur **OK** pour démarrer le processus de copie.
 
-    ![nom et serveur de la base de données][2]
+    ![Base de données SQL](./media/sql-database-copy-portal/copy-page.png)
 
 
 ## Contrôle de la progression de l'opération de copie
 
-- Après le démarrage de la copie, cliquez sur la notification du portail pour plus d'informations.
+- Après le démarrage de la copie, cliquez sur la notification du portail pour plus d’informations.
 
     ![notification][3]
  
@@ -62,7 +63,7 @@ Ouvrez le panneau SQL Database de la base de données que vous voulez copier :
 
 ## Vérifiez que la base de données est en ligne sur le serveur
 
-- Cliquez sur **PARCOURIR** > **Bases de données SQL** et vérifiez que la nouvelle base de données est **En ligne**.
+- Cliquez sur **Plus de services** > **Bases de données SQL** et vérifiez que la nouvelle base de données est **En ligne**.
 
 
 ## Résolution des connexions
@@ -96,4 +97,4 @@ Pour résoudre les connexions à l’issue de l’opération de copie, consultez
 [3]: ./media/sql-database-copy-portal/copy-notification.png
 [4]: ./media/sql-database-copy-portal/monitor-copy.png
 
-<!---HONumber=AcomDC_0622_2016-->
+<!---HONumber=AcomDC_0921_2016-->

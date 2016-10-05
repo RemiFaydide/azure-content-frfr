@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/31/2016"
+	ms.date="09/16/2016"
 	ms.author="brandwe"/>
 
 #  Ajouter l’authentification dans une application Android à l’aide d’une bibliothèque tierce avec l’API Graph à l’aide du point de terminaison v2.0
@@ -197,4 +197,4 @@ Une fois que vous avez été authentifié, sélectionnez le bouton **Request Pro
 
 Nous vous encourageons à activer les notifications d’incidents de sécurité en vous rendant sur [Security TechCenter](https://technet.microsoft.com/security/dd252948) et en vous abonnant aux alertes d’avis de sécurité.
 
-<!---HONumber=AcomDC_0907_2016-->
+<!---HONumber=AcomDC_0921_2016-->

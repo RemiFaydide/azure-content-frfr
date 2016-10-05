@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Rapports Azure Multi-Factor Authentication" 
-	description="Cette section vous explique comment modifier les paramètres utilisateur tels que le fait de forcer les utilisateurs à réexécuter le processus de vérification." 
-	documentationCenter="" 
-	services="multi-factor-authentication" 
-	authors="billmath" 
-	manager="stevenpo" 
+	pageTitle="Rapports Azure Multi-Factor Authentication"
+	description="Cette section vous explique comment modifier les paramètres utilisateur tels que le fait de forcer les utilisateurs à réexécuter le processus de vérification."
+	documentationCenter=""
+	services="multi-factor-authentication"
+	authors="kgremban"
+	manager="femila"
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2016" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2016"
+	ms.author="kgremban"/>
 
 # Gestion des paramètres utilisateur avec Azure Multi-Factor Authentication dans le cloud
 
@@ -86,4 +86,4 @@ Les administrateurs ont la possibilité de restaurer Multi-Factor Authenticatio
 9. Cliquez sur Enregistrer.
 10. Cliquez sur Fermer.
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

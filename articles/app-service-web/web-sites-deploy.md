@@ -194,7 +194,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 * [Mettre en service une application Web avec une base de données SQL](app-service-web-arm-with-sql-database-provision.md)
 * [Mise en service et déploiement de microservices de manière prévisible dans Azure](app-service-deploy-complex-application-predictably.md)
 * [Tout automatiser (développement d'applications de cloud concrètes avec Azure)](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything). Chapitre d'un livre électronique expliquant comment l'exemple d'application contenu dans le livre utilise des scripts Windows PowerShell pour créer un environnement de test Azure et y procéder à un déploiement. Consultez la section [Ressources](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources) pour obtenir des liens vers une documentation Azure PowerShell supplémentaire.
-* [Utilisation des scripts Windows PowerShell pour la publication dans des environnements de développement et de test](http://msdn.microsoft.com/library/dn642480.aspx). Explique comment utiliser les scripts Windows PowerShell générés par Visual Studio.
+* [Utilisation des scripts Windows PowerShell pour la publication dans des environnements de développement et de test](../vs-azure-tools-publishing-using-powershell-scripts.md). Explique comment utiliser les scripts Windows PowerShell générés par Visual Studio.
 
 ###<a name="api"></a>Automatiser le déploiement avec l’API de gestion .NET
 
@@ -234,4 +234,4 @@ Pour plus d’informations sur l’utilisation du contrôle d’accès en foncti
 
  
 
-<!---HONumber=AcomDC_0907_2016-->
+<!---HONumber=AcomDC_0921_2016-->

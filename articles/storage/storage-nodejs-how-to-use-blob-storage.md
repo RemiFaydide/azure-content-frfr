@@ -32,7 +32,7 @@ Cet article décrit le déroulement de scénarios courants dans le cadre de l’
 
 ## Création d’une application Node.js
 
-Pour obtenir des instructions sur la création d’une application Node.js, consultez [Créer une application web Node.js dans Azure App Service], [Création et déploiement d'une application Node.js dans Azure Cloud Services] (à l’aide de Windows PowerShell) ou [Créer et déployer une application web Node.js dans Azure à l’aide de WebMatrix].
+Pour obtenir des instructions sur la création d’une application Node.js, consultez [Créer une application web Node.js dans Azure App Service], [Création et déploiement d'une application Node.js dans Azure Cloud Services] \(à l’aide de Windows PowerShell) ou [Créer et déployer une application web Node.js dans Azure à l’aide de WebMatrix].
 
 ## Configuration de votre application pour accéder au stockage
 
@@ -83,9 +83,7 @@ Pour créer un conteneur, utilisez **createContainerIfNotExists**. Le code suiva
 
 	blobSvc.createContainerIfNotExists('mycontainer', function(error, result, response){
 	    if(!error){
-	      // Container exists and allows
-	      // anonymous read access to blob
-	      // content and metadata within this container
+	      // Container exists and is private
 	    }
 	});
 
@@ -103,7 +101,9 @@ L’exemple de code suivant montre la définition du niveau d’accès sur **blo
 
 	blobSvc.createContainerIfNotExists('mycontainer', {publicAccessLevel : 'blob'}, function(error, result, response){
 	    if(!error){
-	      // Container exists and is private
+	      // Container exists and allows
+	      // anonymous read access to blob
+	      // content and metadata within this container
 	    }
 	});
 
@@ -415,4 +415,4 @@ Pour plus d'informations, consultez les ressources suivantes.
 [Blog de l'équipe Azure Storage]: http://blogs.msdn.com/b/windowsazurestorage/
 [Kit de développement logiciel (SDK) Azure Storage pour la référence de l'API Node]: http://dl.windowsazure.com/nodestoragedocs/index.html
 
-<!---HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0921_2016-->

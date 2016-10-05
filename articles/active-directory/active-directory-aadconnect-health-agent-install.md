@@ -4,7 +4,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="karavar"
-	manager="stevenpo"
+	manager="femila"
 	editor="karavar"/>
 
 <tags
@@ -266,4 +266,4 @@ Vous pouvez utiliser l’indicateur - ShowResults dans la commande pour afficher
 * [Forum Aux Questions (FAQ) Azure AD Connect Health](active-directory-aadconnect-health-faq.md)
 * [Historique de publication des versions d’Azure AD Connect Health](active-directory-aadconnect-health-version-history.md)
 
-<!----HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0928_2016-->

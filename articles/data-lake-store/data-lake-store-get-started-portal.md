@@ -128,4 +128,4 @@ Pour supprimer un compte Azure Data Lake Store, cliquez sur **Supprimer** dans l
 - [Utiliser Azure HDInsight avec Data Lake Store](data-lake-store-hdinsight-hadoop-use-portal.md)
 - [Accéder aux journaux de diagnostic de Data Lake Store](data-lake-store-diagnostic-logs.md)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!-----HONumber=AcomDC_0914_2016-->

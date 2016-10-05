@@ -15,7 +15,7 @@
 	ms.topic="hero-article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="08/11/2016"
+	ms.date="09/26/2016"
 	ms.author="jeffstok"
 />
 
@@ -120,4 +120,4 @@ Ici, nous utilisons une clause **LEFT OUTER JOIN** sur le même flux de données
 
 L’objectif de ce didacticiel est de montrer comment écrire différentes requêtes en langage de requête Stream Analytics et afficher les résultats dans le navigateur. Toutefois, il ne s’agit que d’une prise en main. Vous pouvez effectuer beaucoup plus de choses avec Stream Analytics. Stream Analytics prend en charge un large éventail d’entrées et de sorties et peut même tirer parti de fonctions d’Azure Machine Learning, ce qui en fait un outil robuste pour l’analyse des flux de données. Vous pouvez commencer à explorer l’utilisation de Stream Analytics à l’aide de notre [Parcours d’apprentissage](https://azure.microsoft.com/documentation/learning-paths/stream-analytics/). Si vous souhaitez obtenir plus d’informations sur l’écriture de requêtes, consultez l’article [Modèles de requête courants](./stream-analytics-stream-analytics-query-patterns.md).
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

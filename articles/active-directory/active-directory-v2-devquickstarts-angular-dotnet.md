@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="javascript"
 	ms.topic="article"
-	ms.date="05/31/2016"
+	ms.date="09/16/2016"
 	ms.author="dastrock"/>
 
 
@@ -46,7 +46,7 @@ Dans un premier temps, créez une application dans le [portail d’inscription d
 
 - ajouter la plateforme **web** pour votre application ;
 - entrer l’**URI de redirection** approprié. La valeur par défaut pour cet exemple est `https://localhost:44326/`.
-- Laissez la case **Autoriser un flux implicite** sélectionnée. 
+- Laissez la case **Autoriser un flux implicite** sélectionnée.
 
 Copiez l’**ID d’application** affecté à votre application ; vous en aurez besoin rapidement.
 
@@ -233,4 +233,4 @@ Pour en savoir plus sur le point de terminaison v2.0, consultez de nouveau notre
 
 Nous vous encourageons à activer les notifications d’incidents de sécurité en vous rendant sur [cette page](https://technet.microsoft.com/security/dd252948) et en vous abonnant aux alertes d’avis de sécurité.
 
-<!---HONumber=AcomDC_0608_2016-->
+<!---HONumber=AcomDC_0921_2016-->

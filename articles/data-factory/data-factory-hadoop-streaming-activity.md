@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/05/2016" 
+	ms.date="09/20/2016" 
 	ms.author="spelluru"/>
 
 # Activité de diffusion en continu Hadoop
@@ -70,18 +70,18 @@ Le cluster HDInsight est automatiquement rempli avec les données (davinci.txt) 
 
 Notez les points suivants :
 
-1. Définissez **linkedServiceName** sur le nom du service lié qui pointe vers votre cluster HDInsight sur lequel sera exécutée la tâche mapreduce de diffusion en continu.
+1. Définissez **linkedServiceName** sur le nom du service lié qui pointe vers votre cluster HDInsight sur lequel est exécutée la tâche de diffusion en continu mapreduce.
 2. Affectez au type de l’activité la valeur **HDInsightStreaming**.
-3. Pour la propriété **mapper**, spécifiez le nom du fichier exécutable du mappeur. Dans l’exemple ci-dessus, cat.exe est le fichier exécutable du mappeur.
-4. Pour la propriété **reducer**, spécifiez le nom du fichier exécutable du raccord de réduction. Dans l’exemple ci-dessus, wc.exe est le fichier exécutable du raccord de réduction.
-5. Pour la propriété de type **input**, spécifiez le fichier en entrée (y compris son emplacement) du mappeur. Dans l’exemple « wasb://adfsample@<nom du compte>.blob.core.windows.net/example/data/gutenberg/davinci.txt », adfsample est le conteneur de l’objet blob, example/data/Gutenberg est le dossier et davinci.txt est l’objet blob.
+3. Pour la propriété **mapper**, spécifiez le nom du fichier exécutable du mappeur. Dans l’exemple, cat.exe est le fichier exécutable du mappeur.
+4. Pour la propriété **reducer**, spécifiez le nom du fichier exécutable du raccord de réduction. Dans l’exemple, wc.exe est le fichier exécutable du raccord de réduction.
+5. Pour la propriété de type **input**, spécifiez le fichier en entrée (y compris son emplacement) du mappeur. Dans l’exemple « wasb://adfsample@<nom du compte>.blob.core.windows.net/example/data/gutenberg/davinci.txt », adfsample est le conteneur de l’objet blob, example/data/Gutenberg est le dossier et davinci.txt est l’objet blob.
 6. Pour la propriété de type **output**, spécifiez le fichier en sortie (y compris son emplacement) du raccord de réduction. La sortie de la tâche de diffusion en continu Hadoop est écrite à l’emplacement spécifié pour cette propriété.
 7. Dans la section **filePaths**, spécifiez les chemins des fichiers exécutables du mappeur et du raccord de réduction. Dans l’exemple « adfsample/example/apps/wc.exe », adfsample est le conteneur de l’objet blob, example/apps est le dossier et wc.exe est le fichier exécutable.
 8. Pour la propriété **fileLinkedService**, spécifiez le service lié Azure Storage qui représente le stockage Azure qui contient les fichiers spécifiés dans la section filePaths.
 9. Pour la propriété **arguments**, spécifiez les arguments de la tâche de diffusion en continu.
 10. La propriété **getDebugInfo** est un élément facultatif. Si sa valeur est Failure, les journaux ne sont téléchargés qu’en cas d’échec. Si sa valeur est All, les journaux sont toujours téléchargés, quel que soit l’état de l’exécution.
 
-> [AZURE.NOTE] Comme le montre l’exemple, vous devrez spécifier un jeu de données en sortie pour l’activité de diffusion en continu Hadoop pour la propriété **sorties**. Il s'agit simplement d'un ensemble de données factice qui est nécessaire au fonctionnement de la planification de pipeline. Il est inutile de spécifier un jeu de données en entrée pour l’activité de la propriété **entrées**.
+> [AZURE.NOTE] Comme indiqué dans l’exemple, vous spécifiez un jeu de données de sortie pour l’activité de diffusion en continu Hadoop pour la propriété **outputs**. Il s’agit simplement d’un ensemble de données factice qui est nécessaire au fonctionnement de la planification de pipeline. Il est inutile de spécifier un jeu de données en entrée pour l’activité de la propriété **entrées**.
 
 	
 ## Exemple
@@ -118,10 +118,10 @@ Tout d'abord, vous créez un service lié pour lier le cluster Azure HDInsight �
 	    }
 	}
 
-### Jeux de données
+### Groupes de données
 
 #### Jeu de données de sortie
-Le pipeline de cet exemple n’accepte pas d’entrées. Vous devez spécifier un jeu de données de sortie pour l’activité de diffusion en continu HDInsight. Il s'agit simplement d'un ensemble de données factice qui est nécessaire au fonctionnement de la planification de pipeline.
+Le pipeline de cet exemple n’accepte pas d’entrées. Vous spécifiez un jeu de données de sortie pour l’activité de diffusion en continu HDInsight. Il s’agit simplement d’un ensemble de données factice qui est nécessaire au fonctionnement de la planification de pipeline.
 
 	{
 	    "name": "StreamingOutputDataset",
@@ -199,4 +199,4 @@ Le cluster HDInsight est automatiquement rempli avec les données (davinci.txt) 
 - [Appeler des programmes Spark](data-factory-spark.md)
 - [Appeler des scripts R](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/RunRScriptUsingADFSample)
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

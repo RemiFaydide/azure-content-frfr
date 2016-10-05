@@ -60,7 +60,12 @@ De haut en bas dans le tableau de bord :
 - Panneau Supprimer : si un coffre Recovery Services n’est plus utilisé, vous pouvez le supprimer pour libérer de l’espace de stockage. L’option Supprimer est disponible uniquement une fois que tous les serveurs protégés ont été supprimés du coffre.
 
 ![Tâches du tableau de bord Backup](./media/backup-azure-manage-windows-server/dashboard-tasks.png)
-
+## Alertes relatives aux sauvegardes à l’aide de l’agent de sauvegarde Azure :
+| Niveau d’alerte | Alertes envoyées |
+| ------------- | ------------- |
+| Critique | Échec de sauvegarde, échec de récupération |
+| Avertissement | Sauvegarde terminée avec des avertissements (lorsque moins de cent fichiers n’ont pas été sauvegardés du fait de problèmes d’altération et que plus d’un million de fichiers ont été correctement sauvegardés) |
+| Informations | Aucun |
 ## Gérer les alertes de sauvegarde
 Cliquez sur la mosaïque **Alertes de sauvegarde** pour ouvrir le panneau **Alertes de sauvegarde** et gérer les alertes.
 
@@ -285,9 +290,14 @@ R3 Voici les cas pour lesquels la notification ne sera pas envoyée afin de réd
    - Si le travail est annulé.
    - Si le travail de sauvegarde secondaire a échoué, car un travail de sauvegarde d’origine est en cours.
 
+## Résolution des problèmes de surveillance<br>
+#### Problème : les travaux et les alertes de l’agent de sauvegarde Azure n’apparaissent pas sur le portail.
+##### Procédure de résolution :
+« OBRecoveryServicesManagementAgent » est utilisé pour envoyer les données des travaux et des alertes au service de sauvegarde Azure. Ouvrez le gestionnaire de tâches et vérifiez si le processus « OBRecoveryServicesManagementAgent » est en cours d’exécution. Il est possible que ce processus ait été bloqué ou arrêté. Si le processus n’est pas en cours d’exécution, parcourez la liste des services dans le Panneau de configuration, puis démarrez ou redémarrez « Agent de gestion Microsoft Azure Recovery Services ». Pour plus d’informations, recherchez les journaux dans : « dossier d’installation de l’agent de sauvegarde Azure »\\Agent Microsoft Azure Recovery Services\\Temp\\GatewayProvider*. <b>Par exemple :</b> C:\\Program Files\\Agent Microsoft Azure Recovery Services\\Temp\\GatewayProvider0.errlog
+
 ## Étapes suivantes
 - [Restaurer un serveur Windows Server ou un client Windows à partir d’Azure](backup-azure-restore-windows-server.md)
 - Pour en savoir plus sur Azure Backup, consultez la [vue d’ensemble d’Azure Backup](backup-introduction-to-azure-backup.md).
 - Consultez le [forum Azure Backup](http://go.microsoft.com/fwlink/p/?LinkId=290933).
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

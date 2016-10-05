@@ -219,7 +219,7 @@ Dans cette section, vous allez créer un utilisateur de test appelé Britta Simo
 
 ### Création d’un utilisateur de test du Portail du financement
 
-Dans cette section, vous allez créer un utilisateur appelé Britta Simon dans le Portail du financement. Dans cette section, vous allez créer un utilisateur appelé Britta Simon dans le Portail du financement. Si vous ne savez pas comment ajouter Britta Simon au Portail du financement, rapprochez-vous de l’équipe du support technique du Portail du financement pour ajouter l’utilisateur de test et activer l’authentification unique. Contactez-la à l’adresse info@regenteducation.com.
+Dans cette section, vous allez créer un utilisateur appelé Britta Simon dans le Portail du financement. Si vous ne savez pas comment ajouter Britta Simon au Portail du financement, rapprochez-vous de l’équipe du support technique du Portail du financement pour ajouter l’utilisateur de test et activer l’authentification unique. Contactez-la à l’adresse info@regenteducation.com.
 
 ### Affectation de l’utilisateur de test Azure AD
 
@@ -282,4 +282,4 @@ Lorsque vous cliquez sur la mosaïque Portail du financement dans le volet d’a
 [204]: ./media/active-directory-saas-thefundingportal-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-thefundingportal-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_0907_2016-->
+<!---HONumber=AcomDC_0921_2016-->

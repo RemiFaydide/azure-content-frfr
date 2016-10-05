@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/05/2016"
+   ms.date="09/15/2016"
    ms.author="dkshir;chackdan"/>
 
 
@@ -23,13 +23,17 @@ Azure Service Fabric permet la création de clusters Service Fabric sur toute ma
 
 Cet article vous guide tout au long des étapes de création locale d’un cluster à l’aide d’un package autonome Service Fabric, même s’il peut être facilement adapté à tout autre environnement, notamment d’autres fournisseurs de cloud.
 
->[AZURE.NOTE] Ce package Windows Server autonome est actuellement en préversion et n’est pas pris en charge pour les charges de production. [Cliquez ici](http://go.microsoft.com/fwlink/?LinkID=733084) si vous souhaitez télécharger une copie du CLUF (Contrat de Licence Utilisateur Final).
+>[AZURE.NOTE] Ce package Windows Server autonome peut contenir des fonctionnalités qui sont actuellement en version préliminaire et n’est pas pris en charge pour les charges de production. Pour afficher la liste de fonctionnalités en version préliminaire, faites défiler jusqu’à la fin de ce document. [Cliquez ici](http://go.microsoft.com/fwlink/?LinkID=733084) si vous souhaitez télécharger une copie du CLUF (Contrat de Licence Utilisateur Final).
 
 <a id="downloadpackage"></a>
 ## Télécharger le package autonome Service Fabric
 
 
 [Téléchargez le package autonome Service Fabric pour Windows Server 2012 R2 et ultérieur](http://go.microsoft.com/fwlink/?LinkId=730690), nommé *Microsoft.Azure.ServiceFabric.WindowsServer.&lt;version&gt;.zip*.
+
+>[AZURE.NOTE] Si vous utilisez des navigateurs Internet Explorer ou Microsoft Edge pour télécharger ce package, vous devez ajouter le site [http://download.microsoft.com](http://download.microsoft.com) aux sites de confiance dans l’intranet pour empêcher que la balise Zones ne soit écrite dans les fichiers lorsque le fichier zip est téléchargé
+
+ ![TustedZone][TrustedZone]
 
 Vous trouverez les fichiers suivants dans le package de téléchargement :
 
@@ -51,16 +55,16 @@ Vous trouverez les fichiers suivants dans le package de téléchargement :
 
 
 ## Planifier et préparer le déploiement de cluster
-Les étapes suivantes doivent être effectuées avant la création de votre cluster.
+Exécutez les étapes suivantes avant de créer votre cluster.
 
 ### Étape 1 : planifier votre infrastructure de cluster
-Vous allez créer un cluster Service Fabric sur les ordinateurs que vous avez pour décider des types de défaillance auxquels le cluster doit survivre. Par exemple, devez-vous séparer les lignes d’alimentation des connexions internet reliées à ces ordinateurs ? Prenez en outre en compte la sécurité physique de ces ordinateurs. Où l’emplacement physique se trouve-t-il et qui a besoin d’y accéder ? Une fois ces décisions prises, vous pouvez mapper logiquement les ordinateurs sur les différents domaines d’erreur (voir ci-dessous pour plus d’informations). L’infrastructure de planification pour les clusters de production est plus complexe que pour les clusters de test.
+Vous allez créer un cluster Service Fabric sur les ordinateurs que vous avez pour décider des types de défaillance auxquels le cluster doit survivre. Par exemple, devez-vous séparer les lignes d’alimentation des connexions internet reliées à ces ordinateurs ? Prenez en outre en compte la sécurité physique de ces ordinateurs. Où l’emplacement physique se trouve-t-il et qui a besoin d’y accéder ? Une fois ces décisions prises, vous pouvez mapper logiquement les ordinateurs sur les différents domaines d’erreur (faites défiler vers le bas pour plus d’informations). La planification de l’infrastructure pour les clusters de production est plus complexe que pour les clusters de test.
 
 <a id="preparemachines"></a>
 ### Étape 2 : préparer les ordinateurs pour répondre aux conditions préalables
 Conditions préalables pour chaque ordinateur que vous souhaitez ajouter au cluster :
 
-- 2 Go de mémoire minimum recommandés
+- 4 Go de mémoire minimum recommandés
 - Connectivité réseau : assurez-vous que les ordinateurs sont sur un réseau/des réseaux sécurisé(s).
 - Windows Server 2012 R2 ou Windows Server 2012 ([KB2858668](https://support.microsoft.com/kb/2858668) doit être installé).
 - [.NET Framework 4.5.1 ou une version ultérieure](https://www.microsoft.com/download/details.aspx?id=40773), installation complète.
@@ -69,7 +73,7 @@ Conditions préalables pour chaque ordinateur que vous souhaitez ajouter au clus
 - Le [service RemoteRegistry](https://technet.microsoft.com/library/cc754820) doit être exécuté sur tous les ordinateurs.
 
 ### Étape 3 : déterminer la taille initiale du cluster
-Le runtime Service Fabric est déployé sur chaque nœud d’un cluster Service Fabric autonome, et les nœuds sont membres du cluster. Un déploiement de production type comprend un nœud par instance du système d’exploitation (physique ou virtuel). La taille de cluster est déterminée par vos besoins métier. Toutefois, vous devez disposer d’une taille minimale de cluster de trois nœuds (ordinateurs/machines virtuelles). Notez que, à des fins de développement, vous pouvez avoir plusieurs nœuds sur un ordinateur donné. Dans un environnement de production, Service Fabric ne prend en charge qu’un seul nœud par ordinateur physique ou virtuel.
+Le runtime Service Fabric est déployé sur chaque nœud d’un cluster Service Fabric autonome, et les nœuds sont membres du cluster. Un déploiement de production type comprend un nœud par instance du système d’exploitation (physique ou virtuel). La taille de cluster est déterminée par vos besoins métier. Toutefois, vous devez disposer d’une taille minimale de cluster de trois nœuds (ordinateurs/machines virtuelles). À des fins de développement, vous pouvez avoir plusieurs nœuds sur un ordinateur donné. Dans un environnement de production, Service Fabric ne prend en charge qu’un seul nœud par ordinateur physique ou virtuel.
 
 ### Étape 4 : déterminer le nombre de domaines d’erreur et de domaines de mise à niveau
 Un **domaine d’erreur (FD)** est une unité physique de défaillance directement liée à l’infrastructure physique dans les centres de données. Un domaine d’erreur est constitué de composants matériels (ordinateurs, commutateurs, réseau, etc.) qui partagent un point de défaillance unique. Bien qu’il n’existe aucun mappage 1:1 entre les domaines d’erreur et les racks, chaque rack peut être considéré au sens large comme un domaine d’erreur. Lorsque vous envisagez d’utiliser les nœuds de votre cluster, nous vous recommandons fortement de distribuer les nœuds sur au moins trois domaines d’erreur.
@@ -81,7 +85,7 @@ Quand vous spécifiez des domaines d’erreur dans *ClusterConfig.json*, vous po
 - "faultDomain": "fd:/Room1/Rack1/PDU1/M1"
 
 
-Un **domaine de mise à niveau (UD)** est une unité logique de nœuds. Pendant une mise à niveau orchestrée par Service Fabric (mise à niveau de l’application ou du cluster), tous les nœuds dans un domaine de mise à niveau sont mis hors service pour effectuer la mise à niveau alors que les nœuds dans d’autres domaines de mise à niveau restent disponibles pour répondre aux requêtes. Les mises à niveau du microprogramme effectuées sur vos ordinateurs ne respecteront pas les domaines de mise à niveau. Vous devez les exécuter sur un ordinateur à la fois.
+Un **domaine de mise à niveau (UD)** est une unité logique de nœuds. Pendant une mise à niveau orchestrée par Service Fabric (mise à niveau de l’application ou du cluster), tous les nœuds dans un domaine de mise à niveau sont mis hors service pour effectuer la mise à niveau alors que les nœuds dans d’autres domaines de mise à niveau restent disponibles pour répondre aux requêtes. Les mises à niveau du microprogramme effectuées sur vos ordinateurs ne respectent pas les domaines de mise à niveau. Vous devez les exécuter sur un ordinateur à la fois.
 
 L’approche la plus simple de ces concepts consiste à considérer les domaines d’erreur comme unité de défaillance non planifiée et les domaines mise à niveau comme unité de maintenance planifiée.
 
@@ -111,25 +115,41 @@ Le cluster est décrit dans un fichier *ClusterConfig.json*. Pour plus d’infor
 |Nœuds|Les détails de chacun des nœuds qui feront partie du cluster (type de nœud, nom de nœud, adresse IP, domaine d’erreur et domaine de mise à niveau du nœud). Les ordinateurs sur lesquels vous souhaitez créer le cluster doivent être répertoriés ici avec leur adresse IP. <br> Si vous utilisez les mêmes adresses IP pour tous les nœuds, un cluster à boîtier unique est créé. Vous pouvez l’utiliser à des fins de test. Les clusters à boîtier unique ne doivent pas servir au déploiement de charges de travail de production.|
 
 ### Étape 2 : exécuter le script de création de cluster
-Une fois que vous avez modifié la configuration de cluster dans le document JSON et ajouté toutes les informations de nœud, exécutez le script PowerShell de création de cluster *CreateServiceFabricCluster.ps1* à partir du dossier de package et transmettez-lui le chemin du fichier de configuration JSON et l’emplacement du fichier CAB de package.
+Une fois que vous avez modifié la configuration de cluster dans le document JSON et ajouté toutes les informations de nœud, exécutez le script PowerShell de création de cluster *CreateServiceFabricCluster.ps1* à partir du dossier de package et transmettez-lui le chemin du fichier de configuration JSON et acceptez le CLUF (Contrat de Licence Utilisateur Final).
 
 Ce script peut être exécuté sur n’importe quel ordinateur disposant d’un accès administrateur à tous les ordinateurs qui sont répertoriés en tant que nœuds dans le fichier de configuration du cluster. L’ordinateur sur lequel ce script est exécuté peut faire partie du cluster ou non.
 
 ```
 #Create an unsecured local development cluster
 
-.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.DevCluster.json -MicrosoftServiceFabricCabFilePath .\MicrosoftAzureServiceFabric.cab -AcceptEULA $true
+.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.DevCluster.json -AcceptEULA true
 ```
 ```
 #Create an unsecured multi-machine cluster
 
-.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.MultiMachine.json -MicrosoftServiceFabricCabFilePath .\MicrosoftAzureServiceFabric.cab -AcceptEULA $true
+.\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.MultiMachine.json -AcceptEULA true
 ```
 
->[AZURE.NOTE] Les journaux de déploiement sont disponibles localement sur une machine virtuelle/un ordinateur sur lequel vous avez exécuté le script PowerShell CreateServiceFabricCluster. Vous les trouverez dans un sous-dossier nommé « DeploymentTraces » dans le dossier où vous avez exécuté la commande Powershell. En outre, pour voir si Service Fabric a été déployé correctement sur un ordinateur, vous pouvez rechercher les fichiers installés dans le répertoire C:\\ProgramData et vérifier si les processus FabricHost.exe et Fabric.exe sont mentionnés comme étant en cours d’exécution dans le Gestionnaire des tâches.
+>[AZURE.NOTE] Les journaux de déploiement sont disponibles localement sur une machine virtuelle/un ordinateur sur lequel vous avez exécuté le script PowerShell CreateServiceFabricCluster. Ils se trouvent dans un sous-dossier nommé « DeploymentTraces » sous le dossier où vous avez exécuté la commande Powershell. En outre, pour voir si Service Fabric a été déployé correctement sur un ordinateur, vous pouvez rechercher les fichiers installés dans le répertoire C:\\ProgramData et vérifier si les processus FabricHost.exe et Fabric.exe sont mentionnés comme étant en cours d’exécution dans le Gestionnaire des tâches.
 
 ### Étape 3 : se connecter au cluster
+
+Reportez-vous à [ce document](service-fabric-connect-to-secure-cluster.md) pour obtenir des instructions de connexion à un cluster sécurisé.
+
+Exécutez la commande PowerShell suivante pour vous connecter à un cluster non sécurisé
+
+```powershell
+
+Connect-ServiceFabricCluster -ConnectionEndpoint <*IPAddressofaMachine*>:<Client connection end point port>
+
+Connect-ServiceFabricCluster -ConnectionEndpoint 192.13.123.2345:19000
+
+```
+### Étape 4 : Afficher Service Fabric Explorer
+
 Désormais, vous pouvez vous connecter au cluster avec Service Fabric Explorer directement à partir de l’un des ordinateurs avec http://localhost:19080/Explorer/index.html ou à distance avec http://<*adresse\_IP\_ordinateur*>:19080/Explorer/index.html
+
+
 
 ## Ajouter et supprimer des nœuds à/de votre cluster
 
@@ -138,14 +158,17 @@ Vous pouvez ajouter des nœuds à votre cluster Service Fabric autonome ou en su
 
 ## Supprimer votre cluster
 
-Pour supprimer un cluster, exécutez le script Powershell *RemoveServiceFabricCluster.ps1* à partir du dossier de package et transmettez le chemin du fichier de configuration JSON et l’emplacement du fichier CAB de package.
+Pour supprimer un cluster, exécutez le script Powershell *RemoveServiceFabricCluster.ps1* à partir du dossier de package et transmettez le chemin du fichier de configuration JSON et spécifiez un emplacement pour le fichier de la suppression (cette dernière étape est facultative).
 
 Ce script peut être exécuté sur n’importe quel ordinateur disposant d’un accès administrateur à tous les ordinateurs qui sont répertoriés en tant que nœuds dans le fichier de configuration du cluster. L’ordinateur sur lequel ce script est exécuté peut faire partie du cluster ou non.
 
 ```
-.\RemoveServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.MultiMachine.json   -MicrosoftServiceFabricCabFilePath .\MicrosoftAzureServiceFabric.cab
+.\RemoveServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.Unsecure.MultiMachine.json   
 ```
 
+## Fonctionnalités préliminaires incluses dans ce package
+
+L’ensemble du package est actuellement en version préliminaire.
 
 ## Étapes suivantes
 - [Paramètres de configuration pour un cluster Windows autonome](service-fabric-cluster-manifest.md)
@@ -154,4 +177,8 @@ Ce script peut être exécuté sur n’importe quel ordinateur disposant d’un 
 - [Sécuriser un cluster autonome sur Windows à l’aide de la sécurité Windows](service-fabric-windows-cluster-windows-security.md)
 - [Sécuriser un cluster autonome sur Windows à l’aide de certificats X509](service-fabric-windows-cluster-x509-security.md)
 
-<!---HONumber=AcomDC_0810_2016-->
+
+<!--Image references-->
+[TrustedZone]: ./media/service-fabric-cluster-creation-for-windows-server/TrustedZone.png
+
+<!---HONumber=AcomDC_0921_2016-->

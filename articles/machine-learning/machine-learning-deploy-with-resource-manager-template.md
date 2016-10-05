@@ -124,6 +124,12 @@ Une fois le déploiement terminé, il est simple d’accéder aux propriétés d
 $rgd.Outputs.mlWorkspaceToken.Value
 ```
 
+Une autre méthode pour récupérer des jetons de l’espace de travail existant consiste à utiliser la commande Invoke-AzureRmResourceAction. Par exemple, vous pouvez répertorier les jetons principaux et secondaires de tous les espaces de travail.
+
+```  
+# List the primary and secondary tokens of all workspaces
+Get-AzureRmResource |? { $_.ResourceType -Like "*MachineLearning/workspaces*"} |% { Invoke-AzureRmResourceAction -ResourceId $_.ResourceId -Action listworkspacekeys -Force}  
+```
 Après la configuration de l’espace de travail, vous pouvez également automatiser de nombreuses tâches Azure Machine Learning Studio à l’aide du [Module PowerShell pour Azure Machine Learning](http://aka.ms/amlps).
 
 ## Étapes suivantes 
@@ -138,4 +144,4 @@ Après la configuration de l’espace de travail, vous pouvez également automat
 
 <!--Link references-->
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="mobile-windows-phone"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="05/16/2016"
+	ms.date="09/16/2016"
 	ms.author="dastrock"/>
 
 
@@ -28,7 +28,7 @@ Si vous développez une application Windows Phone 8.1, Azure AD facilite l’aut
 
 > [AZURE.NOTE] Cet exemple de code utilise la bibliothèque ADAL v2.0. Pour utiliser les dernières technologies, vous souhaiterez peut-être plutôt essayer notre [Didacticiel universel Windows avec ADAL v3.0](active-directory-devquickstarts-windowsstore.md). Si vous créez une application pour Windows Phone 8.1, vous êtes au bon endroit. ADAL v2.0 est entièrement pris en charge. C’est la méthode recommandée pour le développement d’applications, par rapport à Windows Phone 8.1 avec Azure AD.
 
-Pour les clients natifs .NET qui doivent accéder à des ressources protégées, Azure AD fournit la bibliothèque d’authentification Active Directory (bibliothèque ADAL). Le seul objectif de cette bibliothèque ADAL est de faciliter l’obtention des jetons d’accès pour votre application. Pour illustrer cette simplicité, nous créerons une application Windows Phone 8.1 « Directory Searcher » effectuant les actions suivantes :
+Pour les clients natifs .NET qui doivent accéder à des ressources protégées, Azure AD fournit la bibliothèque d’authentification Active Directory (bibliothèque ADAL). Le seul objectif de cette bibliothèque ADAL est de faciliter l’obtention des jetons d'accès pour votre application. Pour illustrer cette simplicité, nous créerons une application Windows Phone 8.1 « Directory Searcher » effectuant les actions suivantes :
 
 -	obtention de jetons d’accès pour appeler l’API Azure AD Graph à l’aide du [protocole d’authentification OAuth 2.0](https://msdn.microsoft.com/library/azure/dn645545.aspx) ;
 -	recherche, dans un répertoire, d’utilisateurs correspondant à un UPN (nom d’utilisateur principal) donné.
@@ -77,7 +77,7 @@ redirectURI = Windows.Security.Authentication.Web.WebAuthenticationBroker.GetCur
 ms-app://s-1-15-2-1352796503-54529114-405753024-3540103335-3203256200-511895534-1429095407/
 ```
 
-- Sous l’onglet **Configurer** de votre application, dans le portail de gestion Azure, remplacez la valeur de l’**URI de redirection** par cette valeur.  
+- Sous l’onglet **Configurer** de votre application, dans le portail de gestion Azure, remplacez la valeur de l’**URI de redirection** par cette valeur.
 
 ## *3. Utilisation de la bibliothèque ADAL pour obtenir des jetons à partir d’AAD*
 Le principe de base de la bibliothèque ADAL consiste simplement à appeler `authContext.AcquireToken(…)` chaque fois que votre application a besoin d’un jeton d’accès, et la bibliothèque ADAL s’occupe du reste.
@@ -175,4 +175,4 @@ Pour référence, l’exemple terminé (sans vos valeurs de configuration) est f
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=AcomDC_0518_2016-->
+<!---HONumber=AcomDC_0921_2016-->

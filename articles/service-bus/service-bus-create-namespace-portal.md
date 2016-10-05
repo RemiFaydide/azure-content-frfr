@@ -34,7 +34,7 @@ Félicitations ! Vous venez de créer un espace de noms de messagerie Service B
 
 Consultez les [exemples fournis dans notre référentiel GitHub](https://github.com/Azure-Samples/azure-servicebus-messaging-samples][github-samples), qui illustrent certaines des fonctionnalités les plus avancées de la messagerie Azure Service Bus.
 
-[create-namespace-using-arm]: ./service-bus-resource-manager-overview.md
+[create-namespace-using-arm]: ../service-bus-messaging/service-bus-resource-manager-overview.md
 [github-samples]: https://github.com/Azure-Samples/azure-servicebus-messaging-samples
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0928_2016-->

@@ -1,7 +1,8 @@
-When you create a virtual network gateway, you need to specify the gateway SKU that you want to use. When the virtual network gateway is created, it is built as virtual hardware. When you select a higher gateway SKU, more processing power is allocated to the gateway in order to route traffic and, in the case of VPN Gateway, process VPN encryption.
+Lorsque vous créez une passerelle de réseau virtuel, vous devez spécifier la référence SKU de passerelle que vous voulez utiliser. Lorsque la passerelle de réseau virtuel est créée, elle est conçu comme du matériel virtuel. Lorsque vous sélectionnez une référence SKU de passerelle supérieure, une puissance de traitement supplémentaire est affectée à la passerelle pour acheminer le trafic et, dans le cas d’une passerelle VPN, traiter le chiffrement du VPN.
 
-ExpressRoute virtual network gateways can use the following SKUs: 
+Les passerelles de réseau virtuel ExpressRoute peuvent utiliser les références SKU suivantes :
 
 - Standard
 - HighPerformance
 
+<!---HONumber=AcomDC_0921_2016-->

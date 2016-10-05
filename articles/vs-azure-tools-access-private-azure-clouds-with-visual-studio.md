@@ -41,6 +41,6 @@ Par défaut, Visual Studio prend en charge les points de terminaison REST du clo
 
 [Publication d’un service cloud Azure depuis Visual Studio](https://msdn.microsoft.com/library/azure/ee460772.aspx)
 
-[Téléchargement et importation des paramètres de publication et des informations d’abonnement] (https://msdn.microsoft.com/library/dn385850(v=nav.70).aspx)
+[Téléchargement et importation des paramètres de publication et des informations d’abonnement](https://msdn.microsoft.com/library/dn385850(v=nav.70).aspx)
 
 <!---HONumber=AcomDC_0817_2016-->

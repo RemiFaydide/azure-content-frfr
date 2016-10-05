@@ -1,20 +1,20 @@
 <properties
    pageTitle="Guide de démarrage rapide pour l’installation manuelle de SAP HANA sur des machines virtuelles Azure | Microsoft Azure"
    description="Guide de démarrage rapide pour l’installation manuelle de SAP HANA sur des machines virtuelles Azure"
-   services="virtual-machines,virtual-network,storage"
-   documentationCenter="saponazure"
+   services="virtual-machines-linux"
+   documentationCenter=""
    authors="hermanndms"
-   manager="juergent"
+   manager="timlt"
    editor=""
    tags="azure-resource-manager"
    keywords=""/>
 <tags
-   ms.service="virtual-machines"
-   ms.devlang="NA"
-   ms.topic="campaign-page"
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
    ms.tgt_pltfrm="vm-linux"
-   ms.workload="na"
-   ms.date="09/07/2016"
+   ms.workload="infrastructure-services"
+   ms.date="09/15/2016"
    ms.author="hermannd"/>
 
 # Guide de démarrage rapide pour l’installation manuelle d’un système SAP HANA à instance unique sur des machines virtuelles Azure
@@ -63,7 +63,7 @@ Il s’agit d’une simple liste de contrôle couvrant les éléments clés lié
 * Monter les nouveaux systèmes de fichiers XFS au niveau du système d’exploitation. Utiliser un système de fichiers pour stocker tous les logiciels SAP et l’autre, par exemple, pour le répertoire sapmnt et éventuellement les sauvegardes. Sur le serveur de base de données SAP HANA, monter les systèmes de fichiers XFS sur les disques de stockage Premium en tant que /hana et /usr/sap. Cette opération est nécessaire pour éviter la saturation du système de fichiers racine, peu volumineux sur les machines virtuelles Linux Azure.
 * Entrer les adresses IP locales des machines virtuelles de test dans /etc/hosts.
 * Entrer le paramètre nofail dans /etc/fstab.
-* Définir les paramètres de noyau en fonction de la note SAP HANA-SLES-12 (pour plus d’informations, voir la section sur les paramètres de noyau plus bas).
+* Définir les paramètres de noyau en fonction de la note SAP HANA-SLES-12 (pour obtenir des informations détaillées, voir la section sur les paramètres de noyau plus bas).
 * Ajouter un espace d’échange.
 * Le cas échéant, installer un bureau graphique sur les machines virtuelles de test. Sinon, utiliser une installation sapinst distante.
 * Télécharger les logiciels SAP sur le SAP Service Marketplace.
@@ -384,11 +384,11 @@ Outre l’installation de SAP HANA dans le cadre d’une installation distribué
 
 Voici trois sources d’informations sur l’outil HANA hdblcm :
 
-[Choosing the Correct SAP HANA HDBLCM for Your Task](https://help.sap.com/saphelp_hanaplatform/helpdata/en/68/5cff570bb745d48c0ab6d50123ca60/content.htm) (Choisir l’outil SAP HANA HDBLCM adapté à votre tâche)
+[Choosing the Correct SAP HANA HDBLCM for Your Task (Choisir l’outil SAP HANA HDBLCM adapté à votre tâche)](https://help.sap.com/saphelp_hanaplatform/helpdata/en/68/5cff570bb745d48c0ab6d50123ca60/content.htm)
 
-[SAP HANA Lifecycle Management Tools](http://saphanatutorial.com/sap-hana-lifecycle-management-tools/) (Outils de gestion du cycle de vie SAP HANA)
+[SAP HANA Lifecycle Management Tools (Outils de gestion du cycle de vie SAP HANA)](http://saphanatutorial.com/sap-hana-lifecycle-management-tools/)
 
-[SAP HANA Server Installation and Update Guide](http://help.sap.com/hana/SAP_HANA_Server_Installation_Guide_en.pdf) (Guide d’installation et de mise à jour du serveur SAP HANA)
+[SAP HANA Server Installation and Update Guide (Guide d’installation et de mise à jour du serveur SAP HANA)](http://help.sap.com/hana/SAP_HANA_Server_Installation_Guide_en.pdf)
 
 
 
@@ -484,4 +484,4 @@ Enfin, après l’installation du serveur d’applications SAP et de l’interfa
 
 * Téléchargement de la plateforme HANA SP12 sur le SAP Service Marketplace : ![](./media/virtual-machines-linux-sap-hana-get-started/image002.jpg)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -8,4 +8,4 @@ Les itinéraires système permettent la circulation automatique du trafic lié a
 
 La propriété clé pour activer le routage de transit est le paramètre Autoriser le trafic transféré. Ce paramètre permet d’accepter et d’envoyer le trafic depuis/vers NVA dans les réseaux virtuels homologués.
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

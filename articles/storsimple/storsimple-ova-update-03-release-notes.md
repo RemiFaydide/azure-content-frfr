@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="09/14/2016"
+   ms.date="09/15/2016"
    ms.author="alkohli" />
 
 # Notes de publication de StorSimple Virtual Array Update 0.3
@@ -38,7 +38,7 @@ Le tableau suivant récapitule les problèmes corrigés dans cette version.
 
 | Non. | Fonctionnalité | Problème |
 |------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1 | Sauvegardes |Un problème est apparu dans la version précédente : les sauvegardes échouaient. La cause racine a été identifiée et résolue dans cette version. <br></br> Le correctif ne s’applique pas rétroactivement aux partages qui rencontrent déjà ce problème. Les clients qui rencontrent ce problème doivent tout d’abord appliquer Update 0.3, puis contacter le Support Microsoft pour effectuer une sauvegarde complète du système afin de résoudre le problème. Sinon, ils peuvent également restaurer les partages affectés vers un nouveau partage d’une sauvegarde saine. |
+| 1 | Sauvegardes |Un problème est apparu dans la version précédente : les sauvegardes échouaient pour un partage de fichiers. En cas de problème de ce type, le travail de sauvegarde échouait et une alerte critique était levée sur le service StorSimple Manager pour en informer l’utilisateur. Ce problème n’affectait pas les données sur les partages ou l’accès aux données. La cause racine a été identifiée et résolue dans cette version. <br></br> Le correctif ne s’applique pas rétroactivement aux partages qui rencontrent déjà ce problème. Les clients qui rencontrent ce problème doivent tout d’abord appliquer Update 0.3, puis contacter le Support Microsoft pour effectuer une sauvegarde complète du système afin de résoudre le problème. Sinon, ils peuvent également restaurer les partages affectés vers un nouveau partage d’une sauvegarde saine. |
 | 2 | iSCSI | Un problème est apparu dans la version précédente : les volumes disparaissaient lors de la copie de données vers un volume sur StorSimple Virtual Array. Ce problème a été résolu dans cette version. <br></br> Les correctifs prennent effet uniquement sur les volumes nouvellement créés. Les correctifs ne s’appliquent pas rétroactivement aux volumes qui rencontrent déjà ce problème. Il est conseillé aux clients de mettre en ligne les volumes affectés par le biais du Portail Azure Classic, d’en effectuer une sauvegarde, puis de les restaurer sur de nouveaux volumes. |
 
 
@@ -78,4 +78,4 @@ Vous recherchez une note de version antérieure ? Accédez à :
 - [Notes de publication de StorSimple Virtual Array General Availability](storsimple-ova-pp-release-notes.md)
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

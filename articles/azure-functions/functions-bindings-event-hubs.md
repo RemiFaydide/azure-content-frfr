@@ -20,7 +20,7 @@
 
 # Liaisons de concentrateur d’événements Azure Functions
 
-[AZURE.INCLUDE [functions-selector-bindings](../../includes/functions-selector-bindings.md)]
+[AZURE.INCLUDE [functions-selector-bindings (liaisons de sélecteur de fonctions)](../../includes/functions-selector-bindings.md)]
 
 Cet article explique comment configurer et coder des liaisons de [concentrateur d’événements Azure (Azure Event Hub)](../event-hubs/event-hubs-overview.md) pour Azure Functions. Azure Functions prend en charge des liaisons de déclencheur et de sortie pour des Azure Event Hubs.
 
@@ -64,6 +64,13 @@ En cas d’utilisation de l’exemple function.json exemple, le corps du message
 	{
 	    log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
 	}
+
+#### Exemple F# de déclencheur Azure Event Hub
+
+En cas d’utilisation de l’exemple function.json exemple, le corps du message d’événement est journalisé à l’aide du code de fonction F# ci-dessous :
+
+	let Run(myEventHubMessage: string, log: TraceWriter) =
+	    log.Info(sprintf "F# eventhub trigger function processed work item: %s" myEventHubMessage)
 
 #### Exemple de Node.js de déclencheur Azure Event Hub
  
@@ -113,6 +120,15 @@ L’exemple de code de fonction C# suivant illustre l’écriture d’un événe
 	    outputEventHubMessage = msg;
 	}
 
+#### Exemple de code F# Azure Event Hub pour une liaison de sortie
+
+L’exemple de code de fonction F# suivant illustre l’écriture d’un événement dans un flux d’événements de concentrateur d’événements. Cet exemple représente la liaison de sortie du concentrateur d’événements illustrée ci-dessus appliquée à un déclencheur C# de type Timer.
+
+	let Run(myTimer: TimerInfo, outputEventHubMessage: byref<string>, log: TraceWriter) =
+	    let msg = sprintf "TimerTriggerFSharp1 executed at: %s" DateTime.Now.ToString()
+	    log.Verbose(msg);
+	    outputEventHubMessage <- msg;
+
 #### Exemple de code Node.js Azure Event Hub pour une liaison de sortie
  
 L’exemple de code de fonction Node.js suivant illustre l’écriture d’un événement dans un flux d’événements de concentrateur d’événements. Cet exemple représente la liaison de sortie du concentrateur d’événements illustrée ci-dessus appliquée à un déclencheur Node.js de type Timer.
@@ -136,4 +152,4 @@ L’exemple de code de fonction Node.js suivant illustre l’écriture d’un é
 
 [AZURE.INCLUDE [Étapes suivantes](../../includes/functions-bindings-next-steps.md)]
 
-<!----HONumber=AcomDC_0824_2016--->
+<!---HONumber=AcomDC_0921_2016-->

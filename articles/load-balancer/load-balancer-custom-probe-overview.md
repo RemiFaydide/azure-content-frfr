@@ -30,7 +30,7 @@ Le comportement des sondes dépend des éléments suivants :
 - Le nombre de sondes ayant réussi qui permet à une instance d’être étiquetée comme étant en cours d’exécution.
 - Le nombre de sondes ayant échoué qui permet à une instance d’être étiquetée comme n’étant pas en cours d’exécution.
 
-La valeur du délai d’expiration et de la fréquence définie dans SuccessFailCount détermine si une instance est marquée comme étant en cours d’exécution ou pas. Dans le portail Azure, le délai d’expiration est défini sur deux fois la valeur de la fréquence.
+Le délai d’attente divisé par la valeur de fréquence de la sonde est égal à SuccessFailCount qui détermine si une instance est supposée être en cours d’exécution ou non. Dans le portail Azure, le délai d’expiration est défini sur deux fois la valeur de la fréquence.
 
 La configuration de sonde de toutes les instances à charge équilibrée pour un point de terminaison (jeu d’équilibrage de la charge) doit être identique. Cela signifie que vous ne pouvez pas avoir de configuration de sonde différente pour chaque instance de rôle ou machine virtuelle du même service hébergé pour une combinaison de points de terminaison donnée. Par exemple, chaque instance doit avoir des délais d’expiration et des ports locaux identiques.
 
@@ -77,11 +77,11 @@ Les sondes TCP établissent une connexion en effectuant une connexion en trois t
 
 Pour plus d’informations sur la configuration d’une sonde d’intégrité HTTP ou d’une sonde TCP, consultez [Création d’un équilibreur de charge accessible sur Internet dans Resource Manager à l’aide de PowerShell](load-balancer-get-started-internet-arm-ps.md#create-lb-rules-nat-rules-a-probe-and-a-load-balancer).
 
-## Rajout d’instances saines à l’équilibreur de charge
+## Ajout d’instances saines à la rotation d’équilibrage de charge
 
 Les sondes TCP et HTTP sont considérées comme saines et marquent l’instance de rôle comme saine dans les cas suivants :
 
-. L’équilibreur de charge reçoit une sonde positive la première fois que la machine virtuelle démarre.
+- L’équilibreur de charge reçoit une sonde positive la première fois que la machine virtuelle démarre.
 - Le nombre SuccessFailCount (décrit précédemment) définit la valeur des sondes ayant réussi nécessaires pour marquer l’instance de rôle comme étant saine. Si une instance de rôle a été supprimée, le nombre de sondes ayant réussi successives doit être égal ou supérieur à la valeur de SuccessFailCount pour marquer l’instance de rôle comme étant en cours d’exécution.
 
 >[AZURE.NOTE] Si l’intégrité d’une instance de rôle fluctue, l’équilibreur de charge attend plus longtemps avant de remettre l’instance de rôle dans un état d’intégrité normal. Cette opération est effectuée via une stratégie pour protéger l’utilisateur et l’infrastructure.
@@ -90,4 +90,4 @@ Les sondes TCP et HTTP sont considérées comme saines et marquent l’instance 
 
 Vous pouvez utiliser l’[analytique des journaux pour l’équilibreur de charge](load-balancer-monitor-log.md) pour vérifier le nombre et l’état d’intégrité des sondes. La journalisation peut être utilisée avec Power BI ou Operational Insights pour fournir des statistiques sur l’état d’intégrité de l’équilibreur de charge.
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

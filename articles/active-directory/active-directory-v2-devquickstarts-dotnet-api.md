@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="05/31/2016"
+	ms.date="09/16/2016"
 	ms.author="dastrock"/>
 
 # Sécurisation d’une API Web MVC
@@ -121,7 +121,7 @@ public class TodoListController : ApiController
 {
 ```
 
-- Lorsqu’un appelant autorisé appelle correctement l’une des API `TodoListController`, l’action peut avoir besoin d’accéder aux informations sur l’appelant. OWIN fournit l’accès aux revendications dans le jeton porteur via l’objet `ClaimsPrincpal`.  
+- Lorsqu’un appelant autorisé appelle correctement l’une des API `TodoListController`, l’action peut avoir besoin d’accéder aux informations sur l’appelant. OWIN fournit l’accès aux revendications dans le jeton porteur via l’objet `ClaimsPrincpal`.
 
 ```C#
 public IEnumerable<TodoItem> Get()
@@ -155,7 +155,7 @@ Pour référence, l'exemple terminé (sans vos valeurs de configuration) [est fo
 ```git clone --branch complete https://github.com/AzureADQuickStarts/AppModelv2-WebAPI-DotNet.git```
 
 ## Étapes suivantes
-Vous pouvez à présent aborder d’autres rubriques. Par exemple :
+Vous pouvez à présent passer à d’autres rubriques. Par exemple :
 
 [Appeler une API Web à partir d’une application Web >>](active-directory-v2-devquickstarts-webapp-webapi-dotnet.md)
 
@@ -167,4 +167,4 @@ Pour obtenir des ressources supplémentaires, consultez :
 
 Nous vous encourageons à activer les notifications d’incidents de sécurité en vous rendant sur [cette page](https://technet.microsoft.com/security/dd252948) et en vous abonnant aux alertes d’avis de sécurité.
 
-<!---HONumber=AcomDC_0608_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/02/2016"
+	ms.date="09/22/2016"
 	ms.author="curtand"/>
 
 # Ajouter des utilisateurs à partir d’autres répertoires ou entreprises partenaires dans Azure Active Directory
 
 > [AZURE.SELECTOR]
-- [Portail Azure](active-directory-create-users-external-azure-portal.md)
+- [Portail Azure](active-directory-users-create-external-azure-portal.md)
 - [Portail Azure Classic](active-directory-create-users-external.md)
 
 Cet article explique comment ajouter des utilisateurs à partir d’autres répertoires dans Azure Active Directory, ou comment ajouter des utilisateurs d’entreprises partenaires. Pour en savoir plus sur l’ajout de nouveaux utilisateurs dans votre organisation, et en particulier l’ajout d’utilisateurs disposant de comptes Microsoft, voir [Ajout ou modification d’utilisateurs dans Azure Active Directory](active-directory-create-users.md). Par défaut, les utilisateurs ajoutés ne reçoivent pas d’autorisations d’administrateur, mais vous pouvez leur attribuer des rôles à tout moment.
@@ -70,7 +70,7 @@ Si un utilisateur est supprimé de son annuaire de base ou s’il annule son com
 - **Portail Azure Classic** : permet aux utilisateurs externes administrant plusieurs répertoires de gérer chacun d’entre eux.
 - **SharePoint Online** : si le partage externe est activé, permet aux utilisateurs externes d’accéder aux ressources SharePoint Online autorisées.
 - **Dynamics CRM** : permet aux utilisateurs externes d’accéder aux ressources Dynamics CRM autorisées, s’ils sont sous licence via PowerShell.
-- **Dynamics AX** : permet aux utilisateurs externes d’accéder aux ressources Dynamics AX autorisées s’ils sont sous licence via PowerShell. Les limitations relatives aux [utilisateurs externes Azure AD](#known-limitations-of-azure-ad-external-users) et aux [utilisateurs invités](#guest-user-management-and-limitations) s’appliquent également aux utilisateurs externes dans Dynamics AX.
+- **Dynamics AX** : permet aux utilisateurs externes d’accéder aux ressources Dynamics AX autorisées s’ils sont sous licence via PowerShell. Les limitations relatives aux [utilisateurs externes Azure AD](#known-limitations-of-azure-ad-external-users) s’appliquent également aux utilisateurs externes dans Dynamics AX.
 
 ### Limitations connues des utilisateurs externes d’Azure AD
 
@@ -88,4 +88,4 @@ Si un utilisateur est supprimé de son annuaire de base ou s’il annule son com
 - [Gestion des mots de passe dans Azure AD](active-directory-manage-passwords.md)
 - [Gestion des groupes dans Azure AD](active-directory-manage-groups.md)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0928_2016-->

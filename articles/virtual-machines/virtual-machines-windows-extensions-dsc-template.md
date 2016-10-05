@@ -15,7 +15,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="vm-windows"
    ms.workload="na"
-   ms.date="08/29/2016"
+   ms.date="09/15/2016"
    ms.author="zachal"/>
 
 # VMSS Windows et Configuration d’état souhaité avec des modèles Azure Resource Manager
@@ -23,7 +23,7 @@ Cet article décrit le modèle Resource Manager destiné au [gestionnaire de l�
 
 ## Exemple de modèle pour une machine virtuelle sous Windows
 
-L’extrait de code ci-dessous va dans la section « Resource » du modèle.
+L’extrait de code suivant va dans la section « Resource » du modèle.
 
 ```json
 			"name": "Microsoft.Powershell.DSC",
@@ -169,7 +169,7 @@ Si des informations d’identification sont requises pour la configuration, elle
 
 L’exemple suivant est tiré de la section « Prise en main » de l’article [Présentation du gestionnaire d’extensions de configuration d’état souhaité Microsoft Azure](virtual-machines-windows-extensions-dsc-overview.md). Cet exemple utilise des modèles Resource Manager au lieu d’applets de commande pour déployer l’extension. Enregistrez la configuration « IisInstall.ps1 », placez-la dans un fichier .zip et chargez le fichier dans une URL accessible. Cet exemple utilise le stockage Blob Azure, mais il est possible de télécharger les fichiers .zip depuis n’importe quel emplacement arbitraire.
 
-Dans le modèle Resource Manager, le code suivant demande à la VM de télécharger le fichier correct et d’exécuter la fonction PowerShell appropriée :
+Dans le modèle Azure Resource Manager, le code suivant demande à la VM de télécharger le fichier correct et d’exécuter la fonction PowerShell appropriée :
 
 ```json
 "settings": {
@@ -188,7 +188,7 @@ Dans le modèle Resource Manager, le code suivant demande à la VM de téléchar
 ## Mise à jour depuis le format précédent
 Tous les paramètres au format précédent (qui contient les propriétés publiques ModulesUrl, ConfigurationFunction, SasToken ou Properties) s’adaptent automatiquement au format actuel et s’exécutent exactement comme avant.
 
-Le schéma de paramètres précédent ressemblait à ceci :
+Le schéma suivant est ce à quoi les paramètres précédents ressemblaient :
 
 ```json
 "settings": {
@@ -224,8 +224,8 @@ Voici comment le format précédent s’adapte au format actuel :
 | --- | --- |
 | settings.wmfVersion | settings.WMFVersion |
 | settings.configuration.url | settings.ModulesUrl |
-| settings.configuration.script | 1re partie de settings.ConfigurationFunction (avant « \\\ ») |
-| settings.configuration.function | 2e partie de settings.ConfigurationFunction (après « \\\ ») |
+| settings.configuration.script | Première partie de settings.ConfigurationFunction (avant « \\\ ») |
+| settings.configuration.function | Deuxième partie de settings.ConfigurationFunction (après « \\\ ») |
 | settings.configurationArguments | settings.Properties |
 | settings.configurationData.url | protectedSettings.DataBlobUri (sans jeton SAP) |
 | settings.privacy.dataEnabled | settings.Privacy.DataEnabled |
@@ -257,7 +257,7 @@ Solution : Vérifiez toutes les URL que vous avez fournies. Assurez-vous que tou
 
 Problème : La propriété configurationArguments ne peut pas se résoudre en objet de table de hachage.
 
-Solution : Faites de votre propriété configurationArguments une table de hachage. Suivez le format fourni dans l’exemple ci-dessus. Prenez garde aux guillemets, aux virgules et aux accolades.
+Solution : Faites de votre propriété configurationArguments une table de hachage. Suivez le format fourni dans l’exemple précédent. Prenez garde aux guillemets, aux virgules et aux accolades.
 
 ### Propriétés configurationArguments en double
 « Found duplicate arguments '{0}' in both public and protected configurationArguments » (Arguments « {0} » en double trouvés dans les paramètres configurationArguments publics et protégés)
@@ -285,4 +285,14 @@ Solutions :
 - Fournissez la propriété manquante.
 - Supprimez la propriété qui a besoin de la propriété manquante.
 
-<!---HONumber=AcomDC_0914_2016-->
+
+## Étapes suivantes
+[En savoir plus sur DSC et VMSS](virtual-machines-scale-sets-dsc.md)
+
+En savoir plus sur la [Gestion des informations d’identification sécurisées de DSC](virtual-machines-windows-extensions-dsc-credentials.md).
+
+Pour plus d’informations sur le gestionnaire d’extensions DSC Azure, voir [Présentation du gestionnaire d’extensions de configuration d’état souhaité Microsoft Azure](virtual-machines-windows-extensions-dsc-overview.md).
+
+Pour plus informations sur DSC PowerShell, [voir le centre de documentation PowerShell](https://msdn.microsoft.com/powershell/dsc/overview).
+
+<!---HONumber=AcomDC_0921_2016-->

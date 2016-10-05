@@ -22,15 +22,16 @@
 
 > [AZURE.SELECTOR]
 - [Script C#](../articles/azure-functions/functions-reference-csharp.md)
+- [Script F#](../articles/azure-functions/functions-reference-fsharp.md)
 - [Node.JS](../articles/azure-functions/functions-reference-node.md)
  
 L’expérience c# pour Azure Functions repose sur le Kit de développement logiciel (SDK) Azure WebJobs. Les données circulent dans votre fonction C# via des arguments de méthode. Les noms d’argument sont spécifiés dans `function.json`, et il existe des noms prédéfinis pour accéder à des éléments tels que l’enregistreur de fonctions et les jetons d’annulation.
 
-Cet article repose sur l’hypothèse que vous avez déjà lu l’article [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md).
+Cet article suppose que vous ayez déjà lu l’article [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md).
 
 ## Fonctionnement de .csx
 
-Le format `.csx` permet d’écrire de façon moins « réutilisable » et de se contenter de la simple écriture d’une fonction C#. Pour Azure Functions, il suffit d’inclure les références d’assembly et les espaces de noms en haut, comme d’habitude et, au lieu d’encapsuler tous les éléments dans un espace de noms et une classe, vous pouvez simplement définir votre méthode `Run`. Si vous devez inclure toutes les classes, par exemple pour définir des objets POCO, vous pouvez inclure une classe dans le même fichier.
+Le format `.csx` permet d’écrire de façon moins « réutilisable » et de se concentrer uniquement sur l’écriture d’une fonction C#. Pour Azure Functions, il suffit d’inclure les références d’assembly et les espaces de noms en haut, comme d’habitude. Par ailleurs, au lieu d’encapsuler tous les éléments dans un espace de noms et une classe, vous pouvez simplement définir votre méthode `Run`. Si vous devez inclure toutes les classes, par exemple pour définir des objets POCO, vous pouvez inclure une classe dans le même fichier.
 
 ## Liaison aux arguments
 
@@ -76,7 +77,7 @@ public async static Task ProcessQueueMessageAsync(
 
 ## Jeton d’annulation
 
-Dans certains cas, certaines opérations peuvent être délicates à arrêter. Alors qu’il est toujours préférable d’écrire du code permettant de faire face à un blocage, définissez un argument typé [`CancellationToken`](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) lorsque vous voulez traiter des demandes d’arrêt progressif. Un `CancellationToken` sera fourni si un arrêt de l’hôte est déclenché.
+Dans certains cas, certaines opérations peuvent être délicates à arrêter. Alors qu’il est toujours préférable d’écrire du code permettant de faire face à un blocage, pour traiter des demandes d’arrêt progressif, vous définissez un argument typé [`CancellationToken`](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx). Un `CancellationToken` sera fourni si un arrêt de l’hôte est déclenché.
 
 ```csharp
 public async static Task ProcessQueueMessageAsyncCancellationToken(
@@ -91,7 +92,7 @@ public async static Task ProcessQueueMessageAsyncCancellationToken(
 
 ## Importation des espaces de noms
 
-Utilisez la clause `using` si vous devez importer des espaces de noms comme vous le feriez normalement.
+Si vous avez besoin d’importer des espaces de noms, vous pouvez le faire comme vous en avez l’habitude à l’aide de la clause `using`.
 
 ```csharp
 using System.Net;
@@ -138,7 +139,7 @@ Les assemblys suivants sont ajoutés automatiquement par l’environnement hébe
 * `System.Web.Http`
 * `System.Net.Http.Formatting`.
 
-En outre, les assemblys suivants ont une casse spécifique et peuvent être référencés par simplename (par exemple, `#r "AssemblyName"`) :
+En outre, les assemblys suivants ont une casse spécifique et peuvent être référencés par leur nom simple (par exemple, `#r "AssemblyName"`) :
 
 * `Newtonsoft.Json`
 * `Microsoft.WindowsAzure.Storage`
@@ -146,11 +147,11 @@ En outre, les assemblys suivants ont une casse spécifique et peuvent être réf
 * `Microsoft.AspNet.WebHooks.Receivers`
 * `Microsoft.AspNEt.WebHooks.Common`.
 
-Si vous avez besoin de mentionner un assembly privé, vous pouvez charger le fichier d’assembly dans un dossier `bin` relatif à votre fonction et y faire référence à l’aide du nom de fichier (par exemple, `#r "MyAssembly.dll"`). Pour plus d’informations sur le téléchargement de fichiers vers votre conteneur de fonctions, consultez la section suivante sur la gestion des packages.
+Si vous avez besoin de référencer un assembly privé, vous pouvez charger le fichier d’assembly dans un dossier `bin` relatif à votre fonction et le référencer à l’aide du nom de fichier (par exemple, `#r "MyAssembly.dll"`). Pour plus d’informations sur le téléchargement de fichiers vers votre conteneur de fonctions, consultez la section suivante sur la gestion des packages.
 
 ## Gestion des packages
 
-Pour utiliser des packages NuGet dans une fonction C#, chargez un fichier *project.json* dans le dossier de fonction du système de fichiers du conteneur de fonctions. Voici un exemple de fichier *project.json* qui ajoute une référence à Microsoft.ProjectOxford.Face version 1.1.0 :
+Pour utiliser des packages NuGet dans une fonction C#, chargez un fichier *project.json* dans le dossier de la fonction dans le système de fichiers du conteneur de fonctions. Voici un exemple de fichier *project.json* qui ajoute une référence à Microsoft.ProjectOxford.Face version 1.1.0 :
 
 ```json
 {
@@ -166,18 +167,18 @@ Pour utiliser des packages NuGet dans une fonction C#, chargez un fichier *proje
 
 Seul .NET Framework 4.6 est pris en charge. Par conséquent, assurez-vous que votre fichier *project.json* spécifie `net46` comme indiqué ici.
 
-Lorsque vous chargez un fichier *project.json*, le runtime obtient les packages et ajoute automatiquement des références aux assemblys de packages. Vous n’êtes pas obligé d’ajouter de directives `#r "AssemblyName"`. Il suffit d’ajouter les instructions `using` requises à votre fichier *run.csx* pour utiliser les types définis dans les packages NuGet.
+Lorsque vous chargez un fichier *project.json*, le runtime récupère les packages et ajoute automatiquement des références aux assemblys de packages. Vous n’avez pas besoin d’ajouter de directives `#r "AssemblyName"`. Il vous suffit d’ajouter les instructions `using` requises à votre fichier *run.csx* pour utiliser les types définis dans les packages NuGet.
 
 
 ### Comment charger un fichier project.json
 
-1. Commencez par vous assurer que votre conteneur de fonctions est en cours d’exécution. Ce que vous pouvez faire en ouvrant votre fonction dans le portail Azure. 
+1. Commencez par vous assurer que votre conteneur de fonctions est en cours d’exécution. Ce que vous pouvez faire en ouvrant votre fonction dans le portail Azure.
 
 	Il donne également accès aux journaux de diffusion en continu où le résultat de l’installation du package s’affiche.
 
 2. Pour charger un fichier project.json, utilisez une des méthodes décrites dans la section **Comment mettre à jour les fichiers du conteneur de fonctions** de la rubrique [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md#fileupdate).
 
-3. Une fois le fichier *project.json* chargé, un résultat ressemblant à l’exemple suivant s’affiche dans le journal de diffusion en continu de votre fonction :
+3. Une fois le fichier *project.json* chargé, une sortie semblable à l’exemple ci-après s’affiche dans le journal de diffusion en continu de votre fonction :
 
 ```
 2016-04-04T19:02:48.745 Restoring packages.
@@ -198,7 +199,7 @@ Lorsque vous chargez un fichier *project.json*, le runtime obtient les packages 
 
 ## Variables d’environnement
 
-Pour obtenir une variable d’environnement ou une valeur de paramètre d’application, utilisez `System.Environment.GetEnvironmentVariable`, comme l’illustre l’exemple de code suivant :
+Pour obtenir une variable d’environnement ou une valeur de paramètre d’application, utilisez `System.Environment.GetEnvironmentVariable`, comme illustré dans l’exemple de code suivant :
 
 ```csharp
 public static void Run(TimerInfo myTimer, TraceWriter log)
@@ -217,7 +218,7 @@ public static string GetEnvironmentVariable(string name)
 
 ## Réutilisation du code .csx
 
-Vous pouvez utiliser des classes et des méthodes définies dans d’autres fichiers *.csx* dans votre fichier *run.csx*. Pour ce faire, utilisez les directives `#load` dans votre fichier *run.csx*, comme l’indique l’exemple suivant.
+Vous pouvez utiliser des classes et des méthodes définies dans d’autres fichiers *.csx* au sein de votre fichier *run.csx*. Pour ce faire, utilisez les directives `#load` dans votre fichier *run.csx*, comme l’indique l’exemple suivant.
 
 Exemple *run.csx* :
 
@@ -246,7 +247,7 @@ Vous pouvez utiliser un chemin d’accès relatif avec la directive `#load` :
 
 * `#load "loadedfiles\mylogger.csx"` charge un fichier situé dans un dossier du dossier de la fonction.
 
-* `#load "..\shared\mylogger.csx"` charge un fichier situé dans un dossier situé au même niveau que le dossier de la fonction, c’est-à-dire, directement sous *wwwroot*.
+* `#load "..\shared\mylogger.csx"` charge un fichier situé dans un dossier situé au même niveau que le dossier de la fonction, c’est-à-dire directement sous *wwwroot*.
  
 La directive `#load` ne fonctionne qu’avec des fichiers *.csx* (script C#) et non avec des fichiers *.cs*.
 
@@ -255,7 +256,8 @@ La directive `#load` ne fonctionne qu’avec des fichiers *.csx* (script C#) et 
 Pour plus d’informations, consultez les ressources suivantes :
 
 * [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md)
-* [Informations de référence pour les développeurs NodeJS sur Azure Functions](functions-reference-node.md)
+* [Azure Functions NodeJS developer reference (Référence pour les développeurs NodeJS Azure Functions)](functions-reference-fsharp.md)
+* [Azure Functions NodeJS developer reference (Référence pour les développeurs NodeJS Azure Functions)](functions-reference-node.md)
 * [Déclencheurs et liaisons Azure Functions](functions-triggers-bindings.md)
 
-<!---HONumber=AcomDC_0615_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -203,7 +203,7 @@ Vous pouvez créer votre propre modèle à l’aide des informations figurant da
 
 Pour spécifier des valeurs pour les paramètres de ressource qui ont été définis dans le modèle, créez un fichier de paramètres qui contient les valeurs et envoyez-le au Gestionnaire de ressources avec le modèle.
 
-1. Dans l’éditeur de texte, copiez ces informations JSON dans un nouveau fichier appelé *Parameters.json* :
+1. Dans l'éditeur de texte, copiez ces informations JSON dans un nouveau fichier appelé *Parameters.json* :
 
         {
           "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
@@ -286,4 +286,4 @@ Toutes les ressources doivent être déployées dans un groupe de ressources. Po
 - Si vous rencontrez des problèmes de déploiement, consultez [Résolution des problèmes liés aux déploiements de groupes de ressources avec le portail Azure](../resource-manager-troubleshoot-deployments-portal.md).
 - Pour apprendre à gérer la machine virtuelle que vous venez de créer, consultez [Gestion des machines virtuelles à l’aide de modèles Azure Resource Manager et de PowerShell](virtual-machines-windows-ps-manage.md).
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

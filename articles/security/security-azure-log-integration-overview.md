@@ -24,7 +24,7 @@ Découvrez l’intégration des journaux Azure, ses fonctionnalités principales
 
 La plateforme en tant que Service (PaaS) et l’infrastructure en tant que Service (IaaS) hébergées dans Azure génèrent une grande quantité de données dans des journaux de sécurité. Ces journaux contiennent des informations critiques qui peuvent fournir des informations essentielles sur les violations de stratégie, les menaces internes et externes, les problèmes de conformité et anomalies du réseau, de l’hôte et de l’activité des utilisateurs.
 
-L’intégration des journaux Azure permet d’intégrer des journaux bruts de vos ressources Azure dans vos systèmes SIEM (Security Information and Event Management) locaux. Intégration des journaux Azure collecte des diagnostics Microsoft Azure à partir de vos machines virtuelles Windows *(WAD)* et Linux *(LAD)*, ainsi que des diagnostics de solutions partenaires telles qu’un pare-feu d’applications Web (WAF). Cette intégration offre un tableau de bord unifié pour toutes vos ressources, en local ou dans le cloud, pour vous permettre d’agréger, de mettre en corrélation, d’analyser et d’alerter en cas d’événements de sécurité.
+L’intégration des journaux Azure permet d’intégrer des journaux bruts de vos ressources Azure dans vos systèmes SIEM (Security Information and Event Management) locaux. L’intégration des journaux Azure collecte des diagnostics Azure à partir de vos machines virtuelles Windows *(WAD)*, ainsi que des diagnostics à partir de solutions partenaires telles qu’un pare-feu d’applications web (WAF). Cette intégration offre un tableau de bord unifié pour toutes vos ressources, en local ou dans le cloud, pour vous permettre d’agréger, de mettre en corrélation, d’analyser et d’alerter en cas d’événements de sécurité.
 
 ![Intégration des journaux Azure][1]
 
@@ -36,6 +36,8 @@ Azure génère une journalisation complète pour chaque service Azure. Ces journ
 - **Journaux des plans de données**, qui vous offrent une visibilité sur les événements déclenchés lors de l’utilisation d’une ressource Azure. Il s’agit par exemple des journaux du système d’événements, de la sécurité et des applications Windows dans une machine virtuelle.
 
 L’intégration des journaux Azure prend actuellement en charge l’intégration des journaux d’Audit d’Azure, des journaux de machine virtuelle et des alertes de l’Azure Security Center.
+
+Si vous avez des questions sur l’intégration des journaux Azure, envoyez un e-mail à [AzSIEMteam@microsoft.com](mailto:AzSIEMteam@microsoft.com)
 
 ## Étapes suivantes
 
@@ -51,4 +53,4 @@ Ce document vous a présenté une vue d’ensemble de l’intégration des journ
 <!--Image references-->
 [1]: ./media/security-azure-log-integration-overview/azure-log-integration.png
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/04/2016" 
+	ms.date="09/16/2016" 
 	ms.author="pengxia"/>
 
 
@@ -153,4 +153,4 @@ Pour les questions fréquemment posées relatives à l’utilisation du service 
 
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Vidéo en flux continu avec des encodeurs locaux qui créent des flux à vitesses de transmission multiples" 
-	description="Cette rubrique explique comment configurer un canal qui reçoit un flux live à débit binaire multiple en provenance d’un encodeur local. Le flux peut ensuite être distribué aux applications de lecture clientes via un ou plusieurs points de terminaison de diffusion en continu à l’aide d’un des protocoles de diffusion en continu adaptatifs suivants : HLS, Smooth Stream, MPEG DASH et HDS." 
+	pageTitle="Vidéo en flux continu avec des encodeurs locaux qui créent des flux à vitesses de transmission multiples | Microsoft Azure" 
+	description="Cette rubrique explique comment configurer un canal qui reçoit un flux dynamique à débit binaire multiple en provenance d’un encodeur local. Le flux peut ensuite être distribué aux applications de lecture clientes via un ou plusieurs points de terminaison de diffusion en continu à l’aide d’un des protocoles de diffusion en continu adaptatifs suivants : HLS, Smooth Stream, MPEG DASH et HDS." 
 	services="media-services" 
 	documentationCenter="" 
 	authors="Juliako" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
+	ms.date="09/19/2016" 
 	ms.author="cenkdin;juliako"/>
 
 #Vidéo en flux continu avec des encodeurs locaux qui créent des flux à vitesses de transmission multiples
@@ -27,19 +27,19 @@ Dans Azure Media Services, un **canal** représente un pipeline de traitement du
 
 	>[AZURE.NOTE] L’utilisation d’une méthode pass-through est le moyen le plus économique de diffuser une vidéo en flux continu.
 	
-- Un encodeur live envoie un flux à vitesse de transmission unique vers le canal activé pour effectuer un encodage en direct avec Media Services dans l’un des formats suivants : RTP (MPEG-TS), RTMP ou Smooth Streaming (MP4 fragmenté). Le canal procède ensuite à l’encodage en temps réel du flux à débit binaire unique entrant en flux vidéo à débit binaire multiple (adaptatif). Lorsqu’il y est invité, Media Services fournit le flux aux clients.
+- Un encodeur dynamique envoie un flux à vitesse de transmission unique vers le canal activé pour effectuer un encodage en direct avec Media Services dans l’un des formats suivants : RTP (MPEG-TS), RTMP ou Smooth Streaming (MP4 fragmenté). Le canal procède ensuite à l’encodage en temps réel du flux à débit binaire unique entrant en flux vidéo à débit binaire multiple (adaptatif). Lorsqu’il y est invité, Media Services fournit le flux aux clients.
 
 À compter de la version de Media Services 2.10, lorsque vous créez un canal, vous pouvez spécifier la façon dont vous souhaitez qu’il reçoive le flux d’entrée. Vous pouvez également indiquer si vous souhaitez ou non que le canal effectue un encodage en temps réel de votre flux. Deux options s'offrent à vous :
 
 - **Aucun** : indiquez cette valeur si vous envisagez d’utiliser un encodeur live local qui produira des flux à débit binaire multiple (un flux pass-through). Le cas échéant, le flux entrant est transmis à la sortie sans encodage. Il s’agit du comportement d’un canal avant la version 2.10. Cette rubrique fournit des détails sur l’utilisation des canaux de ce type.
 
-- **Standard** : choisissez cette valeur si vous envisagez d’utiliser Media Services pour encoder votre flux live à débit binaire unique en flux à débit binaire multiple. N'oubliez pas qu'il existe un impact sur la facturation pour le codage en direct et que laisser un canal d'encodage en temps réel dans l'état « Actif » occasionne des frais de facturation. Il est recommandé d'arrêter immédiatement vos canaux en cours d'exécution une fois votre événement de diffusion en continu en temps réel terminé pour éviter des frais horaires supplémentaires. Lorsqu’il y est invité, Media Services fournit le flux aux clients.
+- **Standard** : choisissez cette valeur si vous envisagez d’utiliser Media Services pour encoder votre flux live à débit binaire unique en flux à débit binaire multiple. N'oubliez pas qu'il existe un impact sur la facturation pour le codage en direct et que laisser un canal d'encodage en temps réel dans l'état « Actif » occasionne des frais de facturation. Il est recommandé d'arrêter immédiatement vos canaux en cours d'exécution une fois votre événement de diffusion en continu en temps réel terminé pour éviter des frais horaires supplémentaires. Lorsqu’il y est invité, Media Services fournit le flux aux clients.
 
 >[AZURE.NOTE]Cette rubrique décrit les attributs des canaux qui ne sont pas activés pour effectuer un encodage live (type d’encodage **Aucun**). Pour obtenir des informations sur l’utilisation des canaux qui sont activés pour effectuer l’encodage live, consultez [Comment effectuer une diffusion de vidéo en flux continu à l’aide d’Azure Media Services pour créer des flux à vitesses de transmission multiples](media-services-manage-live-encoder-enabled-channels.md).
 
 Le diagramme suivant illustre un workflow de vidéo en flux continu utilisant un encodeur live local pour produire des flux à débit binaire multiple au format MP4 fragmenté (Smooth Streaming) ou RMTP.
 
-![Flux de travail en direct][live-overview]
+![Flux de travail live][live-overview]
 
 Cette rubrique couvre les sujets suivants :
 
@@ -69,7 +69,7 @@ Les étapes suivantes décrivent les tâches impliquées dans la création d’a
 	Lors de l’utilisation du Kit de développement logiciel (SDK) .NET ou de REST, vous devez créer une ressource et préciser son utilisation lors de la création d’un programme.
 1. Publiez la ressource associée au programme.
 
-	Assurez-vous d’avoir au moins une unité réservée de diffusion en continu pour le point de terminaison de diffusion en continu à partir duquel vous prévoyez de diffuser votre contenu.
+	Assurez-vous d'avoir au moins une unité réservée de diffusion en continu pour le point de terminaison de diffusion en continu à partir duquel vous prévoyez de diffuser votre contenu.
 1. Démarrez le programme dès que vous êtes prêt à lancer la diffusion en continu et l’archivage.
 2. Un signal peut éventuellement être envoyé à l’encodeur dynamique pour qu’il démarre une publicité. La publicité est insérée dans le flux de sortie.
 1. Arrêtez le programme chaque fois que vous voulez arrêter la diffusion et archiver l’événement.
@@ -89,9 +89,9 @@ Media Services prend en charge la réception des flux live à l’aide des proto
 
 	Lorsque le protocole de diffusion en continu de réception **RTMP** est sélectionné, deux points de terminaison de réception (entrée) sont créés pour le canal :
 	
-	**URL principale** : spécifie l’URL complète du point de terminaison de réception RTMP principal du canal.
+	**URL principale** : spécifie l’URL complète du point de terminaison de réception RTMP principal du canal.
 
-	**URL secondaire** : spécifie l’URL complète du point de terminaison de réception RTMP secondaire du canal.
+	**URL secondaire** : spécifie l’URL complète du point de terminaison de réception RTMP secondaire du canal.
 
 
 	Utilisez l’URL secondaire si vous désirez améliorer la durabilité et la tolérance de panne de votre flux de réception, ainsi que le basculement et la tolérance de panne de l’encodeur, tout spécialement dans les scénarios suivants.
@@ -184,7 +184,7 @@ Un canal est associé à des programmes vous permettant de contrôler la publica
 
 Vous pouvez spécifier le nombre d’heures pendant lesquelles vous souhaitez conserver le contenu enregistré pour le programme en définissant la durée de la **fenêtre d’archivage**. Cette valeur peut être comprise entre 5 minutes et 25 heures. La durée de la fenêtre d’archivage détermine également la plage maximale de temps dans laquelle les clients peuvent effectuer des recherches en arrière à partir de la position dynamique actuelle. Les programmes peuvent durer davantage que le laps de temps spécifié, mais le contenu qui se situe en dehors de la longueur de fenêtre est ignoré en permanence. La valeur de cette propriété détermine également la longueur maximale que les manifestes de client peuvent atteindre.
 
-Chaque programme est associé à une ressource qui stocke le contenu diffusé en continu. Un élément multimédia est mappé à un conteneur d'objets blob dans le compte de stockage Azure et les fichiers de l'élément multimédia sont stockés en tant qu'objets blob dans ce conteneur. Pour publier le programme afin que vos clients puissent visionner le flux, vous devez créer un localisateur OnDemand pour la ressource associée. Le fait de posséder ce localisateur vous permettra de générer une URL de diffusion en continu que vous pourrez fournir à vos clients.
+Chaque programme est associé à une ressource qui stocke le contenu diffusé en continu. Un élément multimédia est mappé à un conteneur d’objets blob dans le compte de stockage Azure et les fichiers de l’élément multimédia sont stockés en tant qu’objets blob dans ce conteneur. Pour publier le programme afin que vos clients puissent visionner le flux, vous devez créer un localisateur OnDemand pour la ressource associée. Le fait de posséder ce localisateur vous permettra de générer une URL de diffusion en continu que vous pourrez fournir à vos clients.
 
 Un canal prend en charge jusqu’à trois programmes exécutés simultanément, ce qui rend possible la création de plusieurs archives du même flux entrant. Cela vous permet de publier et d’archiver différentes parties d’un événement en fonction des besoins. Par exemple, imaginez que vous devez archiver 6 heures d’un programme, mais diffuser uniquement les 10 dernières minutes. Pour ce faire, vous devez créer deux programmes exécutés simultanément. Un programme est configuré pour archiver 6 heures de l’événement, mais il n’est pas publié. L’autre programme est configuré pour archiver pendant 10 minutes et il est publié.
 
@@ -212,7 +212,7 @@ Le tableau suivant montre comment les états du canal sont mappés au mode de fa
  
 État du canal|Indicateurs de l’interface utilisateur du portail|Facturation ?
 ---|---|---|---
-Démarrage en cours|Démarrage en cours|Aucun (état transitoire)
+Starting|Starting|Aucun (état transitoire)
 Exécution|Prêt (aucun programme en cours d'exécution)<p>ou<p> Diffusion en continu (au moins un programme en cours d'exécution)|Oui
 En cours d’arrêt|En cours d’arrêt|Aucun (état transitoire)
 Arrêté|Arrêté|Non
@@ -271,10 +271,10 @@ Choisissez **Portail**, **.NET**, **API REST** pour voir comment créer et gére
 
 [Spécification d’ingestion en direct au format MP4 fragmenté Azure Media Services](media-services-fmp4-live-ingest-overview.md)
 
-[Diffusion d’événements en direct en continu avec Azure Media Services](media-services-live-streaming-workflow.md)
+[Diffusion d’événements en direct en continu avec Azure Media Services](media-services-overview.md)
 
 [Concepts Azure Media Services](media-services-concepts.md)
 
 [live-overview]: ./media/media-services-manage-channels-overview/media-services-live-streaming-current.png
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

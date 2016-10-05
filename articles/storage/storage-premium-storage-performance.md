@@ -13,12 +13,12 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="07/26/2016"
+    ms.date="09/19/2016"
     ms.author="aungoo-msft"/>
 
 # Azure Premium Storage : conception sous le signe de la haute performance
 
-## Vue d’ensemble  
+## Vue d'ensemble  
 Cet article fournit des instructions pour la création d’applications hautes performances avec Azure Premium Storage. Vous pouvez utiliser les instructions fournies dans ce document parallèlement aux bonnes pratiques de performances applicables aux technologies utilisées par votre application. Pour illustrer les instructions, nous avons utilisé comme exemple un SQL Server exécuté sur Premium Storage.
 
 Bien que cet article couvre plusieurs scénarios de performances au niveau de la couche de stockage, vous devrez optimiser la couche applicative. Par exemple, si vous hébergez une batterie de serveurs SharePoint sur Azure Premium Storage, vous pouvez utiliser les exemples SQL Server de cet article pour optimiser le serveur de base de données. Vous devrez également optimiser le serveur Web et le serveur d’applications de la batterie de serveurs SharePoint pour obtenir de meilleures performances.
@@ -40,7 +40,7 @@ Pour évaluer le degré de performances d’une application, nous nous appuyons 
 
 Dans cette section, nous allons aborder les indicateurs de performances courants dans le contexte de Premium Storage. Dans la section suivante, intitulée « Collecte des exigences de performances de l’application », vous apprendrez à mesurer ces indicateurs de performances pour votre propre application. Dans la section consacrée à l’optimisation des performances applicatives, vous découvrirez les facteurs qui affectent ces indicateurs de performances et obtiendrez des recommandations afin de les optimiser.
 
-## d’opérations d’E/S par seconde  
+## E/S par seconde  
 Le nombre d’E/S par seconde représente le nombre de demandes que votre application envoie aux disques de stockage en une seconde. Une opération d’entrée/sortie peut être accessible en lecture ou écriture, et être séquentielle ou aléatoire. Les applications OLTP (un site web de vente en ligne, par exemple) doivent traiter immédiatement de nombreuses requêtes d’utilisateurs simultanées. Les requêtes utilisateurs représentent des transactions d’insertion et de mise à jour qui pèsent lourdement sur la base de données, et que l’application doit traiter rapidement. Les applications OLTP requièrent dont un nombre d’E/S par seconde très élevé. Ces applications gèrent des millions de demandes d’E/S petites et aléatoires. Si vous possédez une telle application, vous devez concevoir votre infrastructure applicative de manière à optimiser les E/S. Dans la section *Optimisation des performances applicatives*, nous aborderons en détail tous les facteurs que vous devez prendre en compte pour obtenir un nombre d’E/S par seconde élevé.
 
 Lorsque vous attachez un disque de stockage Premium à votre machine virtuelle à grande échelle, Azure met à disposition un nombre garanti d’E/S par seconde, conformément à la spécification de disque. Par exemple, un disque P30 configure 5 000 E/S par seconde. Chaque taille de machine virtuelle à grande échelle est également associée à une limite spécifique d’E/S par seconde qu’elle peut prendre en charge. Par exemple, une machine virtuelle GS5 Standard a une limite de 80 000 E/S par seconde.
@@ -172,7 +172,7 @@ Lorsque vous commencez la conception d’une application, l’une des premières
 
 Ces machines virtuelles sont disponibles en différentes tailles, avec un nombre différent de cœurs de processeur, de mémoire, de système d’exploitation et de taille du disque temporaire. Chaque taille de chaque machine virtuelle possède également un nombre maximal de disques de données que vous pouvez attacher à la machine virtuelle. Par conséquent, la taille de machine virtuelle choisie affectera la quantité de traitement, de mémoire et de capacité de stockage disponible pour votre application. Elle affecte également le coût de traitement et de stockage. Vous trouverez ci-dessous les spécifications de la plus grande taille de machine virtuelle d’une série DS, d’une série DSv2 et d’une série GS :
 
-| Taille de la machine virtuelle | Cœurs d’unité centrale | Mémoire | Tailles du disque de la machine virtuelle | Disques de données max. | Taille du cache | d’opérations d’E/S par seconde | Limites d’E/S du cache de bande passante |
+| Taille de la machine virtuelle | Cœurs d’unité centrale | Mémoire | Tailles du disque de la machine virtuelle | Disques de données max. | Taille du cache | E/S par seconde | Limites d’E/S du cache de bande passante |
 |---|---|---|---|---|---|---|---|
 | Standard\_DS14 | 16 | 112 Go | OS = 1023 Go <br> SSD local = 224 Go | 32 | 576 Go | 50 000 E/S par seconde <br> 512 Mo par seconde | 4 000 E/S par seconde et 33 Mo par seconde |
 | Standard\_GS5 | 32 | 448 Go | OS = 1 023 Go <br> SSD local = 896 Go | 64 | 4 224 Go | 80 000 E/S par seconde <br> 2 000 Mo par seconde | 5 000 E/S par seconde et 50 Mo par seconde |
@@ -231,6 +231,8 @@ N’oubliez pas les disques Premium Storage délivrent des performances supérie
 ## Mise en cache du disque  
 Les machines virtuelles à grande échelle qui exploitent Azure Premium Storage ont une technologie de mise en cache à plusieurs niveaux appelée BlobCache. BlobCache utilise à la fois la RAM de la machine virtuelle et le SSD local pour la mise en cache. Ce cache est disponible pour les disques persistants Premium Storage et pour les disques locaux de la machine virtuelle. Par défaut, ce paramètre de cache est défini en lecture/écriture pour les disques du système d’exploitation et en lecture seule pour les disques de données hébergés sur Premium Storage. Lorsque la mise en cache du disque est activée sur les disques Premium Storage, les machines virtuelles à grande échelle peuvent atteindre des niveaux de performances extrêmement élevés qui dépassent les performances du disque sous-jacent.
 
+>[AZURE.WARNING] La modification du paramètre de cache d’un disque Azure détache et rattache le disque cible. S’il s’agit du disque du système d’exploitation, la machine virtuelle redémarre. Arrêtez toutes les applications et services qui risquent d’être affectés par cette indisponibilité avant de modifier le paramètre de cache du disque.
+
 Pour en savoir plus sur le fonctionnement de BlobCache, reportez-vous à l’article du blog interne [Azure Premium Storage](https://azure.microsoft.com/blog/azure-premium-storage-now-generally-available-2/).
 
 Il est important d’activer le cache sur le jeu de disques approprié. Le fait de devoir activer ou non la mise en cache du disque sur un disque premium dépendra du modèle de charge de travail que ce disque doit gérer. Le tableau ci-dessous répertorie les paramètres de cache par défaut pour les disques du système d’exploitation et les disques de données.
@@ -268,7 +270,7 @@ Sous Windows, vous pouvez utiliser les espaces de stockage pour entrelacer les d
 Important : avec l’interface utilisateur du Gestionnaire de serveurs, vous pouvez définir un nombre maximal de 8 colonnes au total pour un volume entrelacé. Au-delà de 8 disques, utilisez PowerShell pour créer le volume. PowerShell vous permet de définir un nombre de colonnes égal au nombre de disques. Par exemple, s’il existe 16 disques dans un agrégat unique, spécifiez 16 colonnes dans le paramètre *NumberOfColumns* de l’applet de commande *New-VirtualDisk*.
 
 
-Sous Linux, utilisez l’utilitaire MDADM pour entrelacer les disques. Pour obtenir des instructions détaillées sur l’entrelacement de disques sous Linux, reportez-vous à [Configuration d’un RAID logiciel sur Linux](../virtual-machines/virtual-machines-linux-configure-raid.md).
+Sous Linux, utilisez l’utilitaire MDADM pour entrelacer les disques. Pour obtenir des instructions détaillées sur l’entrelacement de disques sous Linux, reportez-vous à [Configuration d’un RAID logiciel sous Linux](../virtual-machines/virtual-machines-linux-configure-raid.md).
 
 
 *Taille d’entrelacement* La taille d’entrelacement constitue un facteur important dans la configuration de l’entrelacement de disques. La taille d’entrelacement ou la taille de bloc représente la plus petite partie des données que l’application peut traiter sur un volume entrelacé. La taille d’entrelacement que vous configurez varie selon le type d’application et le modèle de demande associé. Si vous choisissez une taille d’entrelacement incorrecte, vous risquez de rencontrer un défaut d’alignement des E/S, ce qui conduirait à une dégradation des performances de votre application.
@@ -540,4 +542,4 @@ Pour les utilisateurs de SQL Server, consultez les articles relatifs aux meilleu
 - [Meilleures pratiques relatives aux performances de SQL Server sur les machines virtuelles Azure](../virtual-machines/virtual-machines-windows-sql-performance.md)
 - [Azure Premium Storage provides highest performance for SQL Server in Azure VM (en anglais)](http://blogs.technet.com/b/dataplatforminsider/archive/2015/04/23/azure-premium-storage-provides-highest-performance-for-sql-server-in-azure-vm.aspx)
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

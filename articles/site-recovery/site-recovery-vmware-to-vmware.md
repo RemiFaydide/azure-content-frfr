@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/11/2016"
+	ms.date="09/16/2016"
 	ms.author="nisoneji"/>
 
 
@@ -164,4 +164,4 @@ Update 1 contient les correctifs de bogues et les nouvelles fonctionnalités sui
 
 Publiez vos questions sur le [Forum Azure Recovery Services](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

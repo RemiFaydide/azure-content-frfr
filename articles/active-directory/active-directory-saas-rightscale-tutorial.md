@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/29/2016"
+	ms.date="09/19/2016"
 	ms.author="jeedes"/>
 
 
@@ -27,7 +27,7 @@ L’objectif de ce didacticiel est de vous montrer comment intégrer RightScale 
 
 Pour en savoir plus sur l’intégration des applications SaaS avec Azure AD, consultez [Qu’est-ce que l’accès aux applications et l’authentification unique avec Azure Active Directory ?](active-directory-appssoaccess-whatis.md).
 
-## Configuration requise
+## Composants requis
 
 Pour configurer l’intégration d’Azure AD à RightScale, vous avez besoin des éléments suivants :
 
@@ -93,7 +93,7 @@ Pour configurer et tester l’authentification unique Azure AD avec RightScale,
 1. **[Configuration de l’authentification unique Azure AD](#configuring-azure-ad-single-single-sign-on)** pour permettre à vos utilisateurs d’utiliser cette fonctionnalité.
 2. **[Création d’un utilisateur de test Azure AD](#creating-an-azure-ad-test-user)** pour tester l’authentification unique Azure AD avec Britta Simon.
 4. **[Création d’un utilisateur de test RightScale](#creating-a-rightscale-test-user)** pour avoir un équivalent de Britta Simon dans RightScale lié à la représentation Azure AD associée.
-5. **[Affectation d’un utilisateur de test Azure AD](#assigning-the-azure-ad-test-user)** pour permettre à Britta Simon d’utiliser l’authentification unique Azure AD.
+5. **[Affectation d'un utilisateur de test Azure AD](#assigning-the-azure-ad-test-user)** pour permettre à Britta Simon d'utiliser l'authentification unique Azure AD.
 5. **[Test de l’authentification unique](#testing-single-sign-on)** pour vérifier si la configuration fonctionne.
 
 ### Configuration de l’authentification unique Azure AD
@@ -121,7 +121,7 @@ L’objectif de cette section est d’activer l’authentification unique Azure�
 
 	b. Cliquez sur **Suivant**
 
-4. Si vous souhaitez configurer l’application en **mode lancé par le fournisseur de service** dans la page de boîte de dialogue **Configurer les paramètres d’application**, cliquez sur **Affichez les paramètres avancés (facultatif)**, entrez l’**URL de connexion** et cliquez sur **Suivant**.
+4. Si vous souhaitez configurer l’application en **mode lancé par le fournisseur de service** dans la page de boîte de dialogue **Configurer les paramètres d’application**, cliquez sur **Affichez les paramètres avancés (facultatif)**, saisissez **l’URL de connexion** et cliquez sur **Suivant**.
  
 	![Configurer l’authentification unique](./media/active-directory-saas-rightscale-tutorial/tutorial_rightscale_06.png)
 
@@ -172,7 +172,7 @@ L’objectif de cette section est d’activer l’authentification unique Azure�
 	
 	![Configurer l’authentification unique](./media/active-directory-saas-rightscale-tutorial/tutorial_rightscale_009.png)
 
-	h. Cliquez sur **Enregistrer**.
+	h. Cliquez sur **Save**.
 	
 
 
@@ -200,15 +200,15 @@ L’objectif de cette section est de créer un utilisateur de test appelé Britt
 
 2. Dans la liste **Annuaire**, sélectionnez l'annuaire pour lequel vous voulez activer l'intégration d'annuaire.
 
-3. Pour afficher la liste des utilisateurs, dans le menu situé en haut, cliquez sur **Utilisateurs**.
+3. Pour afficher la liste des utilisateurs, dans le menu du haut, cliquez sur **Utilisateurs**.
 
 	![Création d’un utilisateur de test Azure AD](./media/active-directory-saas-rightscale-tutorial/create_aaduser_03.png)
 
-4. Pour ouvrir la boîte de dialogue **Ajouter un utilisateur**, cliquez sur **Ajouter un utilisateur** dans la barre d’outils inférieure.
+4. Pour ouvrir la boîte de dialogue **Ajouter un utilisateur**, cliquez sur l’option **Ajouter un utilisateur** figurant dans la barre d’outils du bas.
 
 	![Création d’un utilisateur de test Azure AD](./media/active-directory-saas-rightscale-tutorial/create_aaduser_04.png)
 
-5. Dans la page de boîte de dialogue **Dites-nous en plus sur cet utilisateur**, procédez comme suit :
+5. Sur la page de boîte de dialogue **Dites-nous en plus sur cet utilisateur**, procédez comme suit :
 
 	![Création d’un utilisateur de test Azure AD](./media/active-directory-saas-rightscale-tutorial/create_aaduser_05.png)
 
@@ -273,7 +273,7 @@ L’objectif de cette section est de permettre à Britta Simon d’utiliser l’
 
 1. Dans la liste Utilisateurs, sélectionnez **Britta Simon**.
 
-2. Dans la barre d’outils inférieure, cliquez sur **Attribuer**.
+2. Dans la barre d’outils située en bas, cliquez sur **Attribuer**.
 
 	![Affecter des utilisateurs][205]
 
@@ -281,7 +281,7 @@ L’objectif de cette section est de permettre à Britta Simon d’utiliser l’
 
 ### Test de l’authentification unique
 
-L’objectif de cette section est de tester la configuration de l’authentification unique Azure AD à l’aide du volet d’accès. Quand vous cliquez sur la mosaïque RightScale dans le volet d’accès, vous devez être connecté automatiquement à votre application RightScale.
+L’objectif de cette section est de tester la configuration de l’authentification unique Azure AD à l’aide du volet d’accès. Quand vous cliquez sur la mosaïque RightScale dans le volet d’accès, vous devez être connecté automatiquement à votre application RightScale.
 	
 
 ## Ressources supplémentaires
@@ -309,4 +309,4 @@ L’objectif de cette section est de tester la configuration de l’authentifica
 [204]: ./media/active-directory-saas-rightscale-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-rightscale-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

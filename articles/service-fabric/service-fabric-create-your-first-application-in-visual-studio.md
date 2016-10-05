@@ -13,10 +13,15 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="08/26/2016"
+   ms.date="09/28/2016"
    ms.author="ryanwi"/>
 
-# Créer votre première application Service Fabric Azure dans Visual Studio
+
+# Créer votre première application Azure Service Fabric
+
+> [AZURE.SELECTOR]
+- [C Sharp](service-fabric-create-your-first-application-in-visual-studio.md)
+- [Java](service-fabric-create-your-first-linux-application-with-java.md)
 
 Le kit de développement logiciel Fabric Service inclut un complément à Visual Studio proposant des outils et des modèles pour la création, le déploiement et le débogage d’applications Service Fabric. Cette rubrique vous guide tout au long du processus de création de votre première application dans Visual Studio.
 
@@ -54,9 +59,9 @@ Une application Service Fabric peut contenir un ou plusieurs services, chacun ay
 
 	Le projet d’application ne contient pas de code directement. Au lieu de cela, il fait référence à un ensemble de projets de service. En outre, il contient trois autres types de contenu :
 
-	- **Profils de publication** : permet de gérer les préférences d’outils pour différents environnements.
+	- **Profils de publication** : permet de gérer les préférences d’outils pour différents environnements.
 
-	- **Scripts** : contient un script PowerShell de déploiement/mise à niveau de votre application. Visual Studio utilise le script en arrière-plan. Le script peut également être appelé directement dans la ligne de commande.
+	- **Scripts** : contient un script PowerShell de déploiement/mise à niveau de votre application. Visual Studio utilise le script en arrière-plan. Le script peut également être appelé directement dans la ligne de commande.
 
 	- **Définition d’application** : inclut le manifeste d’application dans le dossier *ApplicationPackageRoot*. Les fichiers de paramètres d’application associés, qui définissent l’application et vous permettent de la configurer spécifiquement pour un environnement donné, se trouvent dans le dossier *ApplicationParameters*.
 
@@ -148,4 +153,4 @@ Lorsque vous changez de mode de cluster, le cluster du cluster de développement
 [sfe-delete-application]: ./media/service-fabric-create-your-first-application-in-visual-studio/sfe-delete-application.png
 [switch-cluster-mode]: ./media/service-fabric-create-your-first-application-in-visual-studio/switch-cluster-mode.png
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

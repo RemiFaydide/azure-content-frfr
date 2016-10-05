@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/12/2016" 
+	ms.date="09/20/2016" 
 	ms.author="larryfr"/>
 
 #Analyse des données de capteur à l’aide de la console de requête Hive sur Hadoop dans HDInsight
@@ -52,6 +52,8 @@ Dans cet exemple, vous allez utiliser Hive pour traiter les données d'historiqu
 
 2. Dans la page web qui s’ouvre, cliquez sur l’onglet **Galerie de mise en route**, puis sous la catégorie **Solutions avec des exemples de données**, cliquez sur l’exemple **Analyse des données de capteur**.
 
+    ![Image Galerie de mise en route](./media/hdinsight-hive-analyze-sensor-data/getting-started-gallery.png)
+
 3. Suivez les instructions fournies dans la page web pour terminer l'exemple.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

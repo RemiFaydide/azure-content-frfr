@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="ruby"
 	ms.topic="article"
-	ms.date="06/16/2016"
+	ms.date="09/16/2016"
 	ms.author="andrela"/>
 
 
@@ -22,7 +22,7 @@
 
 [AZURE.INCLUDE [sql-database-develop-includes-selector-language-platform-depth](../../includes/sql-database-develop-includes-selector-language-platform-depth.md)]
 
-Cette rubrique montre comment se connecter à une base de données SQL Azure et l’interroger à l’aide de Ruby. Vous pouvez exécuter cet exemple à partir des plateformes Windows, Ubuntu Linux ou Mac.
+Cette rubrique montre comment se connecter à une base de données Azure SQL Database et l’interroger à l’aide de Ruby. Vous pouvez exécuter cet exemple à partir des plateformes Windows, Ubuntu Linux ou Mac.
 
 ## Étape 1 : configurer l’environnement de développement
 
@@ -50,4 +50,4 @@ Consultez la [page de prise en main](sql-database-get-started.md) pour apprendre
 * [Modèles de conception pour les applications SaaS mutualisées avec Base de données SQL Azure](sql-database-design-patterns-multi-tenancy-saas-applications.md)
 * Explorez toutes les [fonctionnalités de la base de données SQL](https://azure.microsoft.com/services/sql-database/)
 
-<!---HONumber=AcomDC_0622_2016-->
+<!---HONumber=AcomDC_0921_2016-->

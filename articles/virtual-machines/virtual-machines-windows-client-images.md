@@ -1,5 +1,5 @@
 <properties
-   pageTitle="L’utilisation d’images d’un client Windows pour le développement / test | Microsoft Azure"
+   pageTitle="L’utilisation d’images d’un client Windows pour les scénarios de développement / test | Microsoft Azure"
    description="Comment utiliser les avantages de l’abonnement Visual Studio pour déployer Windows 7/8/10 dans Azure pour des scénarios de développement / de test"
    services="virtual-machines-windowse"
    documentationCenter=""
@@ -16,7 +16,7 @@
    ms.date="08/31/2016"
    ms.author="iainfou"/>
 
-# Utilisation d’un client Windows dans Azure pour le développement/test
+# Utilisation d’un client Windows dans Azure pour les scénarios de développement/test
 
 Vous pouvez utiliser Windows 7, Windows 8 ou Windows 10 dans Azure pour des scénarios de développement / de test à condition de disposer d'un abonnement Visual Studio (anciennement MSDN) approprié. Cet article décrit les conditions d’admissibilité pour les clients Windows en cours d’exécution dans Azure et l’utilisation des images de galerie Azure.
 
@@ -57,4 +57,4 @@ Vous pouvez également voir l’ID d’offre dans [l’onglet « Abonnements »]
 ## Étapes suivantes
 Vous pouvez désormais déployer vos machines virtuelles à l’aide de [PowerShell](virtual-machines-windows-ps-create.md), de [modèles Resource Manager](virtual-machines-windows-ps-template.md) ou de [Visual Studio](../vs-azure-tools-resource-groups-deployment-projects-create-deploy.md).
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

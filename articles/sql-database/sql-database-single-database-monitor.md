@@ -14,7 +14,7 @@
 	ms.topic="get-started-article"
 	ms.tgt_pltfrm="na"
 	ms.workload="data-management"
-	ms.date="07/06/2016"
+	ms.date="09/27/2016"
 	ms.author="carlrab"/>
 
 # Analyse des performances d’une base de données dans une base de données SQL Azure
@@ -47,4 +47,4 @@ Les mêmes mesures exposées dans le portail sont également disponibles via des
 
 Pour les pools de base de données élastiques, vous pouvez surveiller des bases de données dans le pool avec les techniques décrites dans cette section. Mais vous pouvez également surveiller le pool dans son ensemble. Pour en savoir plus, consultez [Surveiller et gérer un pool élastique de bases de données](sql-database-elastic-pool-manage-portal.md).
 
-<!---HONumber=AcomDC_0803_2016-->
+<!---HONumber=AcomDC_0928_2016-->

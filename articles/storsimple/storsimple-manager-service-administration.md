@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="05/24/2016"
+   ms.date="09/21/2016"
    ms.author="alkohli" />
 
 # Utiliser le service StorSimple Manager pour gérer votre appareil StorSimple
 
-## Vue d’ensemble
+## Vue d'ensemble
 
 Cet article décrit l’interface de service StorSimple Manager, y compris la connexion à ce service, les options disponibles et les liens vers des flux de travail spécifiques exécutables via cette interface utilisateur. Ce guide s’applique aux appareils StorSimple physiques comme virtuels.
 
@@ -56,7 +56,7 @@ La hiérarchie de navigation de l’interface utilisateur du service StorSimple 
 
 |Page d’accueil|Pages de niveau de service|Pages de niveau appareil|Pages de niveau appareil|
 |---|---|---|---|
-|Service StorSimple Manager|Tableau de bord du service|Page du tableau de bord d’un appareil||
+|service StorSimple Manager|Tableau de bord du service|Page du tableau de bord d’un appareil||
 ||Appareils →|Surveiller|
 ||Catalogue de sauvegarde|Conteneurs de volume →|Volumes|
 ||Configurer (Service)|Stratégies de sauvegarde||
@@ -77,7 +77,7 @@ Pour plus d'informations sur chaque flux de travail, cliquez sur la procédure a
 
 |Pour ce faire...|Accédez à cette page de l'interface utilisateur...|Suivez cette procédure.|
 |---|---|---|
-|Création d’un service</br>Suppression d’un service</br>Obtention d’une clé d’inscription de service</br>Régénération d’une clé d’inscription de service|Service StorSimple Manager|[Déploiement du service StorSimple Manager](storsimple-manage-service.md)
+|Création d’un service</br>Suppression d’un service</br>Obtention d’une clé d’inscription de service</br>Régénération d’une clé d’inscription de service|service StorSimple Manager|[Déploiement du service StorSimple Manager](storsimple-manage-service.md)
 |Modification de la clé de chiffrement des données de service</br>Affichage des journaux des opérations|Service StorSimple Manager → Tableau de bord|[Utilisation du tableau de bord du service StorSimple Manager](storsimple-service-dashboard.md)|
 |Désactivation d’un appareil</br>Suppression d’un appareil|Service StorSimple Manager → Appareil|[Désactivation ou suppression d’un appareil](storsimple-deactivate-and-delete-device.md)|
 |En savoir plus sur le basculement entre appareils et la récupération d’urgence</br>Basculement vers un appareil physique</br>Basculement vers un appareil virtuel</br>Récupération BCDR|Service StorSimple Manager → Appareil|[Basculement et récupération d’urgence pour votre appareil StorSimple](storsimple-device-failover-disaster-recovery.md)|
@@ -114,4 +114,4 @@ Si vous rencontrez des problèmes de fonctionnement quotidien de votre appareil 
 
 Si vous ne parvenez pas à résoudre les problèmes et vous devez générer une demande d’intervention, consultez [Contacter le support technique Microsoft](storsimple-contact-microsoft-support.md).
 
-<!---HONumber=AcomDC_0525_2016-->
+<!---HONumber=AcomDC_0921_2016-->

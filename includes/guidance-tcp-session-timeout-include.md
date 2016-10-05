@@ -5,7 +5,7 @@ Les machines virtuelles Azure communiquent avec l’Internet public à l’aide 
 Ce comportement NAT courant peut entraîner des problèmes de communication sur les applications TCP qui prévoient le maintien d’un socket au-delà d’un délai. Il y a deux délais à prendre en compte pour les sessions avec une *connexion établie* :
 
 - **entrant** via [Azure Load Balancer][azure-lb-timeout]. Ce délai est de 4 minutes par défaut. Sa valeur maximale est de 30 minutes.
-- **sortant** à l’aide de [SNAT][snat] (Source NAT). Ce délai est de 4 minutes et n’est pas modifiable.
+- **sortant** à l’aide de [SNAT][snat] \(Source NAT). Ce délai est de 4 minutes et n’est pas modifiable.
 
 Pour garantir le maintien des connexions au-delà de ce délai, vous devez vous assurer que votre application garde la session active ou configurer le système d’exploitation sous-jacent en ce sens. Les paramètres à utiliser sont différents pour les systèmes Linux et Windows, comme indiqué ci-dessous.
 

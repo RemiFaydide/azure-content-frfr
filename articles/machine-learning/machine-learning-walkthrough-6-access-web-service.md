@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/10/2016"
+	ms.date="09/16/2016"
 	ms.author="garye"/>
 
 
@@ -44,4 +44,4 @@ Pour plus d'informations sur les modèles d'applications web, consultez [Utilisa
 
 Vous pouvez également développer une application personnalisée pour accéder au service web à l'aide du code de démarrage fourni dans R, C# et les langages de programmation Python. Vous trouverez des détails complets dans [Utilisation d'un service web Microsoft Azure Machine Learning publié à partir d'une expérience Machine Learning](machine-learning-consume-web-services.md).
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

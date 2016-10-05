@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Lecture du contenu" 
+	pageTitle="Lecture du contenu | Microsoft Azure" 
 	description="Cette rubrique répertorie les lecteurs existants que vous pouvez utiliser pour lire votre contenu." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
+	ms.date="09/19/2016" 
 	ms.author="juliako"/>
 
 
@@ -21,18 +21,18 @@
 
 Azure Media Services prend en charge de nombreux formats de diffusion en continu populaires, tels que la diffusion en continu lisse, la diffusion en continu HTTP et MPEG-Dash. Cette rubrique vous oriente vers les lecteurs existants que vous pouvez utiliser pour tester votre flux de données.
 
->[AZURE.NOTE]Pour lire du contenu empaqueté ou chiffré dynamiquement, veillez à obtenir au moins une unité de diffusion en continu pour le point de terminaison de diffusion en continu à partir duquel vous prévoyez de remettre votre contenu. Pour plus d’informations sur la mise à l’échelle des unités de diffusion en continu, voir : [Mise à l’échelle des unités de diffusion en continu](media-services-manage-origins.md#scale_streaming_endpoints).
+>[AZURE.NOTE]Pour lire du contenu empaqueté ou chiffré dynamiquement, veillez à obtenir au moins une unité de diffusion en continu pour le point de terminaison de diffusion en continu à partir duquel vous prévoyez de remettre votre contenu. Pour plus d’informations sur la mise à l’échelle des unités de diffusion en continu, voir : [Mise à l’échelle des unités de diffusion en continu](media-services-portal-manage-streaming-endpoints.md).
 
 ###Lecteur de contenu Media Services sur le portail Azure Classic
 
-Le **portail Azure Classic** propose un lecteur de contenu que vous pouvez utiliser pour tester votre vidéo.
+Le **portail Azure** propose un lecteur de contenu que vous pouvez utiliser pour tester votre vidéo.
 
-Cliquez sur la vidéo de votre choix (assurez-vous qu’elle a été [publiée](media-services-manage-content.md#publish)), puis sur le bouton **Lire** situé en bas du portail.
- 
+Cliquez sur la vidéo de votre choix (assurez-vous qu’elle a été [publiée](media-services-portal-publish.md)), puis sur le bouton **Lire** situé en bas du portail.
+
 Certaines considérations s’appliquent :
 
 - Le **lecteur de contenu de Media Services** assure la lecture depuis le point de terminaison de diffusion en continu par défaut. Si vous souhaitez lire à partir d’un autre point de terminaison de diffusion en continu que celui par défaut, utilisez un autre lecteur, Par exemple, le [Lecteur multimédia Azure](http://amsplayer.azurewebsites.net/azuremediaplayer.html).
- 
+
 
 ![AMSPlayer][AMSPlayer]
 
@@ -48,13 +48,13 @@ Utilisez le [Lecteur multimédia Azure](http://amsplayer.azurewebsites.net/azure
 
 ###Flash Player
 
-####Chiffrement AES avec jeton 
+####Chiffrement AES avec jeton
 
 [http://aestoken.azurewebsites.net](http://aestoken.azurewebsites.net)
 
 ###Lecteurs Silverlight
 
-####Surveillance
+####Analyse
 
 [http://smf.cloudapp.net/healthmonitor](http://smf.cloudapp.net/healthmonitor)
 
@@ -90,7 +90,7 @@ Pour plus d’informations sur le développement de vos propres lecteurs, consul
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
- 
+
 [AMSPlayer]: ./media/media-services-playback-content-with-existing-players/media-services-portal-player.png
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

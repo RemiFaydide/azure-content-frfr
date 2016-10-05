@@ -22,7 +22,7 @@ Avant de commencer, lisez attentivement cette procédure, de manière à compren
 ## Télécharger les outils et applications nécessaires
 Vous devez préparer les éléments suivants avant de commencer le processus :
 
-- En fonction du système d’exploitation que vous ciblez, installez les applets de commande Azure PowerShell ou l’outil d’interface de ligne de commande Linux à partir de la page de téléchargements Azure.
+- En fonction du système d’exploitation que vous ciblez, installez les [applets de commande Azure PowerShell](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/WindowsAzurePowershellGet.3f.3f.3fnew.appids) ou [l’outil d’interface de ligne de commande Linux](https://go.microsoft.com/fwlink/?LinkId=253472&clcid=0x409) à partir de la page de [téléchargements Azure](https://azure.microsoft.com/downloads/).
 - Installez l’Explorateur de stockage Azure à partir de CodePlex.
 - Téléchargez et installez l’outil « Certification Test Tool for Azure Certified » :
   - [http://go.microsoft.com/fwlink/?LinkID=526913](http://go.microsoft.com/fwlink/?LinkID=526913). Vous avez besoin d’un ordinateur Windows pour exécuter l’outil de certification. Si vous n’avez pas d’ordinateur Windows disponible, vous pouvez exécuter l’outil dans une machine virtuelle Windows dans Azure.
@@ -48,9 +48,9 @@ Maintenant que vous avez passé en revue les conditions préalables et effectué
 
 ## Voir aussi
 - [Mise en route : publication d’une offre dans Azure Marketplace](marketplace-publishing-getting-started.md)
-- [Création d’une machine virtuelle exécutant Windows dans le portail Azure en version préliminaire](../virtual-machines-windows-hero-tutorial/)
+- [Création d’une machine virtuelle exécutant Windows dans le portail Azure en version préliminaire](../virtual-machines/virtual-machines-windows-hero-tutorial.md)
 
 
 [link-acct-creation]: marketplace-publishing-accounts-creation-registration.md
 
-<!---HONumber=AcomDC_0504_2016-->
+<!---HONumber=AcomDC_0921_2016-->

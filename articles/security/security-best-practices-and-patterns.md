@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/08/2016"
+   ms.date="09/16/2016"
    ms.author="terrylan"/>
 
 # Meilleures pratiques et tendances Azure relatives à la sécurité
@@ -44,4 +44,4 @@ Pour chaque meilleure pratique, nous tentons d’expliquer les éléments suivan
 
 Nous sommes impatients d’ajouter de nombreux autres articles sur l’architecture de sécurité Azure et les meilleures pratiques. Si vous souhaitez que nous incluions certaines rubriques, faites-le nous savoir dans la zone de discussion en bas de cette page.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

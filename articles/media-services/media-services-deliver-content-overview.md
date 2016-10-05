@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/12/2016"
+	ms.date="09/19/2016"
 	ms.author="juliako"/>
 
 
@@ -36,7 +36,7 @@ Avec l’empaquetage dynamique fourni par Media Services, vous pouvez distribuer
 Pour tirer parti de l’empaquetage dynamique, vous devez effectuer les opérations suivantes :
 
 - encoder votre fichier mezzanine (source) en un ensemble de fichiers MP4 à débit adaptatif ou de fichiers Smooth Streaming à débit adaptatif ;
-- obtenir au moins une unité de streaming à la demande pour le point de terminaison de streaming à partir duquel vous envisagez de distribuer votre contenu. Pour plus d’informations, consultez [Extension des unités réservées de streaming à la demande](media-services-manage-origins.md#scale_streaming_endpoints).
+- obtenir au moins une unité de streaming à la demande pour le point de terminaison de streaming à partir duquel vous envisagez de distribuer votre contenu. Pour plus d’informations, consultez la page [Extension des unités réservées de diffusion en continu à la demande](media-services-portal-manage-streaming-endpoints.md).
 
 Avec l’empaquetage dynamique, vous stockez et payez les fichiers dans un format de stockage unique. Media Services crée et fournit la réponse appropriée à vos demandes.
 
@@ -87,7 +87,7 @@ Vous ne pouvez transmettre en continu avec le protocole SSL que si le point de t
 
 {nom du point de terminaison de diffusion en continu-nom du compte media services}.streaming.mediaservices.windows.net/{ID\_de\_localisateur}/{nom\_de\_fichier}.ISM/Manifest(format=mpd-time-csf)
 
-	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf)
+http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=mpd-time-csf)
 
 
 
@@ -95,19 +95,19 @@ Vous ne pouvez transmettre en continu avec le protocole SSL que si le point de t
 
 {nom du point de terminaison de diffusion en continu-nom du compte media services}.streaming.mediaservices.windows.net/{ID\_de\_localisateur}/{nom\_de\_fichier}.ISM/Manifest(format=m3u8-aapl)
 
-	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl)
+http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl)
 
 ### Format Apple HTTP Live Streaming (HLS) V3
 
 {nom du point de terminaison de diffusion en continu-nom du compte media services}.streaming.mediaservices.windows.net/{ID\_de\_localisateur}/{nom\_de\_fichier}.ISM/Manifest(format=m3u8-aapl-v3)
 
-	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
+http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3)
 
 ### Format Apple HTTP Live Streaming (HLS) avec filtre audio uniquement
 
 Par défaut, les pistes uniquement audio sont incluses dans le manifeste HLS. Cette condition est nécessaire pour qu’Apple Store certifie les réseaux cellulaires. Dans ce cas, si un client n’a pas suffisamment de bande passante ou est connecté au moyen d’une connexion 2G, la lecture bascule vers l’audio uniquement. Cela permet de maintenir la diffusion en continu du contenu sans mise en mémoire tampon, mais sans la vidéo. Dans certains scénarios, la mise en mémoire tampon du lecteur est préférable à une diffusion audio uniquement. Si vous souhaitez supprimer la piste audio uniquement, ajoutez **audio-only=false** à l’URL.
 
-	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
+http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest(format=m3u8-aapl-v3,audio-only=false)
 
 Pour plus d’informations, consultez [Prise en charge la composition du manifeste dynamique et fonctionnalités supplémentaires de sortie HLS](https://azure.microsoft.com/blog/azure-media-services-release-dynamic-manifest-composition-remove-hls-audio-only-track-and-hls-i-frame-track-support/).
 
@@ -118,7 +118,7 @@ Pour plus d’informations, consultez [Prise en charge la composition du manifes
 
 Exemple :
 
-	http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest
+http://testendpoint-testaccount.streaming.mediaservices.windows.net/fecebb23-46f6-490d-8b70-203e86b0df58/BigBuckBunny.ism/Manifest
 
 ### <a id="fmp4_v20"></a>Manifeste Smooth Streaming 2.0 (manifeste hérité)
 
@@ -159,7 +159,7 @@ Les considérations suivantes s'appliquent :
 
 ## Points de terminaison de streaming
 
-Un point de terminaison de streaming représente un service de diffusion en continu qui peut fournir du contenu directement à une application de lecteur cliente ou à un réseau de distribution de contenu (CDN) en vue de sa redistribution. Le flux sortant d’un service de point de terminaison de streaming peut être un flux dynamique ou une ressource de vidéo à la demande dans votre compte Media Services. Vous pouvez également contrôler la capacité du service de point de terminaison de streaming afin de gérer les besoins croissants en matière de bande passante en ajustant les unités réservées de diffusion en continu. Vous devez allouer au moins une unité réservée pour les applications au sein d’un environnement de production. Pour plus d’informations, consultez [Mise à l’échelle d’un service de média](media-services-manage-origins.md#scale_streaming_endpoints).
+Un point de terminaison de streaming représente un service de diffusion en continu qui peut fournir du contenu directement à une application de lecteur cliente ou à un réseau de distribution de contenu (CDN) en vue de sa redistribution. Le flux sortant d’un service de point de terminaison de streaming peut être un flux dynamique ou une ressource de vidéo à la demande dans votre compte Media Services. Vous pouvez également contrôler la capacité du service de point de terminaison de streaming afin de gérer les besoins croissants en matière de bande passante en ajustant les unités réservées de diffusion en continu. Vous devez allouer au moins une unité réservée pour les applications au sein d’un environnement de production. Pour plus d’informations, consultez [Mise à l’échelle d’un service de média](media-services-portal-manage-streaming-endpoints.md).
 
 ## Problèmes connus
 
@@ -167,16 +167,7 @@ Un point de terminaison de streaming représente un service de diffusion en cont
 
 Avant la version de service de juillet 2016, lorsque des éléments multimédias générés par Media Encoder Standard, Media Encoder Premium Workflow ou, précédemment, Azure Media Encoder étaient diffusés en continu à l’aide de l’empaquetage dynamique, le manifeste Smooth Streaming retourné devait être conforme à la version 2.0. Dans la version 2.0, les durées de fragments n’utilisent pas ce que l’on appelle les balises de répétition (« r »). Par exemple :
 
-	<?xml version="1.0" encoding="UTF-8"?>
-	<SmoothStreamingMedia MajorVersion="2" MinorVersion="0" Duration="8000" TimeScale="1000">
-		<StreamIndex Chunks="4" Type="video" Url="QualityLevels({bitrate})/Fragments(video={start time})" QualityLevels="3" Subtype="" Name="video" TimeScale="1000">
-			<QualityLevel Index="0" Bitrate="1000000" FourCC="AVC1" MaxWidth="640" MaxHeight="360" CodecPrivateData="00000001674D4029965201405FF2E02A100000030010000003032E0A000F42400040167F18E3050007A12000200B3F8C70ED0B16890000000168EB7352" />
-			<c t="0" d="2000" n="0" />
-			<c d="2000" />
-			<c d="2000" />
-			<c d="2000" />
-		</StreamIndex>
-	</SmoothStreamingMedia>
+<?xml version="1.0" encoding="UTF-8"?> <SmoothStreamingMedia MajorVersion="2" MinorVersion="0" Duration="8000" TimeScale="1000"> <StreamIndex Chunks="4" Type="video" Url="QualityLevels({bitrate})/Fragments(video={start time})" QualityLevels="3" Subtype="" Name="video" TimeScale="1000"> <QualityLevel Index="0" Bitrate="1000000" FourCC="AVC1" MaxWidth="640" MaxHeight="360" CodecPrivateData="00000001674D4029965201405FF2E02A100000030010000003032E0A000F42400040167F18E3050007A12000200B3F8C70ED0B16890000000168EB7352" /> <c t="0" d="2000" n="0" /> <c d="2000" /> <c d="2000" /> <c d="2000" /> </StreamIndex> </SmoothStreamingMedia>
 
 Dans la version de service de juillet 2016, le manifeste Smooth Streaming généré est conforme à la version 2.2, avec des durées de fragments utilisant des balises de répétition. Par exemple :
 
@@ -202,4 +193,4 @@ Certains clients Smooth Streaming hérités peuvent ne pas prendre en charge les
 
 [Mettre à jour les localisateurs de Media Services après le déploiement des clés de stockage](media-services-roll-storage-access-keys.md)
 
-<!---HONumber=AcomDC_0803_2016-->
+<!---HONumber=AcomDC_0921_2016-->

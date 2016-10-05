@@ -3,7 +3,7 @@
 	description="Comment utiliser Azure Data Lake pour effectuer des tâches d’exploration de donnés et de classification binaire sur un jeu de données."  
 	services="machine-learning"
 	documentationCenter=""
-	authors="bradsev,wguo123"
+	authors="bradsev"
 	manager="jhubbard"
 	editor="cgronlun" />
 
@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
-	ms.author="bradsev;weig;gopitk"/>
+	ms.date="09/19/2016"
+	ms.author="bradsev;weig"/>
 
 
 # Science des données évolutive dans Azure Data Lake : une procédure de bout en bout
 
-Cette procédure de bout en bout montre comment utiliser Azure Data Lake pour effectuer des tâches d’exploration de données et de classification binaire sur un échantillon de jeu de données NYC taxi trip and fare afin de prédire si le pourboire est compris dans le prix du billet. Elle vous guide tout au long du [processus de science des données](http://aka.ms/datascienceprocess) de bout en bout, depuis l’acquisition de données à l’apprentissage du modèle et au déploiement d’un service web qui publie le modèle.
+Cette procédure de bout en bout montre comment utiliser Azure Data Lake pour effectuer des tâches d’exploration de données et de classification binaire sur un échantillon de jeu de données NYC taxi trip and fare afin de prédire si le pourboire est compris dans le prix du billet. Elle vous guide tout au long du [processus de science des données pour les équipes](http://aka.ms/datascienceprocess) de bout en bout, depuis l’acquisition de données à l’apprentissage du modèle et au déploiement d’un service web qui publie le modèle.
 
 
 ### Service Analytique Azure Data Lake
@@ -76,10 +76,8 @@ Pour préparer l’environnement de science des données pour cette procédure p
 - Compte Azure Machine Learning Studio
 - Outils Azure Data Lake pour Visual Studio (Recommandé)
 
-Cette section fournit des instructions sur la création de chacune de ces ressources. Si vous choisissez d’utiliser des tables Hive avec Azure Machine Learning, plutôt que Python, pour générer un modèle, vous devez également configurer un cluster HDInsight (Hadoop). Cette autre procédure est décrite dans la section correspondante ci-dessous.
-
->AZURE.REMARQUE Le **Azure Data Lake Store** peut être créé séparément ou bien à la création de **Azure Data Lake Analytics** comme stockage par défaut. Il est fait référence à des instructions pour la création distincte de chacune des ressources ci-dessous. Toutefois, il n’est pas nécessaire de créer séparément le compte de stockage Data Lake.
-
+Cette section fournit des instructions sur la création de chacune de ces ressources. Si vous choisissez d’utiliser des tables Hive avec Azure Machine Learning, plutôt que Python, pour générer un modèle, vous devez également configurer un cluster HDInsight (Hadoop). Cette autre procédure est décrite dans la section correspondante ci-dessous. <br/>
+>AZURE.REMARQUE Le **Azure Data Lake Store** peut être créé séparément ou bien à la création de **Azure Data Lake Analytics** comme stockage par défaut. Il est fait référence à des instructions pour la création distincte de chacune des ressources ci-dessous. Toutefois, il n’est pas nécessaire de créer séparément le compte de stockage Data Lake. <br/>
 ### Créer un Azure Data Lake Store
 
 Créez un ADLS à partir du [Portail Azure](http://portal.azure.com). Pour en savoir plus, consultez [Créer un cluster HDInsight avec Data Lake Store à l’aide du portail Azure](../data-lake-store/data-lake-store-hdinsight-hadoop-use-portal.md). Veillez à définir l’identité AAD de cluster dans le panneau **DataSource** de **Configuration facultative** décrit ici.
@@ -741,4 +739,4 @@ Le parcours d’apprentissage du [processus TDSP (Team Data Science Process)](ht
 - [Processus TDSP (Team Data Science Process) : utilisation de SQL Server](machine-learning-data-science-process-sql-walkthrough.md)
 - [Vue d’ensemble du processus de science des données à l’aide de Spark sur Azure HDInsight](machine-learning-data-science-spark-overview.md)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

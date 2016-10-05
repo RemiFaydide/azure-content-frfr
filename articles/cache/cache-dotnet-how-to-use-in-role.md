@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/24/2016" 
+	ms.date="09/15/2016" 
 	ms.author="sdanie"/>
 
 
@@ -65,8 +65,8 @@ Ce guide offre un aperçu de la prise en main de In-Role Cache. Pour plus d'info
 
 In-Role Cache permet d'activer la mise en cache à l'aide de la mémoire qui se trouve sur les machines virtuelles qui hébergent vos instances de rôle. Les instances de rôle qui hébergent vos caches sont appelées **clusters de cache**. Il existe deux topologies de déploiement pour la mise en cache sur les instances de rôle :
 
--	**Rôle dédié** : les instances de rôle sont utilisées exclusivement pour la mise en cache.
--	**Rôle en colocation** : le cache partage les ressources de la machine virtuelle (bande passante, processeur, mémoire) avec l'application.
+-	**Rôle dédié** : les instances de rôle sont utilisées exclusivement pour la mise en cache.
+-	**Rôle en colocation** : le cache partage les ressources de la machine virtuelle (bande passante, processeur, mémoire) avec l'application.
 
 Pour utiliser la mise en cache sur les instances de rôle, vous devez configurer un cluster de cache, puis configurer les clients du cache afin qu'ils puissent accéder au cluster de cache.
 
@@ -112,10 +112,10 @@ Passez sur l'onglet **Configuration**. La valeur par défaut de **Instance count
 
 La mémoire totale par taille de machine virtuelle se présente comme suit :
 
--	**Petite** : 1,75 Go
--	**Moyenne** 3,5 Go
--	**Grande** : 7 Go
--	**Très grande** : 14 Go
+-	**Petite** : 1,75 Go
+-	**Moyenne** 3,5 Go
+-	**Grande** : 7 Go
+-	**Très grande** : 14 Go
 
 
 > Cette taille représente la quantité totale de mémoire disponible pour la machine virtuelle, partagée par le système d'exploitation, le processus de cache, les données en cache et l'application. Pour plus d'informations sur la configuration de la taille des machines virtuelles, consultez la page [Configuration de la taille des machines virtuelles][]. Notez que le cache n'est pas pris en charge sur les machines virtuelles de taille **ExtraSmall**.
@@ -276,7 +276,7 @@ Par défaut, les éléments du cache expirent 10 minutes après qu'ils y ont é
 
 ![RoleCache6][RoleCache6]
 
-Il existe trois types de **Type d’expiration** : **Aucun**, **Absolu** et **Fenêtre coulissante**. Ils définissent comment **Time to Live (min)** est utilisé pour déterminer l'expiration. Le **Type d'expiration** par défaut est **Absolute**, ce qui signifie que le compte à rebours pour l'expiration d'un élément commence lorsque l'élément est placé dans le cache. Une fois que le délai spécifié pour un élément est écoulé, l'élément expire. Si **Sliding Window** est spécifié, le décompte de l'expiration d'un élément est réinitialisé à chaque accès de l'élément dans le cache et l'élément n'expire pas tant que la durée spécifiée depuis son dernier accès n'est pas écoulée. Si **None** est spécifié, alors **Time to Live (min)** soit être défini sur **0**. Les éléments n'expirent pas et restent valides tant qu'ils se trouvent dans le cache.
+Il existe trois types de **Type d’expiration** : **Aucun**, **Absolu** et **Fenêtre coulissante**. Ils définissent comment **Time to Live (min)** est utilisé pour déterminer l'expiration. Le **Type d'expiration** par défaut est **Absolute**, ce qui signifie que le compte à rebours pour l'expiration d'un élément commence lorsque l'élément est placé dans le cache. Une fois que le délai spécifié pour un élément est écoulé, l'élément expire. Si **Sliding Window** est spécifié, le décompte de l'expiration d'un élément est réinitialisé à chaque accès de l'élément dans le cache et l'élément n'expire pas tant que la durée spécifiée depuis son dernier accès n'est pas écoulée. Si **None** est spécifié, alors **Time to Live (min)** soit être défini sur **0**. Les éléments n'expirent pas et restent valides tant qu'ils se trouvent dans le cache.
 
 Si vous souhaitez une durée d'expiration plus longue ou plus courte que celle configurée dans les propriétés du rôle, cette durée spécifique peut être indiquée lors de l'ajout ou de la mise à jour d'un élément dans le cache à l'aide de la surcharge **Add** et **Put**, qui peuvent prendre le paramètre **TimeSpan**. Dans l'exemple suivant, la chaîne **value** est ajoutée au cache, indexée par **item**, avec un délai d'expiration de 30 minutes.
 
@@ -412,4 +412,4 @@ Maintenant que vous avez appris les bases de In-Role Cache, suivez ces liens pou
 [Which Azure Cache offering is right for me?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
  
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

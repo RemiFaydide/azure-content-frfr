@@ -466,7 +466,7 @@ La fonction DBCC SHOW\_STATISTICS() est implémentée de manière plus stricte d
 
 ## Étapes suivantes
 
-Pour en savoir plus, consultez la section [DBCC SHOW\_STATISTICS][] de MSDN. Pour plus d’informations, consultez les articles [Table Overview][Overview] (Vue d’ensemble des tables), [Table Data Types ][Data Types] (Types de données de table), [Distributing a Table][Distribute] (Distribution d’une table), [Indexing a Table][Index] (Indexation d’une table), [Partitioning a Table][Partition] (Partitionnement d’une table) et [Tables temporaires][Temporary]. Pour en savoir plus sur les meilleures pratiques, consultez [Meilleures pratiques relatives à SQL Data Warehouse][].
+Pour en savoir plus, consultez la section [DBCC SHOW\_STATISTICS][] de MSDN. Pour plus d’informations, consultez les articles [Table Overview][Overview] \(Vue d’ensemble des tables), [Table Data Types ][Data Types] \(Types de données de table), [Distributing a Table][Distribute] \(Distribution d’une table), [Indexing a Table][Index] \(Indexation d’une table), [Partitioning a Table][Partition] \(Partitionnement d’une table) et [Tables temporaires][Temporary]. Pour en savoir plus sur les meilleures pratiques, consultez [Meilleures pratiques relatives à SQL Data Warehouse][].
 
 <!--Image references-->
 

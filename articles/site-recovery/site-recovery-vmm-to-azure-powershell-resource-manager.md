@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/13/2016"
+	ms.date="09/16/2016"
 	ms.author="rajanaki"/>
 
 # Réplication vers Azure de machines virtuelles Hyper-V hébergées dans des clouds VMM à l’aide de PowerShell et d’Azure Resource Manager
@@ -35,11 +35,11 @@ Cet article vous montre comment utiliser PowerShell pour automatiser les tâches
 L’article inclut la configuration requise pour le scénario et décrit les étapes suivantes :
 
 - Configuration d’un coffre Recovery Services
-- Installation du fournisseur Azure Site Recovery sur le serveur VMM source 
+- Installation du fournisseur Azure Site Recovery sur le serveur VMM source
 - Inscription du serveur dans le coffre, ajout d’un compte de stockage Azure
 - Installation de l’agent Azure Recovery Services sur les serveurs Hyper-V
-- Configuration des paramètres de protection des clouds VMM qui seront appliqués à toutes les machines virtuelles protégées 
-- Activation de la protection de ces machines virtuelles 
+- Configuration des paramètres de protection des clouds VMM qui seront appliqués à toutes les machines virtuelles protégées
+- Activation de la protection de ces machines virtuelles
 - Test du basculement pour s’assurer que tout fonctionne comme prévu.
 
 Si vous rencontrez des problèmes pour mettre en œuvre ce scénario, posez vos questions sur le [Forum Azure Recovery Services](https://social.msdn.microsoft.com/forums/azure/home?forum=hypervrecovmgr).
@@ -75,7 +75,7 @@ Assurez-vous que les conditions préalables sont remplies :
 ### Conditions préalables liées à Hyper-V
 
 - Les serveurs hôtes Hyper-V doivent exécuter au moins Windows Server 2012 avec le rôle Hyper-V et les dernières mises à jour doivent être installées.
-- Si vous utilisez Hyper-V dans un cluster, notez que le service Broker du cluster n'est pas créé automatiquement si vous avez un cluster basé sur des adresses IP statiques. Vous devez configurer manuellement le service Broker du cluster. Pour 
+- Si vous utilisez Hyper-V dans un cluster, notez que le service Broker du cluster n'est pas créé automatiquement si vous avez un cluster basé sur des adresses IP statiques. Vous devez configurer manuellement le service Broker du cluster. Concernant l'option
 - Pour obtenir des instructions, consultez [How to Configure Hyper-V Replica Broker](http://blogs.technet.com/b/haroldwong/archive/2013/03/27/server-virtualization-series-hyper-v-replica-broker-explained-part-15-of-20-by-yung-chou.aspx) (Configuration du service Broker de réplication Hyper-V).
 - Tout cluster ou serveur hôte Hyper-V pour lequel vous souhaitez gérer la protection doit être inclus dans un cloud VMM.
 
@@ -345,4 +345,4 @@ Utilisez les commandes suivantes pour suivre l’activité. Vous devez attendre 
 
 [En savoir plus](https://msdn.microsoft.com/library/azure/mt637930.aspx) sur Azure Site Recovery avec les applets de commande PowerShell Azure Resource Manager.
 
-<!---HONumber=AcomDC_0615_2016-->
+<!---HONumber=AcomDC_0921_2016-->

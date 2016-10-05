@@ -5,7 +5,7 @@
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
@@ -52,7 +52,7 @@ Vous pouvez vérifier que votre requête se comporte comme prévu en l'exécutan
 
     ![Tester les données de requête](./media/stream-analytics-write-queries/4-stream-analytics-write-queries.png)
 
-3.	Accédez à un fichier de test. Plusieurs exemples de fichiers sont disponibles sur [github] (données https://github.com/Azure/azure-stream-analytics/tree/master/Sample) et vous pouvez également récupérer des données d’exemple à partir de vos propres entrées de flux de données avec la fonction Exemples de données de l’onglet des entrées.
+3.	Accédez à un fichier de test. Plusieurs exemples de fichiers sont disponibles sur [github] \(données https://github.com/Azure/azure-stream-analytics/tree/master/Sample) et vous pouvez également récupérer des données d’exemple à partir de vos propres entrées de flux de données avec la fonction Exemples de données de l’onglet des entrées.
 
     ![Entrée de requête](./media/stream-analytics-write-queries/5-stream-analytics-write-queries.png)
 
@@ -71,4 +71,4 @@ Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https:
 - [Références sur le langage des requêtes d'Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Références sur l’API REST de gestion d’Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

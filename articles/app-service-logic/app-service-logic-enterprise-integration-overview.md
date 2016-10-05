@@ -65,6 +65,6 @@ Enterprise Integration prend en charge les normes suivantes :
 - [Schémas](./app-service-logic-enterprise-integration-schemas.md "Découvrez les schémas d’intégration d’entreprise")
 - [Validation de message XML](./app-service-logic-enterprise-integration-xml.md "Découvrez comment valider des messages XML avec vos applications logiques")
 - [Transformation XML](./app-service-logic-enterprise-integration-transform.md "Découvrez les mappages d’intégration d’entreprise")
-- [Connecteurs Enterprise Integration](../connectors/apis-list.md "En savoir plus sur les connecteurs Enterprise Integration Pack")
+- [Connecteurs d'intégration d’entreprise](../connectors/apis-list.md "En savoir plus sur les connecteurs Enterprise Integration Pack")
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

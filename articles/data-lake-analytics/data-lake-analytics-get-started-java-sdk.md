@@ -24,8 +24,6 @@ Apprenez à utiliser le Kit de développement logiciel (SDK) Java Azure Data Lak
 
 Dans ce didacticiel, vous allez développer une application de console Java qui contient des exemples de tâches d’administration courantes. Vous créerez ensuite des données de test et soumettrez un travail. Pour suivre ce didacticiel même à l'aide d'autres outils pris en charge, cliquez sur les onglets en haut de cette section.
 
-[AZURE.INCLUDE [basic-process-include](../../includes/data-lake-analytics-basic-process.md)]
-
 ## Composants requis
 
 * Kit de développement Java (JDK) 8 (avec Java version 1.8).
@@ -356,4 +354,4 @@ Vous devrez donner à votre application l’autorisation de créer des ressource
 - Pour les tâches de gestion, consultez [Gestion d’Azure Data Lake Analytics à l’aide du portail Azure](data-lake-analytics-manage-use-portal.md).
 - Pour obtenir une vue d’ensemble de l’analyse de données Analytique Data Lake, consultez [Présentation d’Analytique Data Lake Azure](data-lake-analytics-overview.md).
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Azure Multi-Factor Authentication - Étapes suivantes" 
-	description="Voici la page Multi-Factor Authentication qui vous indique ce qu’il faut faire avec MFA. Cela inclut les rapports, l’alerte de fraude, le contournement à usage unique, les messages vocaux personnalisés, la mise en cache, les adresses IP approuvées et les mots de passe d’application." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+	pageTitle="Azure Multi-Factor Authentication - Étapes suivantes"
+	description="Voici la page Multi-Factor Authentication qui vous indique ce qu’il faut faire avec MFA. Cela inclut les rapports, l’alerte de fraude, le contournement à usage unique, les messages vocaux personnalisés, la mise en cache, les adresses IP approuvées et les mots de passe d’application."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="kgremban"
+	manager="femila"
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/30/2016" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/30/2016"
+	ms.author="kgremban"/>
 
 # Configuration d’Azure Multi-Factor Authentication
 
@@ -28,12 +28,12 @@ Pour accéder au portail de gestion MFA par le biais de la page des paramètres 
 
 
 Fonctionnalité| Description| Éléments
-:------------- | :------------- | :------------- | 
+:------------- | :------------- | :------------- |
 [Alerte de fraude](#fraud-alert)|Alerte de fraude peut être configuré et installé de manière à ce que vos utilisateurs puissent signaler les tentatives frauduleuses d’accès à leurs ressources.|Installation, configuration et signalement d’une fraude
 [Contournement à usage unique](#one-time-bypass) |Un contournement à usage unique permet à un utilisateur de s'authentifier une seule fois en « contournant » l'authentification multifacteur.|Installation et configuration d’un contournement à usage unique
 [Messages vocaux personnalisés](#custom-voice-messages) |Les messages vocaux personnalisés vous permettent d'utiliser vos propres enregistrements ou messages d’accueil avec l'authentification multifacteur. |Installation et configuration des messages et messages d’accueil personnalisés
 [Mise en cache](#caching-in-azure-multi-factor-authentication)|La mise en cache vous permet de définir une période spécifique pour que les tentatives d'authentification suivantes aboutissent automatiquement. |Installation et configuration de la mise en cache de l’authentification.
-[Adresses IP approuvées](#trusted-ips)|Adresses IP approuvées est une fonctionnalité d'authentification multifacteur qui permet aux administrateurs d'un client géré ou fédéré de contourner l'authentification multifacteur des utilisateurs qui se connectent à partir de l'intranet local de l'entreprise.|Configurer et définir les adresses IP qui ne sont pas soumis à l'authentification multifacteur	
+[Adresses IP approuvées](#trusted-ips)|Adresses IP approuvées est une fonctionnalité d'authentification multifacteur qui permet aux administrateurs d'un client géré ou fédéré de contourner l'authentification multifacteur des utilisateurs qui se connectent à partir de l'intranet local de l'entreprise.|Configurer et définir les adresses IP qui ne sont pas soumis à l'authentification multifacteur
 [Mots de passe d'application](#app-passwords)|Mots de passe d'application permet à une application, qui ne prend pas en charge MFA, de contourner l'authentification multifacteur et de continuer à fonctionner.|Informations sur les mots de passe d'application.
 [Mémoriser Multi-Factor Authentication pour les appareils et les navigateurs mémorisés](#remember-multi-factor-authentication-for-devices-users-trust)|Vous permet de mémoriser des appareils pour un nombre défini de jours après qu’un utilisateur soit parvenu à se connecter à l’aide de MFA.|Informations sur l'activation de cette fonctionnalité et la configuration du nombre de jours.
 [Méthodes de vérification sélectionnables](#selectable-verification-methods)|Vous permet de choisir les méthodes d'authentification disponibles pour les utilisateurs.|Informations sur l'activation ou la désactivation des méthodes d'authentification spécifiques telles que les messages d'appel ou de texte.
@@ -172,9 +172,9 @@ La mise en cache vous permet de définir une période spécifique pour que les t
 
 Adresses IP approuvées est une fonctionnalité d'authentification multifacteur qui permet aux administrateurs d'un client géré ou fédéré de contourner l'authentification multifacteur des utilisateurs qui se connectent à partir de l'intranet local de l'entreprise. Les fonctionnalités sont disponibles pour les clients Azure AD titulaires d’une licence Azure AD Premium, Enterprise Mobility Suite ou Azure Multi-Factor Authentication.
 
- 
+
 Type de client Azure AD| Options d’Adresses IP approuvées disponibles
-:------------- | :------------- | 
+:------------- | :------------- |
 Adresses IP gérées|Plages d'adresses IP spécifiques : les administrateurs peuvent spécifier une plage d'adresses IP pouvant contourner l'authentification multifacteur des utilisateurs qui se connectent à partir de l'intranet de l’entreprise.
 Adresses IP fédérées|<li>Tous les utilisateurs fédérés : tous les utilisateurs fédérés, qui se connectent au sein de l'organisation, contourneront l'authentification multifacteur à l'aide d'une revendication émise par AD FS.</li><li>Plages d'adresses IP spécifiques : les administrateurs peuvent spécifier une plage d'adresses IP pouvant contourner l'authentification multifacteur des utilisateurs qui se connectent à partir de l'intranet de l'entreprise.
 
@@ -182,7 +182,7 @@ Ce contournement ne fonctionne qu’à partir de l'intranet d'une entreprise. Pa
 
 
 |Adresses IP approuvées activé| Adresses IP approuvées désactivé
-:------------- | :------------- | :------------- | 
+:------------- | :------------- | :------------- |
 Au sein du réseau d'entreprise|Pour les flux de navigateur, l’authentification multifacteur n’est PAS obligatoire.|Pour les flux de navigateur, l’authentification multifacteur est obligatoire.
 |Pour les applications clientes riches, les mots de passe traditionnels fonctionnent si l'utilisateur n'a créé aucun mot de passe d'application. Une fois qu'un mot de passe d’application a été créé, les mots de passe d'application sont obligatoires.|Pour les applications clientes riches, les mots de passe d'application sont obligatoires
 En dehors du réseau d'entreprise|Pour les flux de navigateur, l'authentification multifacteur est obligatoire.|Pour les flux de navigateur, l'authentification multifacteur est obligatoire.
@@ -209,7 +209,7 @@ En dehors du réseau d'entreprise|Pour les flux de navigateur, l'authentificatio
 
 
 
- 
+
 ## Mots de passe d'application
 
 Dans certaines applications, telles qu’Office 2010 (ou version antérieure) et Apple Mail, vous ne pouvez pas utiliser l’authentification multifacteur. Pour utiliser ces applications, vous devrez utiliser des « mots de passe d’application » à la place de votre mot de passe traditionnel. Le mot de passe d'application permet à l’application de contourner l'authentification multifacteur et de continuer à fonctionner.
@@ -225,7 +225,7 @@ Dans certaines applications, telles qu’Office 2010 (ou version antérieure) e
 Voici ce qu’il faut absolument savoir sur les mots de passe d'application.
 
 Expérience d'authentification|Pour les applications avec navigateur|Pour les applications sans navigateur
-:------------- | :------------- | :------------- 
+:------------- | :------------- | :-------------
 |<ul><li>Le premier facteur d'authentification est exécuté localement</li><li>Le second facteur est une méthode effectuée par téléphone via l'identité de Cloud.</li>|<ul><li>Les administrateurs et utilisateurs peuvent utiliser des mots de passe d'application pour se connecter.
 
 - Les utilisateurs peuvent avoir plusieurs mots de passe d’application, ce qui augmente leur surface d'exposition au vol. Puisque les mots de passe d'application sont difficiles à mémoriser, cela peut encourager les utilisateurs à les noter. Ceci n'est pas recommandé et doit être proscrit, car pour se connecter, l’utilisateur n’a besoin que d’un mot de passe d’application.
@@ -362,7 +362,7 @@ Toutefois, étant donné que les utilisateurs sont autorisés à mémoriser MFA 
 Il est désormais possible de choisir les méthodes d'authentification disponibles pour vos utilisateurs lors de l'utilisation d'Azure Multi-Factor Authentication. Cette fonctionnalité était auparavant uniquement disponible dans la version serveur locale. Le tableau ci-dessous fournit une vue d'ensemble des différentes méthodes d'authentification qui peuvent être activées ou désactivées pour vos utilisateurs.
 
 Méthode|Description
-:------------- | :------------- | 
+:------------- | :------------- |
 [Appel vers le téléphone](multi-factor-authentication-end-user-first-time-mobile-phone.md)| Effectue un appel vocal automatisé vers le téléphone d’authentification. L’utilisateur répond à l’appel et appuie sur la touche # du clavier du téléphone pour s’authentifier. Ce numéro de téléphone n’est pas synchronisé avec Active Directory local.
 [Message texte vers le téléphone](multi-factor-authentication-end-user-first-time-mobile-phone.md)|Envoie un message texte contenant un code de vérification à l’utilisateur. L’utilisateur est invité à répondre au SMS avec le code de vérification ou à entrer le code de vérification dans l’interface de connexion.
 [Notification via une application mobile](multi-factor-authentication-end-user-first-time-mobile-app.md)|Dans ce mode, l’application Microsoft Authenticator empêche l’accès non autorisé à des comptes et arrête les transactions frauduleuses. Cette opération est effectuée à l’aide d’une notification Push sur votre téléphone ou votre appareil inscrit. Affichez simplement la notification et si elle est légitime, sélectionnez Vérifier. Dans le cas contraire, vous pouvez choisir de refuser ou de refuser et signaler la notification frauduleuse. Pour plus d’informations sur le signalement des notifications frauduleuses, consultez la rubrique Utilisation de la fonctionnalité de refus et signalement d’une fraude pour Multi-Factor Authentication.</br></br>L'application Microsoft Authenticator est disponible pour [Windows Phone](http://go.microsoft.com/fwlink/?Linkid=825071), [Android](http://go.microsoft.com/fwlink/?Linkid=825072) et [IOS](http://go.microsoft.com/fwlink/?Linkid=825073).|
@@ -379,4 +379,4 @@ Méthode|Description
 9. Cliquez sur Enregistrer.
 10. Cliquez sur Fermer.
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

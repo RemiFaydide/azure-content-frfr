@@ -15,7 +15,7 @@
 	ms.topic="support-article" 
 	ms.tgt_pltfrm="vm-linux"
 	ms.workload="infrastructure" 
-	ms.date="06/28/2016" 
+	ms.date="09/19/2016" 
 	ms.author="iainfou" 
 />
 
@@ -49,4 +49,4 @@ azure vm list -g <resourcegroup>
 ## Étapes suivantes
 Vous pouvez rechercher une aide spécifique sur le [dépannage des connexions SSH](virtual-machines-linux-troubleshoot-ssh-connection.md) ou sur les [étapes de dépannage détaillées des connexions SSH](virtual-machines-linux-detailed-troubleshoot-ssh-connection.md) si vous rencontrez des problèmes de connexion à votre machine virtuelle. Vous pouvez également lire des informations sur les [problèmes de dépannage des applications](virtual-machines-linux-troubleshoot-app-connection.md) si vous ne pouvez pas accéder à une application exécutée sur votre machine virtuelle.
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

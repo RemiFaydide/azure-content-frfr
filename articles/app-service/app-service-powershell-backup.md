@@ -40,8 +40,7 @@ Une URL SAP peut être générée avec PowerShell. Voici un exemple montrant com
 		$context = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey[0].Value
 
 		$blobContainerName = "<name of blob container for app backups>"
-		$token = New-AzureStorageContainerSASToken -Name $blobContainerName -Permission rwdl -Context $context -ExpiryTime (Get-Date).AddMonths(1)
-		$sasUrl = $context.BlobEndPoint + $blobContainerName + $token
+		$sasUrl = New-AzureStorageContainerSASToken -Name $blobContainerName -Permission rwdl -Context $context -ExpiryTime (Get-Date).AddMonths(1) -FullUri
 
 ## Installer Azure PowerShell 1.3.2 ou versions ultérieures
 
@@ -153,4 +152,4 @@ Vous pouvez également diriger un objet de sauvegarde dans l’applet de command
 		$backup = Get-AzureRmWebAppBackup -Name $appName -ResourceGroupName $resourceGroupName -BackupId 10102
 		$backup | Remove-AzureRmWebAppBackup -Overwrite
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

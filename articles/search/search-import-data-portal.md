@@ -34,9 +34,9 @@ Vous pouvez tester ce workflow à l’aide d’exemples de données dans Documen
 
 ## Sources de données prises en charge par l’Assistant Importer des données
 
-L’automatisation et les outils d’indexation sont disponibles pour les sources de données suivantes :
+L’Assistant Importation de données prend en charge les sources de données suivantes :
 
-- Base de données SQL Azure
+- Azure SQL Database
 - Données relationnelles SQL Server sur une machine virtuelle Azure
 - Document DB Azure
 - Stockage Blob Azure (version préliminaire)
@@ -119,4 +119,4 @@ Suivez ces liens pour en savoir plus sur les indexeurs :
 <!--Image references-->
 [1]: ./media/search-import-data-portal/search-import-data-command.png
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0928_2016-->

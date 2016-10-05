@@ -1,7 +1,7 @@
 <properties
    pageTitle="Créer une fonction de traitement d’événement | Microsoft Azure"
    description="Utilisez Azure Functions pour créer une fonction C# qui s’exécute en fonction d’un compteur d’événements."
-   services="azure-functions"
+   services="functions"
    documentationCenter="na"
    authors="ggailey777"
    manager="erikre"
@@ -15,16 +15,16 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="multiple"
    ms.workload="na"
-   ms.date="06/05/2016"
+   ms.date="09/25/2016"
    ms.author="glenga"/>
    
 # Créer une fonction de traitement d’événement Azure
 
 Faites l’expérience du calcul à la demande piloté par les événements d’Azure Functions qui vous permet de créer des unités de code planifiées ou déclenchées, et de les implémenter dans différents langages de programmation. Pour en savoir plus sur Azure Functions, consultez [Vue d’ensemble d’Azure Functions](functions-overview.md).
 
-Cette rubrique explique comment créer une nouvelle fonction en C#, qui s’exécute en fonction d’un compteur d’événements afin d’ajouter des messages à une file d’attente de stockage.
+Cette rubrique explique comment créer une nouvelle fonction en C# qui s’exécute selon un compteur d’événements afin d’ajouter des messages à une file d’attente de stockage.
 
-## Configuration requise 
+## Composants requis 
 
 Pour créer une fonction, vous devez avoir un compte Azure actif. Si tel n’est pas le cas, des [comptes gratuits sont disponibles](https://azure.microsoft.com/free/).
 
@@ -44,7 +44,7 @@ Une application de fonction héberge l’exécution de vos fonctions dans Azure.
 
 	![Créer une nouvelle fonction déclenchée par un minuteur](./media/functions-create-an-event-processing-function/functions-create-storage-queue-output-binding.png)
 
-5. Dans **Azure Storage Queue output** (Sortie de file d’attente Azure Storage), cliquez sur **Sélectionner** à côté de **Storage account connection** (Connexion au compte de stockage), sélectionnez le compte de stockage existant ou créez-en un, puis cliquez sur **Enregistrer**.
+5. Dans **Azure Storage Queue output** (Sortie de file d’attente Azure Storage), sélectionnez une **connexion au compte de stockage** existante ou créez-en une, puis cliquez sur **Enregistrer**.
 
 	![Créer une nouvelle fonction déclenchée par un minuteur](./media/functions-create-an-event-processing-function/functions-create-storage-queue-output-binding-2.png)
 
@@ -67,7 +67,7 @@ Une application de fonction héberge l’exécution de vos fonctions dans Azure.
 
 8. (Facultatif) Accédez au compte de stockage et vérifiez que les messages sont ajoutés à la file d’attente.
 
-9. Revenez à l’onglet **Intégrer** et changez le champ de planification en `0 0 * * * *`. La fonction s’exécute maintenant toutes les heures.
+9. Revenez à l’onglet **Intégrer** et remplacez le champ de planification par `0 0 * * * *`. La fonction s’exécute maintenant toutes les heures.
 
 Il s’agit d’un exemple très simplifié de déclenchement de minuteur et de liaison de sortie de file d’attente de stockage. Pour plus d’informations, consultez les rubriques [Déclencheur de minuteur Azure Functions](functions-bindings-timer.md) et [Déclencheurs et liaisons Azure Functions pour Azure Storage](functions-bindings-storage.md).
 
@@ -75,10 +75,10 @@ Il s’agit d’un exemple très simplifié de déclenchement de minuteur et de 
 
 Pour plus d’informations sur Azure Functions, consultez ces rubriques.
 
-+ [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md) Informations de référence pour les programmeurs pour le codage de fonctions et la définition de déclencheurs et de liaisons.
-+ Le didacticiel [Test des fonctions Azure](functions-test-a-function.md) décrit plusieurs outils et techniques permettant de tester vos fonctions.
-+ L’article [Mise à l’échelle d’Azure Functions](functions-scale.md) présente les plans de service disponibles dans Azure Functions, dont le plan de service dynamique, et explique comment choisir le plan adapté à vos besoins.  
++ [Référence du développeur Azure Functions](functions-reference.md) Référence du programmeur pour le codage de fonctions et la définition de déclencheurs et de liaisons.
++ Le didacticiel [Test d’Azure Functions](functions-test-a-function.md) décrit plusieurs outils et techniques permettant de tester vos fonctions.
++ La rubrique [Comment mettre à l’échelle Azure Functions](functions-scale.md) présente les plans de services disponibles dans Azure Functions, dont le plan de service dynamique, et explique comment choisir le plan adapté à vos besoins.
 
 [AZURE.INCLUDE [Remarque relative à la prise en main](../../includes/functions-get-help.md)]
 
-<!---HONumber=AcomDC_0622_2016-->
+<!---HONumber=AcomDC_0928_2016-->

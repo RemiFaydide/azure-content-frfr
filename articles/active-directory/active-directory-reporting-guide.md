@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="03/07/2016"
+   ms.date="09/16/2016"
    ms.author="dhanyahk"/>
 
 
@@ -29,4 +29,4 @@
  - [Événement « Acteur inconnu » lors de la création de rapports Azure Active Directory](active-directory-reporting-unknown-actor.md)
  - [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md)
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

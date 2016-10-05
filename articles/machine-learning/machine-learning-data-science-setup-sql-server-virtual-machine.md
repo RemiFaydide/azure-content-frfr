@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/19/2016"
 	ms.author="xibingao;bradsev" />
 
 # Configurer une machine virtuelle Azure SQL Server comme serveur IPython Notebook pour des analyses avancées
@@ -34,7 +34,7 @@ La galerie de machines virtuelles Azure inclut différentes images contenant Mic
 
 2.  Dans le portail Azure Classic, en bas à gauche de la page web, cliquez sur **+NOUVEAU**, sur **CALCUL**, sur **MACHINE VIRTUELLE**, puis sur **À PARTIR DE LA GALERIE**.
 
-3.  Dans la page **Créer une machine virtuelle**, sélectionnez une image de machine virtuelle avec SQL Server adaptée à vos besoins en matière de données, puis cliquez sur la flèche suivante dans le coin inférieur droit de la page. Pour obtenir les informations les plus récentes sur les images SQL Server prises en charge sur Azure, consultez la page [Mise en route de SQL Server sur les machines virtuelles Windows Azure](http://go.microsoft.com/fwlink/p/?LinkId=294720) dans l’ensemble de documentation [SQL Server dans les machines virtuelles Azure](http://go.microsoft.com/fwlink/p/?LinkId=294719).
+3.  Dans la page **Créer une machine virtuelle**, sélectionnez une image de machine virtuelle avec SQL Server adaptée à vos besoins en matière de données, puis cliquez sur la flèche suivante dans le coin inférieur droit de la page. Pour obtenir les informations les plus récentes sur les images SQL Server prises en charge sur Azure, consultez la page [Mise en route de SQL Server sur les machines virtuelles Microsoft Azure](http://go.microsoft.com/fwlink/p/?LinkId=294720) dans l’ensemble de documentation [SQL Server dans les machines virtuelles Azure](http://go.microsoft.com/fwlink/p/?LinkId=294719).
 
 	![Sélection de la machine virtuelle Serveur SQL][1]
 
@@ -219,7 +219,7 @@ Pour créer des connexions SQL Server à l’aide de SQL Server Management Stu
 
 11. S'il s'agit de votre première connexion, vous pouvez désigner cette connexion en tant qu'administrateur SQL Server. Si cela est le cas, sur la page **Rôles du serveur**, activez la case à cocher **administrateur système**.
 
-    **Remarque relative à la sécurité** : les membres du rôle serveur fixe administrateur système contrôlent complètement le moteur de base de données. Vous devez limiter soigneusement l'appartenance à ce rôle.
+    > [AZURE.IMPORTANT] les membres du rôle serveur administrateur système fixe contrôlent complètement le moteur de base de données. Pour des raisons de sécurité, vous devez limiter soigneusement l'appartenance à ce rôle.
 
     ![administrateur système][12]
 
@@ -306,4 +306,4 @@ Les étapes suivantes du processus de science des données sont présentées dan
 [15]: ./media/machine-learning-data-science-setup-sql-server-virtual-machine/vmshutdown.png
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

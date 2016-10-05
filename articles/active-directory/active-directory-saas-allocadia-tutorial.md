@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/01/2016"
+	ms.date="09/19/2016"
 	ms.author="jeedes"/>
 
 
@@ -29,12 +29,12 @@ L’intégration d’Allocadia dans Azure AD vous offre les avantages suivants :
 
 Pour en savoir plus sur l’intégration des applications SaaS avec Azure AD, consultez [Qu’est-ce que l’accès aux applications et l’authentification unique avec Azure Active Directory ?](active-directory-appssoaccess-whatis.md).
 
-## Configuration requise
+## Composants requis
 
 Pour configurer l'intégration d'Azure AD avec Allocadia, vous avez besoin des éléments suivants :
 
 - Un abonnement Azure AD
-- Un abonnement Allocadia pour lequel l'authentification unique est activée
+- Un abonnement Allocadia pour lequel l’authentification unique est activée
 
 
 > [AZURE.NOTE] Pour tester les étapes de ce didacticiel, nous déconseillons l’utilisation d’un environnement de production.
@@ -159,7 +159,7 @@ L’application Allocadia attend les assertions SAML dans un format spécifique.
 
     a. Cliquez sur **Télécharger les métadonnées**, puis enregistrez le fichier sur votre ordinateur.
 
-    b. Cliquez sur **Next**.
+    b. Cliquez sur **Suivant**.
 
 
 7.  Afin de configurer l’authentification unique pour votre application, contactez l'équipe de [support Allocadia](mailTo:support@allocadia.com), qui vous aidera à configurer l’authentification unique. Notez que vous devez envoyer un courrier électronique et joindre le fichier de métadonnées téléchargé pour configurer l’authentification unique côté Allocadia.
@@ -191,11 +191,11 @@ Dans cette section, vous allez créer un utilisateur de test appelé Britta Simo
 
 2. Dans la liste **Annuaire**, sélectionnez l'annuaire pour lequel vous voulez activer l'intégration d'annuaire.
 
-3. Pour afficher la liste des utilisateurs, dans le menu situé en haut, cliquez sur **Utilisateurs**.
+3. Pour afficher la liste des utilisateurs, dans le menu du haut, cliquez sur **Utilisateurs**.
 	
 	![Création d’un utilisateur de test Azure AD](./media/active-directory-saas-allocadia-tutorial/create_aaduser_03.png)
 
-4. Pour ouvrir la boîte de dialogue **Ajouter un utilisateur**, cliquez sur **Ajouter un utilisateur** dans la barre d’outils située en bas.
+4. Pour ouvrir la boîte de dialogue **Ajouter un utilisateur**, cliquez sur l’option **Ajouter un utilisateur** figurant dans la barre d’outils du bas.
 
 	![Création d’un utilisateur de test Azure AD](./media/active-directory-saas-allocadia-tutorial/create_aaduser_04.png)
 
@@ -209,7 +209,7 @@ Dans cette section, vous allez créer un utilisateur de test appelé Britta Simo
 
     c. Cliquez sur **Next**.
 
-6.  Sur la page de boîte de dialogue **Profil utilisateur**, procédez comme suit :
+6.  Sur la page **Profil utilisateur**, procédez comme suit :
 
 	![Création d’un utilisateur de test Azure AD](./media/active-directory-saas-allocadia-tutorial/create_aaduser_06.png)
 
@@ -267,7 +267,7 @@ Dans cette section, vous allez autoriser Britta Simon à utiliser l’authentifi
 
 1. Dans la liste Utilisateurs, sélectionnez **Britta Simon**.
 
-2. Dans la barre d’outils inférieure, cliquez sur **Attribuer**.
+2. Dans la barre d’outils située en bas, cliquez sur **Attribuer**.
 
 	![Affecter des utilisateurs][205]
 
@@ -302,4 +302,4 @@ Dans cette section, vous allez tester la configuration de l’authentification u
 [204]: ./media/active-directory-saas-allocadia-tutorial/tutorial_general_204.png
 [205]: ./media/active-directory-saas-allocadia-tutorial/tutorial_general_205.png
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

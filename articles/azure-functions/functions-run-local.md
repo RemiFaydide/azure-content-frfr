@@ -219,7 +219,8 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 * [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md)
 * [Informations de référence pour les développeurs C# sur Azure Functions](functions-reference-csharp.md)
+* [Informations de référence pour les développeurs F# sur Azure Functions](functions-reference-fsharp.md)
 * [Azure Functions NodeJS developer reference (Référence pour les développeurs NodeJS Azure Functions)](functions-reference-node.md)
 * [Azure Functions triggers and bindings (Déclencheurs et liaisons Azure Functions)](functions-triggers-bindings.md)
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

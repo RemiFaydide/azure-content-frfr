@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="05/02/2016"
+   ms.date="09/09/2016"
    ms.author="chackdan"/>
 
 # Créer des clusters Service Fabric autonomes sur un serveur Windows Server ou Linux
@@ -24,11 +24,11 @@ Azure Service Fabric permet la création de clusters Service Fabric sur toute ma
 Service Fabric fournit un package d’installation pour créer ces clusters Service Fabric autonomes en local. L’avantage est qu’il n’existe aucune obligation en termes de fournisseur lorsque vous générez une application à l’aide de Service Fabric dans la mesure où vous choisissez où ces applications s’exécutent. Cela augmente également votre capacité à atteindre un ensemble plus large de clients, étant donné que des clients différents peuvent avoir des exigences différentes pour les environnements où ils souhaitent exécuter vos applications. Par exemple, les clients du secteur financier et du secteur de la santé peuvent avoir des besoins différents de ceux d’un constructeur automobile ou d’une agence de voyages.
 
 ## Systèmes d’exploitation pris en charge
-Vous pourrez créer des clusters sur des machines virtuelles ou des ordinateurs qui exécutent ces systèmes d’exploitation :
+Vous pouvez créer des clusters sur des machines virtuelles ou des ordinateurs qui exécutent ces systèmes d’exploitation :
 
 * Windows Server 2012 R2
-* Windows Server 2016
-* Linux
+* Windows Server 2016 (une fois annoncé comme étant mis à la disposition générale)
+* Linux (prochainement)
 
 Pour plus d’informations sur Windows Server, consultez l’article [Création d’un cluster Service Fabric pour Windows Server](service-fabric-cluster-creation-for-windows-server.md)
 
@@ -55,11 +55,11 @@ L’exécution de clusters Service Fabric sur Azure offre des avantages par rapp
 * **Cluster Service Fabric en tant que ressource Azure :** un cluster Service Fabric est une ressource ARM, que vous pouvez modeler comme d’autres ressources ARM dans Azure.
 * **Intégration à l’infrastructure Azure :** Service Fabric se coordonne avec l’infrastructure Azure sous-jacente pour que le système d’exploitation, le réseau et d’autres mises à niveau améliorent la disponibilité et la fiabilité de vos applications.
 * **Diagnostics :** dans Azure, nous proposons l’intégration d’Azure Diagnostics et de Log Analytics.
-* **Mise à l’échelle automatique :** pour les clusters sur Azure, nous fournissons une fonctionnalité de mise à l’échelle automatique intégrée provenant des jeux de mise à l’échelle de machine virtuelle. Dans des environnements locaux ou d’autres environnements cloud, vous devrez créer votre propre fonctionnalité de mise à l’échelle automatique ou mettre à l’échelle manuellement à l’aide des API que Service Fabric expose pour la mise à l’échelle des clusters.
+* **Mise à l’échelle automatique :** pour les clusters sur Azure, nous fournissons une fonctionnalité de mise à l’échelle automatique intégrée provenant des jeux de mise à l’échelle de machine virtuelle. Dans des environnements locaux ou d’autres environnements cloud, vous devez créer votre propre fonctionnalité de mise à l’échelle automatique ou mettre à l’échelle manuellement à l’aide des API que Service Fabric expose pour la mise à l’échelle des clusters.
 
 ## Étapes suivantes
 Créer un cluster sur des machines virtuelles ou des ordinateurs exécutant Windows Server : [Création d’un cluster Service Fabric pour Windows Server](service-fabric-cluster-creation-for-windows-server.md)
 
 Créer un cluster sur des machines virtuelles ou des ordinateurs exécutant Linux : [Service Fabric sur Linux](service-fabric-linux-overview.md)
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

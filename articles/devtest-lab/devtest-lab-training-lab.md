@@ -73,7 +73,7 @@ Cet article présente les différentes fonctionnalités d’Azure DevTest Labs q
 
     Azure DevTest Labs vous permet de mettre en place une stratégie dans le laboratoire pour spécifier le nombre maximal de machines virtuelles qui peuvent être créées par un participant.
 
-    Si vous dirigez une formation de plusieurs jours et souhaitez arrêter toutes les machines virtuelles à un moment précis de la journée, puis les redémarrer automatiquement le jour suivant, vous pouvez facilement le faire en définissant des stratégies d’arrêt et de démarrage automatiques dans le laboratoire.
+    Si vous dirigez une formation de plusieurs jours et souhaitez arrêter toutes les machines virtuelles à un moment précis de la journée, puis les redémarrer automatiquement le lendemain, vous pouvez facilement le faire en définissant des stratégies d’arrêt et de démarrage automatiques dans le laboratoire.
 
     Enfin, une fois la formation terminée, vous pouvez supprimer toutes les machines virtuelles d’un coup en exécutant un simple script PowerShell.
 
@@ -108,4 +108,4 @@ Cet article présente les différentes fonctionnalités d’Azure DevTest Labs q
 
 [AZURE.INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

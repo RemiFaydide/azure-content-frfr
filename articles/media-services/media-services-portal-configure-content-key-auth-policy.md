@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Configuration de la stratégie d’autorisation de clé de contenu à l’aide du portail" 
+	pageTitle="Configurer la stratégie d’autorisation de clé de contenu à l’aide du portail Azure | Microsoft Azure" 
 	description="Apprenez à configurer une stratégie d’autorisation pour une clé de contenu." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="06/22/2016" 
+ 	ms.date="09/19/2016" 
 	ms.author="juliako"/>
 
 
 
-#Configuration de la stratégie d’autorisation de clé de contenu 
+#Configuration de la stratégie d’autorisation de clé de contenu
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
 
 
@@ -29,7 +29,7 @@ Microsoft Azure Media Services vous permet de fournir des flux MPEG-DASH, Smooth
 Media Services fournit également un **service de remise de clés/de licences** à partir duquel les clients peuvent obtenir des clés AES ou des licences PlayReady/Widevine pour lire le contenu chiffré.
 
 Cette rubrique montre comment utiliser le **portail Azure Classic** pour configurer la stratégie d’autorisation de clé de contenu. Elles peuvent ensuite être utilisées pour chiffrer dynamiquement votre contenu. Notez que, actuellement, vous pouvez chiffrer les formats de diffusion en continu suivants : HLS, MPEG DASH et Smooth Streaming. Vous ne pouvez pas chiffrer le format de diffusion en continu HDS ni les téléchargements progressifs.
- 
+
 Lorsqu’un lecteur demande un flux de données devant être chiffré dynamiquement, Media Services utilise la clé configurée pour chiffrer dynamiquement votre contenu à l’aide du chiffrement AES ou DRM. Pour déchiffrer le flux de données, le lecteur demande la clé au service de remise de clé. Pour déterminer si l’utilisateur est autorisé à obtenir la clé, le service évalue les stratégies d’autorisation que vous avez spécifiées pour la clé.
 
 
@@ -41,7 +41,7 @@ Si vous prévoyez de disposer de plusieurs clés de contenu ou souhaitez spécif
 
 ###Certaines considérations s’appliquent :
 
-- Pour pouvoir utiliser l’empaquetage et le chiffrement dynamiques, vous devez vous assurer d’avoir au moins une unité réservée de diffusion en continu. Pour plus d'informations, consultez [Mise à l'échelle d'un service de média](media-services-manage-origins.md#scale_streaming_endpoints).
+- Pour pouvoir utiliser l’empaquetage et le chiffrement dynamiques, vous devez vous assurer d’avoir au moins une unité réservée de diffusion en continu. Pour plus d'informations, consultez [Mise à l'échelle d'un service de média](media-services-portal-manage-streaming-endpoints.md).
 - Votre ressource doit contenir un ensemble de MP4 à débit adaptatif ou des fichiers de diffusion en continu lisse à débit adaptatif. Pour plus d'informations, consultez [Encoder une ressource](media-services-encode-asset.md).
 - Le service de remise de clé met en cache ContentKeyAuthorizationPolicy et ses objets connexes (options de stratégie et restrictions) pendant 15 minutes. Si vous créez une ContentKeyAuthorizationPolicy et que vous spécifiez l’utilisation d’une restriction « Jeton », puis la testez avant de mettre à jour la stratégie de restriction vers « Ouverte », vous devrez attendre environ 15 minutes avant que la stratégie bascule vers la version « Ouverte ».
 
@@ -49,7 +49,7 @@ Si vous prévoyez de disposer de plusieurs clés de contenu ou souhaitez spécif
 ##Configuration de la stratégie d’autorisation de clé
 
 Pour configurer la stratégie d’autorisation de clé, sélectionnez la page **PROTECTION DU CONTENU**.
-	
+
 Media Services prend en charge plusieurs méthodes d’authentification des utilisateurs effectuant des demandes de clé. La stratégie d’autorisation de clé de contenu peut disposer de restrictions d’autorisation de type **ouvert**, **jeton** ou **IP** (l’**IP** peut être configuré avec REST ou le Kit de développement logiciel (SDK) .NET).
 
 ###Restriction ouverte
@@ -71,23 +71,15 @@ Lorsque vous configurez la stratégie de restriction **JETON**, vous devez défi
 ###PlayReady
 
 Quand vous protégez votre contenu avec **PlayReady**, vous devez spécifier dans votre stratégie d'autorisation une chaîne XML qui définisse le modèle de licence PlayReady. Par défaut, la stratégie suivante est définie :
-		
-	<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1">
-	  <LicenseTemplates>
-	    <PlayReadyLicenseTemplate><AllowTestDevices>true</AllowTestDevices>
-	      <ContentKey i:type="ContentEncryptionKeyFromHeader" />
-	      <LicenseType>Nonpersistent</LicenseType>
-	      <PlayRight>
-	        <AllowPassingVideoContentToUnknownOutput>Allowed</AllowPassingVideoContentToUnknownOutput>
-	      </PlayRight>
-	    </PlayReadyLicenseTemplate>
-	  </LicenseTemplates>
-	</PlayReadyLicenseResponseTemplate>
+
+<PlayReadyLicenseResponseTemplate xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/Azure/MediaServices/KeyDelivery/PlayReadyTemplate/v1"> <LicenseTemplates> <PlayReadyLicenseTemplate><AllowTestDevices>true</AllowTestDevices> <ContentKey i:type="ContentEncryptionKeyFromHeader" /> <LicenseType>Nonpersistent</LicenseType> <PlayRight> <AllowPassingVideoContentToUnknownOutput>Allowed</AllowPassingVideoContentToUnknownOutput> </PlayRight> </PlayReadyLicenseTemplate> </LicenseTemplates> </PlayReadyLicenseResponseTemplate>
 
 Vous pouvez cliquer sur le bouton **importer le xml de la stratégie** et fournir un autre XML conforme au schéma XML défini [ici](https://msdn.microsoft.com/library/azure/dn783459.aspx).
 
 
-##Parcours d’apprentissage de Media Services
+##Étape suivante
+
+Consultez les parcours d’apprentissage de Media Services.
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
@@ -96,13 +88,10 @@ Vous pouvez cliquer sur le bouton **importer le xml de la stratégie** et fourni
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 
-##Étapes suivantes
-La stratégie d’autorisation de la clé de contenu étant configurée, consultez la rubrique [Comment utiliser le portail Azure Classic pour activer le chiffrement](media-services-manage-content.md#encrypt).
+
 
 
 [open_policy]: ./media/media-services-portal-configure-content-key-auth-policy/media-services-protect-content-with-open-restriction.png
 [token_policy]: ./media/media-services-key-authorization-policy/media-services-protect-content-with-token-restriction.png
 
- 
-
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

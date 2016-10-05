@@ -454,7 +454,7 @@ Votre hub de notification est à présent configuré pour fonctionner avec Fireb
 
 ##Envoi de notifications Push
 
-Vous pouvez tester la réception de notifications Push dans votre application en les envoyant via le [portail Azure] (recherchez la section **Dépannage** dans le panneau Hub, comme illustré ci-dessous).
+Vous pouvez tester la réception de notifications Push dans votre application en les envoyant via le [portail Azure] \(recherchez la section **Dépannage** dans le panneau Hub, comme illustré ci-dessous).
 
 ![Azure Notification Hubs - Test d’envoi](./media/notification-hubs-android-push-notification-google-fcm-get-started/notification-hubs-test-send.png)
 

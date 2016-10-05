@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/08/2016"
+   ms.date="09/16/2016"
    ms.author="terrylan"/>
 
 # Vue d’ensemble des fonctionnalités de sécurité d’Azure Storage
@@ -101,4 +101,4 @@ En savoir plus :
 - [Qu’est-ce qu’Azure Key Vault ?](../key-vault/key-vault-whatis.md)
 - [Prise en main du coffre de clés Azure](../key-vault/key-vault-get-started.md)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

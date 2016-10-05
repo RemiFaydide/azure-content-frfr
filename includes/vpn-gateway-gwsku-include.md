@@ -1,4 +1,4 @@
-Lorsque vous créez une passerelle de réseau virtuel, vous devez spécifier la référence SKU de passerelle que vous voulez utiliser. Lorsque la passerelle de réseau virtuel est créée, elle est conçue comme du matériel virtuel. Lorsque vous sélectionnez une référence SKU de passerelle supérieure, une puissance de traitement supplémentaire est affectée à la passerelle pour acheminer le trafic et, dans le cas d’une passerelle VPN, traiter le chiffrement du VPN. Les références SKU de passerelle s’appliquent aux modèles de déploiement classique et Resource Manager.
+Lorsque vous créez une passerelle de réseau virtuel, vous devez spécifier la référence SKU de passerelle que vous voulez utiliser. Si vous sélectionnez une référence SKU de passerelle supérieure, la quantité de ressources processeur et de bande passante réseau allouées à la passerelle augmente. Par conséquent, la passerelle peut prendre en charge un débit réseau plus élevé sur le réseau virtuel.
 
 La passerelle VPN peut utiliser les références SKU suivantes :
 
@@ -6,4 +6,4 @@ La passerelle VPN peut utiliser les références SKU suivantes :
 - Standard
 - HighPerformance
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/07/2016"
+	ms.date="09/20/2016"
 	ms.author="robmcm"/>
 
 # Configuration d’un nom de domaine personnalisé pour une application web dans Azure App Service utilisant Traffic Manager
@@ -55,7 +55,7 @@ Pour associer votre domaine personnalisé à une application web dans Azure App
 
 1. Bien que les spécificités de chaque bureau d'enregistrement varient, vous mappez généralement *à partir de* votre nom de domaine personnalisé (par exemple, **contoso.com**,) *vers* le nom de domaine Traffic Manager (**contoso.trafficmanager.net**) qui est utilisé pour votre application web.
 
-> [AZURE.NOTE] Sinon, si un enregistrement est déjà utilisé et que vous devez lier vos applications à titre préventif, créez un enregistrement TXT pour **awverify.contoso.com** sur **contoso.trafficmanager.net**.
+    > [AZURE.NOTE] Autrement, si un enregistrement est déjà utilisé et que vous devez lier vos applications à titre préventif, vous pouvez créer un enregistrement CNAME supplémentaire. Par exemple, pour lier **www.contoso.com** à votre application web à titre préventif, créez un enregistrement CNAME entre **awverify.www** et **contoso.trafficmanager.net**. Vous pouvez ensuite ajouter « www.contoso.com » à votre application web sans modifier l’enregistrement CNAME « www ». Pour plus d’informations, consultez [Créer des enregistrements DNS pour une application web dans un domaine personnalisé][CREATEDNS].
 
 1. Lorsque vous avez fini d'ajouter ou de modifier des enregistrements DNS auprès de votre bureau d'enregistrement, enregistrez les modifications.
 
@@ -72,4 +72,8 @@ Pour plus d’informations, consultez le [Centre pour développeurs Node.js](/de
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
 
-<!---HONumber=AcomDC_0824_2016-->
+<!-- URL List -->
+
+[CREATEDNS]: ../dns/dns-web-sites-custom-domain.md
+
+<!---HONumber=AcomDC_0921_2016-->

@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="06/29/2016" 
+    ms.date="09/19/2016" 
     ms.author="jeedes" />
 
 #Didacticiel : Intégration d’Azure AD avec Slack
@@ -66,7 +66,7 @@ Cette section décrit l’activation de l’intégration d’applications pour S
 
 ##Configuration de l'authentification unique
   
-Cette section explique comment permettre aux utilisateurs de s’authentifier sur Slack avec leur compte Azure AD en utilisant la fédération basée sur le protocole SAML. Dans le cadre de cette procédure, vous devez créer un fichier de certificat codé en base 64. Si cette procédure ne vous est pas familière, consultez [Comment convertir un certificat binaire en fichier texte](http://youtu.be/PlgrzUZ-Y1o).
+Cette section explique comment permettre aux utilisateurs de s’authentifier sur Slack avec leur compte Azure AD en utilisant la fédération basée sur le protocole SAML. Dans le cadre de cette procédure, vous devez créer un fichier de certificat codé en base 64. Si cette procédure ne vous est pas familière, consultez [Conversion d’un certificat binaire en fichier texte](http://youtu.be/PlgrzUZ-Y1o).
 
 ###Pour configurer l’authentification unique, procédez comme suit :
 
@@ -78,7 +78,7 @@ Cette section explique comment permettre aux utilisateurs de s’authentifier su
 
     ![Configurer l’authentification unique](./media/active-directory-saas-slack-tutorial/IC794983.png "Configurer l’authentification unique")
 
-3.  Dans la zone de texte **URL de connexion à Slack** de la page **Configurer l’URL de l’application**, tapez l’URL de votre client Slack (par exemple, "*https://azuread.slack.com*"), puis cliquez sur **Suivant**.
+3.  Dans la zone de texte **URL de connexion à Slack** de la page **Configurer l’URL de l’application**, tapez l’URL de votre client Slack (par exemple, « **https://azuread.slack.com*"), puis cliquez sur **Suivant**.
 
     ![Configurer l’URL de l’application](./media/active-directory-saas-slack-tutorial/IC794984.png "Configurer l’URL de l’application")
 
@@ -140,4 +140,4 @@ Pour tester votre configuration, vous devez autoriser les utilisateurs d’Azure
   
 Si vous souhaitez tester vos paramètres d’authentification unique, ouvrez le volet d’accès. Pour plus d’informations sur le volet d’accès, consultez [Présentation du volet d’accès](active-directory-saas-access-panel-introduction.md).
 
-<!----HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

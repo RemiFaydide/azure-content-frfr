@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="03/07/2016"
+   ms.date="09/16/2016"
    ms.author="dhanyahk"/>
 
 # Versions préliminaires des rapports Azure Active Directory
@@ -37,7 +37,7 @@ Erreurs de configuration de compte | Disponibilité générale
 Utilisation des applications | Disponibilité générale
 État de substitution de mot de passe | Disponibilité générale
 **Rapports d’audit et d’activité** |
-Rapport d’audit | Version préliminaire publique
+Rapport d'audit | Version préliminaire publique
 Activité de réinitialisation de mot de passe (Azure AD) | Version préliminaire publique
 Activité de réinitialisation de mot de passe (Identity Manager) | Version préliminaire publique
 Activité d’enregistrement de réinitialisation de mot de passe (Azure AD) | Version préliminaire publique
@@ -46,7 +46,7 @@ Activité de groupes en libre-service (Azure AD) | Version préliminaire publiqu
 Activité de groupes en libre-service (Identity Manager) | Version préliminaire publique
 **Rapports B2B** |
 Résumé de l’invitation | Version préliminaire publique
-**Rapports RMS** |
+**Rapports RMS** |
 Utilisateurs RMS les plus actifs | Version préliminaire publique
 Utilisation de RMS | Version préliminaire publique
 Utilisation d’un appareil RMS | Version préliminaire publique
@@ -54,4 +54,4 @@ Utilisation d’applications fonctionnant avec RMS | Version préliminaire publi
 **Rapports sur la version préliminaire privée** |
 Toute l’activité de connexion des utilisateurs | Version préliminaire privée
 
-<!---------HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0921_2016-->

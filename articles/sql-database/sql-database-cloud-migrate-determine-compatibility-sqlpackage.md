@@ -29,7 +29,7 @@ Cet article explique comment déterminer si une base de données SQL Server est 
 
 ## Avec SqlPackage.exe
 
-1. Ouvrez une invite de commandes et modifiez le répertoire contenant la version la plus récente de sqlpackage.exe. Cet utilitaire est fourni avec Visual Studio et SQL Server. Téléchargez le [version la plus récente de SQL Server Data Tools pour Visual Studio](https://msdn.microsoft.com/library/mt204009.aspx) pour obtenir la dernière version de l’utilitaire SqlPackage.
+1. Ouvrez une invite de commandes et modifiez le répertoire contenant la version la plus récente de sqlpackage.exe. Cet utilitaire est fourni avec les dernières versions de [SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx) et de [SQL Server Data Tools pour Visual Studio](https://msdn.microsoft.com/library/mt204009.aspx). Vous pouvez également télécharger la dernière version de [SqlPackage](https://www.microsoft.com/fr-FR/download/details.aspx?id=53876) directement à partir du Centre de téléchargement Microsoft.
 2. Exécutez la commande SqlPackage suivante avec les arguments ci-dessous pour votre environnement :
 
 	'sqlpackage.exe /Action:Export /ssn:< nom\_serveur > /sdn:< nom\_base\_de\_données > /tf:< fichier\_cible > /p:TableData=< nom\_schéma.nom\_table > > < fichier\_sortie > 2>&1'
@@ -42,7 +42,7 @@ Cet article explique comment déterminer si une base de données SQL Server est 
 	| < nom\_schéma.nom\_table > | tables pour lesquelles les données sont générées dans le fichier cible |
 	| < fichier\_sortie > | nom de fichier et emplacement du fichier de sortie avec des erreurs, le cas échéant |
 
-	L’argument /p:TableName est utilisé afin de tester uniquement la compatibilité de base de données en vue d’une exportation vers Azure SQL DB V12. Nous ne cherchons pas en effet à exporter les données de toutes les tables. Malheureusement, l’argument d’exportation de sqlpackage.exe ne prend pas en charge l’extraction de zéro table. Vous devez spécifier au moins une table, telle une petite table simple. Le fichier < fichier\_sortie > contiendra le rapport d’erreurs. La chaîne "> 2>&1" dirige le résultat standard et l'erreur standard générés par l'exécution de la commande vers le fichier de sortie spécifié.
+	L’argument /p:TableName est utilisé afin de tester uniquement la compatibilité de base de données en vue d’une exportation vers Azure SQL DB V12. Nous ne cherchons pas en effet à exporter les données de toutes les tables. Malheureusement, l’argument d’exportation de sqlpackage.exe ne prend pas en charge l’extraction de zéro table. Vous devez spécifier au moins une table, telle une petite table simple. Le fichier < fichier\_sortie > contient le rapport d’erreurs. La chaîne "> 2>&1" dirige le résultat standard et l'erreur standard générés par l'exécution de la commande vers le fichier de sortie spécifié.
 
 	![Exporter une application de la couche Données à partir du menu Tâches](./media/sql-database-cloud-migrate/TestForCompatibilityUsingSQLPackage01.png)
 
@@ -62,4 +62,4 @@ Cet article explique comment déterminer si une base de données SQL Server est 
 - [Fonctions partiellement ou non prises en charge de Transact-SQL](sql-database-transact-sql-information.md)
 - [Migration de bases de données non-SQL Server avec l’Assistant Migration SQL Server](http://blogs.msdn.com/b/ssma/)
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

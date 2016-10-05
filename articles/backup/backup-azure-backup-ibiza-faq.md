@@ -23,11 +23,11 @@
 - [FAQ Azure Backup pour le mode Classic](backup-azure-backup-faq.md)
 - [FAQ Azure Backup pour le mode Resource Manager](backup-azure-backup-ibiza-faq.md)
 
-Cet article fournit des informations spécifiques au coffre Recovery Services et il vient compléter la [FAQ Azure Backup](backup-azure-backup-faq). La FAQ Azure Backup fournit l’ensemble des questions et réponses sur le service Azure Backup.
+Cet article fournit des informations spécifiques au coffre Recovery Services et il vient compléter la [FAQ Azure Backup](backup-azure-backup-faq.md). La FAQ Azure Backup fournit l’ensemble des questions et réponses sur le service Azure Backup.
 
 Vous pouvez poser des questions sur Azure Backup dans la section Disques de cet article ou d’un article associé. Vous pouvez également publier des questions sur le service Azure Backup dans le [forum de discussion](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazureonlinebackup).
 
-## Les coffres Recovery Services sont en mode Resource Manager. Les coffres Azure Backup (en mode Classic) sont-ils toujours pris en charge ? <br/>
+## Les coffres Recovery Services sont basés sur Resource Manager. Les coffres Azure Backup (mode Classic) sont-ils toujours gérés ? <br/>
 Oui, les coffres Azure Backup sont toujours pris en charge. Créez des coffres Azure Backup dans le [portail Azure Classic](https://manage.windowsazure.com). Créez des coffres Azure Recovery Services dans le [portail Azure](https://portal.azure.com). Toutefois, il est vivement recommandé de créer un coffre Recovery Services, car toutes les futures améliorations ne seront disponibles que dans c type de coffre.
 
 ## Puis-je migrer un coffre Azure Backup dans un coffre Recovery Services ? <br/>
@@ -43,4 +43,4 @@ Les sauvegardes de machines virtuelles en mode Classic dans le code Azure Backup
 2. Migrez la machine virtuelle du mode Classic vers le mode Resource Manager. Vérifiez que le stockage et le réseau correspondant à la machine virtuelle sont également migrés vers le mode Resource Manager.
 3. Créez un coffre Recovery Services et configurez la sauvegarde sur la machine virtuelle migrée, à l’aide de l’action **Sauvegarder** en haut du tableau de bord du coffre. En savoir plus sur la [sauvegarde dans le coffre Recovery Services](backup-azure-vms-first-look-arm.md)
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0928_2016-->

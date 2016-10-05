@@ -3,7 +3,7 @@
 	description="Sous-échantillonnage de données dans des tables Hive Azure HDInsight (Hadoop)"
 	services="machine-learning,hdinsight"
 	documentationCenter=""
-	authors="bradsev,hangzh-msft"
+	authors="bradsev"
 	manager="jhubbard" 
 	editor="cgronlun"  />
 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/19/2016"
 	ms.author="hangzh;bradsev" />
 
 # Échantillonner des données dans des tables Hive Azure HDInsight
@@ -107,4 +107,4 @@ Voici un exemple de requête :
 Pour plus d’informations sur les méthodes d’échantillonnage plus élaborées qui sont disponibles dans Hive, consultez la page consacrée aux [méthodes d’échantillonnage dans le manuel du langage](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Sampling).
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

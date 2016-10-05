@@ -362,4 +362,4 @@ Le script PowerShell ci-après prépare un compte Azure Data Lake Analytics et l
     Get-AzureRmDataLakeStoreChildItem -Account $dataLakeStoreName -Path  "/Samples/Data/"
     #endregion
 
-<!---HONumber=AcomDC_0914_2016-->
+<!-----HONumber=AcomDC_0914_2016-->

@@ -42,4 +42,4 @@
 
 4. Cliquez sur l’icône en forme de coche ![icône en forme de coche](./media/storsimple-create-volume-u2/HCS_CheckIcon-include.png). Un volume est créé avec les paramètres spécifiés.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!-------HONumber=AcomDC_0914_2016-->

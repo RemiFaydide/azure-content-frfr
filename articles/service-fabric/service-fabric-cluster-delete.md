@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Supprimer un cluster et ses ressources | Microsoft Azure"
+   pageTitle="Supprimer un cluster Azure et ses ressources | Microsoft Azure"
    description="Découvrez comment supprimer complètement un cluster Service Fabric en supprimant le groupe de ressources dans lequel il se trouve ou en supprimant les ressources individuellement."
    services="service-fabric"
    documentationCenter=".net"
@@ -13,12 +13,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="05/04/2016"
+   ms.date="09/09/2016"
    ms.author="chackdan"/>
 
-# Supprimer un cluster Service Fabric et les ressources qu’il utilise
+# Supprimer un cluster Service Fabric sur Azure et les ressources qu’il utilise
 
-Un cluster Service Fabric est composé de nombreuses ressources Azure en plus de la ressource de cluster elle-même. Ainsi, pour supprimer complètement un cluster Service Fabric, vous devez également supprimer toutes les ressources qui le composent. Vous pouvez procéder de deux façons : vous pouvez supprimer le groupe de ressources dans lequel est situé le cluster (ce qui supprime la ressource de cluster et toutes les autres ressources du groupe de ressources) ou supprimer spécifiquement la ressource de cluster et les ressources associées (mais pas d’autres ressources du groupe de ressources).
+Un cluster Service Fabric est composé de nombreuses ressources Azure en plus de la ressource de cluster elle-même. Pour supprimer complètement un cluster Service Fabric, vous devez également supprimer toutes les ressources qui le composent. Vous pouvez procéder de deux façons : vous pouvez supprimer le groupe de ressources dans lequel est situé le cluster (ce qui supprime la ressource de cluster et toutes les autres ressources du groupe de ressources) ou supprimer spécifiquement la ressource de cluster et les ressources associées (mais pas d’autres ressources du groupe de ressources).
 
 >[AZURE.NOTE] La suppression de la ressource de cluster n’entraîne **pas** celle de toutes les autres ressources composant votre cluster Service Fabric.
 
@@ -45,7 +45,7 @@ Vous êtes invité à confirmer la suppression si vous n’avez pas utilisé l�
 1. Connectez-vous au [portail Azure](https://portal.azure.com).
 2. Accédez au cluster Service Fabric que vous souhaitez supprimer.
 3. Cliquez sur le nom du groupe de ressources sur la page des éléments essentiels du cluster.
-4. Cela fait apparaître la page **Essentials** du groupe de ressources.
+4. Cela fait apparaître la page **Essentials du groupe de ressources**.
 5. Cliquez sur **Supprimer**.
 6. Suivez les instructions de cette page pour procéder à la suppression du groupe de ressources.
 
@@ -56,13 +56,13 @@ Vous êtes invité à confirmer la suppression si vous n’avez pas utilisé l�
 
 Si votre groupe de ressources comporte uniquement des ressources qui sont liées au cluster Service Fabric à supprimer, il est plus facile de supprimer l’ensemble du groupe de ressources. Si vous souhaitez supprimer certaines ressources de votre groupe de ressources individuellement, procédez comme suit.
 
-Si vous avez déployé votre cluster à l’aide du portail ou de l’un des modèles ARM Service Fabric de la galerie de modèles, toutes les ressources utilisées par le cluster sont balisées avec les deux balises suivantes. Vous pouvez les utiliser pour décider des ressources à supprimer.
+Si vous avez déployé votre cluster à l’aide du portail ou de l’un des modèles Resource Manager Service Fabric de la galerie de modèles, toutes les ressources utilisées par le cluster sont balisées avec les deux balises suivantes. Vous pouvez les utiliser pour décider des ressources à supprimer.
 
-***Balise n° 1 :*** Clé = clusterName, Valeur = « nom du cluster »
+***Balise 1 :*** Clé = clusterName, Valeur = « nom du cluster »
 
-***Balise n° 2 :*** Clé = resourceName, Valeur = ServiceFabric
+***Balise n 2 :*** Clé = resourceName, Valeur = ServiceFabric
 
-### Supprimer des ressources spécifiques dans le Portail Azure
+### Supprimer des ressources spécifiques dans le portail Azure
 
 1. Connectez-vous au [portail Azure](https://portal.azure.com).
 2. Accédez au cluster Service Fabric que vous souhaitez supprimer.
@@ -111,4 +111,4 @@ Lisez les documents suivants pour en savoir plus sur la mise à niveau d’un cl
 
 [TaggedResources]: ./media/service-fabric-cluster-delete/TaggedResources.PNG
 
-<!---HONumber=AcomDC_0518_2016-->
+<!---HONumber=AcomDC_0921_2016-->

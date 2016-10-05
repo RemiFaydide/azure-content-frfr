@@ -75,6 +75,8 @@ Le service d’intégration des journaux Azure collecte les données de télém�
 
 6. Pointez le connecteur de transfert de fichier SIEM standard vers le dossier approprié pour diriger les données vers l’instance SIEM. Reportez-vous aux [configurations SIEM](https://azsiempublicdrops.blob.core.windows.net/drops/ALL.htm) sur votre configuration SIEM.
 
+Si vous avez des questions sur l’intégration des journaux Azure, envoyez un e-mail à [AzSIEMteam@microsoft.com](mailto:AzSIEMteam@microsoft.com)
+
 ## Étapes suivantes
 
 Pour plus d’informations sur les journaux d’audit Azure et les définitions de propriétés, consultez :
@@ -88,4 +90,4 @@ Pour plus d’informations sur le Centre de sécurité, consultez les rubriques 
 - [FAQ Azure Security Center](security-center-faq.md) : forum aux questions concernant l’utilisation de ce service.
 - [Blog sur la sécurité Azure](http://blogs.msdn.com/b/azuresecurity/) : découvrez les dernières nouvelles et informations sur la sécurité Azure.
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

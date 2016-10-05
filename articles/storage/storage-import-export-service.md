@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/22/2016"
-	ms.author="renash"/>
+	ms.date="09/21/2016"
+	ms.author="renash;robinsh"/>
 
 
 # Transfert de données vers le stockage d’objets blob à l’aide du service Microsoft Azure Import/Export
@@ -24,7 +24,7 @@
 Le service Azure Import/Export vous permet de transférer en toute sécurité des volumes importants de données vers Azure Blob Storage en expédiant des disques durs vers un centre de données Azure. Vous pouvez également utiliser ce service pour transférer des données depuis Azure Blob Storage vers les disques durs et les expédier vers votre site local. Ce service est utile lorsque vous souhaitez transférer plusieurs téraoctets de données vers ou depuis Azure, mais le transfert ou le téléchargement via le réseau est impossible à cause d’une bande passante limitée et de coûts de réseau élevés.
 
 Ce service nécessite que les disques durs soient chiffrés par BitLocker pour garantir la sécurité des données. Il prend en charge les comptes de stockage classiques présents dans toutes les régions d’Azure public. Vous devez expédier les disques durs à l’un des emplacements pris en charge spécifiés plus loin dans cet article.
- 
+
 Dans cet article, vous allez découvrir le service Azure Import/Export et apprendre comment expédier des disques pour copier des données vers et depuis Azure Blob Storage.
 
 > [AZURE.IMPORTANT] Vous pouvez créer et gérer des travaux d’importation et d’exportation dans le cadre d’un modèle de stockage classique à l’aide du portail Azure Classic ou des [API REST du service Import/Export](http://go.microsoft.com/fwlink/?LinkID=329099). Les comptes de stockage Resource Manager ne sont pas pris en charge actuellement.
@@ -54,7 +54,7 @@ Vous pouvez utiliser le service Azure Import/Export pour copier des données dan
 
 ### Travail
 
-Pour lancer le processus d'importation ou d'exportation vers ou à partir d'un stockage d'objets blob, commencez par créer une tâche. Il peut s'agir d'une tâche d'importation ou d'une tâche d'exportation :
+Pour lancer le processus d'importation ou d'exportation vers ou à partir d'un stockage d'objets blob, commencez par créer une *tâche*. Il peut s'agir d'une *tâche d'importation* ou d'une *tâche d'exportation* :
 
 - Une tâche d’importation vise à transférer des données locales vers des objets blob de votre compte de stockage Azure.
 - Une tâche d'exportation vise à transférer des données stockées sous forme d'objets blob dans votre compte de stockage sur des disques durs qui vous sont ensuite expédiés.
@@ -207,19 +207,19 @@ Vous pouvez suivre l’état de vos tâches d’importation ou d’exportation d
 
 Selon la phase de traitement de votre disque, vous obtiendrez l’un des statuts suivants :
 
-Statut de tâche|Description
----|---
-Creating|Votre tâche a été créée, mais vous n'avez pas encore fourni vos détails d'expédition.
-Shipping|Votre tâche a été créée et vous avez fourni vos détails d'expédition. **Remarque** : lorsque le disque est remis au centre de données Azure, l’état « Expédition » peut rester affiché pendant un certain temps. Lorsque le service démarre la copie de vos données, l’état devient « Transfert ». Pour afficher un état plus précis de votre disque, vous pouvez utiliser l’API REST Import/Export. 
-Transferring|Vos données sont en cours de transfert de votre disque dur (pour une tâche d'importation) ou vers ce dernier (pour une tâche d'exportation).
-Packaging|Le transfert de vos données est terminé et votre disque dur est en cours de préparation pour vous être renvoyé.
-Complete|Votre disque dur vous a été renvoyé.
+| Statut de tâche | Description |
+|:-------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Creating | Votre tâche a été créée, mais vous n'avez pas encore fourni vos détails d'expédition. |
+| Shipping | Votre tâche a été créée et vous avez fourni vos détails d'expédition. **Remarque** : lorsque le disque est remis au centre de données Azure, l’état « Expédition » peut rester affiché pendant un certain temps. Lorsque le service démarre la copie de vos données, l’état devient « Transfert ». Pour afficher un état plus précis de votre disque, vous pouvez utiliser l’API REST Import/Export. |
+| Transferring | Vos données sont en cours de transfert de votre disque dur (pour une tâche d'importation) ou vers ce dernier (pour une tâche d'exportation). |
+| Packaging | Le transfert de vos données est terminé et votre disque dur est en cours de préparation pour vous être renvoyé. |
+| Complete | Votre disque dur vous a été renvoyé. |
 
-### Temps de traitement du travail 
+### Temps de traitement du travail
 
 Le temps de traitement d’un travail d’importation/exportation varie en fonction de différents facteurs, tels que le délai de livraison, le type de travail, le type et la taille des données copiées, ou encore la taille des disques fournis. Le service Import/Export n’est adossé à aucun contrat de niveau de service. Vous pouvez utiliser l’API REST pour assurer le suivi détaillé de la progression du travail. Dans l’option d’affichage des travaux, un pourcentage d’achèvement terminé indique l’état d’avancement de la copie. Contactez-nous si vous avez besoin d’estimer la durée nécessaire à un travail d’importation/exportation.
 
-### Tarification 
+### Tarification
 
 **Frais de manipulation de disque**
 
@@ -243,7 +243,7 @@ Créez un travail d’importation pour copier les données de vos disques durs d
 
 > [AZURE.IMPORTANT] Vous ne pouvez envoyer qu’un seul travail par compte de stockage. Chaque disque que vous expédiez peut être importé dans un compte de stockage. Par exemple, supposons que vous souhaitiez importer les données dans deux comptes de stockage. Vous devez utiliser un disque dur pour chaque compte de stockage et créer un travail distinct par compte de stockage.
 
-### Préparation des lecteurs	
+### Préparation des lecteurs
 
 Lors de l’importation des données à l’aide du service Azure Import/Export, la première étape consiste à préparer vos disques à l’aide de l’outil client Azure Import/Export). Suivez la procédure ci-dessous pour préparer vos disques :
 
@@ -256,7 +256,7 @@ Lors de l’importation des données à l’aide du service Azure Import/Export,
 4.	Déterminez les répertoires et/ou les fichiers à copier sur chaque disque dur.
 
 5.	Utilisez [l’outil Azure Import/Export](http://go.microsoft.com/fwlink/?LinkID=301900&clcid=0x409) pour copier vos données sur un ou plusieurs disques durs.
-	
+
 	- L’outil Azure Import/Export crée des sessions pour copier vos données sur les disques durs. Au cours d’une session de copie, l’outil peut copier un répertoire et ses sous-répertoires, ou un seul fichier.
 
 	- Plusieurs sessions sont nécessaires si votre source de données comprend plusieurs répertoires.
@@ -321,7 +321,7 @@ Pour une description étape par étape, consultez [Exemple de flux de travail po
 
 	Si vous possédez un numéro de suivi, entrez-le après avoir sélectionné le transporteur dans la liste.
 
-	Si vous n'avez pas encore de numéro de suivi, choisissez **Je fournirai mes informations d'expédition pour ce travail d'importation une fois mon colis envoyé**, puis terminez le processus d'importation.
+	Si vous n'avez pas encore de numéro de suivi, choisissez **I will provide my shipping information for this import job once I have shipped my package**, puis terminez le processus d'importation.
 
 6. Pour entrer votre numéro de suivi après avoir expédié votre colis, revenez à la page **Import/Export** de votre compte de stockage dans le portail Classic, sélectionnez votre travail dans la liste, puis choisissez **Informations d’expédition**. Parcourez l’Assistant, puis entrez votre numéro de suivi à l’étape 2.
 
@@ -425,7 +425,7 @@ Tout disque que vous souhaitez expédier en vue d’importer des données doit �
 
 **Ai-je besoin d’effectuer la préparation du disque lors de la création d'une tâche d'exportation ?**
 
-Non, mais certaines vérifications préalables sont recommandées. Vérifiez le nombre de disques requis à l'aide de la commande PreviewExport de l’outil Azure Import/Export. Pour plus d’informations, consultez [Previewing Drive Usage for an Export Job](https://msdn.microsoft.com/library/azure/dn722414.aspx) (Aperçu de l’utilisation des lecteurs pour une tâche travail d’exportation). Celle-ci vous permet d'afficher un aperçu de l'utilisation du disque pour les objets BLOB que vous avez sélectionnés, en fonction de la taille des disques que vous voulez utiliser. Vérifiez également que le disque dur qui sera utilisé pour le travail d’exportation est accessible en lecture et en écriture.
+Non, mais certaines vérifications préalables sont recommandées. Vérifiez le nombre de disques requis à l'aide de la commande PreviewExport de l’outil Azure Import/Export. Pour plus d’informations, consultez [Aperçu de l’utilisation des lecteurs pour un travail d’exportation](https://msdn.microsoft.com/library/azure/dn722414.aspx). Celle-ci vous permet d'afficher un aperçu de l'utilisation du disque pour les objets BLOB que vous avez sélectionnés, en fonction de la taille des disques que vous voulez utiliser. Vérifiez également que le disque dur qui sera utilisé pour le travail d’exportation est accessible en lecture et en écriture.
 
 **Que se passe-t-il si j’envoie par accident un disque dur non conforme au type pris en charge ?**
 
@@ -505,4 +505,4 @@ Consultez la rubrique [Flux de travail de la sauvegarde hors connexion dans Azur
 
 - [Exemple d’API REST Azure Import Export](https://azure.microsoft.com/documentation/samples/storage-dotnet-import-export-job-management/)
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -14,7 +14,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="06/06/2016"
+   ms.date="09/16/2016"
    ms.author="mbaldwin"/>
 
 # Scénarios d’authentification pour Azure AD
@@ -66,7 +66,7 @@ Voici ce que vous devez savoir sur les divers composants du diagramme ci-dessus�
 > [AZURE.IMPORTANT] Azure AD utilise le chiffrement à clé publique pour signer les jetons et vérifier leur validité. Consultez la rubrique [Informations importantes sur la substitution des clés de signature dans Azure AD](active-directory-signing-key-rollover.md) pour plus d’informations sur la logique dont vous devez disposer dans votre application pour vous assurer qu’elle est systématiquement mise à jour avec les clés les plus récentes.
 
 
-• Le flux de demandes et réponses du processus d’authentification est déterminé par le protocole d’authentification utilisé, par exemple OAuth 2.0, OpenID Connect, WS-Federation ou SAML 2.0. Ces protocoles sont présentés plus en détail dans la rubrique [Protocoles d’authentification d’Azure Active Directory](active-directory-authentication-protocols.md) et dans les sections ci-dessous.
+• Le flux de demandes et réponses du processus d’authentification est déterminé par le protocole d’authentification utilisé, par exemple OAuth 2.0, OpenID Connect, WS-Federation ou SAML 2.0. Ces protocoles sont présentés plus en détail dans la rubrique [Protocoles d’authentification d’Azure Active Directory](active-directory-authentication-protocols.md) et dans les sections ci-dessous.
 
 > [AZURE.NOTE] Azure AD prend en charge les normes OAuth 2.0 et OpenID Connect, qui utilisent massivement les jetons porteurs, y compris des jetons porteurs représentés sous forme de JWT. Un jeton porteur est un jeton de sécurité léger qui octroie l’accès à une ressource protégée au « porteur ». En ce sens, le « porteur » désigne toute partie qui peut présenter le jeton. Une partie doit certes d’abord s’authentifier auprès d’Azure AD pour recevoir le jeton porteur, mais si les mécanismes nécessaires à la sécurité du jeton lors de la transmission et du stockage ne sont pas en place, il peut être intercepté et utilisé par une partie non autorisée. Bien que certains jetons de sécurité intègrent un mécanisme de protection contre l’utilisation par des parties non autorisées, les jetons porteurs n’en sont pas dotés et doivent donc être acheminés sur un canal sécurisé, par exemple à l’aide du protocole TLS (HTTPS). Si un jeton porteur est transmis en clair, une partie malveillante peut utiliser une attaque d’intercepteur afin de s’approprier le jeton et de l’utiliser pour accéder sans autorisation à une ressource protégée. Les mêmes principes de sécurité s’appliquent au stockage ou à la mise en cache des jetons porteurs pour une utilisation ultérieure. Veillez systématiquement à ce que votre application transmette et stocke les jetons porteurs de manière sécurisée. Pour en savoir plus sur les aspects de sécurité des jetons porteurs, consultez [RFC 6750 Section 5](http://tools.ietf.org/html/rfc6750).
 
@@ -468,4 +468,4 @@ Quand la première application utilise son code d’autorisation pour obtenir un
 
 [OAuth 2.0 dans Azure AD](https://msdn.microsoft.com/library/azure/dn645545.aspx)
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

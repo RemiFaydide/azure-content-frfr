@@ -13,12 +13,12 @@
 	ms.tgt_pltfrm="multiple"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="07/07/2016" 
+	ms.date="09/20/2016" 
 	ms.author="robmcm;asirveda"/>
 
 <!-- Legacy MSDN URL = https://msdn.microsoft.com/library/azure/hh694271.aspx -->
 
-# Kit de ressources Azure pour Eclipse
+# Kit de ressources Azure pour Eclipse
 
 Le kit de ressources Azure pour Eclipse contient des modèles et des fonctionnalités qui vous permettent de créer, de développer, de tester et de déployer des applications Azure avec l’environnement de développement Eclipse. Il s’agit d’un projet Open Source, dont le code source est disponible sous licence MIT sur le site du projet à l’adresse :
 
@@ -33,11 +33,11 @@ Les articles suivants vous aideront à vous familiariser avec l’utilisation du
 * [Nouveautés du kit de ressources Azure pour Eclipse]
 * [Installation du kit de ressources Azure pour Eclipse]
 * [Créer un service cloud « Hello World » pour Azure dans Eclipse]
-* [Créer une application web « Hello World » pour Azure dans Eclipse]
+* [Créer une application web « Hello World » pour Azure dans Eclipse]
 
 ## Configuration des paramètres de projet Azure
 
-Les articles suivants expliquent comment utiliser la Boîte à outils Azure pour Eclipse afin de configurer les paramètres de vos projets Azure :
+Les articles suivants expliquent comment utiliser la Boîte à outils Azure pour Eclipse afin de configurer les paramètres de vos projets Azure :
 
 * [Propriétés du projet Azure]
 * [Propriétés du rôle Azure]
@@ -48,7 +48,7 @@ Les articles suivants expliquent comment utiliser la Boîte à outils Azure pour
 
 ## Utilisation de la Boîte à outils Azure pour Eclipse
 
-Les articles suivants expliquent comment utiliser la Boîte à outils Azure pour Eclipse afin d’ajouter la fonctionnalité Azure à vos projets Azure :
+Les articles suivants expliquent comment utiliser la Boîte à outils Azure pour Eclipse afin d’ajouter la fonctionnalité Azure à vos projets Azure :
 
 * [Affichage du contenu Javadoc dans Eclipse pour le package de bibliothèques Azure pour Java]
 * [Réalisation de déploiements volumineux]
@@ -62,7 +62,7 @@ Pour plus d’informations sur les boîtes à outils Azure pour les environnemen
 
 - *Kit de ressources Azure pour Eclipse (cet article)*
   - [Installation du kit de ressources Azure pour Eclipse]
-  - [Créer une application web « Hello World » pour Azure dans Eclipse]
+  - [Créer une application web « Hello World » pour Azure dans Eclipse]
   - [Nouveautés du kit de ressources Azure pour Eclipse]
 - [Kit de ressources Azure pour IntelliJ]
   - [Installation du kit de ressources Azure pour IntelliJ]
@@ -75,7 +75,7 @@ Pour plus d’informations sur l’utilisation d’Azure avec Java, consultez le
 
 [Azure Toolkit for Eclipse]: ./azure-toolkit-for-eclipse.md
 [Kit de ressources Azure pour IntelliJ]: ./azure-toolkit-for-intellij.md
-[Créer une application web « Hello World » pour Azure dans Eclipse]: ./app-service-web/app-service-web-eclipse-create-hello-world-web-app.md
+[Créer une application web « Hello World » pour Azure dans Eclipse]: ./app-service-web/app-service-web-eclipse-create-hello-world-web-app.md
 [Créer une application web « Hello World » pour Azure dans IntelliJ]: ./app-service-web/app-service-web-intellij-create-hello-world-web-app.md
 [Installation du kit de ressources Azure pour Eclipse]: ./azure-toolkit-for-eclipse-installation.md
 [Installation du kit de ressources Azure pour IntelliJ]: ./azure-toolkit-for-intellij-installation.md
@@ -106,4 +106,4 @@ Pour plus d’informations sur l’utilisation d’Azure avec Java, consultez le
 <!-- [SSL Offloading]: http://go.microsoft.com/fwlink/?LinkID=699549 -->
 <!-- [Using the Azure Service Runtime Library in JSP]: http://go.microsoft.com/fwlink/?LinkID=699551 -->
 
-<!---HONumber=AcomDC_0720_2016-->
+<!---HONumber=AcomDC_0921_2016-->

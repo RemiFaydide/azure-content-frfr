@@ -31,7 +31,7 @@ Exigences et principaux aspects de l’homologation de réseaux virtuels :
 - Les deux réseaux virtuels à homologuer doivent être situés dans la même région Azure.
 - Les espaces d’adressage des réseaux virtuels à homologuer ne doivent pas se chevaucher.
 - L’homologation concerne deux réseaux virtuels et aucune relation transitive n’en découle. Par exemple, si le réseau virtuel A est homologué avec le réseau virtuel B et si le réseau virtuel B est homologué avec le réseau virtuel C, cela ne signifie pas que le réseau virtuel 1 est homologué avec le réseau virtuel C.
-- L’homologation peut être établie entre des réseaux virtuels dans deux abonnements, à condition qu’un utilisateur privilégié de chacun de ces abonnements autorise l’homologation.
+- L’homologation peut être établie entre des réseaux virtuels dans deux abonnements, à condition qu’un utilisateur privilégié de chacun de ces abonnements autorise l’homologation et que les abonnements soient associés au même locataire Active Directory.
 - Un réseau virtuel qui utilise le modèle de déploiement Resource Manager peut être homologué avec un autre réseau virtuel qui utilise ce modèle, ou avec un réseau virtuel qui utilise le modèle de déploiement classique. Cependant, les réseaux virtuels qui utilisent le modèle de déploiement classique ne peuvent pas être homologués entre eux.
 - Bien que la communication entre des machines virtuelles de réseaux virtuels homologués ne présente aucune restriction de bande passante supplémentaire, un plafond de bande passante basé sur la taille des machines virtuelles continue de s’appliquer.
 
@@ -88,4 +88,4 @@ L’homologation de réseaux virtuels ne sera pas facturée pendant la période 
 - En savoir plus sur les [groupes de sécurité réseau](virtual-networks-nsg.md).
 - En savoir plus sur les [tinéraires définis par l’utilisateur et le transfert IP](virtual-networks-udr-overview.md).
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0928_2016-->

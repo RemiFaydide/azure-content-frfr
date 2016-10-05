@@ -187,7 +187,7 @@ Si vous accédez au [référentiel][] de code source iPython, vous y trouverez u
 
 Grâce à son interface performante, Jupyter Notebook offre un accès interactif aux puissantes fonctionnalités de l’écosystème Python sur Azure. Il couvre une large gamme de cas d'utilisation, notamment les simples exploration et apprentissage de Python, l'analyse et la visualisation des données, le calcul de simulation et parallèle. Les documents Notebook obtenus contiennent un enregistrement complet des calculs qui sont effectués et peuvent être partagés avec d’autres utilisateurs de Jupyter. Jupyter Notebook peut être utilisé comme application locale, mais il est plus particulièrement conçu pour des déploiements cloud sur Azure.
 
-Les fonctionnalités principales de Jupyter sont également disponibles dans Visual Studio par le biais des [outils Python pour Visual Studio][] (PTVS). PTVS est un plug-in open source gratuit de Microsoft qui transforme Visual Studio en environnement de développement Python avancé qui inclut un éditeur avancé avec IntelliSense, ainsi qu'une intégration de débogage, de profilage et de calcul parallèle.
+Les fonctionnalités principales de Jupyter sont également disponibles dans Visual Studio par le biais des [outils Python pour Visual Studio][] \(PTVS). PTVS est un plug-in open source gratuit de Microsoft qui transforme Visual Studio en environnement de développement Python avancé qui inclut un éditeur avancé avec IntelliSense, ainsi qu'une intégration de débogage, de profilage et de calcul parallèle.
 
 ## Étapes suivantes
 

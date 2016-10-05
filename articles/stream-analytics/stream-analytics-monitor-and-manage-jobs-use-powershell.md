@@ -5,7 +5,7 @@
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
@@ -62,7 +62,7 @@ Azure PowerShell 1.0 :
 Vous pouvez utiliser les applets de commande Azure PowerShell suivantes pour surveiller et gérer des travaux Azure Stream Analytics. Notez qu'il existe différentes versions d'Azure PowerShell. **Dans les exemples répertoriés, la première commande s'applique à Azure PowerShell 0.9.8, la deuxième commande s'applique à Azure PowerShell 1.0.** Les commandes Azure PowerShell 1.0 contiennent toujours « AzureRM » dans la commande.
 
 ### Get-AzureStreamAnalyticsJob | Get-AzureRMStreamAnalyticsJob
-Répertorie tous les travaux Stream Analytics définis dans l'abonnement Azure ou le groupe de ressources spécifié, ou obtient des informations sur un travail spécifique au sein d'un groupe de ressources.
+Répertorie tous les travaux Stream Analytics définis dans l’abonnement Azure ou le groupe de ressources spécifié, ou obtient des informations sur un travail spécifique au sein d’un groupe de ressources.
 
 **Exemple 1**
 
@@ -252,7 +252,7 @@ Azure PowerShell 1.0 :
 
 	New-AzureRMStreamAnalyticsJob -ResourceGroupName StreamAnalytics-Default-Central-US –File "C:\JobDefinition.json" 
 
-Cette commande PowerShell crée un travail à partir de la définition qui se trouve dans JobDefinition.json. Si une tâche existante avec le nom spécifié dans le fichier de définition de tâche est déjà définie, l'applet de commande vous demande s'il faut la remplacer.
+Cette commande PowerShell crée un travail à partir de la définition qui se trouve dans JobDefinition.json. Si un travail existant avec le nom spécifié dans le fichier de définition de travail est déjà défini, l'applet de commande vous demande s'il faut le remplacer.
 
 **Exemple 2**
 
@@ -398,7 +398,7 @@ Cette commande PowerShell démarre le travail StreamingJob avec une heure de dé
 
 
 ### Stop-AzureStreamAnalyticsJob | Stop-AzureRMStreamAnalyticsJob
-Arrête l'exécution d'un travail Stream Analytics dans Microsoft Azure de façon asynchrone et libère les ressources qui étaient utilisées. La définition du travail et les métadonnées restent disponibles dans votre abonnement par le biais du portail Azure et des API de gestion ; ainsi, le travail peut être modifié et redémarré. Un travail à l'état Arrêté ne vous sera pas facturé.
+Arrête l'exécution d'un travail Stream Analytics dans Microsoft Azure de façon asynchrone et libère les ressources qui étaient utilisées. La définition du travail et les métadonnées restent disponibles dans votre abonnement par le biais du Portail Azure et des API de gestion ; ainsi, le travail peut être modifié et redémarré. Un travail à l'état Arrêté ne vous sera pas facturé.
 
 **Exemple 1**
 
@@ -472,4 +472,4 @@ Pour obtenir une assistance, consultez le [forum Azure Stream Analytics](https:/
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
  
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

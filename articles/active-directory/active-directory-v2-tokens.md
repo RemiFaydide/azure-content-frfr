@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/31/2016"
+	ms.date="09/16/2016"
 	ms.author="dastrock"/>
 
 # Informations de référence sur les jetons v2.0
@@ -29,7 +29,7 @@ Le point de terminaison v2.0 prend en charge le [protocole d’autorisation OAu
 
 Un jeton porteur est un jeton de sécurité léger qui octroie l’accès à une ressource protégée au « porteur ». En ce sens, le « porteur » désigne toute partie qui peut présenter le jeton. Une partie doit certes d’abord s’authentifier auprès d’Azure AD pour recevoir le jeton porteur, mais si les mécanismes nécessaires à la sécurité du jeton lors de la transmission et du stockage ne sont pas en place, il peut être intercepté et utilisé par une partie non autorisée. Bien que certains jetons de sécurité intègrent un mécanisme de protection contre l’utilisation par des parties non autorisées, les jetons porteurs n’en sont pas dotés et doivent donc être acheminés sur un canal sécurisé, par exemple à l’aide du protocole TLS (HTTPS). Si un jeton porteur est transmis en clair, une partie malveillante peut utiliser une attaque d’intercepteur afin de s’approprier le jeton et de l’utiliser pour accéder sans autorisation à une ressource protégée. Les mêmes principes de sécurité s’appliquent au stockage ou à la mise en cache des jetons porteurs pour une utilisation ultérieure. Veillez systématiquement à ce que votre application transmette et stocke les jetons porteurs de manière sécurisée. Pour en savoir plus sur les aspects de sécurité des jetons porteurs, consultez [RFC 6750 Section 5](http://tools.ietf.org/html/rfc6750).
 
-La plupart des jetons émis par le point de terminaison v2.0 sont implémentés en tant que jetons Web JSON (JWT). Un jeton JWT constitue un moyen compact et sécurisé pour les URL de transférer des informations entre deux parties. Les informations contenues dans les jetons JWT sont appelées « revendications », c’est-à-dire des assertions d’informations sur le porteur et le sujet du jeton. Les revendications dans les jetons JWT sont des objets JSON codés et sérialisés pour la transmission. Étant donné que les jetons JWT émis par le point de terminaison v2.0 sont signés, mais pas chiffrés, vous pouvez facilement inspecter le contenu d’un jeton JWT à des fins de débogage. Il existe plusieurs outils disponibles pour y parvenir, tels que [calebb.net](http://jwt.calebb.net). Pour plus d’informations sur les jetons JWT, consultez la [spécification JWT](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html).
+La plupart des jetons émis par le point de terminaison v2.0 sont implémentés en tant que jetons Web JSON (JWT). Un jeton JWT constitue un moyen compact et sécurisé pour les URL de transférer des informations entre deux parties. Les informations contenues dans les jetons JWT sont appelées « revendications », c’est-à-dire des assertions d’informations sur le porteur et le sujet du jeton. Les revendications dans les jetons JWT sont des objets JSON codés et sérialisés pour la transmission. Étant donné que les jetons JWT émis par le point de terminaison v2.0 sont signés, mais pas chiffrés, vous pouvez facilement inspecter le contenu d’un jeton JWT à des fins de débogage. Pour plus d’informations sur les jetons JWT, consultez la [spécification JWT](http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html).
 
 ## Jetons id\_token
 
@@ -50,7 +50,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6Ik1uQ19WWmNBVGZNNXBPWWlKSE1iYTlnb0VL
 #### Revendications dans les jetons id\_token
 | Nom | Revendication | Exemple de valeur | Description |
 | ----------------------- | ------------------------------- | ------------ | --------------------------------- |
-| Audience | `aud` | `6731de76-14a6-49ae-97bc-6eba6914391e` | Identifie le destinataire du jeton. Dans les jetons id\_token, l’audience est l’ID attribué à votre application dans le portail d’inscription de l’application. Votre application doit valider cette valeur et rejeter le jeton s’il ne correspond pas. |
+| Public ciblé | `aud` | `6731de76-14a6-49ae-97bc-6eba6914391e` | Identifie le destinataire du jeton. Dans les jetons id\_token, l’audience est l’ID attribué à votre application dans le portail d’inscription de l’application. Votre application doit valider cette valeur et rejeter le jeton s’il ne correspond pas. |
 | Émetteur | `iss` | `https://login.microsoftonline.com/b9419818-09af-49c2-b0c3-653adc1f376e/v2.0 ` | Identifie le service d’émission de jeton de sécurité (STS) qui construit et retourne le jeton, ainsi que le client Azure AD dans lequel l’utilisateur a été authentifié. Votre application doit valider la revendication de l’émetteur de manière à s’assurer que le jeton provient bien du point de terminaison v2.0. Il doit également utiliser la partie GUID de la revendication pour restreindre l’ensemble des clients qui sont autorisés à se connecter à l’application. La partie GUID qui indique que l’utilisateur est un utilisateur consommateur avec un compte Microsoft est `9188040d-6c67-4c5b-b112-36a304b66dad`. |
 | Émis à | `iat` | `1452285331` | Heure à laquelle le jeton a été émis, représentée en heure epoch. |
 | Heure d’expiration | `exp` | `1452289231` | Heure à laquelle le jeton n’est plus valide, représentée en heure epoch. Votre application doit utiliser cette revendication pour vérifier la validité de la durée de vie du jeton. |
@@ -154,4 +154,4 @@ Les durées de vie de jeton suivantes sont fournies uniquement à titre indicati
 | Codes d’autorisation (comptes professionnels ou scolaires) | 10 minutes | Les codes d’autorisation, qui sont volontairement de courte durée, doivent être échangés immédiatement contre des jetons d’accès et des jetons d’actualisation quand ils sont reçus. |
 | Codes d’autorisation (comptes personnels) | 5 minutes | Les codes d’autorisation, qui sont volontairement de courte durée, doivent être échangés immédiatement contre des jetons d’accès et des jetons d’actualisation quand ils sont reçus. Les codes d’autorisation émis au nom de comptes personnels sont également à usage unique. |
 
-<!---HONumber=AcomDC_0608_2016-->
+<!---HONumber=AcomDC_0921_2016-->

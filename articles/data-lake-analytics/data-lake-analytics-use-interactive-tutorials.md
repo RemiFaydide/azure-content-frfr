@@ -88,4 +88,4 @@ Chaque compte Data Lake Analytics possède un compte [Azure Data Lake Store](../
 - [Développer des scripts U-SQL avec Data Lake Tools pour Visual Studio](data-lake-analytics-data-lake-tools-get-started.md)
 - [Analyser les journaux des sites web à l'aide d'Azure Data Lake Analytics](data-lake-analytics-analyze-weblogs.md)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!-----HONumber=AcomDC_0914_2016-->

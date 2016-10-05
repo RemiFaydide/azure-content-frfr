@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/14/2016"
 	ms.author="bradsev" />
 
 # Déplacer des données vers ou depuis le stockage d’objets blobs Azure à l’aide de connecteurs SSIS
@@ -38,6 +38,7 @@ Pour une présentation de scénarios canoniques utilisant SSIS pour répondre au
 Pour exécuter les tâches décrites dans cet article, vous devez disposer d’un abonnement Azure et configurer un compte de stockage Azure. Pour charger ou télécharger des données, vous devez connaître le nom et la clé de votre compte Azure Storage.
 
 - Pour configurer un **abonnement Azure**, consultez la section [Essai gratuit pendant un mois](https://azure.microsoft.com/pricing/free-trial/).
+
 - Pour obtenir des instructions sur la création d’**un compte de stockage** et obtenir des informations sur le compte et la clé, consultez la section [À propos des comptes de stockage Azure](../storage/storage-create-storage-account.md).
 
 
@@ -57,7 +58,7 @@ L'exemple décrit ici utilise un groupe de données disponible au public (l'ense
 
 
 ## Téléchargement de données vers le stockage d’objets blob Azure
-Pour déplacer des données à l’aide du pack de fonctionnalités du site local pour le stockage d’objets blobs Azure, nous utilisons une instance de la [**tâche de téléchargement d’objets blobs Azure**](https://msdn.microsoft.com/library/mt146776.aspx), comme illustré ci-dessous :
+Pour déplacer des données à l’aide du pack de fonctionnalités du site local pour le stockage d’objets blobs Azure, nous utilisons une instance de la [**tâche de téléchargement d’objets blobs Azure**](https://msdn.microsoft.com/library/mt146776.aspx), comme illustré ici :
 
 ![configure-data-science-vm](./media/machine-learning-data-science-move-data-to-azure-blob-using-ssis/ssis-azure-blob-upload-task.png)
 
@@ -68,11 +69,11 @@ Les paramètres que la tâche utilise sont décrits ici :
 Champ|Description|
 ----------------------|----------------|
 **AzureStorageConnection**|Spécifie un gestionnaire de connexions de stockage Azure existant ou en crée un nouveau faisant référence à un compte de stockage Azure qui pointe vers l’endroit où les fichiers de l’objet blob sont hébergés.|
-**BlobContainer**|Spécifie le nom du conteneur d’objets blobs qui contiendra les fichiers téléchargés en tant qu’objets blobs.|
-**BlobDirectory**|Spécifie le répertoire blob où le fichier téléchargé sera stocké en tant qu’objet blob de bloc. Le répertoire d’objet blob est une structure hiérarchique virtuelle. Si l’objet blob existe déjà, il sera remplacé.|
+**BlobContainer**|Spécifie le nom du conteneur d’objets blobs qui contient les fichiers téléchargés en tant qu’objets blobs.|
+**BlobDirectory**|Spécifie le répertoire blob où le fichier téléchargé est stocké en tant qu’objet blob de bloc. Le répertoire d’objet blob est une structure hiérarchique virtuelle. Si l’objet blob existe déjà, il est remplacé.|
 **LocalDirectory**|Spécifie le répertoire local qui contient les fichiers à télécharger.|
 **FileName**|Spécifie un filtre de nom pour sélectionner des fichiers obéissant à un schéma de nom spécifié. Par exemple, MySheet*.xls * inclut des fichiers tels que MySheet001.xls et MySheetABC.xlsx|
-**TimeRangeFrom/TimeRangeTo**|Spécifie une plage de temps pour appliquer un filtre. Les fichiers modifiés après *TimeRangeFrom* et avant *TimeRangeTo* seront inclus.|
+**TimeRangeFrom/TimeRangeTo**|Spécifie une plage de temps pour appliquer un filtre. Les fichiers modifiés après *TimeRangeFrom* et avant *TimeRangeTo* sont inclus.|
 
 
 > [AZURE.NOTE] Les informations d’identification **AzureStorageConnection** doivent être correctes et **BlobContainer** doit exister avant que le transfert soit tenté.
@@ -87,4 +88,4 @@ Nous remarquons ici que le pack de fonctionnalités SSIS permet de gérer des fl
 - Pour exécuter un script Hive sur un cluster Azure HDInsight avec SSIS, utilisez la [tâche Azure HDInsight Hive](https://msdn.microsoft.com/library/mt146771.aspx).
 - Pour exécuter un script Pig sur un cluster Azure HDInsight avec SSIS, utilisez la [tâche Azure HDInsight Pig](https://msdn.microsoft.com/library/mt146781.aspx).
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

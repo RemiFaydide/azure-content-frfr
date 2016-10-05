@@ -285,4 +285,4 @@ Consultez le [guide PolyBase][] pour obtenir d’autres informations sur le dév
 [Créer des informations d’identification de niveau base de données (Transact-SQL)]: https://msdn.microsoft.com/library/mt270260.aspx
 [DROP CREDENTIAL (Transact-SQL)]: https://msdn.microsoft.com/library/ms189450.aspx
 
-<!---HONumber=AcomDC_0907_2016-->
+<!-----HONumber=AcomDC_0907_2016-->

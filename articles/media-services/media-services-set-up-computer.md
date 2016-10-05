@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="06/22/2016"
+	ms.date="09/26/2016"
 	ms.author="juliako"/>
 
 # Configurer votre environnement
@@ -44,7 +44,7 @@ Choisissez .NET ou l’API REST pour vous connecter par programme à Azure Media
 [AZURE.INCLUDE [media-services-selector-connect](../../includes/media-services-selector-connect.md)]
 
 
-##Étapes suivantes : parcours d’apprentissage Azure Media Services
+##Étapes suivantes : parcours d’apprentissage Azure Media Services
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
@@ -52,4 +52,4 @@ Choisissez .NET ou l’API REST pour vous connecter par programme à Azure Media
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0928_2016-->

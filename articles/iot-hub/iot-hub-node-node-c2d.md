@@ -41,7 +41,7 @@ Vous trouverez des informations supplémentaires sur les messages du cloud vers 
 
 Pour réaliser ce didacticiel, vous aurez besoin des éléments suivants :
 
-+ Node.js version 0.12.x ou version ultérieure. <br/> L’article [Prepare your development environment][lnk-dev-setup] (Préparer votre environnement de développement) décrit comment installer Node.js pour ce didacticiel sur Windows ou sur Linux.
++ Node.js version 0.12.x ou version ultérieure. <br/> L’article [Prepare your development environment][lnk-dev-setup] \(Préparer votre environnement de développement) décrit comment installer Node.js pour ce didacticiel sur Windows ou sur Linux.
 
 + Un compte Azure actif. (Si vous ne possédez pas de compte, vous pouvez créer un compte d’évaluation gratuit en quelques minutes. Pour plus d’informations, consultez la page [Version d’évaluation gratuite d’Azure][lnk-free-trial].)
 
@@ -175,7 +175,7 @@ Vous êtes maintenant prêt à exécuter les applications.
 
     ![Exécutez l’application pour envoyer la commande c2d][img-send-command]
 
-    > [AZURE.NOTE] Par souci de simplicité, ce didacticiel n’implémente aucune stratégie de nouvelle tentative. Dans le code de production, vous devez mettre en œuvre des stratégies de nouvelle tentative (par exemple, une interruption exponentielle), comme indiqué dans l’article MSDN [Transient Fault Handling] (Gestion des erreurs temporaires).
+    > [AZURE.NOTE] Par souci de simplicité, ce didacticiel n’implémente aucune stratégie de nouvelle tentative. Dans le code de production, vous devez mettre en œuvre des stratégies de nouvelle tentative (par exemple, une interruption exponentielle), comme indiqué dans l’article MSDN [Transient Fault Handling] \(Gestion des erreurs temporaires).
 
 ## Étapes suivantes
 

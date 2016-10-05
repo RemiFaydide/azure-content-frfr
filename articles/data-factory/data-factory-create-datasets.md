@@ -64,11 +64,11 @@ La table suivante décrit les propriétés dans le JSON ci-dessus :
 | -------- | ----------- | -------- | ------- |
 | name | Nom du jeu de données Consultez la page [Azure Data Factory - Règles d’affectation des noms](data-factory-naming-rules.md) pour connaître les règles d’affectation des noms. | Oui | N/D |
 | type | Type du jeu de données. Spécifiez un des types pris en charge par Azure Data Factory (par exemple : AzureBlob, AzureSqlTable). <br/><br/>Consultez la rubrique [Type du jeu de données](#Type) pour plus d’informations. | Oui | N/D |
-| structure | Schéma du jeu de données<br/><br/>Consultez la section [Structure d’un jeu de données](#Structure) pour plus de détails | Non. | N/D |
+| structure | Schéma du jeu de données<br/><br/>Pour plus d’informations, consultez la section [Structure d’un jeu de données](#Structure). | Non. | N/D |
 | typeProperties | Propriétés correspondant au type sélectionné. Consultez la section [Type du jeu de données](#Type) pour plus d’informations sur les types pris en charge et leurs propriétés. | Oui | N/D |
 | external | Indicateur booléen pour indiquer si un jeu de données est explicitement généré par un pipeline de fabrique de données ou non. | Non | false | 
-| availability | Définit la fenêtre de traitement ou le modèle de découpage pour la production du jeu de données. <br/><br/>Consultez la rubrique [Disponibilité du jeu de données](#Availability) pour plus de détails<br/><br/>Consultez l’article [Planification et exécution](data-factory-scheduling-and-execution.md) pour plus d’informations sur le modèle de découpage du jeu de données | Oui | N/D
-| policy | Définit les critères ou la condition que les segments du jeu de données doivent remplir. <br/><br/>Consultez la rubrique [Stratégie du jeu de données](#Policy) pour plus de détails | Non | N/D |
+| availability | Définit la fenêtre de traitement ou le modèle de découpage pour la production du jeu de données. <br/><br/>Pour plus d’informations, consultez la section [Disponibilité du jeu de données](#Availability). <br/><br/>Pour plus d’informations sur le modèle de découpage du jeu de données, consultez l’article [Planification et exécution](data-factory-scheduling-and-execution.md). | Oui | N/D
+| policy | Définit les critères ou la condition que les segments du jeu de données doivent remplir. <br/><br/>Pour plus d’informations, consultez la section [Disponibilité du jeu de données](#Policy). | Non | N/D |
 
 ## Exemple de jeu de données
 Dans l’exemple suivant, le jeu de données représente une table nommée **MyTable** dans une **base de données SQL Azure**.
@@ -137,7 +137,7 @@ La section **Structure** définit le schéma du jeu de données. Il contient une
 ## <a name="Availability"></a> Disponibilité du jeu de données
 La section **availability** (disponibilité) dans un jeu de données définit la fenêtre de traitement (horaire, journalier, hebdomadaire, etc.) ou le modèle de découpage du jeu de données. Consultez l’article [Planification et exécution](data-factory-scheduling-and-execution.md) pour plus d'informations sur le découpage du jeu de données et le modèle de dépendance.
 
-La section availability suivante spécifie que le jeu de données de sortie est exécuté toutes les heures (ou) que le jeu de données d’entrée est disponible toutes les heures.
+La section availability suivante spécifie que le jeu de données de sortie est exécuté toutes les heures (ou) que le jeu de données d’entrée est disponible toutes les heures :
 
 	"availability":	
 	{	
@@ -145,7 +145,7 @@ La section availability suivante spécifie que le jeu de données de sortie est 
 		"interval": 1	
 	}
 
-Le tableau suivant décrit les propriétés que vous pouvez utiliser dans la section availability.
+Le tableau suivant décrit les propriétés que vous pouvez utiliser dans la section availability :
 
 | Propriété | Description | Requis | Default |
 | -------- | ----------- | -------- | ------- |
@@ -166,9 +166,7 @@ Segments quotidiens qui démarrent à 6h au lieu de minuit, la valeur par défau
 		"offset": "06:00:00"
 	}
 
-**frequency** est défini sur **Month** et **interval** est défini sur **1** (une fois par mois) : si vous souhaitez que le segment soit produit le 9e jour de chaque mois à 6 h, définissez le décalage sur « 09.06:00:00 ». N’oubliez pas qu’il s’agit de l’heure UTC.
-
-Pour un planning de 12 mois (fréquence = mois ; intervalle = 12), la valeur offset : 60.00:00:00 signifie chaque année le 1er ou le 2 mars (60 jours à partir du début de l’année si style = StartOfInterval), selon si l’année en cours est une année bissextile ou non.
+La **fréquence** est définie sur **Jour** et l’**intervalle** est défini sur **1** (une fois par jour) : si vous souhaitez que la tranche démarre à 6 h 00 et non à 12 h 00, la valeur par défaut. N’oubliez pas qu’il s’agit de l’heure UTC.
 
 ## Exemple anchorDateTime
 
@@ -241,17 +239,17 @@ La section **policy** de la définition du jeu de données définit les critère
 
 Les jeux de données externes sont ceux qui ne sont pas générés par un pipeline en cours d’exécution dans la fabrique de données. Si le jeu de données est marqué comme étant **external**, la stratégie **ExternalData** peut être définie de manière à influencer le comportement de disponibilité du segment du jeu de données.
 
-À moins qu’un jeu de données ne soit généré par Azure Data Factory, il doit être marqué comme **external** (externe). Cela s’applique généralement aux entrées de la première activité dans un pipeline, à moins que l’activité ou le chaînage de pipeline ne soient utilisés.
+À moins qu’un jeu de données ne soit généré par Azure Data Factory, il doit être marqué comme **external** (externe). Ce paramètre s’applique généralement aux entrées de la première activité d’un pipeline, à moins que le chaînage des activités ou pipelines ne soit utilisé.
 
 | Nom | Description | Requis | Valeur par défaut |
 | ---- | ----------- | -------- | -------------- |
 | dataDelay | Durée du délai de la vérification de la disponibilité des données externes pour le segment donné. Par exemple, si les données sont censées être disponibles toutes les heures, il est possible de retarder le test vérifiant si les données externes sont disponibles et si le segment correspondant est prêt à l’aide de dataDelay.<br/><br/>S’applique uniquement à l’heure actuelle. Par exemple, s’il est 13 h et si cette valeur est de 10 minutes, la validation commence à 13 h 10.<br/><br/>Ce paramètre n’affecte pas les segments passés : les segments pour lesquelles Slice End Time (Heure de fin du segment) + dataDelay < Maintenant sont traités sans délai.<br/><br/>Les heures supérieures à 23:59 doivent être spécifiées en suivant le format jour.heures:minutes:secondes. Par exemple, pour spécifier 24 heures, n'utilisez pas 24:00:00 ; utilisez plutôt 1.00:00:00. Si vous utilisez 24:00:00, cette valeur est traitée comme 24 jours (24.00:00:00). Pour 1 jour et 4 heures, spécifiez 1:04:00:00. | Non | 0 |
 | retryInterval | Délai d'attente entre un échec et la nouvelle tentative. S'applique à l'heure actuelle ; si la tentative précédente a échoué, le système laisse ce délai s'écouler après la dernière tentative. <br/><br/>S’il est 13 h actuellement, la première tentative commence. Si la durée de la première vérification de validation est de 1 minute et si l’opération a échoué, la tentative suivante aura lieu à 13 h + 1 min (durée) + 1 minute (intervalle avant nouvelle tentative) = 13 h 02. <br/><br/>Pour les segments dans le passé, il n’y a aucun délai. La nouvelle tentative se fait immédiatement. | Non | 00:01:00 (1 minute) | 
-| retryTimeout | Le délai d’attente pour chaque nouvelle tentative.<br/><br/>S’il est défini sur 10 minutes, la validation doit être effectuée en 10 minutes maximum. S’il faut plus de 10 minutes pour effectuer la validation, la nouvelle tentative expire.<br/><br/>Si toutes les tentatives de validation expirent, le segment est marqué comme TimedOut. | Non | 00:10:00 (10 minutes) |
+| retryTimeout | Délai d’attente pour chaque nouvelle tentative.<br/><br/>Si la propriété est définie sur 10 minutes, la validation doit être effectuée en 10 minutes maximum. S’il faut plus de 10 minutes pour effectuer la validation, la nouvelle tentative expire.<br/><br/>Si toutes les tentatives de validation expirent, le segment est marqué comme TimedOut. | Non | 00:10:00 (10 minutes) |
 | maximumRetry | Nombre de fois où la disponibilité des données externes est vérifiée. La valeur maximale autorisée est de 10. | Non | 3 | 
 
 ## Étendue des jeux de données
-Vous pouvez créer des jeux de données étendus jusqu’à un pipeline à l’aide de la propriété **datasets**. Ces jeux de données peuvent uniquement être utilisés par les activités dans ce pipeline et non pas par les activités d’autres pipelines. L’exemple suivant définit un pipeline avec deux jeux de données à utiliser dans le pipeline : InputDataset-rdc et OutputDataset-rdc.
+Vous pouvez créer des jeux de données étendus jusqu’à un pipeline à l’aide de la propriété **datasets**. Ces jeux de données peuvent uniquement être utilisés par les activités dans ce pipeline et non pas par les activités d’autres pipelines. L’exemple suivant définit un pipeline avec deux jeux de données à utiliser dans le pipeline, InputDataset-rdc et OutputDataset-rdc :
 
 > [AZURE.IMPORTANT] Les étendues des jeux de données sont uniquement prises en charge avec les pipelines à usage unique (**pipelineMode** défini sur **OneTime**). Pour plus d’informations, consultez [Pipeline onetime](data-factory-scheduling-and-execution.md#onetime-pipeline).
 
@@ -344,4 +342,4 @@ Vous pouvez créer des jeux de données étendus jusqu’à un pipeline à l’a
 	    }
 	}
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

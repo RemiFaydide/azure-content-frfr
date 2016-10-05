@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="NA"
 	ms.workload="data-catalog"
-	ms.date="05/06/2016"
+	ms.date="09/21/2016"
 	ms.author="maroche"/>
 
 # Comment configurer le glossaire métier pour un balisage géré
@@ -27,7 +27,7 @@ L’une des fonctionnalité de Data Catalog qui favorise une meilleure compréhe
 Cependant, le balisage peut parfois engendrer des problèmes qui lui sont propres. Voici quelques exemples de problèmes potentiels liés au balisage :
 
 1.	Utilisateurs balisant certaines ressources avec des abréviations et d’autres avec du texte développé. Cette incohérence est un obstacle à la découverte de ressources même si l’intention était de baliser les ressources avec la même balise.
-2.	Balises ayant plusieurs significations selon le contexte. Par exemple, l’application de la balise « Chiffre d’affaires » sur un jeu de données clients pourra-t-elle désigner le chiffre d’affaires par client, alors que l’application de la même balise appliquée à un jeu de données de ventes trimestrielles pourra désigner le chiffre d’affaires trimestriel de l’entreprise.  
+2.	Balises ayant plusieurs significations selon le contexte. Par exemple, l’application de la balise « Chiffre d’affaires » sur un jeu de données clients pourra-t-elle désigner le chiffre d’affaires par client, alors que l’application de la même balise appliquée à un jeu de données de ventes trimestrielles pourra désigner le chiffre d’affaires trimestriel de l’entreprise.
 
 Pour faire face à ce type de difficulté, Data Catalog met à disposition un glossaire métier.
 
@@ -37,21 +37,21 @@ Le glossaire métier de Data Catalog permet aux organisations de rassembler les 
 
 ## Disponibilité du glossaire et privilèges
 
-/*Le glossaire métier est disponible dans l’édition Standard d’Azure Data Catalog. L’édition gratuite de Data Catalog n’intègre pas de glossaire.*/
+/*Le glossaire métier est disponible dans l’Édition Standard d’Azure Data Catalog. L’Édition gratuite de Data Catalog n’intègre pas de glossaire.*/
 
 Le glossaire métier est accessibles via l’option « Glossaire » du menu de navigation du portail Data Catalog.
 
 ![Accès au glossaire métier](./media/data-catalog-how-to-business-glossary/01-portal-menu.png)
 
 
-Les administrateurs de Data Catalog peuvent créer, modifier et supprimer des termes dans le glossaire métier. Tous les utilisateurs de Data Catalog peuvent consulter les définitions des termes et baliser les ressources avec ces termes du glossaire.
+Les administrateurs de Data Catalog et les membres du rôle Administrateurs de glossaire peuvent créer, modifier et supprimer des termes dans le glossaire métier. Tous les utilisateurs de Data Catalog peuvent consulter les définitions des termes et baliser les ressources avec ces termes du glossaire.
 
 ![Ajout d’un nouveau terme de glossaire](./media/data-catalog-how-to-business-glossary/02-new-term.png)
 
 
 ## Création de termes de glossaire
 
-Les administrateurs de Data Catalog peuvent créer des termes de glossaire en cliquant sur le bouton Nouveau terme. Des termes de glossaire sont alors créés avec les champs suivants :
+Les administrateurs de Data Catalog et les administrateurs de glossaire peuvent créer des termes de glossaire en cliquant sur le bouton Nouveau terme. Des termes de glossaire sont alors créés avec les champs suivants :
 
 * définition métier du terme ;
 * description qui rend compte de l’usage prévu ou des règles métier de la ressource/colonne ;
@@ -88,4 +88,4 @@ Le glossaire métier d’Azure Data Catalog et le balisage géré qu’il autori
 
 - [Documentation de l’API REST pour les opérations de glossaire métier](https://msdn.microsoft.com/library/mt708855.aspx)
 
-<!---HONumber=AcomDC_0518_2016-->
+<!---HONumber=AcomDC_0921_2016-->

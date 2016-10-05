@@ -3,8 +3,8 @@
 	description="Stockez des données non structurées dans le cloud avec Azure Blob Storage (stockage d’objets)."
 	services="storage"
 	documentationCenter="python"
-	authors="emgerner-msft"
-	manager="wpickett"
+	authors="tamram"
+	manager="carmonm"
 	editor="tysonn"/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-    ms.date="07/26/2016"
-	ms.author="jehine"/>
+    ms.date="09/20/2016"
+	ms.author="jwillis;tamram"/>
 
 # Utilisation du stockage d’objets blob Azure à partir de Python
 
@@ -30,7 +30,7 @@ Cet article décrit le déroulement de scénarios courants dans le cadre de l’
 
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
-## Création d'un conteneur
+## Créer un conteneur
 
 Selon le type d’objet blob que vous souhaitez utiliser, créez un objet **BlockBlobService**, **AppendBlobService** ou **PageBlobService**. Le code suivant utilise un objet **BlockBlobService**. Ajoutez ce qui suit vers le début de chaque fichier Python dans lequel vous souhaitez accéder au stockage d’objet blob de blocs Azure par programme.
 
@@ -73,7 +73,7 @@ L’exemple suivant charge le contenu du fichier **sunset.png** dans l’objet b
         content_settings=ContentSettings(content_type='image/png')
 				)
 
-## Création d'une liste d'objets blob dans un conteneur
+## Créer une liste d'objets blob dans un conteneur
 
 Pour répertorier les objets blob dans un conteneur, utilisez la méthode **list\\_blobs**. Cette méthode retourne un générateur. Le code suivant sort le **nom** de chaque objet blob d'un conteneur sur la console.
 
@@ -89,7 +89,7 @@ L’exemple suivant illustre l’utilisation de **get\_blob\_to\_path** pour té
 
 	block_blob_service.get_blob_to_path('mycontainer', 'myblockblob', 'out-sunset.png')
 
-## Supprimer un blob.
+## Supprimer un objet blob
 
 Pour supprimer un objet blob, appelez **delete\_blob**.
 
@@ -128,4 +128,4 @@ Maintenant que vous connaissez les bases du stockage d’objets blob, consultez 
 [Kit de développement logiciel (SDK) Microsoft Azure Storage pour Python]: https://github.com/Azure/azure-storage-python
 [Kit de développement logiciel (SDK) Microsoft Azure Storage pour Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

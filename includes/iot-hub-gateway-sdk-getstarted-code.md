@@ -36,7 +36,7 @@ Cette section présente certains éléments clés du code dans l'exemple Hello W
 
 ### Création de la passerelle
 
-Le développeur doit écrire le *processus de passerelle*. Ce programme crée l'infrastructure interne (le bus de messages), charge les modules et configure tous les éléments pour qu’ils fonctionnent correctement. Le SDK fournit la fonction **Gateway\_Create\_From\_JSON** pour vous permettre d'amorcer une passerelle à partir d'un fichier JSON. Pour utiliser la fonction **Gateway\_Create\_From\_JSON**, vous devez lui transmettre le chemin d'accès à un fichier JSON qui spécifie les modules à charger.
+Le développeur doit écrire le *processus de passerelle*. Ce programme crée l’infrastructure interne (le répartiteur), charge les modules et configure tous les éléments pour qu’ils fonctionnent correctement. Le SDK fournit la fonction **Gateway\_Create\_From\_JSON** pour vous permettre d'amorcer une passerelle à partir d'un fichier JSON. Pour utiliser la fonction **Gateway\_Create\_From\_JSON**, vous devez lui transmettre le chemin d'accès à un fichier JSON qui spécifie les modules à charger.
 
 Vous trouverez le code du processus de passerelle dans l'exemple Hello World du fichier [main.c][lnk-main-c]. Pour une meilleure lisibilité, l'extrait de code ci-dessous montre une version abrégée du code du processus de passerelle. Ce programme crée une passerelle puis attend que l'utilisateur appuie sur la touche **ENTRÉE** avant de mettre fin à la passerelle.
 
@@ -65,21 +65,34 @@ Le fichier de paramètres JSON contient une liste des modules à charger. Chaque
 - **chemin\_module** : le chemin d'accès à la bibliothèque contenant le module. Il s’agit d’un fichier .so sous Linux, et d’un fichier .dll sous Windows.
 - **args** : toute information de configuration nécessaire au module.
 
-L'exemple suivant montre le fichier de paramètres JSON utilisé pour configurer l'exemple Hello World sous Linux. La nécessité d’attribuer un argument à un module dépend de la conception du module. Dans cet exemple, le module enregistreur prend un argument qui correspond au chemin d'accès au fichier de sortie, et le module Hello World n'accepte aucun argument :
+Le fichier JSON contient également les liaisons entre les modules qui seront transmis au répartiteur. Une liaison possède deux propriétés :
+- **source** : un nom de module de la section `modules`, ou « * » ;
+- **récepteur** : un nom de module de la section `modules`.
+
+Chaque liaison définit un itinéraire de message et une direction. Les messages du module `source` doivent être remis au module `sink`. `source` peut avoir la valeur « * », qui signifie que `sink` recevra des messages à partir de n’importe quel module.
+
+L'exemple suivant montre le fichier de paramètres JSON utilisé pour configurer l'exemple Hello World sous Linux. Tous les messages générés par le module `hello_world` seront utilisés par le module `logger`. La nécessité d’attribuer un argument à un module dépend de la conception du module. Dans cet exemple, le module enregistreur prend un argument qui correspond au chemin d'accès au fichier de sortie, et le module Hello World n'accepte aucun argument :
 
 ```
 {
     "modules" :
     [ 
         {
-            "module name" : "logger_hl",
+            "module name" : "logger",
             "module path" : "./modules/logger/liblogger_hl.so",
             "args" : {"filename":"log.txt"}
         },
         {
-            "module name" : "helloworld",
+            "module name" : "hello_world",
             "module path" : "./modules/hello_world/libhello_world_hl.so",
 			"args" : null
+        }
+    ],
+    "links" :
+    [
+        {
+            "source" : "hello_world",
+            "sink" : "logger"
         }
     ]
 }
@@ -92,24 +105,24 @@ Vous trouverez le code utilisé par le module « hello world » pour publier des
 ```
 int helloWorldThread(void *param)
 {
-    // Create data structures used in function.
+    // create data structures used in function.
     HELLOWORLD_HANDLE_DATA* handleData = param;
     MESSAGE_CONFIG msgConfig;
     MAP_HANDLE propertiesMap = Map_Create(NULL);
     
-    // Add a property named "helloWorld" with a value of "from Azure IoT
+    // add a property named "helloWorld" with a value of "from Azure IoT
     // Gateway SDK simple sample!" to a set of message properties that
     // will be appended to the message before publishing it. 
     Map_AddOrUpdate(propertiesMap, "helloWorld", "from Azure IoT Gateway SDK simple sample!")
 
-    // Set the content for the message
+    // set the content for the message
     msgConfig.size = strlen(HELLOWORLD_MESSAGE);
     msgConfig.source = HELLOWORLD_MESSAGE;
 
-    // Set the properties for the message
+    // set the properties for the message
     msgConfig.sourceProperties = propertiesMap;
     
-    // Create a message based on the msgConfig structure
+    // create a message based on the msgConfig structure
     MESSAGE_HANDLE helloWorldMessage = Message_Create(&msgConfig);
 
     while (1)
@@ -121,8 +134,8 @@ int helloWorldThread(void *param)
         }
         else
         {
-            // Publish the message to the bus
-            (void)MessageBus_Publish(handleData->busHandle, helloWorldMessage);
+            // publish the message to the broker
+            (void)Broker_Publish(handleData->brokerHandle, helloWorldMessage);
             (void)Unlock(handleData->lockHandle);
         }
 
@@ -137,7 +150,7 @@ int helloWorldThread(void *param)
 
 ### Traitement des messages du module Hello World
 
-Le module Hello World n'a jamais besoin de traiter les messages que les autres modules publient sur le bus de messages. Cela rend inopérante l’implémentation du rappel de message dans le module Hello World.
+Le module Hello World n’a jamais besoin de traiter les messages que les autres modules publient sur le répartiteur. Cela rend inopérante l’implémentation du rappel de message dans le module Hello World.
 
 ```
 static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
@@ -148,9 +161,9 @@ static void HelloWorld_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messag
 
 ### Publication et traitement des messages du module enregistreur
 
-Le module enregistreur reçoit des messages du bus de messages et les inscrit dans un fichier. Il ne publie jamais les messages sur le bus de messages. Par conséquent, le code du module enregistreur n'appelle jamais la fonction **MessageBus\_Publish**.
+Le module enregistreur reçoit des messages du répartiteur et les inscrit dans un fichier. Il ne publie jamais les messages. Par conséquent, le code du module enregistreur n’appelle jamais la fonction **Broker\_Publish**.
 
-La fonction **Logger\_Recieve** du fichier [logger.c][lnk-logger-c] est le rappel que le bus de messages appelle pour remettre les messages au module enregistreur. L'extrait de code ci-dessous montre une version modifiée avec des commentaires supplémentaires et un code de gestion d’erreur supprimé pour une meilleure lisibilité :
+La fonction **Logger\_Receive** du fichier [logger.c][lnk-logger-c] est le rappel que le répartiteur appelle pour remettre les messages au module enregistreur. L'extrait de code ci-dessous montre une version modifiée avec des commentaires supplémentaires et un code de gestion d’erreur supprimé pour une meilleure lisibilité :
 
 ```
 static void Logger_Receive(MODULE_HANDLE moduleHandle, MESSAGE_HANDLE messageHandle)
@@ -205,4 +218,4 @@ Pour savoir comment utiliser le Kit de développement logiciel (SDK) de la passe
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk/
 [lnk-gateway-simulated]: ../articles/iot-hub/iot-hub-linux-gateway-sdk-simulated-device.md
 
-<!---HONumber=AcomDC_0713_2016-->
+<!---HONumber=AcomDC_0928_2016-->

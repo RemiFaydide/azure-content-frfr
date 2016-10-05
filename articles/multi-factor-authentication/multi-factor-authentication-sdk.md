@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Intégration de vos identités locales avec Azure Active Directory" 
-	description="Cette page décrit Azure AD Connect et vous explique pourquoi l’utiliser." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+	pageTitle="Intégration de vos identités locales avec Azure Active Directory"
+	description="Cette page décrit Azure AD Connect et vous explique pourquoi l’utiliser."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="kgremban"
+	manager="femila"
 	editor="curtand"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2016" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2016"
+	ms.author="kgremban"/>
 
 # Création de Multi-Factor Authentication dans des applications personnalisées (SDK)
 
@@ -33,7 +33,7 @@ Comme les API n'ont pas accès aux utilisateurs enregistrés dans Azure Active D
 
 
 
-## Téléchargement du SDK Azure Multi-Factor Authentication 
+## Téléchargement du SDK Azure Multi-Factor Authentication
 
 Le téléchargement du SDK Azure Multi-Factor Authentication nécessite un [fournisseur Azure Multi-Factor Auth](multi-factor-authentication-get-started-auth-provider.md). Cela requiert un abonnement Azure complet, même si vous possédez des licences Azure MFA, Azure AD Premium ou Enterprise Mobility Suite. Pour télécharger le Kit de développement logiciel (SDK), vous devez accéder au portail de gestion multi-facteur soit en gérant directement le fournisseur Multi-Factor Auth, soit en cliquant sur le lien **Accéder au portail** sur la page des paramètres du MFA.
 
@@ -101,11 +101,11 @@ Cette implémentation minimale peut être écrite en quelques lignes. Toutefois,
 
 Voici le code du client Web d’une page de démonstration.
 
-	
+
 	<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
-	
+
 	<!DOCTYPE html>
-	
+
 	<html xmlns="http://www.w3.org/1999/xhtml">
 	<head runat="server">
 	<title>Multi-Factor Authentication Demo</title>
@@ -113,21 +113,21 @@ Voici le code du client Web d’une page de démonstration.
 	<body>
 	<h1>Azure Multi-Factor Authentication Demo</h1>
 	<form id="form1" runat="server">
-	
+
 	<div style="width:auto; float:left">
 	Username:&nbsp;<br />
 	Password:&nbsp;<br />
 	</div>
-	
+
 	<div">
 	<asp:TextBox id="username" runat="server" width="100px"/><br />
 	<asp:Textbox id="password" runat="server" width="100px" TextMode="password" /><br />
 	</div>
-	
+
 	<asp:Button id="btnSubmit" runat="server" Text="Log in" onClick="btnSubmit_Click"/>
-	
+
 	<p><asp:Label ID="lblResult" runat="server"></asp:Label></p>
-	
+
 	</form>
 	</body>
 	</html>
@@ -143,13 +143,13 @@ Dans le code côté serveur suivant, l'authentification multifacteur est configu
 	using System.Web;
 	using System.Web.UI;
 	using System.Web.UI.WebControls;
-	
+
 	public partial class _Default : System.Web.UI.Page
 	{
 	    protected void Page_Load(object sender, EventArgs e)
 	    {
 	    }
-	
+
 	    protected void btnSubmit_Click(object sender, EventArgs e)
 	    {
 	        // Step 1: Validate the username and password
@@ -161,23 +161,23 @@ Dans le code côté serveur suivant, l'authentification multifacteur est configu
 	        else
 	        {
 	            // Step 2: Perform multi-factor authentication
-	
+
 	            // Add call details from the user database.
 	            PfAuthParams pfAuthParams = new PfAuthParams();
 	            pfAuthParams.Username = username.Text;
 	            pfAuthParams.Phone = "9134884271";
 	            pfAuthParams.Mode = pf_auth.MODE_STANDARD;
-	            
-	            // Specify a client certificate 
+
+	            // Specify a client certificate
 	            // NOTE: This file contains the private key for the client
-	            // certificate. It must be stored with appropriate file 
+	            // certificate. It must be stored with appropriate file
 	            // permissions.
 	            pfAuthParams.CertFilePath = "c:\\cert_key.p12";
-	
+
 	            // Perform phone-based authentication
 	            int callStatus;
 	            int errorId;
-	
+
 	            if(pf_auth.pf_authenticate(pfAuthParams, out callStatus, out errorId))
 	            {
 	                lblResult.ForeColor = System.Drawing.Color.Green;
@@ -189,8 +189,8 @@ Dans le code côté serveur suivant, l'authentification multifacteur est configu
 	                lblResult.Text = " Multi-Factor Authentication failed.";
 	            }
 	        }
-	
+
 	    }
 	}
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

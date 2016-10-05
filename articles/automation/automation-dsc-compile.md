@@ -103,7 +103,7 @@ Vous pouvez compiler les configurations DSC qui utilisent des paramètres de bas
 
 Dans le portail, vous pouvez entrer des valeurs de paramètre après avoir cliqué sur **Compiler**.
 
-![alt text](./media/automation-dsc-compile/DSC_compiling_1.png)
+![texte de remplacement](./media/automation-dsc-compile/DSC_compiling_1.png)
 
 ###PowerShell###
 
@@ -185,7 +185,7 @@ Les références de ressources sont les mêmes dans les configurations Azure Aut
 - [Variables](automation-variables.md)
 
 ###Ressources d’informations d’identification###
-Bien que les configurations DSC dans Azure Automation puissent référencer des ressources d’informations d’identification en utilisant **Get-AutomationPSCredential**, les ressources d’informations d’identification peuvent également être transmises par le biais de paramètres, si vous le souhaitez. Si une configuration accepte un paramètre de type **PSCredential**, vous devez transmettre le nom de chaîne d’une ressource d’informations d’identification Azure Automation comme valeur de ce paramètre, plutôt qu’un objet PSCredential. En arrière-plan, la ressource d’informations d’identification Azure Automation portant le même nom est récupérée et transmise à la configuration.
+Bien que les configurations DSC dans Azure Automation puissent référencer des ressources d’informations d’identification en utilisant **Get-AzureRmAutomationCredential**, vous pouvez également transmettre les ressources d’informations d’identification par le biais de paramètres si vous le souhaitez. Si une configuration accepte un paramètre de type **PSCredential**, vous devez transmettre le nom de chaîne d’une ressource d’informations d’identification Azure Automation comme valeur de ce paramètre, plutôt qu’un objet PSCredential. En arrière-plan, la ressource d’informations d’identification Azure Automation portant le même nom est récupérée et transmise à la configuration.
 
 Conserver les informations d’identification en sûreté dans les configurations de nœud (documents de configuration MOF) nécessite le chiffrement des informations d’identification dans le fichier MOF de configuration de nœud. Azure Automation va encore plus loin et chiffre la totalité du fichier MOF. Cependant, actuellement, vous devez indiquer à la configuration de l’état souhaité PowerShell que vous êtes d’accord pour que les informations d’identification soient extraites en texte brut lors de la génération du fichier MOF de configuration de nœud, parce que la configuration de l’état souhaité PowerShell ne sait pas qu’Azure Automation va chiffrer l’intégralité du fichier MOF après sa génération via une tâche de compilation.
 
@@ -195,7 +195,7 @@ L’exemple suivant montre une configuration de l’état souhaité qui utilise 
 
     Configuration CredentialSample
     {
-       $Cred = Get-AutomationPSCredential -Name "SomeCredentialAsset"
+       $Cred = Get-AzureRmAutomationCredential -Name "SomeCredentialAsset"
     
     	Node $AllNodes.NodeName
     	{ 
@@ -228,4 +228,4 @@ Vous pouvez compiler la configuration DSC ci-dessus avec PowerShell. La commande
     
     Start-AzureRmAutomationDscCompilationJob -ResourceGroupName "MyResourceGroup" -AutomationAccountName "MyAutomationAccount" -ConfigurationName "CredentialSample" -ConfigurationData $ConfigData
 
-<!---HONumber=AcomDC_0803_2016-->
+<!---HONumber=AcomDC_0921_2016-->

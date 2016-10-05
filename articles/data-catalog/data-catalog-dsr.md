@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="09/13/2016"
+   ms.date="09/15/2016"
    ms.author="trhabe"/>
 
 # Sources de données prises en charge par Azure Data Catalog
@@ -269,7 +269,7 @@ Les utilisateurs d’Azure Data Catalog peuvent publier des métadonnées à l�
       <td>✓</td>
       <td>✓</td>
       <td><font size=2>PowerBI</font></td>
-      <td><font size=2></font></td>
+      <td><font size=2>Vues de calcul et vues analytiques uniquement ; les vues d’attribut ne sont pas prises en charge.</font></td>
     </tr>
 
     <tr>
@@ -1166,4 +1166,4 @@ Si vous avez besoin d’une prise en charge de sources supplémentaires, envoyez
     </tr>
 </table>
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -16,4 +16,4 @@
 
 8. Cliquez sur **Créer** pour créer la passerelle de réseau local.
 
-<!---HONumber=AcomDC_0810_2016-->
+<!-------HONumber=AcomDC_0810_2016-->

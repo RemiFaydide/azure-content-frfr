@@ -138,4 +138,4 @@ Revenez plus tard consulter les instructions pour téléphones ou tablettes Andr
 
 [Accès conditionnel Azure Active Directory](active-directory-conditional-access.md)
 
-<!---HONumber=AcomDC_0831_2016-->
+<!-----HONumber=AcomDC_0831_2016-->

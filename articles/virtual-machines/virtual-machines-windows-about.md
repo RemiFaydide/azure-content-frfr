@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="06/15/2016"
+	ms.date="09/27/2016"
 	ms.author="cynthn"/>
 
 #À propos des machines virtuelles Windows dans Azure
@@ -39,4 +39,4 @@ Essayez une machine virtuelle en en créant rapidement une simple. Pour obtenir 
 
 Comme ce didacticiel vous aide à créer rapidement une machine virtuelle, il ne vous montre qu’une seule façon de procéder au lieu de décrire les différents outils que vous pouvez utiliser pour créer des machines virtuelles. Pour obtenir un résumé de ces outils et les liens qui renvoient vers des instructions, consultez la page [Différentes méthodes de création d’une machine virtuelle Windows](virtual-machines-windows-creation-choices.md).
 
-<!---HONumber=AcomDC_0615_2016-->
+<!---HONumber=AcomDC_0928_2016-->

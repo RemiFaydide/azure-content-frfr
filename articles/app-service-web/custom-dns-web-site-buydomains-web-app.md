@@ -58,15 +58,14 @@ Procédez comme suit pour acheter des noms de domaine et les attribuer à votre 
 
 	a) « Renouveler automatiquement » votre domaine chaque année
 	
-	b) « Protection de confidentialité », incluse GRATUITEMENT dans le prix d'achat
+	b) « Protection de confidentialité », incluse GRATUITEMENT dans le prix d’achat (à l’exception des domaines de premier niveau dont le registre ne prend en charge la confidentialité, par exemple .co.in,. co.uk, etc.)
 	
 	c) « Attribuer des noms d'hôte par défaut » pour le domaine racine et WWW dans l'application web actuelle.
 
   ![](./media/custom-dns-web-site-buydomains-web-app/dncmntask-cname-buydomains-2.5.png)
   
     > [AZURE.NOTE] Option C configures DNS bindings and Hostname bindings automatically for you.  This way, your Web App can be accessed using custom domain as soon as the purchase is complete (baring DNS propagation delays in few cases). In case, your Web App is behind Azure Traffic Manager, you will not see an option to assign root domain, as A-Records do not work with the Traffic Manager. 
-    >
-    >You can always assign the domains/sub-domains purchased through one Web App to another Web App and vice-versa. See step 8 for more details. 
+    You can always assign the domains/sub-domains purchased through one Web App to another Web App and vice-versa. See step 8 for more details. 
 	
 7. Cliquez sur **Sélectionner** dans le volet **Acheter des domaines**, les informations d'achat s'affichent dans le volet **Confirmation d'achat**. Si vous acceptez les conditions juridiques et cliquez sur **Acheter**, votre commande est envoyée et vous pouvez surveiller le processus d'achat dans **Notification**. L'achat de domaine peut prendre plusieurs minutes.
 
@@ -103,4 +102,4 @@ Si vous avez acheté le domaine personnalisé à partir du panneau **Domaines pe
 - Vous avez peut-être supprimé le domaine personnalisé à un moment donné. Vérifiez les journaux d’audit en cliquant sur **Paramètres** > **Journaux d’audit** dans le panneau principal de votre application.
 - Le panneau **Domaines personnalisés et SSL** que vous consultez appartient peut-être à une application qui est créée dans un autre abonnement Azure. Basculez vers une autre application dans un autre abonnement et vérifiez le panneau **Domaines personnalisés et SSL**. Dans le portail, vous ne pourrez pas voir ni gérer les domaines personnalisés créés dans un abonnement Azure différent de celui lié à l’application. Toutefois, si vous cliquez sur **Gestion avancée** dans le panneau **Gérer le domaine** du domaine, vous êtes redirigé vers le site web du fournisseur de domaine, où vous pourrez [configurer manuellement votre domaine personnalisé comme n’importe quel domaine personnalisé externe](web-sites-custom-domain-name.md) pour les applications créées dans un autre abonnement Azure.
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

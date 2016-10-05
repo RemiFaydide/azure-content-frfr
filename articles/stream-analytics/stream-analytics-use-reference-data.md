@@ -5,7 +5,7 @@
 	services="stream-analytics"
 	documentationCenter=""
 	authors="jeffstokes72"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
@@ -37,11 +37,11 @@ Pour configurer vos données de référence, vous devez d'abord créer une entr�
 </tr>
 <tr>
 <td>Compte de stockage</td>
-<td>Nom du compte de stockage dans lequel se trouvent vos fichiers blob. S’il se trouve dans le même abonnement que votre tâche Stream Analytics, vous pouvez le sélectionner dans la liste déroulante.</td>
+<td>Nom du compte de stockage dans lequel se trouvent vos fichiers blob. S’il se trouve dans le même abonnement que votre travail Stream Analytics, vous pouvez le sélectionner dans la liste déroulante.</td>
 </tr>
 <tr>
 <td>Clé du compte de stockage</td>
-<td>Clé secrète associée au compte de stockage. Elle est remplie automatiquement si le compte de stockage se trouve dans le même abonnement que votre tâche Stream Analytics.</td>
+<td>Clé secrète associée au compte de stockage. Elle est remplie automatiquement si le compte de stockage se trouve dans le même abonnement que votre travail Stream Analytics.</td>
 </tr>
 <tr>
 <td>Conteneur de stockage</td>
@@ -91,7 +91,7 @@ Si vos données de référence sont un jeu de données variant lentement, la pri
 2.	Les données de référence d'objets BLOB ne sont pas triées selon l'heure de la « Dernière modification » de l'objet blob, mais uniquement par l'heure et la date spécifiées dans le nom d'objet blob utilisant les substitutions {date} et {time}.
 3.	Une tâche doit revenir en arrière à plusieurs reprises. Par conséquent, les objets blobs de données de référence ne doivent pas être modifiés ou supprimés.
 
-## Obtenir de l'aide
+## Obtenir de l’aide
 Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/fr-FR/home?forum=AzureStreamAnalytics)
 
 ## Étapes suivantes
@@ -110,4 +110,4 @@ Stream Analytics, un service géré d’analyse de diffusion en continu des donn
 [stream.analytics.query.language.reference]: http://go.microsoft.com/fwlink/?LinkID=513299
 [stream.analytics.rest.api.reference]: http://go.microsoft.com/fwlink/?LinkId=517301
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

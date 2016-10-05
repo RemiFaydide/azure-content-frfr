@@ -1,5 +1,7 @@
-|                                     | **ExpressRoute Gateway throughput** | **VPN Gateway and ExpressRoute coexist**|
+| | **Débit de passerelle ExpressRoute** | **Passerelle VPN et ExpressRoute coexistants**|
 |-------------------------------------|-------------------------------------|-----------------------------------------|
-| **Basic SKU**                       |  500 Mbps                           | No   |
-| **Standard SKU**                    | 1000 Mbps                           | Yes  |
-| **High Performance SKU**            | 2000 Mbps                           | Yes  |
+| **Référence De base** | 500 Mbits/s | Non |
+| **Référence Standard** | 1 000 Mbits/s | Oui |
+| **Référence Hautes performances** | 2 000 Mbits/s | Oui |
+
+<!---HONumber=AcomDC_0921_2016-->

@@ -200,7 +200,7 @@ One thing which is important to point out: if there are pending changes in the l
 
 * [Cloud Cover : synchronisation hors connexion dans Azure Mobile Services]
 
-* [Azure Friday : applications prenant en charge le mode hors connexion dans Azure Mobile Services] (Remarque : les démonstrations s'appuient sur Windows, mais la présentation de cette fonctionnalité s'applique à toutes les plateformes)
+* [Azure Friday : applications prenant en charge le mode hors connexion dans Azure Mobile Services] \(Remarque : les démonstrations s'appuient sur Windows, mais la présentation de cette fonctionnalité s'applique à toutes les plateformes)
 
 
 <!-- URLs. -->

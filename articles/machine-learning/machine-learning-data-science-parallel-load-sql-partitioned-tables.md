@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/14/2016" 
+	ms.date="09/19/2016" 
 	ms.author="bradsev" />
 
 # Importer des données en parallèle et en bloc à l’aide de tables de partition SQL
@@ -23,9 +23,10 @@ Ce document décrit comment créer une ou plusieurs tables partitionnées pour i
 
 ## Créer une base de données et un ensemble de groupes de fichiers
 
-- [Créez une base de données](https://technet.microsoft.com/library/ms176061.aspx) (le cas échéant).
+- [Créer une base de données](https://technet.microsoft.com/library/ms176061.aspx) (si elle n’existe pas)
 - Ajoutez des groupes de fichiers à la base de données qui contiendra les fichiers physiques partitionnés.
-- Remarque : pour cette opération, utilisez [CREATE DATABASE](https://technet.microsoft.com/library/ms176061.aspx) si la base n’existe pas encore ou [ALTER DATABASE](https://msdn.microsoft.com/library/bb522682.aspx) si elle existe.
+
+  Remarque : pour cette opération, utilisez [CREATE DATABASE](https://technet.microsoft.com/library/ms176061.aspx) si la base n’existe pas encore ou [ALTER DATABASE](https://msdn.microsoft.com/library/bb522682.aspx) si elle existe
 
 - Ajoutez un ou plusieurs fichiers (selon le cas) dans chaque groupe de fichiers de base de données.
 
@@ -74,7 +75,7 @@ Créez une ou plusieurs tables partitionnées, selon le schéma de données, et 
 	    <filegroup_5>, <filegroup_6>, <filegroup_7>, <filegroup_8>,
 	    <filegroup_9>, <filegroup_10>, <filegroup_11>, <filegroup_12> )
 
-- Conseil : pour vérifier les plages de chaque partition selon la fonction et le schéma, exécutez la requête suivante :
+  Conseil : pour vérifier les plages de chaque partition selon la fonction et le schéma, exécutez la requête suivante :
 
 	    SELECT psch.name as PartitionScheme,
 	    	prng.value AS ParitionValue,
@@ -89,7 +90,7 @@ Créez une ou plusieurs tables partitionnées, selon le schéma de données, et 
 	    CREATE TABLE <table_name> ( [include schema definition here] )
 	    ON <TablePScheme>(<partition_field>)
 
-- Pour plus d’informations, consultez l’article [Créer des tables partitionnées et des index](https://msdn.microsoft.com/library/ms188730.aspx).
+Pour plus d’informations, consultez l’article [Créer des tables partitionnées et des index](https://msdn.microsoft.com/library/ms188730.aspx).
 
 
 ## Importer les données en bloc dans chaque table de partition
@@ -187,4 +188,4 @@ ou
 Pour obtenir un exemple de procédure pas à pas complet utilisant le processus Cortana Analytics avec un jeu de données public, consultez [Processus Cortana Analytics en action : utilisation de SQL Server](machine-learning-data-science-process-sql-walkthrough.md).
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

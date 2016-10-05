@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Création de mots de passe d’application dans le portail Azure pour Azure Multi-Factor Authentication" 
-	description="Cette page montre aux utilisateurs comment créer des mots de passe d’application supplémentaires dans le portail Azure." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenp" 
+<properties
+	pageTitle="Création de mots de passe d’application dans le portail Azure pour Azure Multi-Factor Authentication"
+	description="Cette page montre aux utilisateurs comment créer des mots de passe d’application supplémentaires dans le portail Azure."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="kgremban"
+	manager="femila"
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2016" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2016"
+	ms.author="kgremban"/>
 
 # Création de mots de passe d’application dans le portail Azure pour Azure Multi-Factor Authentication
 
@@ -32,6 +32,4 @@ Si vous utilisez l’authentification multifacteur avec Azure, vous voulez peut-
 
 <center>![Cloud](./media/multi-factor-authentication-end-user-app-passwords-create-azure/app2.png)</center>
 
- 
-
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

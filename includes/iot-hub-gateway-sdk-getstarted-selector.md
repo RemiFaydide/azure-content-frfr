@@ -6,10 +6,10 @@ Cet article fournit une description détaillée de l’[exemple de code Hello Wo
 
 Cette procédure pas à pas inclut les étapes suivantes :
 
-- **Concepts** : une vue d'ensemble conceptuelle des composants de toute passerelle créée avec le SDK de passerelle.  
+- **Concepts** : une vue d'ensemble conceptuelle des composants de toute passerelle créée avec le SDK de passerelle.
 - **Architecture de l'exemple Hello World** : décrit comment les concepts s'appliquent à l'exemple Hello World et comment les composants s'imbriquent.
 - **Comment créer l'exemple** : les étapes requises pour créer l'exemple.
-- **Comment exécuter l'exemple**: les étapes requises pour exécuter l'exemple. 
+- **Comment exécuter l'exemple**: les étapes requises pour exécuter l'exemple.
 - **Exemple de résultat** : un exemple du résultat attendu lorsque vous exécutez l'exemple.
 - **Extraits de code** : une collection d'extraits de code montrant comment l'exemple Hello World implémente les composants clés de la passerelle.
 
@@ -35,32 +35,34 @@ Le SDK fournit une couche d'abstraction qui vous permet de créer des passerelle
 
 ### Messages
 
-L’approche consistant à utiliser des modules pour s’échanger des messages représente un moyen pratique de conceptualiser le fonctionnement d'une passerelle, mais elle ne reflète pas exactement ce qui se produit. Les modules utilisent un bus de messages pour communiquer entre eux, publient des messages sur le bus, puis le bus diffuse les messages sur tous les modules connectés au bus.
+L’approche consistant à utiliser des modules pour s’échanger des messages représente un moyen pratique de conceptualiser le fonctionnement d'une passerelle, mais elle ne reflète pas exactement ce qui se produit. Les modules utilisent un répartiteur pour communiquer entre eux. Ils publient des messages sur le répartiteur (bus, pubsub ou tout autre modèle de messagerie) et laissent ensuite le répartiteur acheminer le message vers les modules connectés.
 
-Un module utilise la fonction **MessageBus\_Publish** pour publier un message sur le bus de messages. Le bus de messages remet les messages à un module en appelant une fonction de rappel. Un message se compose d'un ensemble de propriétés de clés/valeurs et d’un contenu transmis sous forme d’un bloc de mémoire.
+Un module utilise la fonction **Broker\_Publish** pour publier un message sur le répartiteur. Le répartiteur remet les messages à un module en appelant une fonction de rappel. Un message se compose d'un ensemble de propriétés de clés/valeurs et d’un contenu transmis sous forme d’un bloc de mémoire.
 
 ![][3]
 
-Chaque module est chargé de filtrer les messages car le bus de messages utilise un mécanisme de diffusion pour remettre chaque message à chaque module connecté. Un module doit uniquement agir sur les messages qui lui sont destinés. Le filtrage des messages crée effectivement le pipeline de messages. Un module filtre généralement les messages qu'il reçoit à l'aide des propriétés du message afin d’identifier les messages qu'il doit traiter.
+### Routage et filtrage des messages
+
+Il existe deux manières d’acheminer les messages vers les modules adéquats. Il est possible de transmettre un ensemble de liens au répartiteur pour permettre à ce dernier de connaître la source et le récepteur de chaque module. L’autre méthode consiste configurer le module pour appliquer un filtre sur les propriétés du message. Un module doit agir sur un message uniquement si le message lui est destiné. Le filtrage des liens et des messages est à la base même d’un pipeline de messages.
 
 ## Exemple d'architecture Hello World
 
 L'exemple Hello World illustre les concepts décrits dans la section précédente. L'exemple Hello World implémente une passerelle avec un pipeline composé de deux modules :
 
--	Le module *Bonjour* crée un message toutes les cinq secondes et le transmet au module enregistreur.
--	Le module *enregistreur* inscrit les messages qu'il reçoit dans un fichier.
+-	Le module *Hello Wolrd* crée un message toutes les cinq secondes et le transmet au module enregistreur.
+-	Le module *enregistreur* inscrit les messages qu’il reçoit dans un fichier.
 
 ![][4]
 
-Comme décrit dans la section précédente, le module Hello World ne transmet pas les messages directement vers le module enregistreur toutes les cinq secondes. Au lieu de cela, il publie un message dans le bus de messages toutes les cinq secondes.
+Comme décrit dans la section précédente, le module Hello World ne transmet pas les messages directement vers le module enregistreur toutes les cinq secondes. Au lieu de cela, il publie un message sur le répartiteur toutes les cinq secondes.
 
-Le module enregistreur reçoit le message du bus de messages et examine ses propriétés à l’aide d’un filtre. Si le module enregistreur détermine qu'il doit traiter le message, il écrit le contenu du message dans un fichier.
+Le module enregistreur reçoit le message du répartiteur et intervient en écrivant le contenu du message dans un fichier.
 
-Le module enregistreur utilise uniquement les messages provenant du bus de messages et ne publie jamais de nouveaux messages sur le bus.
+Le module enregistreur utilise uniquement les messages provenant du répartiteur et ne publie jamais de nouveaux messages sur le répartiteur.
 
 ![][5]
 
-La figure ci-dessus montre l'architecture de l'exemple Hello World et les chemins d'accès relatifs aux fichiers sources qui implémentent différentes parties de l'exemple dans le [référentiel][lnk-gateway-sdk]. Explorez vous-même le code, ou utilisez les extraits de code ci-dessous comme guide.
+La figure ci-dessus montre l’architecture de l’exemple Hello World et les chemins d’accès relatifs aux fichiers sources qui implémentent différentes parties de l’exemple dans le [référentiel][lnk-gateway-sdk]. Explorez vous-même le code, ou utilisez les extraits de code ci-dessous comme guide.
 
 <!-- Images -->
 [1]: media/iot-hub-gateway-sdk-getstarted-selector/modules.png
@@ -73,3 +75,4 @@ La figure ci-dessus montre l'architecture de l'exemple Hello World et les chemin
 [lnk-helloworld-sample]: https://github.com/Azure/azure-iot-gateway-sdk/tree/master/samples/hello_world
 [lnk-gateway-sdk]: https://github.com/Azure/azure-iot-gateway-sdk
 
+<!---HONumber=AcomDC_0928_2016-->

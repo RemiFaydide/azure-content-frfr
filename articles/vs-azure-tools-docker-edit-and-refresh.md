@@ -3,7 +3,7 @@
    description="Découvrez comment modifier une application qui s’exécute dans un conteneur Docker local et actualiser le conteneur via la modification et l’actualisation ainsi que la définition de points d’arrêt pour le débogage"
    services="azure-container-service"
    documentationCenter="na"
-   authors="allclark"
+   authors="mlearned"
    manager="douge"
    editor="" />
 <tags
@@ -13,7 +13,7 @@
    ms.tgt_pltfrm="na"
    ms.workload="multiple"
    ms.date="07/22/2016"
-   ms.author="allclark" />
+   ms.author="mlearned" />
 
 # Débogage d’applications dans un conteneur Docker local
 
@@ -26,8 +26,8 @@ Visual Studio Tools pour Docker fournit un moyen cohérent de développer et val
 Les outils suivants doivent être installés.
 
 - [Visual Studio 2015 Mise à jour 2](https://go.microsoft.com/fwlink/?LinkId=691978)
-- [Microsoft ASP .NET Core RC 2](http://go.microsoft.com/fwlink/?LinkId=798481)
-- [Visual Studio 2015 Tools pour Docker](https://aka.ms/DockerToolsForVS)
+- Installez [Visual Studio 2015 Update 3](https://go.microsoft.com/fwlink/?LinkId=691129)
+- [Kit de développement logiciel (SDK) Microsoft ASP.NET Core 1.0](https://go.microsoft.com/fwlink/?LinkID=809122)
 
 Pour exécuter des conteneurs de Docker localement, vous aurez besoin d’un client Docker local. Vous pouvez utiliser la version [Boîte à outils Docker](https://www.docker.com/products/overview#/docker_toolbox), qui nécessite la désactivation d’Hyper-V, ou la [version bêta de Docker pour Windows](https://beta.docker.com) qui utilise Hyper-V et nécessite Windows 10.
 
@@ -125,4 +125,4 @@ Avec [Visual Studio 2015 Tools pour Docker](https://aka.ms/DockerToolsForVS), vo
 
 [2]: ./media/vs-azure-tools-docker-edit-and-refresh/breakpoint.png
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

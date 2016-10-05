@@ -189,7 +189,7 @@ Une fois le Générateur de données lancé, l’alimentation du pipeline commen
 
 ## **Tableau de bord Power BI**
 
-### Vue d’ensemble
+### Vue d'ensemble
 
 Cette section décrit comment configurer un tableau de bord Power BI afin de visualiser vos données en temps réel à partir d’Azure Stream Analytics (chemin à chaud), ainsi que les résultats des prévisions à partir d’Azure Machine Learning (chemin à froid).
 
@@ -233,7 +233,7 @@ Dans les étapes suivantes, nous allons vous expliquer comment visualiser la sor
 ### Configurer le tableau de bord de chemin à froid
 Dans le pipeline de données de chemin à froid, l'objectif principal est d’obtenir la prévision de la demande de chaque région. Power BI se connecte à une base de données SQL Azure en tant que source de données où sont stockés les résultats de la prédiction.
 
-> [AZURE.NOTE] \3(1) Il faut plusieurs heures pour collecter suffisamment de résultats de prévisions pour le tableau de bord. Nous vous recommandons donc de démarrer ce processus 2 à 3 heures après le lancement du Générateur de données. 2) Dans cette étape, la condition préalable consiste à télécharger et installer le logiciel gratuit [Power BI Desktop](https://powerbi.microsoft.com/desktop).
+> [AZURE.NOTE] \(1) Il faut plusieurs heures pour collecter suffisamment de résultats de prévisions pour le tableau de bord. Nous vous recommandons donc de démarrer ce processus 2 à 3 heures après le lancement du Générateur de données. 2) Avant d’effectuer cette étape, vous devez télécharger et installer le logiciel gratuit [Power BI Desktop](https://powerbi.microsoft.com/desktop).
 
 
 
@@ -287,7 +287,7 @@ Veillez à arrêter le générateur de données quand vous n’utilisez pas la s
 
 ## **Outils d’estimation des coûts**
 
-Les deux outils suivants peuvent vous aider à mieux comprendre les coûts impliqués dans l’exécution du modèle de solution de prévision de la demande énergétique dans votre abonnement :
+Les deux outils suivants peuvent vous aider à mieux comprendre les coûts impliqués dans l’exécution du modèle de solution de prévision de la demande énergétique dans votre abonnement :
 
 -   [Microsoft Azure Cost Estimator Tool (en ligne)](https://azure.microsoft.com/pricing/calculator/)
 
@@ -296,4 +296,4 @@ Les deux outils suivants peuvent vous aider à mieux comprendre les coûts impli
 ## **Remerciements**
 Cet article a été créé par le scientifique de données Yijing Chen et l’ingénieur logiciel Min Qiu de Microsoft.
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

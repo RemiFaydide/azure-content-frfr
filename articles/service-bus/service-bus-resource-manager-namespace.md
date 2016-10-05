@@ -35,7 +35,7 @@ Pour connaître le modèle complet, consultez le [modèle d’espace de noms Ser
 
 ## Qu'allez-vous déployer ?
 
-Avec ce modèle, vous allez déployer un espace de noms Service Bus avec une référence (SKU) [De base ou Standard](https://azure.microsoft.com/pricing/details/service-bus/).
+Avec ce modèle, vous allez déployer un espace de noms Service Bus avec une référence (SKU) [De base, Standard ou Premium](https://azure.microsoft.com/pricing/details/service-bus/).
 
 Pour exécuter automatiquement le déploiement, cliquez sur le bouton ci-dessous :
 
@@ -69,7 +69,8 @@ Nom de la référence [SKU](https://azure.microsoft.com/pricing/details/service-
     "type": "string", 
     "allowedValues": [ 
         "Basic", 
-        "Standard" 
+        "Standard",
+        "Premium" 
     ], 
     "defaultValue": "Standard", 
     "metadata": { 
@@ -78,9 +79,7 @@ Nom de la référence [SKU](https://azure.microsoft.com/pricing/details/service-
 
 ```
 
-Le modèle définit les valeurs autorisées pour ce paramètre (De base ou Standard) et affecte une valeur par défaut (Standard) si aucune valeur n’est spécifiée.
-
-Il existe des frais de base de niveau standard de 10 $ par mois, ce qui vous permet d'effectuer jusqu'à 12,5 millions d'opérations par mois sans frais supplémentaires. Le niveau De base coûte 0,05 $ par million d'opérations.
+Le modèle définit les valeurs autorisées pour ce paramètre (De base, Standard ou Premium) et affecte une valeur par défaut (Standard) si aucune valeur n’est spécifiée.
 
 Pour plus d’informations sur la tarification Service Bus, consultez [Tarification et facturation Service Bus][].
 
@@ -154,4 +153,4 @@ Maintenant que vous avez créé et déployé des ressources à l’aide d’Azur
   [Using Azure PowerShell with Azure Resource Manager]: ../powershell-azure-resource-manager.md
   [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management]: ../xplat-cli-azure-resource-manager.md
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

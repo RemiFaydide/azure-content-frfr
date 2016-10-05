@@ -13,7 +13,7 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="05/09/2016"
+	ms.date="09/19/2016"
 	ms.author="raynew"/>
 
 
@@ -193,11 +193,11 @@ Configurez le site Hyper-V, installez le fournisseur Azure Site Recovery et l’
 1. Exécutez le fichier de configuration du fournisseur.
 2. Dans **Microsoft Update**, vous pouvez choisir des mises à jour, pour que celles du fournisseur soient installées conformément à votre stratégie Microsoft Update.
 3. Dans le champ **Installation**, acceptez ou modifiez l’emplacement d’installation du fournisseur par défaut et cliquez sur **Installer**.
-5. Sur la page **Paramètres du coffre**, cliquez sur **Parcourir** pour sélectionner le fichier de clé du coffre que vous avez téléchargé. Spécifiez l’abonnement Azure Site Recovery, le nom du coffre et le site Hyper-V auquel appartient le serveur Hyper-V.
+4. Sur la page **Paramètres du coffre**, cliquez sur **Parcourir** pour sélectionner le fichier de clé du coffre que vous avez téléchargé. Spécifiez l’abonnement Azure Site Recovery, le nom du coffre et le site Hyper-V auquel appartient le serveur Hyper-V.
 
 	![Enregistrement du serveur](./media/site-recovery-hyper-v-site-to-azure/provider3.png)
 
-4\. Dans **Paramètres de proxy**, indiquez comment le fournisseur à installer sur le serveur doit se connecter à Azure Site Recovery par le biais d’Internet.
+5\. Dans **Paramètres de proxy**, indiquez comment le fournisseur à installer sur le serveur doit se connecter à Azure Site Recovery par le biais d’Internet.
 
 - Si vous voulez que le fournisseur se connecte directement, sélectionnez **Se connecter directement sans proxy**.
 - Si vous voulez vous connecter avec le proxy actuellement défini sur le serveur, sélectionnez **Se connecter avec des paramètres de proxy existants**.
@@ -207,9 +207,9 @@ Configurez le site Hyper-V, installez le fournisseur Azure Site Recovery et l’
 
 	![Internet](./media/site-recovery-hyper-v-site-to-azure/provider7.PNG)
 
-5\. Une fois l’installation terminée, cliquez sur **Inscrire** pour inscrire le serveur dans le coffre. ![Emplacement d’installation](./media/site-recovery-hyper-v-site-to-azure/provider2.png)
+6\. Une fois l’installation terminée, cliquez sur **Inscrire** pour inscrire le serveur dans le coffre. ![Emplacement d’installation](./media/site-recovery-hyper-v-site-to-azure/provider2.png)
 
-6\. Une fois l’inscription terminée, les métadonnées du serveur Hyper-V sont récupérées par Azure Site Recovery et le serveur s’affiche dans le panneau **Paramètres** > **Site Recovery Infrastructure** (Infrastructure Site Recovery) > **Hyper-V Hosts** (Hôtes Hyper-V).
+7\. Une fois l’inscription terminée, les métadonnées du serveur Hyper-V sont récupérées par Azure Site Recovery et le serveur s’affiche dans le panneau **Paramètres** > **Site Recovery Infrastructure** (Infrastructure Site Recovery) > **Hyper-V Hosts** (Hôtes Hyper-V).
 
 
 ### Installation à partir de la ligne de commande
@@ -469,4 +469,4 @@ Voici comment vous pouvez surveiller l’intégrité, l’état et les paramètr
 
 Une fois votre déploiement configuré et effectué, pour en savoir plus sur les différents types de basculement, [cliquez ici](site-recovery-failover.md).
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

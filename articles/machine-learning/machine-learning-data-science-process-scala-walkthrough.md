@@ -3,7 +3,7 @@
 	description="Comment utiliser Scala pour les tâches d’apprentissage automatique supervisées avec des packages MLlib et Spark ML sur un cluster Azure HDInsight Spark."  
 	services="machine-learning"
 	documentationCenter=""
-	authors="bradsev,deguhath"
+	authors="bradsev"
 	manager="jhubbard"
 	editor="cgronlun" />
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="08/01/2016"
-	ms.author="bradsev;"/>
+	ms.author="bradsev;deguhath"/>
 
 
 # Science des données à l’aide de Scala et Spark sur Azure
@@ -1164,4 +1164,4 @@ Pour une vue d’ensemble des rubriques qui vous guident à travers les tâches 
 
 La rubrique [Noter les modèles Machine Learning créés avec Spark](machine-learning-data-science-spark-model-consumption.md) vous montre comment utiliser du code Scala pour charger automatiquement et noter les nouveaux jeux de données avec des modèles Machine Learning basés sur Spark et enregistrés dans des objets blob Azure. Vous pouvez suivre les instructions fournies et simplement remplacer le code Python par le code Scala de cet article pour activer la consommation automatisée.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -60,7 +60,7 @@ L’XML de l’événement a des métadonnées comme indiqué ci-dessous, notamm
 
 Error:
 
-  *Échec de l’application AAD - Locataire 72f988bf-86f1-41af-91ab-2d7cd011db37 - Raison = « Interdit » - Message = « Privilèges insuffisants pour terminer l’opération ».* (Failed to create AAD Application - Tenant 72f988bf-86f1-41af-91ab-2d7cd011db37 - Reason = ’Forbidden’ - Message = ’Insufficient privileges to complete the operation.’)
+  *Échec de l’application AAD - Locataire 72f988bf-86f1-41af-91ab-2d7cd011db37 - Raison = « Interdit » - Message = « Privilèges insuffisants pour terminer l’opération ». (Failed to create AAD Application - Tenant 72f988bf-86f1-41af-91ab-2d7cd011db37 - Reason = ’Forbidden’ - Message = ’Insufficient privileges to complete the operation.’)*
 
 **Azlog createazureid** tente de créer un principal du service dans tous les locataires Azure AD pour les abonnements auxquels la connexion Azure a accès. Si votre connexion Azure n'a que le rôle d’Invité dans ce locataire Azure AD, la commande échoue avec « Privilèges insuffisants pour terminer l’opération ». Demander à l’administrateur du locataire d’ajouter votre compte en tant qu’utilisateur dans le locataire.
 
@@ -77,7 +77,7 @@ La commande **Azlog authorize** attribue le rôle de lecteur au principal du ser
 Consultez l'article :
 
 - [Opérations d’audit avec Resource Manager](../resource-group-audit.md)
-- [Liste des événements de gestion dans un abonnement dans une API REST Azure Insights](https://msdn.microsoft.com/library/azure/dn931934.aspx) (en Anglais)
+- [Liste des événements de gestion dans un abonnement dans une API REST Azure Insights (en Anglais)](https://msdn.microsoft.com/library/azure/dn931934.aspx)
 
 ## Où puis-je trouver plus d’informations sur les alertes de l’Azure Security Center ?
 
@@ -99,7 +99,7 @@ Consultez la page [Utiliser PowerShell pour activer Azure Diagnostics sur une ma
 
 ### Modification de la configuration de WAD
 
-L’exemple suivant est une configuration où seuls l’ID d’événement 4624 et ID d’événement 4625 sont collectés à partir du journal des événements de sécurité. Des événements Microsoft Antimalware sont collectés dans le journal des événements système. Consultez [Consommation d’événements] (https://msdn.microsoft.com/library/windows/desktop/dd996910(v=vs.85) pour plus d’informations sur l’utilisation d’expressions XPath.
+L’exemple suivant est une configuration où seuls l’ID d’événement 4624 et ID d’événement 4625 sont collectés à partir du journal des événements de sécurité. Des événements Microsoft Antimalware sont collectés dans le journal des événements système. Consultez [Consommation d’événements](https://msdn.microsoft.com/library/windows/desktop/dd996910(v=vs.85) pour plus d’informations sur l’utilisation d’expressions XPath.
 
     <WindowsEventLog scheduledTransferPeriod="PT1M">
         <DataSource name="Security!*[System[(EventID=4624 or EventID=4625)]]" />
@@ -113,7 +113,9 @@ L’exemple suivant est une configuration où seuls l’ID d’événement 4624 
 
 Après avoir apporté les modifications, vérifiez le compte de stockage pour vous assurer que les événements corrects sont collectés.
 
+Si vous avez des questions sur l’intégration des journaux Azure, envoyez un e-mail à [AzSIEMteam@microsoft.com](mailto:AzSIEMteam@microsoft.com)
+
 <!--Image references-->
 [1]: ./media/security-azure-log-integration-faq/event-xml.png
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

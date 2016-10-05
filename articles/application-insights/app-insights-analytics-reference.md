@@ -27,13 +27,13 @@
 **Let et set** [let](#let-clause) | [set](#set-clause)
 
 
-**Requêtes et opérateurs** [count](#count-operator) | [evaluate](#evaluate-operator) | [extend](#extend-operator) | [join](#join-operator) | [limit](#limit-operator) | [mvexpand](#mvexpand-operator) | [parse](#parse-operator) | [project](#project-operator) | [project-away](#project-away-operator) | [range](#range-operator) | [reduce](#reduce-operator) | [render directive](#render-directive) | [restrict clause](#restrict-clause) | [sort](#sort-operator) | [summarize](#summarize-operator) | [take](#take-operator) | [top](#top-operator) | [top-nested](#top-nested-operator) | [union](#union-operator) | [where](#where-operator)
+**Requêtes et opérateurs** [count](#count-operator) | [evaluate](#evaluate-operator) | [extend](#extend-operator) | [join](#join-operator) | [limit](#limit-operator) | [mvexpand](#mvexpand-operator) | [parse](#parse-operator) | [project](#project-operator) | [project-away](#project-away-operator) | [range](#range-operator) | [reduce](#reduce-operator) | [render directive](#render-directive) | [restrict clause](#restrict-clause) | [sort](#sort-operator) | [summarize](#summarize-operator) | [take](#take-operator) | [top](#top-operator) | [top-nested](#top-nested-operator) | [union](#union-operator) | [where](#where-operator) | [where-in](#where-in-operator)
 
 **Agrégations** [any](#any) | [argmax](#argmax) | [argmin](#argmin) | [avg](#avg) | [buildschema](#buildschema) | [count](#count) | [countif](#countif) | [dcount](#dcount) | [dcountif](#dcountif) | [makelist](#makelist) | [makeset](#makeset) | [max](#max) | [min](#min) | [percentile](#percentile) | [percentiles](#percentiles) | [percentilesw](#percentilesw) | [percentilew](#percentilew) | [stdev](#stdev) | [sum](#sum) | [variance](#variance)
 
 **Valeurs scalaires** [Littéraux booléens](#boolean-literals) | [Opérateurs booléens](#boolean-operators) | [Casts](#casts) | [Comparaisons scalaires](#scalar-comparisons) | [gettype](#gettype) | [hash](#hash) | [iff](#iff) | [isnotnull](#isnotnull) | [isnull](#isnull) | [notnull](#notnull) | [toscalar](#toscalar)
 
-**Nombres** [Opérateurs arithmétiques](#arithmetic-operators) | [Littéraux numériques](#numeric-literals) | [abs](#abs) | [bin](#bin) | [exp](#exp) | [floor](#floor) | [log](#log) | [rand](#rand) | [sqrt](#sqrt) | [todouble](#todouble) | [toint](#toint) | [tolong](#tolong)
+**Nombres** [Opérateurs arithmétiques](#arithmetic-operators) | [Littéraux numériques](#numeric-literals) | [abs](#abs) | [bin](#bin) | [exp](#exp) | [floor](#floor) | [gamma](#gamma) | [log](#log) | [rand](#rand) | [sqrt](#sqrt) | [todouble](#todouble) | [toint](#toint) | [tolong](#tolong)
 
 **Date et heure** [Expressions de date et heure](#date-and-time-expressions) | [Littéraux de date et heure](#date-and-time-literals) | [ago](#ago) | [datepart](#datepart) | [dayofmonth](#dayofmonth) | [dayofweek](#dayofweek) | [dayofyear](#dayofyear) | [endofday](#endofday) | [endofmonth](#endofmonth) | [endofweek](#endofweek) | [endofyear](#endofyear) | [getmonth](#getmonth) | [getyear](#getyear) | [now](#now) | [startofday](#startofday) | [startofmonth](#startofmonth) | [startofweek](#startofweek) | [startofyear](#startofyear) | [todatetime](#todatetime) | [totimespan](#totimespan) | [weekofyear](#weekofyear)
 
@@ -105,7 +105,7 @@ La clause set définit une option pour la durée de la requête. Les options de 
     set OptionName [= OptionValue] ; query
 
 
-|Name | Implication si la valeur est définie sur true
+|Nom | Implication si la valeur est définie sur true
 |---|---
 |querytrace| Augmente le niveau des traces de débogage générées par une requête. 
 |noexecute| Désactive l’exécution réelle de la requête (seule la phase de planification de la requête est exécutée). 
@@ -445,7 +445,7 @@ Fusionne les lignes de deux tables en faisant correspondre les valeurs de la col
 
 **Syntaxe**
 
-    Table1 | join [kind=Kind] (Table2) on CommonColumn [, ...]
+    Table1 | join [kind=Kind] \(Table2) on CommonColumn [, ...]
 
 **Arguments**
 
@@ -1053,7 +1053,7 @@ Cette version plus efficace génère le même résultat. Il filtre chaque table 
 
 ### opérateur where
 
-     T | where fruit=="apple"
+     requests | where resultCode==200
 
 Filtre une table d’après le sous-ensemble de lignes correspondant à un prédicat.
 
@@ -1086,7 +1086,7 @@ Pour obtenir des performances optimales :
 **Exemple**
 
 ```AIQL
-Traces
+traces
 | where Timestamp > ago(1h)
     and Source == "Kuskus"
     and ActivityId == SubActivityIt 
@@ -1096,6 +1096,26 @@ Enregistrements datant de moins de 1 heure et provenant de la source nommée «�
 
 Notez que nous plaçons la comparaison entre deux colonnes à la fin, car elle ne peut pas utiliser l’index et force une analyse.
 
+
+### Opérateur where-in
+
+    requests | where resultCode !in (200, 201)
+
+    requests | where resultCode in (403, 404)
+
+**Syntaxe**
+
+    T | where col in (expr1, expr2, ...)
+    T | where col !in (expr1, expr2, ...)
+
+**Arguments**
+
+* `col` : colonne dans la table.
+* `expr1`... : liste d’expressions scalaires.
+
+Utilisez `in` pour inclure uniquement les lignes où `col` est égal à l’une des expressions `expr1...`.
+
+Utilisez `!in` pour inclure uniquement les lignes où `col` n’est égal à aucune des expressions `expr1...`.
 
 
 ## Agrégations
@@ -1670,7 +1690,7 @@ Argument évalué. Si l’argument est une table, retourne la première colonne 
 
 ## Nombres
 
-[abs](#abs) | [bin](#bin) | [exp](#exp) | [floor](#floor) |[log](#log) | [rand](#rand) | [range](#range) | [sqrt](#sqrt) | [todouble](#todouble) | [toint](#toint) | [tolong](#tolong)
+[abs](#abs) | [bin](#bin) | [exp](#exp) | [floor](#floor) | [gamma](#gamma) |[log](#log) | [rand](#rand) | [range](#range) | [sqrt](#sqrt) | [todouble](#todouble) | [toint](#toint) | [tolong](#tolong)
 
 ### Littéraux numériques
 
@@ -1757,10 +1777,25 @@ L’expression suivante calcule un histogramme de durées, avec une taille de co
     exp10(v) // 10 raised to the power v
 
 
-
 ### floor
 
 Alias de [`bin()`](#bin).
+
+### gamma
+
+[Fonction gamma](https://en.wikipedia.org/wiki/Gamma_function).
+
+**Syntaxe**
+
+    gamma(x)
+
+**Arguments**
+
+* *x :* nombre réel.
+
+Pour les entiers positifs, `gamma(x) == (x-1)!`. Par exemple, `gamma(5) == 4 * 3 * 2 * 1`.
+
+Voir aussi [loggamma](#loggamma).
 
 
 ### log
@@ -1771,6 +1806,20 @@ Alias de [`bin()`](#bin).
 
 
 `v` doit être un nombre réel > 0. Sinon, la valeur null est retournée.
+
+### loggamma
+
+
+Logarithme népérien de la valeur absolue de la [fonction gamma](#gamma).
+
+**Syntaxe**
+
+    loggamma(x)
+
+**Arguments**
+
+* *x :* nombre réel.
+
 
 ### rand
 
@@ -2397,7 +2446,7 @@ Convertit une chaîne en majuscules.
 
 ## Tableaux, objets et dynamiques
 
-[littéraux](#dynamic-literals) | [conversion](#casting-dynamic-objects) | [opérateurs](#operators) | [clauses let](#dynamic-objects-in-let-clauses) <br/> [arraylength](#arraylength) | [extractjson](#extractjson) | [parsejson](#parsejson) | [range](#range) | [treepath](#treepath) | [todynamic](#todynamic)
+[Littéraux](#dynamic-literals) | [Conversion](#casting-dynamic-objects) | [pérateurs](#operators) | [Clauses let](#dynamic-objects-in-let-clauses) <br/> [arraylength](#arraylength) | [extractjson](#extractjson) | [parsejson](#parsejson) | [range](#range) | [treepath](#treepath) | [todynamic](#todynamic) | [zip](#zip)
 
 
 Voici le résultat d’une requête sur une exception d’Application Insights. La valeur de `details` est un tableau.
@@ -2699,6 +2748,24 @@ Un tableau d’expressions de chemin.
 
 Notez que « [0] » indique la présence d’un tableau, mais ne spécifie pas l’index utilisé par un chemin spécifique.
 
+### zip
+
+    zip(list1, list2, ...)
+
+Regroupe un ensemble de listes dans une liste de tuples.
+
+* `list1...` : liste de valeurs.
+
+**Exemples**
+
+    zip(parsejson('[1,3,5]'), parsejson('[2,4,6]'))
+    => [ [1,2], [3,4], [5,6] ]
+
+    
+    zip(parsejson('[1,3,5]'), parsejson('[2,4]'))
+    => [ [1,2], [3,4], [5,null] ]
+
+
 ### Noms
 
 Les noms peuvent comprendre jusqu’à 1 024 caractères. Ils respectent la casse et peuvent contenir des lettres, des chiffres et des traits de soulignement (`_`).
@@ -2724,4 +2791,4 @@ Entourez de guillemets un nom à l’aide de ['... '] ou ["..."] pour inclure d�
 
 [AZURE.INCLUDE [app-insights-analytics-footer](../../includes/app-insights-analytics-footer.md)]
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

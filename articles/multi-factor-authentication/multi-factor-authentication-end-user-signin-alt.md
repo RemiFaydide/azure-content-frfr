@@ -1,20 +1,20 @@
 <properties 
-	pageTitle="Connexion à l’aide d’une autre méthode avec Azure Multi-Factor Authentication" 
-	description="Cette page décrit comment un utilisateur peut se connecter à l’aide d’une autre méthode avec Azure MFA." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenpo" 
+	pageTitle="Connexion à l’aide d’une autre méthode avec Azure Multi-Factor Authentication"
+	description="Cette page décrit comment un utilisateur peut se connecter à l’aide d’une autre méthode avec Azure MFA."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="kgremban"
+	manager="femilao"
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2016" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2016"
+	ms.author="kgremban"/>
 
 # Connexion à l’aide d’une autre méthode avec Azure Multi-Factor Authentication
 
@@ -33,6 +33,4 @@ La section suivante vous montre comment vous connecter avec une autre méthode q
 
 <li>Choisissez une autre méthode et connectez-vous.</li>
 
- 
-
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

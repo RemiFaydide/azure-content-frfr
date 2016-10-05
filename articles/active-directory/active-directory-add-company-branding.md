@@ -3,7 +3,7 @@
 	description="Découvrir comment ajouter une société à la page de connexion Azure et à la page du panneau d’accès"
 	services="active-directory"
 	documentationCenter=""
-	authors="markusvi"
+	authors="curtand"
 	manager="femila"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="07/13/2016"
-	ms.author="MarkVi"/>
+	ms.date="09/22/2016"
+	ms.author="curtand"/>
 
 # Ajout d’une marque de société aux pages de connexion et du volet d’accès
 
@@ -25,12 +25,12 @@ Pour éviter toute confusion, de nombreuses entreprises veulent que tous les sit
 
 - **Page du volet d’accès** : le volet d’accès est un portail Web qui vous permet de consulter et d’exécuter les applications cloud auxquelles votre administrateur Azure AD vous a autorisé à accéder. Pour accéder au volet d’accès, utilisez l’URL suivante : [https://myapps.microsoft.com](https://myapps.microsoft.com).
 
-Cette rubrique explique comment vous pouvez personnaliser la page de connexion et la page de panneau d’accès.
+Cette rubrique explique comment personnaliser la page de connexion et la page de panneau d’accès.
 
 > [AZURE.NOTE]
 >
-- La promotion de la marque de société est une fonctionnalité disponible uniquement si vous avez effectué une mise à niveau vers l’édition Premium ou De base d’Azure Active Directory. Pour plus d’informations, consultez la page [Éditions d’Azure Active Directory](active-directory-editions.md).
-- Les clients vivant en Chine peuvent accéder aux éditions De base et Premium d’Azure Active Directory à l’aide de l’instance mondiale d’Azure Active Directory. Actuellement, les éditions De base et Premium d’Azure Active Directory ne sont pas prises en charge dans le service Microsoft Azure utilisé par 21Vianet en Chine. Pour plus d’informations, contactez-nous via le [Forum Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).
+- La promotion de la marque de société est une fonctionnalité disponible uniquement si vous avez effectué une mise à niveau vers l’édition Premium ou De base d’Azure Active Directory, ou si vous êtes un utilisateur Office 365. Pour plus d’informations, consultez la page [Éditions d’Azure Active Directory](active-directory-editions.md).
+- Les clients vivant en Chine peuvent accéder aux éditions de base et Premium d’Azure Active Directory à l’aide de l’instance mondiale d’Azure Active Directory. Actuellement, les éditions De base et Premium d’Azure Active Directory ne sont pas prises en charge dans le service Microsoft Azure utilisé par 21Vianet en Chine. Pour plus d’informations, contactez-nous via le [Forum Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).
 
 
 
@@ -134,7 +134,7 @@ Bien que vous puissiez configurer un jeu pour chaque langue prise en charge par 
 3. Dans la barre d’outils située en haut, cliquez sur **Configurer**.
 4. Cliquez sur **Personnaliser la marque**.
 4. Modifiez les éléments que vous voulez personnaliser. Tous les champs sont facultatifs.
-5. Cliquez sur **Enregistrer**.
+5. Cliquez sur **Save**.
 
 Il peut s’écouler jusqu’à une heure avant que les modifications que vous avez apportées à la page de connexion soient visibles.
 
@@ -147,7 +147,7 @@ Il peut s’écouler jusqu’à une heure avant que les modifications que vous a
 2. Cliquez sur **Ajouter des paramètres de marque pour une langue spécifique**.
 3. Sélectionnez la langue pour laquelle vous souhaitez personnaliser le logo, puis cliquez sur **Suivant**.
 3. Modifiez uniquement les éléments pour lesquels vous souhaitez configurer des remplacements spécifiques par langue. Tous les champs sont facultatifs. Si un champ est vide, la valeur personnalisée par défaut s’affiche à la place (ou la valeur par défaut Microsoft si aucune valeur par défaut personnalisée n’est configurée).
-4. Cliquez sur **Enregistrer**.
+4. Cliquez sur **Save**.
 
 **Pour supprimer la marque de votre société de votre répertoire, procédez comme suit :**
 
@@ -164,7 +164,7 @@ Il peut s’écouler jusqu’à une heure avant que les modifications que vous a
 
     c. Supprimez le texte de toutes les zones de texte.
 
-    d. Cliquez sur **Next**.
+    d. Cliquez sur **Suivant**.
 
     e. Supprimez le texte de toutes les zones de texte.
 
@@ -219,4 +219,4 @@ Couleur d’arrière-plan de la page de connexion | La couleur d’arrière-plan
 [7]: ./media/active-directory-add-company-branding/SignInPage_aftercustomization_croppedtop.png
 [8]: ./media/active-directory-add-company-branding/APBranding.png
 
-<!---HONumber=AcomDC_0720_2016-->
+<!---HONumber=AcomDC_0928_2016-->

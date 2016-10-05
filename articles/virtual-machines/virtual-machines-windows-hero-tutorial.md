@@ -117,4 +117,4 @@ Cliquez sur le bouton **Démarrer** pour redémarrer la machine virtuelle lorsqu
 
 - Si vous souhaitez automatiser les déploiements, consultez [Création d’une machine virtuelle Windows avec un modèle du Gestionnaire de ressources](virtual-machines-windows-ps-template.md).
 
-<!----HONumber=AcomDC_0912_2016-->
+<!------HONumber=AcomDC_0912_2016-->

@@ -13,24 +13,27 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/29/2016"
+   ms.date="09/21/2016"
    ms.author="cherylmc" />
 
 # À propos des paramètres de la passerelle VPN
 
 Une solution de connexion de passerelle VPN s’appuie sur la configuration de plusieurs ressources afin d’envoyer le trafic réseau entre les réseaux virtuels et les emplacements locaux. Chaque ressource contient des paramètres configurables. La combinaison des ressources et des paramètres détermine le résultat de la connexion.
 
-Les sections de cet article présentent les ressources et les paramètres relatifs à une passerelle VPN. Il est parfois utile de visualiser les configurations disponibles à l’aide de diagrammes de topologie de connexion. Vous trouverez les descriptions et les diagrammes de topologie de chaque solution de connexion dans l’article [À propos la passerelle VPN](vpn-gateway-about-vpngateways.md).
+Les sections de cet article présentent les ressources et les paramètres relatifs à une passerelle VPN dans le modèle de déploiement **Resource Manager**. Il est parfois utile de visualiser les configurations disponibles à l’aide de diagrammes de topologie de connexion. Vous trouverez les descriptions et les diagrammes de topologie de chaque solution de connexion dans l’article [À propos la passerelle VPN](vpn-gateway-about-vpngateways.md).
 
 ## <a name="gwtype"></a>Types de passerelle
 
-Le type de passerelle spécifie la manière dont la passerelle se connecte. Il s’agit d’un paramètre de configuration obligatoire pour le modèle de déploiement Resource Manager. Chaque réseau virtuel ne peut posséder qu’une seule passerelle de réseau virtuel de chaque type. Les valeurs disponibles pour `-GatewayType` sont :
+Chaque réseau virtuel ne peut posséder qu’une seule passerelle de réseau virtuel de chaque type. Lorsque vous créez une passerelle de réseau virtuel, vous devez vous assurer que le type de passerelle convient pour votre configuration.
+
+Les valeurs disponibles pour -GatewayType sont :
 
 - Vpn
 - ExpressRoute
 
+Une passerelle VPN nécessite le *Vpn* `-GatewayType`.
 
-Une passerelle VPN requiert le -GatewayType *Vpn*, comme l’illustre l’exemple PowerShell suivant pour le modèle de déploiement Resource Manager. Lorsque vous créez une passerelle de réseau virtuel, vous devez vous assurer que le type de passerelle convient pour votre configuration.
+Exemple :
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 	-Location 'West US' -IpConfigurations $gwipconfig -GatewayType Vpn `
@@ -39,19 +42,30 @@ Une passerelle VPN requiert le -GatewayType *Vpn*, comme l’illustre l’exempl
 
 ## <a name="gwsku"></a>SKU de passerelle
 
-Lorsque vous créez une passerelle VPN, vous devez spécifier la référence (SKU) de passerelle de réseau virtuel que vous voulez utiliser. Les SKU de passerelle s’appliquent aux types de passerelle ExpressRoute et VPN. La tarification varie en fonction des différents SKU de passerelle. Pour plus d'informations sur la tarification, consultez la [tarification de passerelle VPN](https://azure.microsoft.com/pricing/details/vpn-gateway/). Pour plus d’informations sur ExpressRoute, consultez [Présentation technique d’ExpressRoute](../expressroute/expressroute-introduction.md).
 
-Il existe 3 SKU de passerelle VPN :
+[AZURE.INCLUDE [vpn-gateway-gwsku-include](../../includes/vpn-gateway-gwsku-include.md)]
 
-- De base
-- Standard
-- HighPerformance
+**Spécification de la référence SKU de passerelle dans le portail Azure**
+
+Si vous utilisez le portail Azure pour créer une passerelle de réseau virtuel Resource Manager, la passerelle du réseau virtuel est configurée à l’aide de la référence SKU standard par défaut. Actuellement, vous ne pouvez pas spécifier d’autres références SKU pour le modèle de déploiement de Resource Manager dans le portail Azure. Toutefois, après avoir créé votre passerelle, vous pouvez la mettre à niveau vers une référence SKU de passerelle plus puissante (De base/Standard vers HighPerformance) en utilisant l’applet de commande PowerShell `Resize-AzureRmVirtualNetworkGateway`. Vous pouvez également réduire la taille de référence SKU à l’aide de PowerShell.
+
+**Spécification de la référence SKU de passerelle à l’aide de PowerShell**
+
 
 L’exemple PowerShell suivant spécifie la `-GatewaySku` en tant que *Standard*.
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 	-Location 'West US' -IpConfigurations $gwipconfig -GatewaySku Standard `
 	-GatewayType Vpn -VpnType RouteBased
+
+**Modification d’une référence SKU de passerelle**
+
+Vous pouvez redimensionner une référence SKU de passerelle. L’exemple PowerShell suivant montre une référence SKU de passerelle redimensionnée sur HighPerformance.
+
+	$gw = Get-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg
+	Resize-AzureRmVirtualNetworkGateway -VirtualNetworkGateway $gw -GatewaySku HighPerformance
+
+<br>
 
 
 ###  <a name="aggthroughput"></a>Débit agrégé estimé par type de SKU et de passerelle
@@ -64,7 +78,7 @@ Le tableau ci-dessous présente les types de passerelle et le débit total estim
 
 ## <a name="connectiontype"></a>Types de connexion
 
-Chaque configuration nécessite un type spécifique de connexion de passerelle de réseau virtuel. Les valeurs de PowerShell pour Resource Manager disponibles pour `-ConnectionType` sont :
+Dans le modèle de déploiement de Resource Manager, chaque configuration nécessite un type spécifique de connexion de passerelle de réseau virtuel. Les valeurs de PowerShell pour Resource Manager disponibles pour `-ConnectionType` sont :
 
 - IPsec
 - Vnet2Vnet
@@ -89,7 +103,7 @@ Une fois qu’une passerelle de réseau virtuel a été créée, vous ne pouvez 
 [AZURE.INCLUDE [vpn-gateway-vpntype](../../includes/vpn-gateway-vpntype-include.md)]
 
 
-L’exemple PowerShell suivant pour le modèle de déploiement Resource Manager spécifie la valeur `-VpnType` comme étant *RouteBased*. Lorsque vous créez une passerelle, vous devez vous assurer que -VpnType convient pour votre configuration.
+L’exemple PowerShell suivant spécifie la `-VpnType` en tant que *RouteBased*. Lorsque vous créez une passerelle, vous devez vous assurer que -VpnType convient pour votre configuration.
 
 	New-AzureRmVirtualNetworkGateway -Name vnetgw1 -ResourceGroupName testrg `
 	-Location 'West US' -IpConfigurations $gwipconfig `
@@ -102,7 +116,7 @@ L’exemple PowerShell suivant pour le modèle de déploiement Resource Manager 
 
 ## <a name="gwsub"></a>Sous-réseau de passerelle
 
-Vous devez créer un sous-réseau de passerelle pour votre réseau virtuel afin de configurer une passerelle de réseau virtuel. Pour fonctionner correctement, le sous-réseau de passerelle doit être nommé *SousRéseau\_Passerelle*. Ce nom indique à Azure que ce sous-réseau doit être utilisé pour la passerelle. Si vous utilisez le Portail Classic, le sous-réseau de la passerelle est automatiquement nommé *Passerelle* dans l’interface du portail. Cela se rapporte uniquement à l’affichage du sous-réseau de passerelle dans le portail classique. Dans ce cas, le sous-réseau est créé avec la valeur *SousRéseau\_Passerelle*, et peut ainsi être affiché dans le portail Azure ainsi que dans PowerShell.
+Vous devez créer un sous-réseau de passerelle pour votre réseau virtuel afin de configurer une passerelle de réseau virtuel. Pour fonctionner correctement, le sous-réseau de passerelle doit être nommé *SousRéseau\_Passerelle*. Ce nom indique à Azure que ce sous-réseau doit être utilisé pour la passerelle.
 
 La taille minimale de votre sous-réseau de passerelle dépend entièrement de la configuration que vous voulez créer. Bien qu’il soit possible de créer un sous-réseau de passerelle aussi petit que /29, nous vous recommandons de créer un sous-réseau de passerelle de taille /28 ou supérieure (/28, /27, /26, etc.).
 
@@ -117,11 +131,11 @@ L’exemple PowerShell Resource Manager suivant montre un sous-réseau de passer
 
 ## <a name="lng"></a>Passerelles de réseau local
 
-Lorsque vous créez une solution de passerelle VPN, la passerelle du réseau local représente souvent votre emplacement local. Dans le modèle de déploiement classique, la passerelle de réseau local a été appelée Site local.
+Lorsque vous créez une configuration de passerelle VPN, la passerelle du réseau local représente souvent votre emplacement local. Dans le modèle de déploiement classique, la passerelle de réseau local a été appelée Site local.
 
 Vous donnez un nom à la passerelle de réseau local (l’adresse IP publique du périphérique VPN local) et spécifiez les préfixes d’adresse qui se situent dans l’emplacement local. Azure examine les préfixes d’adresse de destination pour le trafic réseau, consulte la configuration que vous avez spécifiée pour votre passerelle de réseau local, et route les paquets en conséquence. Vous spécifiez également des passerelles de réseau local pour les configurations avec interconnexion de réseaux virtuels qui utilisent une connexion de passerelle VPN.
 
-L’exemple PowerShell Resource Manager suivant crée une nouvelle passerelle de réseau local :
+L’exemple PowerShell suivant crée une nouvelle passerelle de réseau local :
 
 	New-AzureRmLocalNetworkGateway -Name LocalSite -ResourceGroupName testrg `
 	-Location 'West US' -GatewayIpAddress '23.99.221.164' -AddressPrefix '10.5.51.0/24'
@@ -150,4 +164,4 @@ Pour plus d’informations sur les configurations de connexion disponible, consu
 
  
 
-<!---HONumber=AcomDC_0907_2016-->
+<!---HONumber=AcomDC_0921_2016-->

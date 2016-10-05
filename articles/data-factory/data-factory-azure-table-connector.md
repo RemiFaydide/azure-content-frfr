@@ -418,7 +418,7 @@ Dans l’exemple suivant, la colonne source DivisionID est mappée sur la colonn
 		"columnMappings": "DivisionID: DivisionID, FirstName: FirstName, LastName: LastName"
 	} 
 
-EmpID est spécifié en tant que clé de partition.
+DivisionID est spécifié en tant que clé de partition.
 
 	"sink": {
 		"type": "AzureTableSink",
@@ -432,7 +432,7 @@ EmpID est spécifié en tant que clé de partition.
 
 ### Mappage de type de Table Azure
 
-Comme mentionné dans l’article consacré aux [activités de déplacement de données](data-factory-data-movement-activities.md), l’activité de copie convertit automatiquement des types source en types récepteur à l’aide de l’approche en deux étapes suivante.
+Comme mentionné dans l’article consacré aux [activités de déplacement de données](data-factory-data-movement-activities.md), l’activité de copie convertit automatiquement les types source en types récepteur à l’aide de l’approche en deux étapes suivante.
 
 1. Conversion de types natifs source en types .NET
 2. Conversion de types .NET en types récepteur natifs
@@ -531,4 +531,4 @@ Dans ce cas, Data Factory effectue automatiquement les conversions de type, y c
 ## Performances et réglage  
 Consultez l’article [Guide sur les performances et le réglage de l’activité de copie](data-factory-copy-activity-performance.md) pour en savoir plus sur les facteurs clés affectant les performances de déplacement des données (activité de copie) dans Azure Data Factory et les différentes manières de les optimiser.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

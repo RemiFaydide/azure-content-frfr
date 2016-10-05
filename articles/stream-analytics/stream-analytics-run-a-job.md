@@ -5,7 +5,7 @@
 	documentationCenter=""
 	services="stream-analytics"
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
@@ -37,7 +37,7 @@ Pour démarrer la tâche :
 
     ![Heure de démarrage de la tâche de diffusion en continu dans le portail Azure](./media/stream-analytics-run-a-job/5-stream-analytics-run-a-job.png)
 
-3.	Confirmez votre sélection. L’état de la tâche passe à *Démarrage*, puis à *En cours d’exécution* une fois la tâche démarrée. Vous pouvez surveiller la progression de l’opération de **démarrage** dans le **Hub de notification** :
+3.	Confirmez votre sélection. L’état de la tâche passe à *Démarrage*, puis à *En cours d’exécution* une fois la tâche démarrée. Vous pouvez surveiller la progression de l’opération de **démarrage** dans le **Hub de notification** :
 
     ![progression de la tâche de diffusion en continu](./media/stream-analytics-run-a-job/3-stream-analytics-run-a-job.png)
 
@@ -54,4 +54,4 @@ Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https:
 - [Références sur le langage des requêtes d'Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Références sur l’API REST de gestion d’Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

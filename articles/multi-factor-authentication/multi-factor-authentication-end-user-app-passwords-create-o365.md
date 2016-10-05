@@ -1,20 +1,20 @@
-<properties 
-	pageTitle="Création de mots de passe d’application dans le portail Office 365 pour Azure Multi-Factor Authentication" 
-	description="Cette page montre aux utilisateurs comment créer des mots de passe d’application supplémentaires dans le portail Office 365." 
-	services="multi-factor-authentication" 
-	documentationCenter="" 
-	authors="billmath" 
-	manager="stevenp" 
+<properties
+	pageTitle="Création de mots de passe d’application dans le portail Office 365 pour Azure Multi-Factor Authentication"
+	description="Cette page montre aux utilisateurs comment créer des mots de passe d’application supplémentaires dans le portail Office 365."
+	services="multi-factor-authentication"
+	documentationCenter=""
+	authors="kgremban"
+	manager="femila"
 	editor="curtland"/>
 
-<tags 
-	ms.service="multi-factor-authentication" 
-	ms.workload="identity" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="08/04/2016" 
-	ms.author="billmath"/>
+<tags
+	ms.service="multi-factor-authentication"
+	ms.workload="identity"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/04/2016"
+	ms.author="kgremban"/>
 
 # Création ou suppression de mots de passe d’application dans le portail Office 365 pour Azure Multi-Factor Authentication
 
@@ -68,9 +68,4 @@ Si vous utilisez l’authentification multifacteur avec Office 365, vous pourre
 <li>Vous obtenez un message contextuel vous demandant de confirmer la suppression.</li>
 <li>Cliquez sur **Oui**.</li>
 
-
-
- 
- 
-
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/06/2016" 
+	ms.date="09/16/2016" 
 	ms.author="garye"/>
 
 
@@ -41,7 +41,8 @@ L’étape suivante de cette procédure pas à pas consiste à créer une expér
 3.	Dans la palette des modules à gauche du canevas d'expérience, développez **Jeux de données enregistrés**.
 4.	Recherchez le jeu de données que vous avez créé sous **My Datasets** (Mes jeux de données) et faites-le glisser sur la zone de dessin. Vous pouvez également le rechercher en entrant son nom dans la zone **Rechercher** au-dessus de la palette.
 
-##Préparation des données
+## Préparation des données
+
 Vous pouvez voir les 100 premières lignes de données et quelques informations statistiques concernant tout le jeu de données en cliquant sur le port de sortie du jeu de données (le petit cercle en bas) et en sélectionnant **Visualiser**.
 
 Le fichier de données étant dépourvu d’en-têtes de colonne, Studio a fourni des en-têtes génériques (Col1, Col2, *etc.*). Des en-têtes explicites ne sont pas essentiels pour créer un modèle, mais ils facilitent l’utilisation des données dans l’expérience. En outre, lors de la publication de ce modèle dans un service web, les en-têtes permettent à l'utilisateur du service d'identifier les colonnes.
@@ -75,7 +76,8 @@ Pour utiliser [Modifier les métadonnées][edit-metadata], vous spécifiez les c
 
 > [AZURE.TIP] Si vous souhaitez vérifier les en-têtes de colonne, exécutez l’expérience (cliquez sur **EXÉCUTER** sous le canevas d’expérience). À la fin de l’exécution (une coche verte s’affiche sur [Modifier les métadonnées][edit-metadata]), cliquez sur le port de sortie du module [Modifier les métadonnées][edit-metadata] et sélectionnez **Visualiser**. Vous pouvez voir la sortie de tous les modules en procédant de même pour afficher la progression des données dans l'expérience.
 
-##Création de jeux de données d'apprentissage et de test
+## Création de jeux de données d'apprentissage et de test
+
 L’étape suivante de l’expérience consiste à générer des jeux de données séparés dont nous nous servirons pour l’apprentissage et le test de notre modèle.
 
 Pour ce faire, nous utilisons le module [Fractionner les données][split].
@@ -130,4 +132,4 @@ Pour plus d’informations sur l'utilisation de scripts R dans vos expériences,
 [edit-metadata]: https://msdn.microsoft.com/library/azure/370b6676-c11c-486f-bf73-35349f842a66/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

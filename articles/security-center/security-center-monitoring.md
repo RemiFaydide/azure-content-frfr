@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/21/2016"
+   ms.date="09/22/2016"
    ms.author="yurid"/>
 
 #Surveillance de l’intégrité de la sécurité dans le Centre de sécurité Azure
@@ -23,13 +23,13 @@ Ce document a pour but de vous aider à utiliser les fonctionnalités de surveil
 Nous pensons souvent que la surveillance consiste à veiller et à attendre qu’un événement se produise pour y répondre. Ici, la surveillance de la sécurité fait référence à une stratégie proactive qui audite vos ressources afin d’identifier les systèmes qui ne répondent pas aux normes organisationnelles ou aux meilleures pratiques.
 
 ##Surveillance de l'intégrité de la sécurité
-Une fois que vous avez activé les [stratégies de sécurité](security-center-policies.md) pour les ressources d’un abonnement, le Centre de sécurité analyse la sécurité de vos ressources afin d’identifier les vulnérabilités potentielles. Contrairement aux informations sur la configuration réseau, qui sont instantanément disponibles, l’affichage des informations concernant la configuration des machines virtuelles (telles que l’état des mises à jour de sécurité ou la configuration du système d’exploitation) peut prendre une heure ou plus. Vous pouvez visualiser l’état de sécurité de vos ressources, ainsi que les problèmes éventuels, dans le panneau **Intégrité de la sécurité des ressources**. Vous pouvez également afficher une liste de ces problèmes dans le panneau **Recommandations**.
+Une fois que vous avez activé les [stratégies de sécurité](security-center-policies.md) pour les ressources d’un abonnement, Azure Security Center analyse la sécurité de vos ressources afin d’identifier les vulnérabilités potentielles. Contrairement aux informations sur la configuration réseau, qui sont instantanément disponibles, l’affichage des informations concernant la configuration des machines virtuelles (telles que l’état des mises à jour de sécurité ou la configuration du système d’exploitation) peut prendre une heure ou plus. Vous pouvez visualiser l’état de sécurité de vos ressources, ainsi que les problèmes éventuels, dans le panneau **Intégrité de la sécurité des ressources**. Vous pouvez également afficher une liste de ces problèmes dans le panneau **Recommandations**.
 
 Pour plus d’informations sur la façon d’appliquer des recommandations, consultez [Implémentation des recommandations de sécurité dans le Centre de sécurité Azure](security-center-recommendations.md).
 
 La mosaïque **Intégrité de la sécurité des ressources** vous permet de surveiller l’état de sécurité de vos ressources. L’exemple ci-dessous représente des problèmes associés à un niveau de gravité élevé ou moyen, qui nécessitent une attention particulière. Les stratégies de sécurité qui sont activées ont un impact sur les types de contrôles surveillés.
 
-![Intégrité des ressources](./media/security-center-monitoring/security-center-monitoring-fig1-ga.png)
+![Intégrité des ressources](./media/security-center-monitoring/security-center-monitoring-fig1-new4.png)
 
 Si le Centre de sécurité identifie une vulnérabilité qui doit être corrigée (par exemple, une machine virtuelle à laquelle il manque des mises à jour de sécurité ou un sous-réseau sans [groupe de sécurité réseau](../virtual-network/virtual-networks-nsg.md)), cette vulnérabilité est identifiée dans ce panneau.
 
@@ -51,7 +51,7 @@ Cette section indique la quantité totale de machines virtuelles qui ont été i
 
 
 ####Recommandations pour machines virtuelles
-Cette section contient une série de recommandations pour chaque machine virtuelle contrôlée par le Centre de sécurité Azure. La première colonne contient la description de la recommandation ; la deuxième colonne indique la quantité totale de machines virtuelles qui sont affectées par ces recommandations et la troisième, le niveau de gravité du problème, comme indiqué ci-dessous.
+Cette section contient une série de [recommandations pour chaque machine virtuelle](security-center-virtual-machine-recommendations.md) surveillée par Azure Security Center. La première colonne contient la description de la recommandation ; la deuxième colonne indique la quantité totale de machines virtuelles qui sont affectées par ces recommandations et la troisième, le niveau de gravité du problème, comme indiqué ci-dessous.
 
 ![Recommandations pour les machines virtuelles](./media/security-center-monitoring/security-center-monitoring-fig4-ga.png)
 
@@ -61,19 +61,19 @@ Chaque recommandation dispose d'un ensemble d'actions qui peuvent être effectu�
 
 ![Mises à jour système manquantes](./media/security-center-monitoring/security-center-monitoring-fig5-ga.png)
 
-Le panneau **Mises à jour système manquantes** affiche un tableau incluant les informations suivantes :
+Le panneau **Mises à jour système manquantes** affiche un tableau incluant les informations suivantes :
 
-- **MACHINE VIRTUELLE** : nom de la machine virtuelle sur laquelle il manque des mises à jour.
-- **MISES À JOUR SYSTÈME** : quantité de mises à jour système manquantes.
-- **HEURE DE LA DERNIÈRE ANALYSE** : heure de la dernière analyse de la machine virtuelle par le Centre de sécurité afin de contrôler les mises à jour.
-- **ÉTAT** : état actuel de la recommandation :
-	- **Ouverte** : la recommandation n’a pas encore été prise en compte.
-	- **En cours** : la recommandation est actuellement appliquée aux ressources ; aucune action de votre part n’est nécessaire.
-	- **Résolue** : la recommandation a déjà été appliquée (une fois le problème résolu, la ligne est grisée).
-- **GRAVITÉ** : indique le niveau de gravité de chaque recommandation :
-	- **Élevée** : existence d’une vulnérabilité sur une ressource importante (application, machine virtuelle, groupe de sécurité réseau). Le problème doit être analysé.
-	- **Moyenne** : certaines étapes supplémentaires sont nécessaires pour terminer un processus ou éliminer une vulnérabilité.
-	- **Faible** : existence d’une vulnérabilité devant être prise en compte, mais qui ne nécessite aucune attention immédiate. Par défaut, les recommandations de niveau Faible ne sont pas affichées, mais vous pouvez filtrer les recommandations pour les faire apparaître.
+- **MACHINE VIRTUELLE** : nom de la machine virtuelle sur laquelle il manque des mises à jour.
+- **MISES À JOUR SYSTÈME** : quantité de mises à jour système manquantes.
+- **HEURE DE LA DERNIÈRE ANALYSE** : heure de la dernière analyse par le Centre de sécurité de la machine virtuelle, afin de contrôler les mises à jour.
+- **ÉTAT** : état actuel de la recommandation :
+	- **Ouverte** : la recommandation n’a pas encore été prise en compte.
+	- **En cours** : la recommandation est actuellement appliquée aux ressources ; aucune action de votre part n’est nécessaire.
+	- **Résolue** : la recommandation a déjà été appliquée (une fois le problème résolu, la ligne est grisée).
+- **GRAVITÉ** : donne le niveau de gravité de chaque recommandation :
+	- **Élevée** : existence d’une vulnérabilité sur une ressource importante (application, machine virtuelle, groupe de sécurité réseau). Le problème doit être analysé.
+	- **Moyenne** : certaines étapes supplémentaires sont nécessaires pour terminer un processus ou éliminer une vulnérabilité.
+	- **Faible** : existence d’une vulnérabilité devant être prise en compte, mais qui ne nécessite aucune attention immédiate. Par défaut, les recommandations de niveau Faible ne sont pas affichées, mais vous pouvez filtrer les recommandations pour les faire apparaître.
 
 Pour afficher des informations détaillées sur les recommandations, cliquez sur le nom de la machine virtuelle concernée. Un nouveau panneau s’ouvre pour cette machine virtuelle et affiche la liste des mises à jour manquantes, comme indiqué ci-dessous.
 
@@ -103,12 +103,12 @@ Vous devez suivre les étapes de la recommandation pour mettre à jour la versio
 
 ![Détails du service cloud](./media/security-center-monitoring/security-center-monitoring-fig8-new3.png)
 
-Pour visualiser une explication plus normative concernant cette recommandation, cliquez sur **Mettre à jour la version du système d’exploitation** sous la colonne **DESCRIPTION**. Le panneau **Mettre à jour la version du système d’exploitation (version préliminaire)** ) s’ouvre et affiche des informations détaillées.
+Pour voir une explication plus normative concernant cette recommandation, cliquez sur **Update OS version** (Mettre à jour la version du système d’exploitation) sous la colonne **DESCRIPTION **. Le panneau **Update OS version (Preview)** (Mettre à jour la version du système d’exploitation (Version préliminaire)) s’ouvre et affiche des informations détaillées.
 
 ![Recommandations de Cloud Services](./media/security-center-monitoring/security-center-monitoring-fig8-new4.png)
 
 ### Surveillance des réseaux virtuels
-Lorsque vous cliquez sur **Réseaux** dans la mosaïque **Intégrité de la sécurité des ressources**, le panneau **Réseaux** s’ouvre et affiche des informations détaillées, comme illustré ci-après :
+Lorsque vous cliquez sur **Réseaux** dans la vignette **Intégrité des ressources**, le panneau **Réseaux** s’ouvre et affiche des informations détaillées, comme le montre l’illustration ci-dessous :
 
 ![Mise en réseau](./media/security-center-monitoring/security-center-monitoring-fig9-new3.png)
 
@@ -116,7 +116,7 @@ Lorsque vous cliquez sur **Réseaux** dans la mosaïque **Intégrité de la séc
 
 En haut du panneau se trouve un récapitulatif des problèmes et au bas du panneau, la liste des réseaux surveillés. Ces informations sont similaires à celles qui figurent dans le panneau Intégrité des ressources.
 
-La section de répartition des états du réseau répertorie les problèmes de sécurité potentiels et propose des recommandations pour leur résolution. Voici des exemples de problèmes potentiels :
+La section de répartition des états du réseau répertorie les problèmes de sécurité potentiels et propose des [recommandations](security-center-network-recommendations.md) pour leur résolution. Voici des exemples de problèmes potentiels :
 
 - Absence d’installation d’un pare-feu de nouvelle génération (NGFW)
 - Non-activation des groupes de sécurité réseau (NSG)
@@ -130,11 +130,11 @@ Lorsque vous cliquez sur l’une de ces recommandations, un nouveau panneau incl
 
 Dans cet exemple, le panneau **Configurer les groupes de sécurité réseau manquants pour les sous-réseaux** contient une liste de sous-réseaux et de machines virtuelles sur lesquels la protection des groupes de sécurité réseau fait défaut. Un autre panneau s’ouvre lorsque vous cliquez sur le sous-réseau auquel vous souhaitez appliquer le groupe de sécurité réseau.
 
-Dans le panneau **Choisir un groupe de sécurité réseau**, vous devez sélectionner le groupe de sécurité réseau le mieux adapté à votre sous-réseau, mais vous pouvez également créer un autre groupe de sécurité réseau.
+Dans le panneau **Choisir un groupe de sécurité réseau**, vous devez sélectionner le groupe de sécurité réseau le mieux adapté à votre sous-réseau, mais vous pouvez également créer un groupe de sécurité réseau.
 
 ####Section des points de terminaison accessibles sur Internet
 
-La section **Internet facing endpoints** (Points de terminaison accessibles sur Internet) affiche les machines virtuelles qui sont actuellement configurées avec un point de terminaison accessible sur Internet, ainsi que leur état actuel.
+La section **Points de terminaison accessibles sur Internet** présente les machines virtuelles qui sont actuellement configurées avec un point de terminaison accessible sur Internet, ainsi que leur état actuel.
 
 ![Points de terminaison accessibles sur Internet](./media/security-center-monitoring/security-center-monitoring-fig10-ga.png)
 
@@ -145,7 +145,7 @@ Ce tableau indique le nom du point de terminaison qui représente la machine vir
 
 ####Section de topologie de mise en réseau
 
-La section **Networking topology** (Topologie de mise en réseau) contient une vue hiérarchique des ressources, comme illustré ci-dessous :
+La section **Topologie de mise en réseau** contient une vue hiérarchique des ressources, comme illustré ci-dessous :
 
 ![Topologie de mise en réseau](./media/security-center-monitoring/security-center-monitoring-fig121-new4.png)
 
@@ -160,8 +160,8 @@ Dans cette topologie, le premier niveau se décompose comme suit : [Réseaux vir
 
 La partie inférieure de ce panneau regroupe les recommandations pour cette machine virtuelle, comme décrit ci-dessus. Vous pouvez cliquer sur une recommandation pour en savoir plus, ou appliquer la configuration ou le contrôle de sécurité nécessaire.
 
-###Surveillance des ressources SQL
-Lorsque vous cliquez sur l’option **SQL** de la mosaïque **Intégrité de la sécurité des ressources**, le panneau SQL s’ouvre et affiche des recommandations relatives aux problèmes, par exemple la désactivation de la fonction d’audit ou de Transparent Data Encryption. Il contient également des recommandations pour l’état général de la base de données.
+###Surveiller des données
+Lorsque vous cliquez sur l’option **Données** de la mosaïque **Intégrité de la sécurité des ressources**, le panneau **SQL** s’ouvre et affiche des recommandations relatives aux problèmes, telles que la désactivation de la fonction d’audit ou de Transparent Data Encryption. Il contient également des [recommandations](security-center-sql-service-recommendations.md) pour l’état général de la base de données.
 
 ![Intégrité des ressources SQL](./media/security-center-monitoring/security-center-monitoring-fig13-ga.png)
 
@@ -185,7 +185,7 @@ Pour activer l’audit, sélectionnez simplement **ACTIVÉ** sous **Audit**.
 
 ### Surveillance des applications
 
-Si votre charge de travail Azure comprend des applications situées sur des [machines virtuelles Resource Manager](../resource-manager-deployment-model.md) comportant des ports web exposés (ports TCP 80 et 443), le Centre de sécurité peut les surveiller pour identifier les problèmes de sécurité potentiels et recommander des étapes de résolution. Lorsque vous cliquez sur la mosaïque **Applications**, le panneau **Applications** s’ouvre et affiche des recommandations dans la section Étapes de prévention. Il montre également la répartition des applications par hôte/IP virtuelle, comme indiqué ci-dessous.
+Si votre charge de travail Azure comprend des applications situées sur des [machines virtuelles Resource Manager](../resource-manager-deployment-model.md) comportant des ports web exposés (ports TCP 80 et 443), Azure Security Center peut les surveiller pour identifier les problèmes de sécurité potentiels et recommander des étapes de résolution. Lorsque vous cliquez sur la mosaïque **Applications**, le panneau **Applications** s’ouvre et affiche des recommandations dans la section Étapes de prévention. Il montre également la répartition des applications par hôte/IP virtuelle, comme indiqué ci-dessous.
 
 ![État de sécurité des applications](./media/security-center-monitoring/security-center-monitoring-fig16-ga.png)
 
@@ -200,10 +200,10 @@ Ce panneau répertorie toutes les recommandations concernant cette application. 
 ## Voir aussi
 Dans ce document, vous avez vu comment utiliser les fonctionnalités de surveillance du Centre de sécurité Azure. Pour plus d’informations sur le Centre de sécurité Azure, consultez les rubriques suivantes :
 
-- [Définition des stratégies de sécurité dans Azure Security Center](security-center-policies.md) : découvrez comment configurer des paramètres de sécurité dans Azure Security Center.
+- [Définition des stratégies de sécurité dans Azure Security Center](security-center-policies.md) : découvrez comment configurer des paramètres de sécurité dans Azure Security Center
 - [Gestion et résolution des alertes de sécurité dans Azure Security Center](security-center-managing-and-responding-alerts.md) : découvrez comment gérer et résoudre les alertes de sécurité.
 - [Surveillance des solutions de partenaire avec Azure Security Center](security-center-partner-solutions.md) : découvrez comment surveiller l’état d’intégrité de vos solutions de partenaire.
 - [FAQ d’Azure Security Center](security-center-faq.md) : découvrez les réponses aux questions les plus souvent posées à propos de l’utilisation de ce service.
 - [Blog sur la sécurité Azure](http://blogs.msdn.com/b/azuresecurity/) : accédez à des billets de blog sur la sécurité et la conformité Azure.
 
-<!---HONumber=AcomDC_0803_2016-->
+<!---HONumber=AcomDC_0928_2016-->

@@ -5,7 +5,7 @@
 	services="stream-analytics,event-hubs,storage,sql-database" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor=""/>
 
 <tags 
@@ -50,7 +50,7 @@ Microsoft Azure fournit un catalogue étendu de technologies d’analyse compat
 **Téléchargement :** [Traitement d’événements en temps réel avec Microsoft Azure Stream Analytics](http://download.microsoft.com/download/6/2/3/623924DE-B083-4561-9624-C1AB62B5F82B/real-time-event-processing-with-microsoft-azure-stream-analytics.pdf)
 
 
-## Obtenir de l'aide
+## Obtenir de l’aide
 Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/fr-FR/home?forum=AzureStreamAnalytics)
 
 ## Étapes suivantes
@@ -63,4 +63,4 @@ Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https:
 
  
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

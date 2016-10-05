@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="06/24/2016" 
+	ms.date="09/15/2016" 
 	ms.author="sdanie"/>
 
 # Utilisation de Service de cache géré Azure
@@ -65,11 +65,11 @@ Pour créer une instance du service de cache géré, ouvrez une fenêtre de comm
 
 >Pour obtenir des instructions sur l'installation et l'utilisation d'Azure PowerShell, consultez [Installation et configuration d'Azure PowerShell][].
 
-Appelez l'applet de commande [Add-AzureAccount][], puis entrez l'adresse de messagerie et le mot de passe associés à votre compte. Un abonnement est choisi par défaut et s'affiche une fois que vous avez appelé l'applet de commande [Add-AzureAccount][]. Pour changer l'abonnement, appelez l'applet de commande [Select-AzureSubscription][].
+Appelez l'applet de commande [Add-AzureAccount][], puis entrez l'adresse de messagerie et le mot de passe associés à votre compte. Un abonnement est choisi par défaut et s’affiche une fois que vous avez appelé l’applet de commande [Add-AzureAccount][]. Pour changer l’abonnement, appelez l’applet de commande [Select-AzureSubscription][].
 
 >Si vous avez configuré Azure PowerShell avec un certificat pour votre compte, vous pouvez sauter cette étape. Pour plus d'informations sur la connexion d'Azure PowerShell à votre compte Azure, consultez [Installation et configuration d'Azure PowerShell][].
 
-Un abonnement choisi par défaut s'affiche. Pour changer l'abonnement, appelez l'applet de commande [Select-AzureSubscription][].
+Un abonnement est choisi par défaut et s’affiche. Pour changer l’abonnement, appelez l’applet de commande [Select-AzureSubscription][].
 
 Appelez l'applet de commande [New-AzureManagedCache][], puis spécifiez le nom, la région, l'offre de cache et la taille de la mémoire cache.
 
@@ -335,7 +335,7 @@ Par défaut, les éléments du cache expirent 10 minutes après qu'ils y ont é
 
 ![NamedCaches][NamedCaches]
 
-Il existe trois types de **stratégie d'expiration** : **Jamais**, **Absolu** et **Fenêtre coulissante**. Ces stratégies configurent la façon dont le paramètre **Durée (min)** est utilisé pour déterminer l'expiration. Le **Type d'expiration** par défaut est **Absolute**, ce qui signifie que le compte à rebours pour l'expiration d'un élément commence lorsque l'élément est placé dans le cache. Une fois que le délai spécifié pour un élément est écoulé, l'élément expire. Si **Sliding** est spécifié, le compte à rebours du délai d'expiration d'un élément est réinitialisé chaque fois que l'élément fait l'objet d'un accès dans le cache et l'élément expire lorsque le délai spécifié, calculé à partir du dernier accès, est écoulé. Si **Jamais** est spécifié, **Durée (min)** doit être défini sur **0** ; les éléments n'expirent pas et restent valides tant qu'ils sont dans le cache.
+Il existe trois types de **stratégie d'expiration** : **Jamais**, **Absolu** et **Fenêtre coulissante**. Ces stratégies configurent la façon dont le paramètre **Durée (min)** est utilisé pour déterminer l'expiration. Le **Type d'expiration** par défaut est **Absolute**, ce qui signifie que le compte à rebours pour l'expiration d'un élément commence lorsque l'élément est placé dans le cache. Une fois que le délai spécifié pour un élément est écoulé, l'élément expire. Si **Sliding** est spécifié, le compte à rebours du délai d'expiration d'un élément est réinitialisé chaque fois que l'élément fait l'objet d'un accès dans le cache et l'élément expire lorsque le délai spécifié, calculé à partir du dernier accès, est écoulé. Si **Jamais** est spécifié, **Durée (min)** doit être défini sur **0** ; les éléments n'expirent pas et restent valides tant qu'ils sont dans le cache.
 
 Si vous souhaitez que l'intervalle du délai d'expiration soit plus long ou plus court que celui configuré dans les propriétés du cache, vous pouvez spécifier une durée particulière lorsqu'un élément est ajouté ou mis à jour dans le cache en utilisant la surcharge des méthodes **Add** et **Put**, qui prennent un paramètre **TimeSpan**. Dans l'exemple suivant, la chaîne **value** est ajoutée au cache, indexée par **item**, avec un délai d'expiration de 30 minutes.
 
@@ -485,4 +485,4 @@ Pour plus d'informations sur l'utilisation du fournisseur de caches de sortie d'
 [Which Azure Cache offering is right for me?]: cache-faq.md#which-azure-cache-offering-is-right-for-me
  
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Configurer l’encodeur FMLE pour envoyer un flux live à débit binaire unique" 
+	pageTitle="Configurer l’encodeur FMLE pour envoyer un flux live à débit binaire unique | Microsoft Azure" 
 	description="Cette rubrique explique comment configurer l’encodeur Flash Media Live Encoder (FMLE) afin d’envoyer un flux à débit binaire unique à des canaux AMS activés pour l’encodage en temps réel." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="06/22/2016"
+	ms.date="09/19/2016"
 	ms.author="juliako;cenkdin;anilmur"/>
 
 #Utiliser l’encodeur FMLE pour envoyer un flux en direct à débit binaire unique
@@ -33,7 +33,7 @@ Notez que ce didacticiel décrit l’utilisation de AAC. Cependant, FMLE ne pren
 ##Composants requis
 
 - [Créer un compte Azure Media Services](media-services-create-account.md)
-- Assurez-vous qu’il y a un point de terminaison de diffusion en continu en cours d’exécution avec au moins une unité de diffusion en continu allouée. Pour plus d’informations, consultez la rubrique [Gestion des points de terminaison de diffusion en continu dans un compte Media Services](media-services-manage-origins.md).
+- Assurez-vous qu’il y a un point de terminaison de diffusion en continu en cours d’exécution avec au moins une unité de diffusion en continu allouée. Pour plus d’informations, consultez la rubrique [Gestion des points de terminaison de diffusion en continu dans un compte Media Services](media-services-portal-manage-streaming-endpoints.md).
 - Installez la dernière version de l’outil [AMSE](https://github.com/Azure/Azure-Media-Services-Explorer).
 - Lancez l’outil et connectez-vous à votre compte AMS.
 
@@ -67,7 +67,7 @@ Pendant le démarrage du canal, vous pouvez [configurer l’encodeur](media-serv
 
 Dans ce didacticiel, les paramètres de sortie ci-dessous sont utilisés. Le reste de cette section décrit la procédure de configuration plus en détail.
 
-**Vidéo** :
+**Vidéo** :
  
 - Codec : H.264
 - Profil : Élevé (niveau 4.0)
@@ -75,7 +75,7 @@ Dans ce didacticiel, les paramètres de sortie ci-dessous sont utilisés. Le res
 - Image clé : 2 secondes (60 secondes)
 - Fréquence d’images : 30
  
-**Audio** :
+**Audio** :
 
 - Codec : AAC (LC)
 - Débit binaire : 192 kbit/s
@@ -170,4 +170,4 @@ Pour obtenir des instructions détaillées, reportez-vous à la rubrique consacr
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

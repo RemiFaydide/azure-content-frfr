@@ -5,7 +5,7 @@
 	services="active-directory"
 	documentationCenter=""
 	authors="karavar"
-	manager="stevenpo"
+	manager="femila"
 	editor="karavar"/>
 
 <tags
@@ -114,4 +114,4 @@ Le rapport fournit les informations suivantes :
 * [Forum Aux Questions (FAQ) Azure AD Connect Health](active-directory-aadconnect-health-faq.md)
 * [Historique de publication des versions d’Azure AD Connect Health](active-directory-aadconnect-health-version-history.md)
 
-<!----HONumber=AcomDC_0720_2016-->
+<!---HONumber=AcomDC_0928_2016-->

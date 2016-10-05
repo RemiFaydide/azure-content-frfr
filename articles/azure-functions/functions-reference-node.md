@@ -22,11 +22,12 @@
 
 > [AZURE.SELECTOR]
 - [Script C#](../articles/azure-functions/functions-reference-csharp.md)
+- [Script F#](../articles/azure-functions/functions-reference-fsharp.md)
 - [Node.JS](../articles/azure-functions/functions-reference-node.md)
 
 L’expérience Node/JavaScript pour Azure Functions facilite l’exportation d’une fonction qui reçoit un objet `context` pour communiquer avec le runtime et pour recevoir et envoyer des données par le biais des liaisons.
 
-Cet article repose sur l’hypothèse que vous avez déjà lu l’article [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md).
+Cet article suppose que vous ayez déjà lu l’article [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md).
 
 ## Exporter une fonction
 
@@ -46,11 +47,11 @@ module.exports = function(context, myTrigger, myInput, myOtherInput) {
 };
 ```
 
-Les liaisons de `direction === "in"` sont transmises comme arguments de fonction, ce qui signifie que vous pouvez utiliser [`arguments`](https://msdn.microsoft.com/library/87dw3w1k.aspx) pour gérer de manière dynamique les nouvelles entrées (par exemple, en utilisant `arguments.length` pour effectuer une itération sur toutes vos entrées). Cette fonctionnalité est très pratique si vous ne disposez que d’un déclencheur sans entrée supplémentaire, dans la mesure où vous pouvez accéder de manière prévisible aux données de votre déclencheur sans faire référence à votre objet `context`.
+Les liaisons de `direction === "in"` sont transmises en tant qu’arguments de fonction, ce qui signifie que vous pouvez utiliser [`arguments`](https://msdn.microsoft.com/library/87dw3w1k.aspx) pour gérer de manière dynamique les nouvelles entrées (par exemple, en utilisant `arguments.length` pour effectuer une itération sur toutes vos entrées). Cette fonctionnalité est très pratique si vous ne disposez que d’un déclencheur sans entrée supplémentaire, dans la mesure où vous pouvez accéder de manière prévisible aux données de votre déclencheur sans faire référence à votre objet `context`.
 
 Les arguments sont toujours transmis à la fonction dans leur ordre d’apparition dans *function.json*, même si vous ne les spécifiez pas dans votre instruction d’exportation. Par exemple, si vous avez `function(context, a, b)` et le remplacez par `function(context, a)`, vous pouvez toujours obtenir la valeur `b` dans le code de fonction en faisant référence à `arguments[3]`.
 
-Toutes les liaisons, quelle que soit la direction, sont également transmises sur l’objet `context` (voir ci-dessous).
+Toutes les liaisons, quelle que soit leur direction, sont également transmises sur l’objet `context` (voir ci-dessous).
 
 ## Objet de contexte
 
@@ -91,7 +92,7 @@ context.bindings.myOutput = {
 
 La fonction `context.done` indique au runtime que vous avez terminé l’exécution. Il est important d’appeler lorsque vous avez terminé l’exécution de la fonction. Si vous ne le faites pas, le runtime ne saura jamais que votre fonction est terminée.
 
-La fonction `context.done` permet de transmettre une erreur définie par l’utilisateur au runtime, ainsi qu’un conteneur de propriétés qui remplacent les propriétés de l’objet `context.bindings`.
+La fonction `context.done` permet de transmettre une erreur définie par l’utilisateur au runtime, ainsi qu’un conteneur de propriétés qui remplaceront les propriétés de l’objet `context.bindings`.
 
 ```javascript
 // Even though we set myOutput to have:
@@ -105,7 +106,7 @@ context.done(null, { myOutput: { text: 'hello there, world', noNumber: true }});
 
 ## context.log(message)
 
-La méthode `context.log` permet de sortir les instructions du journal corrélées pour des besoins d’enregistrement. Si vous utilisez `console.log`, vos messages ne s’affichent que pour la journalisation au niveau du processus, ce qui n’est pas aussi utile.
+La méthode `context.log` permet de sortir les instructions du journal corrélées à des fins de journalisation. Si vous utilisez `console.log`, vos messages ne s’affichent que pour la journalisation au niveau du processus, ce qui n’est pas aussi utile.
 
 ```javascript
 /* You can use context.log to log output specific to this 
@@ -140,9 +141,9 @@ context.res = { status: 202, body: 'You successfully ordered more coffee!' };
 
 ## Version du nœud et gestion des packages
 
-La version du nœud est actuellement verrouillée sur `5.9.1`. Nous examinons la prise en charge d’autres versions ainsi que le fait de la rendre configurable.
+La version de Node est actuellement verrouillée sur `5.9.1`. Nous examinons la prise en charge d’autres versions ainsi que le fait de la rendre configurable.
 
-Vous pouvez inclure des packages dans votre fonction en téléchargeant un fichier *package.json* vers le dossier de votre fonction dans le système de fichiers du conteneur de fonctions. Pour plus d’instructions pour le téléchargement de fichiers, consultez la section **Comment mettre à jour les fichiers du conteneur de fonctions** de la rubrique [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md#fileupdate).
+Vous pouvez inclure des packages dans votre fonction en chargeant un fichier *package.json* dans le dossier de votre fonction dans le système de fichiers du conteneur de fonctions. Pour savoir comment charger un fichier, consultez la section **Comment mettre à jour les fichiers du conteneur de fonctions** de la rubrique [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md#fileupdate).
 
 Vous pouvez également utiliser `npm install` dans l’interface de ligne de commande SCM (Kudu) du conteneur de fonctions :
 
@@ -154,7 +155,7 @@ Vous pouvez également utiliser `npm install` dans l’interface de ligne de com
 
 4. Exécutez `npm install`.
 
-Une fois les packages nécessaires installés, vous pouvez les importer dans votre fonction de la façon habituelle (c’est-à-dire, par le biais de `require('packagename')`)
+Une fois les packages nécessaires installés, vous pouvez les importer dans votre fonction de la façon habituelle (c’est-à-dire par le biais de `require('packagename')`).
 
 ```javascript
 // Import the underscore.js library
@@ -198,6 +199,7 @@ Pour plus d’informations, consultez les ressources suivantes :
 
 * [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md)
 * [Informations de référence pour les développeurs C# sur Azure Functions](functions-reference-csharp.md)
+* [Informations de référence pour les développeurs F# sur Azure Functions](functions-reference-fsharp.md)
 * [Déclencheurs et liaisons Azure Functions](functions-triggers-bindings.md)
 
-<!---HONumber=AcomDC_0615_2016-->
+<!---HONumber=AcomDC_0921_2016-->

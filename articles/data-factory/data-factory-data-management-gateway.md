@@ -494,6 +494,6 @@ Vous pouvez supprimer une passerelle à l’aide de l’applet de commande **Rem
 
 
 ## Étapes suivantes
-- Pour obtenir des informations détaillées sur la passerelle, consultez l’article [Passerelle de gestion de données](data-factory-data-management-gateway.md).
+- Consultez la page [Déplacement de données entre des sources locales et le cloud à l’aide de la passerelle de gestion des données](data-factory-move-data-between-onprem-and-cloud.md). Dans cette procédure pas à pas, vous créez un pipeline qui utilise la passerelle qui déplace les données d’une base de données SQL Server locale vers un objet blob Azure.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -429,7 +429,7 @@ Votre hub de notification est à présent configuré pour GCM, et vous disposez 
 
 ##Envoi de notifications Push
 
-Vous pouvez tester la réception de notifications dans votre application en les envoyant via le [portail Azure] (observez la section **Dépannage** dans le panneau Hub, comme illustré ci-dessus).
+Vous pouvez tester la réception de notifications dans votre application en les envoyant via le [portail Azure] \(observez la section **Dépannage** dans le panneau Hub, comme illustré ci-dessus).
 
 ![Azure Notification Hubs - Test d’envoi](./media/notification-hubs-android-get-started/notification-hubs-test-send.png)
 

@@ -13,14 +13,14 @@
 	ms.topic="article"
 	ms.tgt_pltfrm="na"
 	ms.workload="storage-backup-recovery"
-	ms.date="06/21/2016"
+	ms.date="09/19/2016"
 	ms.author="pratshar"/>
 
 #  Conception de votre infrastructure réseau pour la récupération d’urgence
 
 Cet article s’adresse aux professionnels de l’informatique, chargés de l’architecture, de l’implémentation et de la prise en charge de l’infrastructure BCDR (continuité des activités et récupération d’urgence), et qui souhaitent tirer parti de Microsoft Azure Site Recovery (ASR) pour prendre en charge et améliorer leurs services BCDR. Ce document traite de considérations pratiques pour le déploiement de serveur System Center Virtual Machine Manager, et des avantages et inconvénients des sous-réseaux étirés et du basculement de sous-réseau. Il indique également comment structurer la récupération d’urgence sur les sites virtuels dans Microsoft Azure.
 
-## Vue d’ensemble
+## Vue d'ensemble
 
 [Azure Site Recovery (ASR)](https://azure.microsoft.com/services/site-recovery/) est un service Microsoft Azure qui organise la protection et la récupération de vos applications virtualisées pour les besoins de scénarios BCDR. Ce document est conçu pour guider le lecteur dans le processus de conception des réseaux, en mettant l’accent sur l’architecture des plages d’adresses IP et des sous-réseaux sur le site de récupération d’urgence, lors de la réplication des machines virtuelles à l’aide de Site Recovery.
 
@@ -36,7 +36,7 @@ Si un administrateur envisage de déployer une solution de récupération d’ur
 
 Lors de la conception du réseau pour le site de récupération, l’administrateur a deux possibilités :
 
-- Utiliser une autre plage d’adresses IP pour le réseau sur le site de récupération. Dans ce scénario, à l’issue du basculement, la machine virtuelle obtient une nouvelle adresse IP, et l’administrateur doit effectuer une mise à jour DNS. Pour en savoir plus sur la procédure de mise à jour de DNS, cliquez [ici](site-recovery-vmm-to-vmm.md#test-your-deployment). 
+- Utiliser une autre plage d’adresses IP pour le réseau sur le site de récupération. Dans ce scénario, à l’issue du basculement, la machine virtuelle obtient une nouvelle adresse IP, et l’administrateur doit effectuer une mise à jour DNS. Pour en savoir plus sur la procédure de mise à jour de DNS, cliquez [ici](site-recovery-vmm-to-vmm.md#test-your-deployment).
 - Utiliser la même plage d’adresses IP pour le réseau sur le site de récupération. Dans certains scénarios, les administrateurs préféreront conserver les adresses IP dont ils disposent sur le site principal, même après le basculement. Dans un scénario normal, un administrateur devrait mettre à jour les itinéraires pour indiquer le nouvel emplacement des adresses IP, mais dans le scénario où un réseau local virtuel étiré est déployé entre le site principal et les sites de récupération, conserver les adresses IP des machines virtuelles est alors une option intéressante. Conserver les mêmes adresses IP permet de simplifier le processus de récupération en supprimant les étapes post-basculement associées au réseau.
 
 
@@ -120,7 +120,7 @@ Avant le basculement
 Pour aider la Woodgrove Bank à satisfaire à ses exigences professionnelles, nous devons implémenter les flux de travail suivants :
 
 - Créez un autre réseau, que nous allons appeler réseau de récupération, où les machines virtuelles ayant basculé seraient créées.
-- Pour vous assurer que l’adresse IP d’une machine virtuelle est conservée après un basculement, accédez à l’onglet Configurer, dans les propriétés de la machine virtuelle, spécifiez la même adresse IP que celle utilisée par la machine virtuelle en local, puis cliquez sur Enregistrer. Au basculement de la machine virtuelle, Azure Site Recovery affecte l’adresse IP fournie à la machine virtuelle. 
+- Pour vous assurer que l’adresse IP d’une machine virtuelle est conservée après un basculement, accédez à l’onglet Configurer, dans les propriétés de la machine virtuelle, spécifiez la même adresse IP que celle utilisée par la machine virtuelle en local, puis cliquez sur Enregistrer. Au basculement de la machine virtuelle, Azure Site Recovery affecte l’adresse IP fournie à la machine virtuelle.
 
 ![Propriétés du réseau](./media/site-recovery-network-design/network-design8.png)
 
@@ -179,4 +179,4 @@ Le billet de blog [Networking Infrastructure Setup for Microsoft Azure as a Disa
 
 [Découvrir ](site-recovery-network-mapping.md) comment Site Recovery mappe les réseaux source et cible quand un serveur VMM est utilisé pour gérer le site principal.
 
-<!---HONumber=AcomDC_0622_2016-->
+<!---HONumber=AcomDC_0921_2016-->

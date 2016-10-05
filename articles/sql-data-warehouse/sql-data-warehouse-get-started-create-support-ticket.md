@@ -105,4 +105,4 @@ En outre, vous pouvez contacter la communauté SQL Data Warehouse sur [Stack Ove
 [Stack Overflow]: https://stackoverflow.com/questions/tagged/azure-sqldw/
 [forum MSDN Azure SQL Data Warehouse]: https://social.msdn.microsoft.com/Forums/home?forum=AzureSQLDataWarehouse/
 
-<!---HONumber=AcomDC_0907_2016-->
+<!-----HONumber=AcomDC_0907_2016-->

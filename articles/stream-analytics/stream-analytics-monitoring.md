@@ -5,7 +5,7 @@
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
@@ -14,7 +14,7 @@
 	ms.topic="article" 
 	ms.tgt_pltfrm="na" 
 	ms.workload="data-services" 
-	ms.date="07/27/2016" 
+	ms.date="09/19/2016" 
 	ms.author="jeffstok"/>
 
 # Présentation de la surveillance des tâches Stream Analytics et des requêtes
@@ -41,9 +41,8 @@ Lors de la première création d’une tâche Stream Analytics dans une région,
 | Mesure | Définition |
 |--------|-------------|
 | Utilisation de % d’unités de diffusion | Utilisation des unités de diffusion affectées à une tâche à partir de l’onglet Mettre à l’échelle de la tâche. Si cet indicateur atteint 80 % ou plus, il est fort probable que le traitement des événements soit retardé ou arrêté. |
-| Événements d’entrée | Quantité de données reçues par la tâche Stream Analytics, en termes de nombre d’événements. Cela permet de valider que les événements sont envoyés à la source d’entrée. |
-| Octets des événements d’entrée | Quantité de données reçues par la tâche Stream Analytics, en termes de débit en octets |
-| Événements de sortie | Quantité de données envoyées par la tâche Stream Analytics à la cible de sortie, en termes de nombre d’événements. |
+| Événements d’entrée | Quantité de données reçues par le travail Stream Analytics, en nombre d’événements. Cela permet de valider que les événements sont envoyés à la source d’entrée. |
+| Événements de sortie | Quantité de données envoyées par le travail Stream Analytics à la cible de sortie, en nombre d’événements. |
 | Événements non ordonnés | Nombre d’événements reçus dans le désordre qui ont été supprimés ou dont l’horodatage a été réglé, en fonction de la stratégie de classement des événements. Cela peut être affecté par la configuration du paramètre de la plage de tolérance pour les événements en désordre. |
 | Erreurs de conversion de données | Nombre d’erreurs de conversion de données générées par une tâche Stream Analytics. |
 | Erreurs d’exécution | Nombre d’erreurs qui se produisent pendant l’exécution d’une tâche Stream Analytics. |
@@ -75,7 +74,7 @@ Vous pouvez régler le type de graphique, les mesures affichées et la période 
 
 Le statut des tâches Stream Analytics peut être affiché dans le portail Azure Classic, où une liste des tâches est disponible. Vous pouvez voir la liste des tâches en cliquant sur l’icône Stream Analytics dans le portail Azure Classic.
 
-| Statut | Définition |
+| État | Définition |
 |--------|------------|
 | Date de création | Une tâche a été créée sans être démarrée. |
 | Starting | Un utilisateur a cliqué sur Démarrer la tâche et celle-ci est en cours de démarrage |
@@ -107,4 +106,4 @@ Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https:
 - [Références sur le langage des requêtes d'Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn834998.aspx)
 - [Références sur l’API REST de gestion d’Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

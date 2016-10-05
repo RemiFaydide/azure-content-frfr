@@ -3,7 +3,7 @@
 	description="La boîte à outils MLlib de Spark offre de nombreuses fonctionnalités de modélisation Machine Learning (ML) à cet environnement distribué."
 	services="machine-learning"
 	documentationCenter=""
-	authors="bradsev,deguhath,gokuma"
+	authors="bradsev"
 	manager="jhubbard"
 	editor="cgronlun"  />
 
@@ -14,7 +14,7 @@
 	ms.devlang="na"
 	ms.topic="article"
 	ms.date="06/14/2016"
-	ms.author="bradsev" />
+	ms.author="deguhath;bradsev;gokuma" />
 
 # Vue d’ensemble de la science des données à l’aide de Spark sur Azure HDInsight
 
@@ -37,7 +37,11 @@ Les étapes de configuration et le code fournis dans cette procédure concernent
 
 ![](./media/machine-learning-data-science-spark-overview/spark-cluster-on-portal.png)
 
+<!-- -->
+
 > [AZURE.NOTE] Pour une rubrique qui montre comment utiliser Scala plutôt que Python pour effectuer des tâches de processus de science des données de bout en bout, consultez [Science des données à l’aide de Scala avec Spark sur Azure](machine-learning-data-science-process-scala-walkthrough.md).
+
+<!-- -->
 
 >[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
@@ -146,4 +150,4 @@ Maintenant que vous avez configuré un cluster HDInsight Spark et téléchargé 
 
 **Validation croisée et balayage hyperparamétrique** : consultez [Exploration et modélisation avancées des données avec Spark](machine-learning-data-science-spark-advanced-data-exploration-modeling.md) pour savoir comment effectuer la formation des modèles à l’aide de la validation croisée et du balayage hyperparamétrique
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

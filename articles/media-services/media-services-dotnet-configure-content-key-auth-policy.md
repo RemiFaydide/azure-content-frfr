@@ -1,9 +1,9 @@
 <properties 
-	pageTitle="Configurer la stratégie d’autorisation de clé de contenu à l’aide du Kit de développement logiciel (SDK).NET Media Services" 
+	pageTitle="Configurer la stratégie d’autorisation de clé de contenu à l’aide du Kit de développement logiciel (SDK).NET Media Services | Microsoft Azure" 
 	description="Apprenez à configurer une stratégie d’autorisation pour une clé de contenu avec le Kit de développement logiciel (SDK) .NET Media Services." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,Mingfeiy" 
+	authors="Mingfeiy" 
 	manager="erikre" 
 	editor=""/>
 
@@ -13,12 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016"
-	ms.author="juliako"/>
+	ms.date="09/15/2016"
+	ms.author="juliako;mingfeiy"/>
 
 
 
-#Chiffrement dynamique : configurer la stratégie d'autorisation de clé de contenu 
+# Chiffrement dynamique : configurer la stratégie d’autorisation de clé de contenu
+
 [AZURE.INCLUDE [media-services-selector-content-key-auth-policy](../../includes/media-services-selector-content-key-auth-policy.md)]
 
 ##Vue d'ensemble
@@ -35,7 +36,7 @@ Media Services prend en charge plusieurs méthodes d’authentification des util
 
 Media Services ne fournit pas de services de jeton sécurisé. Vous pouvez créer un STS personnalisé ou utiliser l’ACS Microsoft Azure pour émettre des jetons. Le STS doit être configuré pour créer un jeton signé avec la clé spécifiée et émettre les revendications spécifiées dans la configuration de restriction de jeton (comme le décrit cet article). Le service de remise de clé Media Services retourne la clé de chiffrement pour le client si le jeton est valide et que les revendications du jeton correspondent à celles configurées pour la clé de contenu.
 
-Pour plus d’informations, consultez la rubrique
+Pour plus d'informations, consultez la rubrique
 
 [Authentification par jeton JWT](http://www.gtrifonov.com/2015/01/03/jwt-token-authentication-in-azure-media-services-and-dynamic-encryption/)
 
@@ -45,7 +46,7 @@ Pour plus d’informations, consultez la rubrique
 
 ###Certaines considérations s’appliquent :
 
-- Pour pouvoir utiliser l’empaquetage et le chiffrement dynamiques, vous devez vous assurer d’avoir au moins une unité réservée de diffusion en continu. Pour plus d'informations, consultez [Mise à l'échelle d'un service de média](media-services-manage-origins.md#scale_streaming_endpoints).
+- Pour pouvoir utiliser l’empaquetage et le chiffrement dynamiques, vous devez vous assurer d’avoir au moins une unité réservée de diffusion en continu. Pour plus d'informations, consultez [Mise à l'échelle d'un service de média](media-services-portal-manage-streaming-endpoints.md).
 - Votre ressource doit contenir un ensemble de MP4 à débit adaptatif ou des fichiers de diffusion en continu lisse à débit adaptatif. Pour plus d'informations, consultez [Encoder une ressource](media-services-encode-asset.md).
 - Téléchargez et codez vos ressources à l'aide de l'option **AssetCreationOptions.StorageEncrypted**.
 - Si vous prévoyez d’avoir plusieurs clés de contenu qui nécessitent la même configuration de stratégie, il est fortement recommandé de créer une stratégie d’autorisation unique et de la réutiliser avec plusieurs clés de contenu.
@@ -54,24 +55,17 @@ Pour plus d’informations, consultez la rubrique
 - Actuellement, vous ne pouvez pas chiffrer le format de diffusion en continu HDS ni les téléchargements progressifs.
 
 
-##Chiffrement dynamique AES-128. 
+##Chiffrement dynamique AES-128.
 
 ###Restriction ouverte
 
 La restriction ouverte signifie que le système fournira la clé à toute personne effectuant une demande de clé. Cette restriction peut être utile à des fins de test.
 
 L’exemple suivant crée une stratégie d’autorisation ouverte et l’ajoute à la clé de contenu.
-	
-	static public void AddOpenAuthorizationPolicy(IContentKey contentKey)
-	{
-	    // Create ContentKeyAuthorizationPolicy with Open restrictions 
-	    // and create authorization policy             
-	    IContentKeyAuthorizationPolicy policy = _context.
-	                            ContentKeyAuthorizationPolicies.
-	                            CreateAsync("Open Authorization Policy").Result;
-	
-	    List<ContentKeyAuthorizationPolicyRestriction> restrictions =
-	        new List<ContentKeyAuthorizationPolicyRestriction>();
+
+static public void AddOpenAuthorizationPolicy(IContentKey contentKey) { // Create ContentKeyAuthorizationPolicy with Open restrictions // and create authorization policy IContentKeyAuthorizationPolicy policy = \_context. ContentKeyAuthorizationPolicies. CreateAsync("Open Authorization Policy").Result;
+
+List<ContentKeyAuthorizationPolicyRestriction> restrictions = new List<ContentKeyAuthorizationPolicyRestriction>();
 	
 	    ContentKeyAuthorizationPolicyRestriction restriction =
 	        new ContentKeyAuthorizationPolicyRestriction
@@ -437,10 +431,8 @@ Pour obtenir un jeton de test basé sur la restriction par jeton utilisée pour 
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-
-
-##Étapes suivantes
+##Étape suivante
 La stratégie d'autorisation de la clé de contenu étant configurée, consultez la rubrique [Comment configurer une stratégie de remise de ressources](media-services-dotnet-configure-asset-delivery-policy.md).
  
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

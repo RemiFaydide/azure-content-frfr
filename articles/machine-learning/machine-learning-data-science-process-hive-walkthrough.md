@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/19/2016"
 	ms.author="hangzh;bradsev" />
 
 
 # Processus TDSP (Team Data Science Process) en action : utilisation de clusters Hadoop HDInsight
 
-Dans cette procédure pas à pas, nous allons utiliser le processus TDSP (Team Data Science Process) avec un scénario complet au moyen d’un [cluster Hadoop HDInsight](https://azure.microsoft.com/services/hdinsight/) pour effectuer des opérations sur le jeu de données [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/) disponible publiquement, telles que le stockage, l’exploration, la conception de fonctionnalités et la réduction de l’échantillon de données. Les modèles de données sont créés avec Azure Machine Learning pour gérer les tâches prédictives de classification et de régression binaires et multiclasses.
+Dans cette procédure pas à pas, nous allons utiliser le [processus TDSP (Team Data Science Process)](data-science-process-overview.md) avec un scénario complet au moyen d’un [cluster Azure Hadoop HDInsight](https://azure.microsoft.com/services/hdinsight/) pour effectuer des opérations sur le jeu de données [NYC Taxi Trips](http://www.andresmh.com/nyctaxitrips/) disponible publiquement, telles que le stockage, l’exploration, la conception de fonctionnalités et la réduction de l’échantillon de données. Les modèles de données sont créés avec Azure Machine Learning pour gérer les tâches prédictives de classification et de régression binaires et multiclasses.
 
 Pour une procédure pas à pas qui montre comment gérer un jeu de données plus grand (1 téraoctet) avec un scénario similaire à l’aide de clusters Hadoop HDInsight pour le traitement des données, consultez [Processus TDSP (Team Data Science Process) : utilisation des clusters Hadoop Azure HDInsight sur un jeu de données de 1 To](machine-learning-data-science-process-hive-criteo-walkthrough.md).
 
@@ -111,7 +111,7 @@ Nous décrivons ici comment utiliser AzCopy pour transférer les fichiers conten
 
 Dans les commandes AzCopy suivantes, remplacez les paramètres suivants par les valeurs réelles que vous avez spécifiées lors de la création du cluster Hadoop et lors de la décompression des fichiers de données.
 
-* ***& #60;path\_to\_data\_folder >*** le répertoire (ainsi que le chemin d'accès) sur votre ordinateur qui contiennent les fichiers de données décompressés
+* ***& #60;path\_to\_data\_folder >*** le répertoire (ainsi que le chemin d'accès) sur votre ordinateur qui contiennent les fichiers de données décompressés  
 * ***&#60;storage account name of Hadoop cluster>*** le compte de stockage associé à votre cluster HDInsight
 * ***&#60;default container of Hadoop cluster>*** le conteneur par défaut utilisé par votre cluster. Notez que le nom du conteneur par défaut est généralement le même nom que celui du cluster. Par exemple, si le cluster est appelé « abc123.azurehdinsight.net », le conteneur par défaut est abc123.
 * ***&#60;storage account key>*** la clé du compte de stockage utilisé par votre cluster
@@ -454,7 +454,7 @@ L’argument *-S* inclus dans la commande supprime l’affichage de l’état de
 
 Pour le problème de classification binaire présenté dans la section [Exemples de tâches de prédiction](machine-learning-data-science-process-hive-walkthrough.md#mltasks), il est utile de savoir si un pourboire a été donné ou non. Cette distribution de pourboires est binaire :
 
-* pourboire donné (classe 1, tip\_amount > 0 $)
+* pourboire donné (classe 1, tip\_amount > 0 $)  
 * aucun pourboire (classe 0, tip\_amount > 0 $)
 
 Le fichier *sample\_hive\_tipped\_frequencies.hql* ci-dessous effectue cette opération.
@@ -495,7 +495,7 @@ Exécutez la commande suivante dans la console de ligne de commande Hadoop :
 
 ### Exploration : calculer la distance directe entre deux emplacements de latitude-longitude
 
-**Remarque :** il s'agit généralement d’une tâche de **données scientifiques**.
+**Remarque:** il s'agit généralement d’une tâche de **données scientifiques**.
 
 Avoir une idée de la distance directe nous permet de déterminer l'écart entre celle-ci et la distance de course réelle. Nous expliquons cette fonctionnalité par le fait qu’un passager peut être moins susceptible de donner un pourboire s’il se rend compte que le chauffeur a pris intentionnellement un itinéraire beaucoup plus long.
 
@@ -794,9 +794,9 @@ Ce didacticiel et ses scripts associés sont partagés par Microsoft sous la lic
 
 ## Références
 
-• [Page de téléchargement des jeux de données NYC Taxi Trips par Andrés Monroy (en anglais)](http://www.andresmh.com/nyctaxitrips/) 
-• [Page de partage des données relatives aux courses en taxi new-yorkais par Chris Whong (en anglais)](http://chriswhong.com/open-data/foil_nyc_taxi/) 
-• [Page de recherche et de statistiques de la Commission des services de taxis et de limousines de la ville de New York (en anglais)](https://www1.nyc.gov/html/tlc/html/about/statistics.shtml)
+•	[Page de téléchargement des jeux de données NYC Taxi Trips par Andrés Monroy (en anglais)](http://www.andresmh.com/nyctaxitrips/)  
+•	[Page de partage des données relatives aux courses en taxi new-yorkais par Chris Whong (en anglais)](http://chriswhong.com/open-data/foil_nyc_taxi/)   
+•	[Page de recherche et de statistiques de la Commission des services de taxis et de limousines de la ville de New York (en anglais)](https://www1.nyc.gov/html/tlc/html/about/statistics.shtml)
 
 
 [2]: ./media/machine-learning-data-science-process-hive-walkthrough/output-hive-results-3.png
@@ -810,4 +810,4 @@ Ce didacticiel et ses scripts associés sont partagés par Microsoft sous la lic
 [select-columns]: https://msdn.microsoft.com/library/azure/1ec722fa-b623-4e26-a44e-a50c6d726223/
 [import-data]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

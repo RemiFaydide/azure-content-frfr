@@ -12,7 +12,7 @@
     ms.tgt_pltfrm="NA"
     ms.devlang="NA"
     ms.topic="article"
-    ms.date="08/15/2016"
+    ms.date="09/19/2016"
     ms.author="elizapo" />
 
 # Nouveautés à venir sur Azure RemoteApp
@@ -20,18 +20,18 @@
 > [AZURE.IMPORTANT]
 Azure RemoteApp n’est plus disponible. Pour plus d’informations, lisez [l’annonce](https://go.microsoft.com/fwlink/?linkid=821148).
 
-Nous cherchons constamment à améliorer Azure RemoteApp sur la base de vos commentaires. Voici un calendrier général des nouvelles fonctionnalités à paraître.
+**Tous les éléments de la version préliminaire et de la feuille de route ont été annulés et supprimés en raison du retrait annoncé d’Azure RemoteApp.**
 
-|Fonctionnalité|Avril-juin 2016|Juillet-septembre 2016|
+|Fonctionnalité|État|
 |-----------|-------|-------|
-|Azure Remote App disponible dans le [Portail Azure Classic](http://manage.windowsazure.com) et le [Portail Azure](https://portal.azure.com) – Version préliminaire privée| | |
-|Possibilité de publier des applications individuelles auprès d’utilisateurs spécifiques – Version préliminaire privée ([commentaires](https://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec/))| | |
-|Package MSI redistribuable pour client Windows ([commentaires](https://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6627191-client-deployment-provide-an-msi-package-to-allo/)) – Version préliminaire privée| | |
-|Prise en charge d’Azure Resource Manager (ARM)|||
-|Prise en charge des ressources Azure v2| ||
-|Fournisseur de solutions cloud (CSP)|||
-|Disponibilité en Inde|||
-|Disponibilité au Royaume-Uni|||
+|Azure Remote App disponible dans le [Portail Azure Classic](http://manage.windowsazure.com) et le [Portail Azure](https://portal.azure.com) – Version préliminaire privée|**Canceled**|
+|Possibilité de publier des applications individuelles auprès d’utilisateurs spécifiques – Version préliminaire privée ([commentaires](https://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6067043-allow-the-ability-to-publish-specific-apps-to-spec/))|**Canceled**|
+|Package MSI redistribuable pour client Windows ([commentaires](https://feedback.azure.com/forums/247748-azure-remoteapp/suggestions/6627191-client-deployment-provide-an-msi-package-to-allo/)) – Version préliminaire privée|**Canceled**|
+|Prise en charge d’Azure Resource Manager (ARM)|**Canceled**|
+|Prise en charge des ressources Azure v2|**Canceled**|
+|Fournisseur de solutions cloud (CSP)|**Canceled**|
+|Disponibilité en Inde|**Canceled**|
+|Disponibilité au Royaume-Uni|**Canceled**|
 
 
 Autres améliorations apportées au cours de l’année :
@@ -50,4 +50,4 @@ Autres améliorations apportées au cours de l’année :
 - Disponibilité dans les centres de données australiens
  
 
-<!---HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0921_2016-->

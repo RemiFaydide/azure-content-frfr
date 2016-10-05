@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Encodage d’un élément multimédia à l’aide de Media Encoder Standard" 
+	pageTitle="Encodage d’un élément multimédia à l’aide de Media Encoder Standard | Microsoft Azure" 
 	description="Apprenez à utiliser Media Encoder Standard pour encoder un contenu multimédia sur Media Services. Les exemples de code utilisent l’API REST." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016"
+	ms.date="09/19/2016"
 	ms.author="juliako"/>
 
 
@@ -23,9 +23,9 @@
 > [AZURE.SELECTOR]
 - [.NET](media-services-dotnet-encode-asset.md)
 - [REST](media-services-rest-encode-asset.md)
-- [Portail](media-services-manage-content.md#encode)
+- [Portail](media-services-portal-encode.md)
 
-##Vue d’ensemble
+##Vue d'ensemble
 Pour fournir une vidéo numérique sur Internet, vous devez compresser le contenu multimédia. Les fichiers vidéo numériques sont volumineux et peuvent être trop gros pour être fournis sur Internet ou pour que les appareils de vos clients les affichent correctement. L’encodage est le processus de compression audio et vidéo permettant à vos clients d’afficher votre contenu multimédia.
 
 Les tâches d’encodage sont une des opérations de traitement les plus courantes dans Media Services. Vous créez des tâches d’encodage pour convertir des fichiers multimédias d’un encodage à un autre. Lorsque vous les encodez, vous pouvez utiliser l’encodeur intégré de Media Services (Media Encoder Standard). Vous pouvez aussi utiliser un encodeur fourni par un partenaire Media Services. Ces encodeurs tiers sont disponibles sur Azure Marketplace. Vous pouvez spécifier les détails des tâches d’encodage à l’aide de chaînes de présélection définies pour votre encodeur ou en utilisant des fichiers de configuration prédéfinis. Pour voir les types de présélections disponibles, consultez [Présélections de tâches pour Media Encoder Standard](http://msdn.microsoft.com/library/mt269960).
@@ -34,16 +34,16 @@ Chaque travail peut comporter une ou plusieurs tâches, en fonction du type de t
 
 - Des tâches peuvent être définies inline via la propriété de navigation de tâches sur les entités de travail, ou
 - via le traitement par lots OData.
-  
 
-Nous vous recommandons de toujours encoder vos fichiers mezzanine sous forme de jeu de fichiers MP4 à débit adaptatif, puis de convertir ce jeu au format souhaité au moyen de l’[empaquetage dynamique](media-services-dynamic-packaging-overview.md). Pour tirer parti de l'empaquetage dynamique, vous devez d'abord obtenir au moins une unité de diffusion en continu à la demande pour le point de terminaison de diffusion en continu à partir duquel vous envisagez de distribuer votre contenu. Pour plus d’informations, voir [Mise à l’échelle de Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
+
+Nous vous recommandons de toujours encoder vos fichiers mezzanine sous forme de jeu de fichiers MP4 à débit adaptatif, puis de convertir ce jeu au format souhaité au moyen de l’[empaquetage dynamique](media-services-dynamic-packaging-overview.md). Pour tirer parti de l'empaquetage dynamique, vous devez d'abord obtenir au moins une unité de diffusion en continu à la demande pour le point de terminaison de diffusion en continu à partir duquel vous envisagez de distribuer votre contenu. Pour plus d’informations, voir [Mise à l’échelle de Media Services](media-services-portal-manage-streaming-endpoints.md).
 
 Si votre ressource de sortie est stockée sous forme chiffrée, vous devez configurer une stratégie de remise de ressources. Pour plus d'informations, consultez [Configuration de la stratégie de remise de ressources](media-services-rest-configure-asset-delivery-policy.md).
 
 
 >[AZURE.NOTE]Avant de référencer les processeurs multimédias, vérifiez que vous disposez de l’ID de processeur multimédia approprié. Pour plus d’informations, consultez la rubrique [Obtenir des processeurs multimédias](media-services-rest-get-media-processor.md).
 
-##Création d’un travail avec une seule tâche d’encodage 
+##Création d’un travail avec une seule tâche d’encodage
 
 >[AZURE.NOTE] Lorsque vous utilisez l’API REST de Media Services, les considérations suivantes s’appliquent :
 >
@@ -54,18 +54,10 @@ Si votre ressource de sortie est stockée sous forme chiffrée, vous devez confi
 >Lors de l’utilisation de JSON et la spécification pour utiliser le mot clé **\_\_metadata** dans la demande (par exemple, pour fait référence à un objet lié) vous DEVEZ définir l’en-tête **Accept** au [format JSON détaillé](http://www.odata.org/documentation/odata-version-3-0/json-verbose-format/) : Accept: application/json;odata=verbose.
 
 L’exemple suivant montre comment créer et publier un projet avec une tâche visant à encoder une vidéo en une résolution et une qualité spécifiques. Quand vous encodez à l’aide de Media Encoder Standard, vous pouvez utiliser les présélections de configuration de tâche spécifiées [ici](http://msdn.microsoft.com/library/mt269960).
-	
+
 Demande :
 
-	POST https://media.windows.net/API/Jobs HTTP/1.1
-	Content-Type: application/json;odata=verbose
-	Accept: application/json;odata=verbose
-	DataServiceVersion: 3.0
-	MaxDataServiceVersion: 3.0
-	x-ms-version: 2.11
-	Authorization: Bearer <token value>
-	x-ms-client-request-id: 00000000-0000-0000-0000-000000000000
-	Host: media.windows.net
+POST https://media.windows.net/API/Jobs HTTP/1.1 Content-Type: application/json;odata=verbose Accept: application/json;odata=verbose DataServiceVersion: 3.0 MaxDataServiceVersion: 3.0 x-ms-version: 2.11 Authorization: Bearer <token value> x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 Host: media.windows.net
 
 	
 	{"Name" : "NewTestJob", "InputMediaAssets" : [{"__metadata" : {"uri" : "https://media.windows.net/api/Assets('nb%3Acid%3AUUID%3Aaab7f15b-3136-4ddf-9962-e9ecb28fb9d2')"}}],  "Tasks" : [{"Configuration" : "H264 Multiple Bitrate 720p", "MediaProcessorId" : "nb:mpid:UUID:ff4df607-d419-42f0-bc17-a481b1331e56",  "TaskBody" : "<?xml version="1.0" encoding="utf-8"?><taskBody><inputAsset>JobInputAsset(0)</inputAsset><outputAsset>JobOutputAsset(0)</outputAsset></taskBody>"}]}
@@ -275,4 +267,4 @@ Maintenant que vous savez comment créer une tâche pour encoder un élément mu
 
 [Obtenir des processeurs multimédias](media-services-rest-get-media-processor.md)
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

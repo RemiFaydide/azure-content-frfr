@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/14/2016" 
+	ms.date="09/19/2016" 
 	ms.author="fashah;garye;bradsev" />
 
 #<a name="heading"></a>Échantillonner des données dans SQL Server sur Azure
@@ -25,7 +25,7 @@ L’échantillonnage Python utilise la bibliothèque ODBC [pyodbc](https://code.
 
 >[AZURE.NOTE] L’exemple de code SQL figurant dans ce document repose sur l’hypothèse que les données sont stockées dans SQL Server sur Azure. Si ce n’est pas le cas, reportez-vous à la rubrique [Déplacer des données vers SQL Server sur Azure](machine-learning-data-science-move-sql-server-virtual-machine.md) pour savoir comment déplacer vos données vers SQL Server sur Azure.
 
-**Pourquoi échantillonner vos données ?** Si vous prévoyez d'analyser un jeu de données volumineux, il est généralement recommandé de sous-échantillonner les données afin de réduire leur taille sous une forme plus facilement exploitable, mais toujours représentative. Cette opération facilite la compréhension et l’exploration des données, ainsi que la conception de fonctionnalités. Son rôle dans le processus TDSP (Team Data Science Process) consiste à permettre le prototypage rapide des fonctions de traitement des données et des modèles d’apprentissage automatique.
+**Pourquoi échantillonner vos données ?** Si vous prévoyez d'analyser un jeu de données volumineux, il est généralement recommandé de sous-échantillonner les données afin de réduire leur taille sous une forme plus facilement exploitable, mais toujours représentative. Cette opération facilite la compréhension et l’exploration des données, ainsi que la conception de fonctionnalités. Son rôle dans le [processus TDSP (Team Data Science Process)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/) consiste à permettre le prototypage rapide des fonctions de traitement des données et des modèles d’apprentissage automatique.
 
 Le **menu** ci-dessous pointe vers des rubriques qui expliquent comment échantillonner des données dans différents environnements de stockage.
 
@@ -60,7 +60,7 @@ Vous pouvez également utiliser l’élément TABLESAMPLE pour l’échantillonn
 
 ###<a name="sql-aml"></a>Connexion à Azure Machine Learning
 
-Vous pouvez utiliser directement les exemples de requêtes ci-dessus dans le module Importer les données d’Azure Machine Learning afin de sous-échantillonner les données à la volée et de les importer dans une expérience Azure Machine Learning. La capture d’écran ci-après illustre l’utilisation du module Lecteur pour lire les données échantillonnées :
+Vous pouvez utiliser directement les exemples de requêtes ci-dessus dans le module [Importer les données][import-data] d’Azure Machine Learning afin de sous-échantillonner les données à la volée et de les importer dans une expérience Azure Machine Learning. La capture d’écran ci-après illustre l’utilisation du module Lecteur pour lire les données échantillonnées :
    
 ![lecteur sql][1]
 
@@ -83,7 +83,7 @@ Vous pouvez à présent travailler sur les données échantillonnées dans la tr
 
 ###<a name="python-aml"></a>Connexion à Azure Machine Learning
 
-Vous pouvez utiliser l’exemple de code ci-après pour enregistrer les données sous-échantillonnées dans un fichier et les charger dans un objet blob Azure. Les données figurant dans l’objet blob peuvent être lues directement dans une expérimentation Azure Machine Learning à l’aide du module *Importer les données*. La procédure comporte trois étapes :
+Vous pouvez utiliser l’exemple de code ci-après pour enregistrer les données sous-échantillonnées dans un fichier et les charger dans un objet blob Azure. Les données figurant dans l’objet blob peuvent être lues directement dans une expérimentation Azure Machine Learning à l’aide du module [Importer les données][import-data]. La procédure comporte trois étapes :
 
 1. Écrire la trame de données pandas dans un fichier local
 
@@ -111,7 +111,7 @@ Vous pouvez utiliser l’exemple de code ci-après pour enregistrer les données
 	    except:	        
 		    print ("Something went wrong with uploading blob:"+BLOBNAME)
 
-3. Lisez les données de l’objet blob Azure à l’aide du module *Importer les données* d’Azure Machine Learning, comme l’illustre la capture d’écran ci-dessous :
+3. Lisez les données de l’objet blob Azure à l’aide du module [Importer les données][import-data] d’Azure Machine Learning, comme l’illustre la capture d’écran ci-dessous :
  
 ![objet blob de lecteur][2]
 
@@ -122,6 +122,6 @@ Pour obtenir un exemple de procédure pas à pas complet du processus TDSP (Team
 [1]: ./media/machine-learning-data-science-sample-sql-server-virtual-machine/reader_database.png
 [2]: ./media/machine-learning-data-science-sample-sql-server-virtual-machine/reader_blob.png
 
- 
+ [import-data]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

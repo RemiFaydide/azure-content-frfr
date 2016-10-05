@@ -13,7 +13,7 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="07/05/2016"
+    ms.date="09/13/2016"
     ms.author="larryfr"/>
 
 # Développement d’actions de script avec HDInsight
@@ -167,6 +167,11 @@ Les programmes d’assistance sont ainsi disponibles pour une utilisation dans v
 | `test_is_headnode` | Lorsqu’il est exécuté sur un nœud principal de cluster, la valeur 1 est renvoyée ; dans le cas contraire, c’est la valeur 0. |
 | `test_is_datanode` | Si le nœud actuel est un nœud de données (worker), la valeur 1 est renvoyée ; dans le cas contraire, c’est la valeur 0. |
 | `test_is_first_datanode` | Si le nœud actuel est le premier nœud de données (worker) (nommé workernode0,) la valeur 1 est renvoyée ; dans le cas contraire, c’est la valeur 0. |
+| `get_headnodes` | Renvoie le nom de domaine complet des nœuds principaux dans le cluster. Les noms sont séparés par des virgules. Une chaîne vide est renvoyée en cas d’erreur. |
+| `get_primary_headnode` | Obtient le nom de domaine complet du nœud principal primaire. Une chaîne vide est renvoyée en cas d’erreur. |
+| `get_secondary_headnode` | Obtient le nom de domaine complet du nœud principal secondaire. Une chaîne vide est renvoyée en cas d’erreur. |
+| `get_primary_headnode_number` | Obtient le suffixe numérique du nœud principal primaire. Une chaîne vide est renvoyée en cas d’erreur. |
+| `get_secondary_headnode_number` | Obtient le suffixe numérique du nœud principal secondaire. Une chaîne vide est renvoyée en cas d’erreur. |
 
 ## <a name="commonusage"></a>Modes d'utilisation courants
 
@@ -268,4 +273,4 @@ Pour la commande ci-dessus, remplacez __INFILE__ par le fichier contenant la mar
 
 * Utilisez l’[API REST HDInsight](https://msdn.microsoft.com/library/azure/mt622197.aspx) pour savoir comment utiliser REST pour effectuer des actions de gestion sur des clusters HDInsight.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

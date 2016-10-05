@@ -46,7 +46,7 @@ azure group create --name myDockerResourceGroup --location "West US" \
   --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/docker-simple-on-ubuntu/azuredeploy.json
 ```
 
-Répondez aux invites vous demandant de donner un nom à votre compte de stockage, d’indiquer le nom DNS, le nom d’utilisateur, etc. et attendez quelques minutes pour que le déploiement se termine. Le résultat ressemble à ce qui suit :
+Répondez aux invites pour nommer votre compte de stockage et indiquer le nom d’utilisateur, le mot de passe et le nom DNS. Le résultat ressemble à ce qui suit en exemple :
 
 ```
 info:    Executing command group create
@@ -71,6 +71,66 @@ info:    group create command OK
 
 ```
 
+L’interface de ligne de commande d’Azure vous renvoie à l’invite après quelques secondes, mais le modèle est déployé en arrière-plan dans le groupe de ressources que vous avez créé. Attendez quelques minutes pour que le déploiement se termine avant d’essayer d’utiliser SSH pour la machine virtuelle.
+
+Vous pouvez obtenir plus d’informations sur le déploiement et le nom DNS de la machine virtuelle avec la commande `azure vm show`. Dans l’exemple suivant, remplacez `myDockerResourceGroup` par le nom que vous avez spécifié à l’étape précédente :
+
+```bash
+azure vm show -g myDockerResourceGroup -n myDockerVM
+info:    Executing command vm show
++ Looking up the VM "myDockerVM"
++ Looking up the NIC "myVMNicD"
++ Looking up the public ip "myPublicIPD"
+data:    Id                              :/subscriptions/guid/resourceGroups/mydockerresourcegroup/providers/Microsoft.Compute/virtualMachines/MyDockerVM
+data:    ProvisioningState               :Succeeded
+data:    Name                            :MyDockerVM
+data:    Location                        :westus
+data:    Type                            :Microsoft.Compute/virtualMachines
+data:
+data:    Hardware Profile:
+data:      Size                          :Standard_F1
+data:
+data:    Storage Profile:
+data:      Image reference:
+data:        Publisher                   :Canonical
+data:        Offer                       :UbuntuServer
+data:        Sku                         :14.04.4-LTS
+data:        Version                     :latest
+data:
+data:      OS Disk:
+data:        OSType                      :Linux
+data:        Name                        :osdisk1
+data:        Caching                     :ReadWrite
+data:        CreateOption                :FromImage
+data:        Vhd:
+data:          Uri                       :http://mydockerstorage.blob.core.windows.net/vhds/osdiskfordockersimple.vhd
+data:
+data:    OS Profile:
+data:      Computer Name                 :MyDockerVM
+data:      User Name                     :ops
+data:      Linux Configuration:
+data:        Disable Password Auth       :false
+data:
+data:    Network Profile:
+data:      Network Interfaces:
+data:        Network Interface #1:
+data:          Primary                   :true
+data:          MAC Address               :00-0D-3A-33-D3-95
+data:          Provisioning State        :Succeeded
+data:          Name                      :myVMNicD
+data:          Location                  :westus
+data:            Public IP address       :13.91.107.235
+data:            FQDN                    :mydockergroup.westus.cloudapp.azure.com
+data:
+data:    Diagnostics Instance View:
+info:    vm show command OK
+```
+
+Vers le haut de la sortie, vous voyez le `ProvisioningState` de la machine virtuelle. Lorsque `Succeeded` s’affiche, le déploiement est terminé et vous pouvez vous connecter par SSH à la machine virtuelle.
+
+Vers la fin de la sortie, `FQDN` affiche le nom de domaine complet basé sur le nom DNS que vous avez fourni et l’emplacement que vous avez sélectionné. Ce nom de domaine complet est ce que vous utilisez pour vous connecter par SSH à la machine virtuelle dans les étapes restantes.
+
+
 ## Déployer votre premier conteneur nginx
 Une fois le déploiement terminé, utilisez SSH pour votre nouvel hôte Docker à l’aide du nome DNS fourni pendant le déploiement. Essayons d’exécuter un conteneur nginx :
 
@@ -78,7 +138,7 @@ Une fois le déploiement terminé, utilisez SSH pour votre nouvel hôte Docker �
 sudo docker run -d -p 80:80 nginx
 ```
 
-Le résultat ressemble à ce qui suit :
+Le résultat ressemble à ce qui suit en exemple :
 
 ```
 Unable to find image 'nginx:latest' locally
@@ -107,7 +167,7 @@ Vous pouvez configurer le port TCP du démon Docker, la sécurité, ou déployer
 
 ## Référence de modèle JSON pour l’extension de machine virtuelle Docker
 
-Cet exemple utilise un modèle de démarrage rapide. Pour déployer l’extension de machine virtuelle Azure Docker avec vos propres modèles Resource Manager, ajoutez les éléments suivants :
+Cet exemple utilise un modèle de démarrage rapide. Pour déployer l’extension de machine virtuelle Azure Docker avec vos propres modèles Resource Manager, ajoutez les éléments JSON suivants :
 
 ```
 {
@@ -140,4 +200,4 @@ Lire des étapes plus détaillées pour les différentes options de déploiement
 3. [Prise en main de Docker et Compose pour définir et exécuter une application à conteneurs multiples sur une machine virtuelle Azure](virtual-machines-linux-docker-compose-quickstart.md).
 3. [Déploiement d’un cluster Azure Container Service](../container-service/container-service-deployment.md)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

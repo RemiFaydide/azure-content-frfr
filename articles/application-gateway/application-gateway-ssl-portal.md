@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/09/2016"
+   ms.date="09/09/2016"
    ms.author="gwallace"/>
 
 # Configurer une passerelle d’application pour le déchargement SSL en utilisant le portail
@@ -36,21 +36,29 @@ Pour configurer le déchargement SSL avec une passerelle Application Gateway, un
 
 L’écouteur HTTPS recherche le trafic en fonction de sa configuration et aide à acheminer le trafic vers les pools principaux.
 
-### Étape 1 :
+### Étape 1
 
-Accédez au portail Azure et sélectionnez une passerelle d’application existante
+Accédez au portail Azure et sélectionnez une passerelle d’application existante.
 
 ![Panneau de vue d’ensemble de passerelle d’application][1]
 
-### Étape 2 :
+### Étape 2
 
-Cliquez sur Écouteurs et cliquez sur le bouton Ajouter pour ajouter un nouvel écouteur.
+Cliquez sur Écouteurs et cliquez sur le bouton Ajouter pour ajouter un écouteur.
 
 ### Étape 3
 
 Remplissez les informations requises pour l’écouteur, et téléchargez le certificat .pfx. Lorsque vous avez terminé, cliquez sur OK.
 
-**Nom** - il s’agit d’un nom convivial pour l’écouteur. **Configuration IP frontale** - il s’agit de la configuration d’IP frontale utilisée pour l’écouteur. **Port frontal (nom/port)** - un nom convivial pour le port utilisé sur le serveur frontal de la passerelle Application Gateway et le port utilisé. **Protocole** - un commutateur qui détermine si https ou http est utilisé pour le serveur frontal. **Certificat (nom/mot de passe)** - si le déchargement SSL est utilisé, un certificat .pfx est requis pour ce paramètre, et un nom convivial et un mot de passe sont requis.
+**Nom** - il s’agit d’un nom convivial pour l’écouteur.
+
+**Configuration IP frontale** - il s’agit de la configuration d’IP frontale utilisée pour l’écouteur.
+
+**Port frontal (nom/port)** - un nom convivial pour le port utilisé sur le serveur frontal de la passerelle Application Gateway et le port utilisé.
+
+**Protocole** - un commutateur qui détermine si https ou http est utilisé pour le serveur frontal.
+
+**Certificat (nom/mot de passe)** - si le déchargement SSL est utilisé, un certificat .pfx est requis pour ce paramètre, et un nom convivial et un mot de passe sont requis.
 
 ![ajouter panneau d’écouteur][2]
 
@@ -62,7 +70,7 @@ L’écouteur a été créé. Il est temps de créer une règle pour gérer le t
 
 Cliquez sur **Règles** dans la passerelle Application Gateway, puis cliquez sur Ajouter.
 
-![panneau de règles appgateway][3]
+![Panneau de règles Application Gateway][3]
 
 ### Étape 2 :
 
@@ -81,4 +89,4 @@ Pour savoir comment configurer une sonde d’intégrité personnalisée avec Azu
 [3]: ./media/application-gateway-ssl-portal/figure3.png
 [4]: ./media/application-gateway-ssl-portal/figure4.png
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

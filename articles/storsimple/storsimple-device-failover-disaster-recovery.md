@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="09/07/2016"
+   ms.date="09/16/2016"
    ms.author="alkohli" />
 
 # Basculement et récupération d’urgence pour votre appareil StorSimple
@@ -179,9 +179,12 @@ Pour Update 3 et les versions ultérieures, StorSimple prend également en charg
 
 - Les conteneurs de volumes basculés sont nettoyés de l’appareil source.
 
-- Un travail de suppression par conteneur de volumes (basculé) est visible sur la page **Travaux**. Le temps nécessaire à la suppression des conteneurs de volumes dépend de la quantité de données présente dans les conteneurs. Si vous envisagez de tester les basculements / restaurations, nous vous recommandons de tester des conteneurs de volumes comprenant moins de données (Go).
+- Un travail en arrière-plan par conteneur de volumes (basculé) est lancé sur l’appareil source. Si vous tentez d’effectuer une restauration automatique lorsque le travail est en cours, vous recevrez une notification à cet effet. Vous devrez attendre la fin du travail pour démarrer la restauration automatique.
 
-- Une fois tous les travaux de suppression terminés, vous pouvez tenter la restauration automatique.
+	Le temps nécessaire à la suppression des conteneurs de volumes dépend de divers facteurs tels que la quantité de données, l’ancienneté des données, le nombre de sauvegardes et la bande passante réseau disponible pour l’opération. Si vous envisagez de tester les basculements / restaurations, nous vous recommandons de tester des conteneurs de volumes comprenant moins de données (Go). Dans la plupart des cas, vous pouvez démarrer la restauration automatique 24 heures après la fin du basculement.
+
+
+
 
 ## Forum Aux Questions
 
@@ -215,4 +218,4 @@ S’il existe des appareils StorSimple inscrits juste avant un incident, ces pé
 - Pour plus d’informations sur l’utilisation du service StorSimple Manager, consultez [Utiliser le service StorSimple Manager pour gérer votre appareil StorSimple](storsimple-manager-service-administration.md).
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

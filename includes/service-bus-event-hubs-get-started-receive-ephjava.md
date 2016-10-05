@@ -12,7 +12,7 @@ Pour utiliser EventProcessorHost, vous devez disposer d’un [compte Azure Stora
 
     ![][11]
 
-3. Cliquez sur le compte de stockage que vous venez de créer, puis cliquez sur **Gérer les clés d'accès** :
+3. Cliquez sur le compte de stockage que vous venez de créer, puis cliquez sur **Gérer les clés d'accès** :
 
     ![][12]
 
@@ -189,7 +189,7 @@ Pour différents types d’environnement de génération, vous pouvez obtenir ex
 > [AZURE.NOTE] Ce didacticiel utilise une seule instance de EventProcessorHost. Pour augmenter le débit, il est recommandé d’exécuter plusieurs instances d’EventProcessorHost. Dans ces cas, les différentes instances se coordonnent automatiquement entre elles afin d'équilibrer la charge des événements reçus. Si vous souhaitez que plusieurs récepteurs traitent *tous* les événements, vous devez utiliser le concept **ConsumerGroup**. Lors de la réception des événements à partir de différents ordinateurs, il peut être utile de spécifier des noms pour les instances de EventProcessorHost basées sur les ordinateurs (ou rôles) dans lesquels ils sont déployés.
 
 <!-- Links -->
-[Event Hubs Overview]: event-hubs-overview.md
+[Event Hubs overview]: event-hubs-overview.md
 [compte Azure Storage]: ../storage/storage-create-storage-account.md
 [portail Azure Classic]: http://manage.windowsazure.com
 [Maven Package]: https://search.maven.org/#search%7Cga%7C1%7Ca%3A%22azure-eventhubs-eph%22
@@ -198,4 +198,4 @@ Pour différents types d’environnement de génération, vous pouvez obtenir ex
 [11]: ./media/service-bus-event-hubs-get-started-receive-ephjava/create-eph-csharp2.png
 [12]: ./media/service-bus-event-hubs-get-started-receive-ephjava/create-eph-csharp3.png
 
-<!---HONumber=AcomDC_0907_2016-->
+<!---HONumber=AcomDC_0928_2016-->

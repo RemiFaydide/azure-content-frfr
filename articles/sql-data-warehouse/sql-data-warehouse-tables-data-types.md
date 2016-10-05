@@ -27,7 +27,7 @@
 - [Statistiques][]
 - [Temporaire][]
 
-SQL Data Warehouse prend en charge les types de données les plus couramment utilisés. Voici une liste des types de données pris en charge par SQL Data Warehouse. Pour plus d’informations sur la prise en charge du type de données, consultez la page [create table][] (créer une table).
+SQL Data Warehouse prend en charge les types de données les plus couramment utilisés. Voici une liste des types de données pris en charge par SQL Data Warehouse. Pour plus d’informations sur la prise en charge du type de données, consultez la page [create table][] \(créer une table).
 
 |**Types de données pris en charge**|||
 |---|---|---|

@@ -110,9 +110,9 @@ La connexion d’applications a toujours fait partie de l’assemblage de soluti
 
 Maintenant que vous avez appris les principes de base d’Azure Service Bus, consultez ces liens pour en savoir plus :
 
-- Utilisation des [files d’attente Service Bus](service-bus-dotnet-get-started-with-queues.md)
-- Utilisation des [rubriques Service Bus](service-bus-dotnet-how-to-use-topics-subscriptions.md)
-- Utilisation des [relais Service Bus](service-bus-dotnet-how-to-use-relay.md)
+- Utilisation des [files d’attente Service Bus](../service-bus-messaging/service-bus-dotnet-get-started-with-queues.md)
+- Utilisation des [rubriques Service Bus](../service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions.md)
+- Utilisation des [relais Service Bus](../service-bus-relay/service-bus-dotnet-how-to-use-relay.md)
 - [Exemples Service Bus](service-bus-samples.md)
 
 [1]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_01_architecture.png
@@ -120,4 +120,4 @@ Maintenant que vous avez appris les principes de base d’Azure Service Bus, con
 [3]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_03_topicsandsubscriptions.png
 [4]: ./media/service-bus-fundamentals-hybrid-solutions/SvcBus_04_relay.png
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0928_2016-->

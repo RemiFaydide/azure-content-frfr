@@ -58,4 +58,4 @@ Effectuez les étapes de configuration suivantes pour créer un réseau virtuel 
 ## Tâche 3 : activer les services de domaine Azure AD
 La tâche de configuration suivante consiste à [activer les services de domaine Azure AD](active-directory-ds-getting-started-enableaadds.md).
 
-<!---HONumber=AcomDC_0921_2016-->
+<!-----HONumber=AcomDC_0921_2016-->

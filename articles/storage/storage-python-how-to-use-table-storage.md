@@ -3,8 +3,8 @@
 	description="Stockez des données structurées dans le cloud à l’aide du stockage de tables Azure, un magasin de données NoSQL."
 	services="storage"
 	documentationCenter="python"
-	authors="emgerner-msft"
-	manager="wpickett"
+	authors="tamram"
+	manager="carmonm"
 	editor="tysonn"/>
 
 <tags
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="python"
 	ms.topic="article"
-	ms.date="07/26/2016"
-	ms.author="emgerner"/>
+	ms.date="09/20/2016"
+	ms.author="gusapost;tamram"/>
 
 
 # Utilisation du stockage de tables à partir de Python
@@ -29,7 +29,7 @@ Ce guide décrit le déroulement de scénarios courants dans le cadre de l’uti
 
 [AZURE.INCLUDE [storage-create-account-include](../../includes/storage-create-account-include.md)]
 
-## Création d'une table
+## Création d’une table
 
 L'objet **TableService** permet d'utiliser les services de Table. Le code suivant permet de créer un objet **TargetService**. Ajoutez ce code vers le début de tout fichier Python dans lequel vous souhaitez accéder à Azure Storage par programme :
 
@@ -41,7 +41,7 @@ Le code suivant crée un objet **TableService** en utilisant le nom et la clé d
 
 	table_service.create_table('tasktable')
 
-## Ajout d'une entité à une table
+## Ajout d’une entité à une table
 
 Pour ajouter une entité, commencez par créer un dictionnaire ou une entité définissant les noms et valeurs des propriétés de votre entité. Notez que pour chaque entité, vous devez spécifier les clés **PartitionKey** et **RowKey**. Elles permettent d’identifier vos entités de manière univoque. Vous pouvez interroger ces valeurs beaucoup plus vite que d’autres propriétés. Le système utilise **PartitionKey** pour distribuer automatiquement les entités de la table sur plusieurs nœuds de stockage. Les entités partageant la même clé **PartitionKey** sont stockées sur le même nœud. **RowKey** identifie de manière univoque l’entité dans sa partition.
 
@@ -113,9 +113,9 @@ Cet exemple recherche toutes les tâches dans Seattle avec la clé **PartitionKe
 		print(task.description)
 		print(task.priority)
 
-## Interrogation d'un sous-ensemble de propriétés d'entité
+## Interrogation d’un sous-ensemble de propriétés d’entité
 
-Vous pouvez utiliser une requête de table pour extraire uniquement quelques propriétés d'une entité. Cette technique, nommée *projection*, réduit la consommation de bande passante et peut améliorer les performances des requêtes, notamment pour les entités volumineuses. Utilisez le paramètre **select** et transmettez le nom des propriétés à soumettre au client.
+Vous pouvez utiliser une requête de table pour extraire uniquement quelques propriétés d’une entité. Cette technique, nommée *projection*, réduit la consommation de bande passante et peut améliorer les performances des requêtes, notamment pour les entités volumineuses. Utilisez le paramètre **select** et transmettez le nom des propriétés à soumettre au client.
 
 La requête contenue dans le code suivant ne renvoie que la description des entités de la table.
 
@@ -125,13 +125,13 @@ La requête contenue dans le code suivant ne renvoie que la description des enti
 	for task in tasks:
 		print(task.description)
 
-## Suppression d'une entité
+## Suppression d’une entité
 
 Vous pouvez supprimer une entité en utilisant ses clés de partition et de ligne.
 
 	table_service.delete_entity('tasktable', 'tasksSeattle', '1')
 
-## Suppression d'une table
+## Suppression d’une table
 
 Le code suivant permet de supprimer une table d'un compte de stockage.
 
@@ -150,4 +150,4 @@ Maintenant que vous connaissez les bases du stockage de tables, consultez les li
 [Kit de développement logiciel (SDK) Microsoft Azure Storage pour Python]: https://github.com/Azure/azure-storage-python
 [Kit de développement logiciel (SDK) Microsoft Azure Storage pour Python]: https://github.com/Azure/azure-storage-python
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

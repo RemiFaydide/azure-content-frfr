@@ -1,10 +1,10 @@
 <properties
-   pageTitle="Création de rapports Azure Active Directory : Prise en main | Microsoft Azure"
+   pageTitle="Création de rapports Azure Active Directory : Prise en main | Microsoft Azure"
    description="Répertorie les différents rapports disponibles dans le rapport d'Azure Active Directory"
    services="active-directory"
    documentationCenter=""
    authors="dhanyahk"
-   manager="stevenpo"
+   manager="femila"
    editor=""/>
 
 <tags
@@ -16,11 +16,11 @@
    ms.date="03/07/2016"
    ms.author="dhanyahk"/>
 
-# Prise en main de la création de rapports Azure Active Directory
+# Prise en main de la création de rapports Azure Active Directory
 
 ## Présentation
 
-Azure Active Directory (Azure AD) comprend des rapports sur la sécurité, les activités et l’audit concernant votre annuaire. Voici une liste des rapports fournis :
+Azure Active Directory (Azure AD) comprend des rapports sur la sécurité, les activités et l’audit concernant votre annuaire. Voici une liste des rapports fournis :
 
 ### Rapports de sécurité
 
@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) comprend des rapports sur la sécurité, les a
 
 - Rapport d’audit d’annuaire
 
-> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
 
 
 
@@ -57,30 +57,30 @@ Azure Active Directory (Azure AD) comprend des rapports sur la sécurité, les a
 
 ### Pipeline de création de rapports
 
-Le pipeline de création de rapports se compose de trois étapes principales. Chaque fois qu’un utilisateur se connecte ou qu’une authentification est effectuée, voici ce qui se produit :
+Le pipeline de création de rapports se compose de trois étapes principales. Chaque fois qu’un utilisateur se connecte ou qu’une authentification est effectuée, voici ce qui se produit :
 
 - Tout d’abord, l’utilisateur est authentifié (ou non) et le résultat est stocké dans les bases de données du service Azure Active Directory.
 - À intervalles réguliers, toutes les connexions récentes sont traitées. À ce stade, nos algorithmes de sécurité et de surveillance des activités anormales recherchent toute activité suspecte dans les connexions récentes.
-- Après traitement, les rapports sont écrits, mis en cache et placés dans le portail Azure Classic.
+- Après traitement, les rapports sont écrits, mis en cache et placés dans le portail Azure Classic.
 
 ### Durée de génération des rapports
 
-En raison du volume important d’authentifications et de connexions traitées par la plateforme Azure AD, les connexions traitées les plus récentes datent en moyenne d’une heure. Dans de rares cas, il peut s’écouler jusqu’à 8 heures avant le traitement des connexions les plus récentes.
+En raison du volume important d’authentifications et de connexions traitées par la plateforme Azure AD, les connexions traitées les plus récentes datent en moyenne d’une heure. Dans de rares cas, il peut s’écouler jusqu’à 8 heures avant le traitement des connexions les plus récentes.
 
 Vous trouverez la dernière connexion traitée en examinant le texte d’aide en haut de chaque rapport.
 
 ![Texte d’aide en haut de chaque rapport.](./media/active-directory-reporting-getting-started/reportingWatermark.PNG)
 
-> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
 
 
 
 ## Prise en main
 
 
-### Connectez-vous au portail Azure Classic
+### Connectez-vous au portail Azure Classic
 
-Tout d’abord, vous devez vous connecter au [portail Azure Classic](https://manage.windowsazure.com) en tant qu’administrateur global ou administrateur de conformité. Vous devez également être administrateur ou coadministrateur de service d’abonnement Azure ou utiliser l’abonnement Azure « Accès à Azure AD ».
+Tout d’abord, vous devez vous connecter au [portail Azure Classic](https://manage.windowsazure.com) en tant qu’administrateur global ou administrateur de conformité. Vous devez également être administrateur ou coadministrateur de service d’abonnement Azure ou utiliser l’abonnement Azure « Accès à Azure AD ».
 
 ### Accès aux rapports
 
@@ -104,7 +104,7 @@ Pour télécharger un rapport au format CSV, accédez au rapport et cliquez sur 
 
 ![Bouton de téléchargement](./media/active-directory-reporting-getting-started/downloadButton.png)
 
-> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
 
 
 
@@ -122,7 +122,7 @@ Activez ou désactivez la section Notification par courrier électronique des an
 
 ![Section Notifications](./media/active-directory-reporting-getting-started/notificationsSection.png)
 
-### Intégration avec l’API de création de rapports d’Azure AD
+### Intégration avec l’API de création de rapports d’Azure AD
 
 Consultez la rubrique [Prise en main de l’API de création de rapports](active-directory-reporting-api-getting-started.md).
 
@@ -134,7 +134,7 @@ Cliquez sur le bouton Activer l’authentification multifacteur en bas de l’é
 
 ![Bouton Multi-Factor Authentication en bas de l’écran](./media/active-directory-reporting-getting-started/mfaButton.png)
 
-> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
 
 
 
@@ -154,6 +154,6 @@ Consultez la rubrique [Prise en main de l’API de création de rapports](active
 
 Envoyez un message à [aadreportinghelp@microsoft.com](mailto:aadreportinghelp@microsoft.com) pour faire part de vos commentaires, obtenir de l’aide ou poser une question.
 
-> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
+> [AZURE.TIP] Pour plus d’informations sur la création de rapports Azure AD, consultez la page [Affichage de vos rapports d’accès et d’utilisation](active-directory-view-access-usage-reports.md).
 
-<!----HONumber=AcomDC_0309_2016-->
+<!---HONumber=AcomDC_0928_2016-->

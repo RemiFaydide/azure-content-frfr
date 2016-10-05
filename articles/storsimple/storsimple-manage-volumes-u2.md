@@ -12,14 +12,14 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/10/2016"
+   ms.date="09/21/2016"
    ms.author="alkohli" />
 
 # Utilisez le service StorSimple Manager pour gérer les volumes (Mise à jour 2)
 
 [AZURE.INCLUDE [storsimple-version-selector-manage-volumes](../../includes/storsimple-version-selector-manage-volumes.md)]
 
-## Vue d’ensemble
+## Vue d'ensemble
 
 Ce didacticiel explique comment utiliser le service StorSimple Manager pour créer et gérer des volumes sur l’appareil StorSimple et l’appareil virtuel StorSimple avec la mise à jour Update 2 installée.
 
@@ -29,8 +29,8 @@ Le service StorSimple Manager est une extension dans le portail Azure Classic
 
 Les volumes StorSimple peuvent être les suivants :
 
-- **Volumes épinglés localement **: les données de ces volumes restent en permanence sur l’appareil StorSimple local.
-- **Volumes hiérarchisés **: les données de ces volumes peuvent se disperser dans le cloud.
+- **Volumes épinglés localement **: les données de ces volumes restent en permanence sur l’appareil StorSimple local.
+- **Volumes hiérarchisés **: les données de ces volumes peuvent se disperser dans le cloud.
 
 Un volume d’archivage est un type de volume hiérarchisé. La grande taille des blocs de déduplication utilisée pour les volumes d’archivage permet à l’appareil de transférer des segments de données plus importants vers le cloud.
 
@@ -73,28 +73,28 @@ La page **Volumes** vous permet de gérer les volumes de stockage alloués sur l
 
 Un volume est constitué d’une série d’attributs :
 
-- **Nom du volume** : nom descriptif qui doit être unique et vous aide à identifier le volume. Ce nom est également utilisé dans les rapports d’analyse lorsque vous filtrez sur un volume particulier.
+- **Nom du volume** : nom descriptif qui doit être unique et vous aide à identifier le volume. Ce nom est également utilisé dans les rapports d’analyse lorsque vous filtrez sur un volume particulier.
 
-- **État** : peut être en ligne ou hors connexion. Si un volume est hors connexion, il n’est pas visible pour les initiateurs (serveurs) qui sont autorisés à l’utiliser.
+- **État** : peut être en ligne ou hors connexion. Si un volume est hors connexion, il n’est pas visible pour les initiateurs (serveurs) qui sont autorisés à l’utiliser.
 
-- **Capacité** : spécifie le volume total de données qui peut être stocké par l’initiateur (serveur). Les volumes épinglés localement sont totalement configurés et résident sur l’appareil StorSimple. Les volumes hiérarchisés sont alloués dynamiquement et les données dédupliquées. Si les volumes sont alloués dynamiquement, votre appareil ne préalloue pas de capacité de stockage physique localement ou dans le cloud en fonction de la capacité de volume configurée. La capacité du volume est allouée et utilisée à la demande.
+- **Capacité** : spécifie le volume total de données qui peut être stocké par l’initiateur (serveur). Les volumes épinglés localement sont totalement configurés et résident sur l’appareil StorSimple. Les volumes hiérarchisés sont alloués dynamiquement et les données dédupliquées. Si les volumes sont alloués dynamiquement, votre appareil ne préalloue pas de capacité de stockage physique localement ou dans le cloud en fonction de la capacité de volume configurée. La capacité du volume est allouée et utilisée à la demande.
 
-- **Type** : indique si le volume est **Hiérarchisé** (par défaut) ou **Épinglé localement**.
+- **Type** : indique si le volume est **Hiérarchisé** (par défaut) ou **Épinglé localement**.
 
-- **Sauvegarde** : indique si une stratégie de sauvegarde par défaut existe pour le volume.
+- **Sauvegarde** : indique si une stratégie de sauvegarde par défaut existe pour le volume.
 
-- **Accès** : indique les initiateurs (serveurs) autorisés à accéder à ce volume. Les initiateurs qui ne sont pas membres de l’enregistrement de contrôle d’accès (ACR) associé au volume ne voient pas le volume.
+- **Accès** : indique les initiateurs (serveurs) autorisés à accéder à ce volume. Les initiateurs qui ne sont pas membres de l’enregistrement de contrôle d’accès (ACR) associé au volume ne voient pas le volume.
 
 - **Analyse** : indique si un volume est ou non en cours d’analyse. Par défaut, l’analyse est activée au moment de la création du volume. Toutefois, elle est désactivée pour un volume cloné. Pour activer l’analyse d’un volume, suivez les instructions indiquées dans [Analyse d’un volume](#monitor-a-volume).
 
 Suivez les instructions de ce didacticiel pour effectuer les tâches suivantes :
 
-- Ajout d’un volume 
-- Modification d’un volume 
+- Ajout d’un volume
+- Modification d’un volume
 - Modification du type de volume
-- Suppression d’un volume 
-- Mise hors connexion d’un volume 
-- Analyse d’un volume 
+- Suppression d’un volume
+- Mise hors connexion d’un volume
+- Analyse d’un volume
 
 ## Ajout d’un volume
 
@@ -144,8 +144,8 @@ Modifiez un volume lorsque vous avez besoin d’en augmenter la taille ou de mod
 
 > [AZURE.IMPORTANT] 
 >
-> - Si vous modifiez la taille du volume sur l’appareil, vous devez la modifier sur l’hôte également. 
-> - Les étapes côté hôte décrites ici concernent Windows Server 2012 (2012R2). Les procédures pour Linux ou d’autres systèmes d’exploitation sont différentes. Consultez les instructions du système d’exploitation de l’hôte pour modifier le volume sur un hôte exécutant un autre système d’exploitation. 
+> - Si vous modifiez la taille du volume sur l’appareil, vous devez la modifier sur l’hôte également.
+> - Les étapes côté hôte décrites ici concernent Windows Server 2012 (2012R2). Les procédures pour Linux ou d’autres systèmes d’exploitation sont différentes. Consultez les instructions du système d’exploitation de l’hôte pour modifier le volume sur un hôte exécutant un autre système d’exploitation.
 
 #### Pour modifier un volume
 
@@ -299,4 +299,4 @@ Suivez la procédure ci-dessous pour activer ou désactiver l’analyse d’un v
 
  
 
-<!---HONumber=AcomDC_0615_2016-->
+<!---HONumber=AcomDC_0921_2016-->

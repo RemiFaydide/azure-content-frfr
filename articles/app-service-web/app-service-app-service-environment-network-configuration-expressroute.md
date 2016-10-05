@@ -70,7 +70,7 @@ Pour plus d'informations sur la création et la configuration d'itinéraires dé
 
 **Conditions préalables**
 
-1. Installez la toute dernière version d'Azure Powershell à partir de la [page Téléchargements Azure][AzureDownloads] (datant de juin 2015 ou version ultérieure). Sous « Outils de ligne de commande », un lien « Installer » sous « Windows Powershell » permet d'installer les dernières applets de commande Powershell.
+1. Installez la toute dernière version d'Azure Powershell à partir de la [page Téléchargements Azure][AzureDownloads] \(datant de juin 2015 ou version ultérieure). Sous « Outils de ligne de commande », un lien « Installer » sous « Windows Powershell » permet d'installer les dernières applets de commande Powershell.
 
 2. Nous vous recommandons de créer un sous-réseau unique pour un usage exclusif par un environnement App Service. Ceci garantit que les itinéraires définis par l'utilisateur appliqués au sous-réseau ouvriront uniquement le trafic sortant pour l'environnement App Service.
 3. **Important** : ne déployez pas l'environnement App Service **avant** d'avoir exécuté les étapes de configuration suivantes. Ceci garantit que la connectivité réseau sortante est disponible avant la tentative de déploiement d'un environnement App Service.

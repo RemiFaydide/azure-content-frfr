@@ -20,7 +20,7 @@
 
 # Informations de référence pour les développeurs sur les déclencheurs et liaisons Azure Functions
 
-Les articles suivants expliquent comment configurer et coder des déclencheurs et des liaisons dans Azure Functions. Ces articles supposent que vous avez lu l’article [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md), ainsi que les articles de référence pour les développeurs concernant [C#](functions-reference-csharp.md) ou [Node.js](functions-reference-node.md).
+Les articles suivants expliquent comment configurer et coder des déclencheurs et des liaisons dans Azure Functions. Ces articles supposent que vous ayez lu l’article [Informations de référence pour les développeurs sur Azure Functions](functions-reference.md), ainsi que les articles de référence pour les développeurs concernant [C#](functions-reference-csharp.md) ou [F#](functions-reference-fsharp.md) ou [Node.js](functions-reference-node.md).
 
 ## Articles sur les déclencheurs et les liaisons
 
@@ -35,4 +35,4 @@ Pour plus d’informations, consultez les ressources suivantes :
 * [Test d’une fonction](functions-test-a-function.md)
 * [Mettre à l’échelle une fonction](functions-scale.md)
 
-<!---HONumber=AcomDC_0907_2016-->
+<!---HONumber=AcomDC_0921_2016-->

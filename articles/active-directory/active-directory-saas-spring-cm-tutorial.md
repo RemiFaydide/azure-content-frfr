@@ -11,7 +11,7 @@
     ms.topic="article" 
     ms.tgt_pltfrm="na" 
     ms.workload="identity" 
-    ms.date="06/29/2016" 
+    ms.date="09/19/2016" 
     ms.author="jeedes" />
 
 #Didacticiel : Intégration d’Azure AD à SpringCM
@@ -102,11 +102,11 @@ Cette section explique comment permettre aux utilisateurs de s’authentifier su
     2.  Dans la page **Configurer l’authentification unique sur SpringCM** du portail Azure Classic, copiez la valeur **URL de l’émetteur**, puis collez-la dans la zone de texte **Issuer** (Émetteur).
     3.  Dans la page **Configurer l’authentification unique sur SpringCM** du portail Azure Classic, copiez la valeur **URL du service d’authentification unique** et collez-la dans la zone de texte **Point de terminaison initié du fournisseur de services**.
     4.  Dans **SAML activé**, sélectionnez **Activer**.
-    5.  Cliquez sur **Enregistrer**.
+    5.  Cliquez sur **Save**.
 
 8.  Dans le portail Azure Classic, sélectionnez la confirmation de la configuration de l’authentification unique, puis cliquez sur **Terminer** pour fermer la boîte de dialogue **Configurer l’authentification unique**.
 
-    ![Configure Single SignOn](./media/active-directory-saas-spring-cm-tutorial/IC797053.png "Configure Single SignOn")
+    ![Configurer l’authentification unique](./media/active-directory-saas-spring-cm-tutorial/IC797053.png "Configure Single SignOn")
 
 ##Configuration de l'approvisionnement des utilisateurs
   
@@ -132,7 +132,7 @@ Pour se connecter à SpringCM, les utilisateurs d’Azure AD doivent être appro
 
 7.  Ajoutez l’utilisateur à un groupe de sécurité dans **Security group**.
 
-8.  Cliquez sur **Enregistrer**.
+8.  Cliquez sur **Save**.
 
 >[AZURE.NOTE] Vous pouvez utiliser n’importe quel outil ou API de création de compte d’utilisateur, fourni par SpringCM, pour approvisionner des comptes utilisateur AAD.
 
@@ -154,4 +154,4 @@ Pour tester votre configuration, vous devez autoriser les utilisateurs d’Azure
   
 Si vous souhaitez tester vos paramètres d’authentification unique, ouvrez le volet d’accès. Pour plus d’informations sur le volet d’accès, consultez [Présentation du volet d’accès](active-directory-saas-access-panel-introduction.md).
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

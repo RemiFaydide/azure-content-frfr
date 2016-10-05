@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Fichiers multimédia hyperlapse avec Azure Media Hyperlapse"
+	pageTitle="Fichiers multimédias Hyperlapse avec Azure Media Hyperlapse | Microsoft Azure"
 	description="Azure Media Hyperlapse crée des vidéos exceptionnelles image par image accélérées (time-lapse) à partir d'un contenu de caméra à la première personne (first-person camera) ou d'action. Cette rubrique explique comment utiliser Media Indexer."
 	services="media-services"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="06/22/2016"  
+	ms.date="09/19/2016"  
 	ms.author="adsolank"/>
 
 
@@ -29,7 +29,7 @@ Pour connaître les dernières mises à jour d'Azure Media Hyperlapse, consultez
 
 ## Hyperlapse d'un élément multimédia
 
-Vous devez tout d'abord charger votre fichier d'entrée souhaité dans Azure Media Services. Pour en savoir plus sur les concepts relatifs au chargement et à la gestion de contenu, lisez l'[article sur la gestion de contenu](media-services-manage-content.md#upload).
+Vous devez tout d'abord charger votre fichier d'entrée souhaité dans Azure Media Services. Pour en savoir plus sur les concepts relatifs au chargement et à la gestion de contenu, lisez l'[article sur la gestion de contenu](media-services-portal-vod-get-started.md).
 
 ###  <a id="configuration"></a>Configuration de la présélection pour Hyperlapse
 
@@ -75,68 +75,28 @@ Voici un exemple de fichier de configuration conforme au format XML et JSON :
 
 La méthode suivante charge un fichier multimédia en tant qu'élément multimédia et crée une tâche avec le processeur multimédia Azure Media Hyperlapse.
 
-> [AZURE.NOTE] Pour que ce code fonctionne, vous devez déjà disposer d'un CloudMediaContext avec le nom « context ». Pour en savoir plus à ce sujet, lisez l'[article sur la gestion de contenu](media-services-manage-content.md).
+> [AZURE.NOTE] Pour que ce code fonctionne, vous devez déjà disposer d'un CloudMediaContext avec le nom « context ». Pour en savoir plus à ce sujet, lisez l'[article sur la gestion de contenu](media-services-dotnet-get-started.md).
 
 > [AZURE.NOTE] L'argument de chaîne « hyperConfig » doit être une présélection de configuration conforme prédéfinie au format JSON ou XML, comme décrit précédemment.
 
-	static bool RunHyperlapseJob(string input, string output, string hyperConfig)
-	{
-		// create asset with input file
-		IAsset asset = context
-					   .Assets
-					   .CreateAssetAndUploadSingleFile(input, "My Hyperlapse Input", AssetCreationOptions.None);
+static bool RunHyperlapseJob(string input, string output, string hyperConfig) { // create asset with input file IAsset asset = context .Assets .CreateAssetAndUploadSingleFile(input, "My Hyperlapse Input", AssetCreationOptions.None);
 
-		// grab instances of Azure Media Hyperlapse MP
-		IMediaProcessor mp = context
-							 .MediaProcessors
-							 .GetLatestMediaProcessorByName("Azure Media Hyperlapse");
+// grab instances of Azure Media Hyperlapse MP IMediaProcessor mp = context .MediaProcessors .GetLatestMediaProcessorByName("Azure Media Hyperlapse");
 
-		// create Job with Hyperlapse task
-		IJob job = context
-				   .Jobs
-				   .Create(String.Format("Hyperlapse {0}", input));
+// create Job with Hyperlapse task IJob job = context .Jobs .Create(String.Format("Hyperlapse {0}", input));
 
-		if (String.IsNullOrEmpty(hyperConfig))
-		{
-			// config cannot be empty
-			return false;
-		}
+if (String.IsNullOrEmpty(hyperConfig)) { // config cannot be empty return false; }
 
-		hyperConfig = File.ReadAllText(hyperConfig);
+hyperConfig = File.ReadAllText(hyperConfig);
 
-		ITask hyperlapseTask = job.Tasks.AddNew("Hyperlapse task",
-												mp,
-												hyperConfig,
-												TaskOptions.None);
-		hyperlapseTask.InputAssets.Add(asset);
-		hyperlapseTask.OutputAssets.AddNew("Hyperlapse output",
-											AssetCreationOptions.None);
+ITask hyperlapseTask = job.Tasks.AddNew("Hyperlapse task", mp, hyperConfig, TaskOptions.None); hyperlapseTask.InputAssets.Add(asset); hyperlapseTask.OutputAssets.AddNew("Hyperlapse output", AssetCreationOptions.None);
 
 
-		job.Submit();
+job.Submit();
 
-		// Create progress printing and querying tasks
-			Task progressPrintTask = new Task(() =>
-			{
+// Create progress printing and querying tasks Task progressPrintTask = new Task(() => {
 
-				IJob jobQuery = null;
-				do
-				{
-					var progressContext = context;
-					jobQuery = progressContext.Jobs
-											  .Where(j => j.Id == job.Id)
-											  .First();
-					Console.WriteLine(string.Format("{0}\t{1}\t{2}",
-									  DateTime.Now,
-									  jobQuery.State,
-									  jobQuery.Tasks[0].Progress));
-					Thread.Sleep(10000);
-				}
-				while (jobQuery.State != JobState.Finished &&
-					   jobQuery.State != JobState.Error &&
-					   jobQuery.State != JobState.Canceled);
-			});
-			progressPrintTask.Start();
+IJob jobQuery = null; do { var progressContext = context; jobQuery = progressContext.Jobs .Where(j => j.Id == job.Id) .First(); Console.WriteLine(string.Format("{0}\\t{1}\\t{2}", DateTime.Now, jobQuery.State, jobQuery.Tasks[0].Progress)); Thread.Sleep(10000); } while (jobQuery.State != JobState.Finished && jobQuery.State != JobState.Error && jobQuery.State != JobState.Canceled); }); progressPrintTask.Start();
 
 			Task progressJobTask = job.GetExecutionProgressTask(
 												 CancellationToken.None);
@@ -215,4 +175,4 @@ La méthode suivante charge un fichier multimédia en tant qu'élément multimé
 
 [Démonstrations Azure Media Analytics](http://azuremedialabs.azurewebsites.net/demos/Analytics.html)
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

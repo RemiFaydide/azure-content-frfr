@@ -4,7 +4,7 @@
    services="active-directory"
    documentationCenter=""
    authors="andkjell"
-   manager="stevenpo"
+   manager="femila"
    editor=""/>
 
 <tags
@@ -164,8 +164,8 @@ Vous êtes prêt à passer de DirSync à Azure AD lorsque vous avez effectué ce
 
 ### Désinstallation de DirSync (ancien serveur)
 
-- Dans **Programmes et fonctionnalités**, recherchez **Outil de synchronisation Microsoft Azure Active Directory**.
-- Désinstallez **Outil de synchronisation Microsoft Azure Active Directory**.
+- Dans **Programmes et fonctionnalités**, recherchez **Outil de synchronisation Windows Azure Active Directory**.
+- Désinstallez **Outil de synchronisation Windows Azure Active Directory**.
 - La désinstallation peut prendre jusqu’à 15 minutes.
 
 Si vous préférez désinstaller DirSync ultérieurement, vous pouvez également arrêter le serveur ou désactiver le service. Si une erreur survient, cette méthode vous permet de le réactiver. Toutefois, comme il est peu probable que l’étape suivante échoue, cette opération ne devrait pas être nécessaire.
@@ -208,4 +208,4 @@ Installation à l’aide de la configuration rapide | [Installation rapide pour 
 Installation à l’aide des paramètres personnalisés | [Installation personnalisée d’Azure AD Connect](active-directory-aadconnect-get-started-custom.md)
 Comptes utilisés pour l’installation | [Informations supplémentaires sur les autorisations et les comptes Azure AD Connect](active-directory-aadconnect-accounts-permissions.md)
 
-<!----HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0928_2016-->

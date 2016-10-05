@@ -3,8 +3,8 @@
 	description="Stockez des données non structurées dans le cloud avec Azure Blob Storage (stockage d’objets)."
     services="storage"
     documentationCenter=".net"
-    authors="tamram"
-    manager="carmonm"
+    authors="dineshmurthy"
+    manager="jahogg"
     editor="tysonn"/>
 
 <tags
@@ -13,8 +13,8 @@
     ms.tgt_pltfrm="na"
     ms.devlang="na"
     ms.topic="article"
-    ms.date="07/25/2016"
-    ms.author="dineshm"/>
+    ms.date="09/20/2016"
+    ms.author="dineshm;tamram"/>
 
 # Utilisation du stockage d'objets blob à partir de C++  
 
@@ -237,8 +237,8 @@ Maintenant que vous connaissez les bases du stockage d'objets blob, consultez le
 -	[Utilisation du service de stockage de files d'attente à partir de C++](storage-c-plus-plus-how-to-use-queues.md)
 -	[Utilisation du stockage de tables à partir de C++](storage-c-plus-plus-how-to-use-tables.md)
 -	[Listage des ressources Azure Storage en C++](storage-c-plus-plus-enumeration.md)
--	[Référence de la bibliothèque cliente de stockage pour C++](http://azure.github.io/azure-storage-cpp)
--	[Documentation d'Azure Storage](https://azure.microsoft.com/documentation/services/storage/)
-- [Transfert de données avec l’utilitaire de ligne de commande AzCopy](storage-use-azcopy.md)
+-	[Bibliothèque cliente de stockage pour C++](https://msdn.microsoft.com/library/azure/gg433040.aspx) 
+-	[Référence MSDN d’Azure Storage](https://msdn.microsoft.com/library/azure/gg433040.aspx)
+-	[Documentation d'Azure Storage](http://azure.microsoft.com/documentation/services/storage/)
 
-<!---HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0921_2016-->

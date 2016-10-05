@@ -30,4 +30,6 @@ Si vous souhaitez vous connecter à SQL Server via Internet, vous devez configur
 
 9. Cliquez sur **OK** pour enregistrer la règle pour votre machine virtuelle.
 
-<!---HONumber=AcomDC_0629_2016-->
+>[AZURE.NOTE] Il est possible d’avoir un deuxième groupe de sécurité réseau associé à votre sous-réseau (distinct du groupe de sécurité réseau sur la machine virtuelle). Cela n’est pas effectué par l’utilisateur par défaut. Toutefois, si vous avez créé un groupe de sécurité réseau sur votre sous-réseau, vous devez ouvrir le port 1433 sur le sous-réseau et le groupe de sécurité réseau de la machine virtuelle.
+
+<!---HONumber=AcomDC_0921_2016-->

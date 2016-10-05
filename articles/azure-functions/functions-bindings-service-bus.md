@@ -67,6 +67,13 @@ public static void Run(string myQueueItem, TraceWriter log)
 }
 ```
 
+#### Exemple de code F# qui traite un message de file d’attente Service Bus
+
+```fsharp
+let Run(myQueueItem: string, log: TraceWriter) =
+    log.Info(sprintf "F# ServiceBus queue trigger function processed message: %s" myQueueItem)
+```
+
 #### Exemple de code Node.js qui traite un message de file d’attente Service Bus
 
 ```javascript
@@ -168,6 +175,15 @@ public static void Run(TimerInfo myTimer, TraceWriter log, ICollector<string> ou
 }
 ```
 
+#### Exemple de code F# qui crée un message de file d’attente Service Bus
+
+```fsharp
+let Run(myTimer: TimerInfo, log: TraceWriter, outputSbQueue: byref<string>) =
+    let message = sprintf "Service Bus queue message created at: %s" (DateTime.Now.ToString())
+    log.Info(message)
+    outputSbQueue = message
+```
+
 #### Exemple de code Node.js qui crée un message de file d’attente Service Bus
 
 ```javascript
@@ -189,4 +205,4 @@ module.exports = function (context, myTimer) {
 
 [AZURE.INCLUDE [Étapes suivantes](../../includes/functions-bindings-next-steps.md)]
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

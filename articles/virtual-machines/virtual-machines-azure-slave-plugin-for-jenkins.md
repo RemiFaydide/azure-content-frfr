@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="vm-multiple"
 	ms.devlang="java"
 	ms.topic="article"
-	ms.date="06/27/2016"
+	ms.date="09/20/2016"
 	ms.author="robmcm"/>
 
 # Utilisation du plug-in subordonné Azure avec la solution d’intégration continue Jenkins
@@ -67,7 +67,7 @@ Vous les trouverez dans votre [profil d’abonnement]. Vous trouverez ci-dessous
 
 	</PublishData>
 
-Une fois que vous avez votre profil d’abonnement, procédez comme suit pour configurer le plug-in subordonné Azure.
+Une fois que vous avez votre profil d’abonnement, procédez comme suit pour configurer le plug-in subordonné Azure :
 
 1. Dans le tableau de bord Jenkins, cliquez sur **Manage Jenkins** (Gérer Jenkins).
 
@@ -173,7 +173,7 @@ Un modèle de machine virtuelle définit les paramètres qui seront utilisés pa
 
 1. Cliquez sur **Verify Template** pour vérifier si les paramètres spécifiés sont valides.
 
-1. Cliquez sur **Enregistrer**.
+1. Cliquez sur **Save**.
 
 
 ## Créer un travail Jenkins qui s'exécute sur un nœud subordonné sur Azure
@@ -220,7 +220,7 @@ Dans cette section, vous allez créer un travail Jenkins qui s'exécutera sur un
 
 		ant
 
-1. Cliquez sur **Enregistrer**.
+1. Cliquez sur **Save**.
 
 1. Dans le tableau de bord Jenkins, survolez la tâche que vous venez de créer, puis cliquez sur la flèche du menu déroulant pour afficher les options de la tâche.
 
@@ -246,4 +246,4 @@ Pour plus d’informations sur l’utilisation d’Azure avec Java, consultez le
 [checkpoint general template config]: ./media/virtual-machines-azure-slave-plugin-for-jenkins/jenkins-slave-template-general-configuration.png
 [OS Image list sample]: ./media/virtual-machines-azure-slave-plugin-for-jenkins/jenkins-os-family-list-sample.png
 
-<!---HONumber=AcomDC_0706_2016-->
+<!---HONumber=AcomDC_0921_2016-->

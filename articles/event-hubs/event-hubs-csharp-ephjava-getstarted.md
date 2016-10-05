@@ -3,7 +3,7 @@
 	description="Suivez ce didacticiel pour commencer à utiliser Azure Event Hubs, à envoyer des événements en C# et à en recevoir en Java à l’aide d’EventProcessorHost."
 	services="event-hubs"
 	documentationCenter=""
-	authors="fsautomata"
+	authors="jtaubensee"
 	manager="timlt"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="hero-article"
-	ms.date="06/16/2016"
-	ms.author="jotaub"/>
+	ms.date="09/27/2016"
+	ms.author="jotaub;sethm"/>
 
 # Prise en main des hubs d’événements
 
@@ -71,4 +71,4 @@ Vous avez conçu une application opérationnelle qui crée un hub d’événemen
 [solution de messages de file d'attente]: ../service-bus/service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
  
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0928_2016-->

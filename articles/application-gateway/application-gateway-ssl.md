@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/09/2016"
+   ms.date="09/09/2016"
    ms.author="gwallace"/>
 
 # Configurer une passerelle d’application pour le déchargement SSL en utilisant le modèle de déploiement classique
@@ -33,7 +33,7 @@ Il est possible de configurer Azure Application Gateway de façon à mettre fin 
 
 Pour configurer le déchargement SSL sur une passerelle d’application, exécutez les étapes suivantes dans l’ordre indiqué.
 
-1. [Créer une passerelle d’application](#create-a-new-application-gateway)
+1. [Créer une passerelle Application Gateway](#create-an-application-gateway)
 2. [Télécharger des certificats SSL](#upload-ssl-certificates)
 3. [Configurer la passerelle](#configure-the-gateway)
 4. [Définir la configuration de la passerelle](#set-the-gateway-configuration)
@@ -45,57 +45,27 @@ Pour configurer le déchargement SSL sur une passerelle d’application, exécut
 
 Pour créer la passerelle, utilisez l’applet de commande **New-AzureApplicationGateway** en remplaçant les valeurs par les vôtres. La facturation de la passerelle ne démarre pas à ce stade. La facturation commence à une étape ultérieure, lorsque la passerelle a démarré correctement.
 
-Cet exemple montre l'applet de commande sur la première ligne, suivie de la sortie.
-
-	PS C:\> New-AzureApplicationGateway -Name AppGwTest -VnetName testvnet1 -Subnets @("Subnet-1")
-
-	VERBOSE: 4:31:35 PM - Begin Operation: New-AzureApplicationGateway
-	VERBOSE: 4:32:37 PM - Completed Operation: New-AzureApplicationGateway
-	Name       HTTP Status Code     Operation ID                             Error
-	----       ----------------     ------------                             ----
-	Successful OK                   55ef0460-825d-2981-ad20-b9a8af41b399
+	New-AzureApplicationGateway -Name AppGwTest -VnetName testvnet1 -Subnets @("Subnet-1")
 
 Pour vérifier que la passerelle a bien été créée, vous pouvez utiliser l’applet de commande **Get-AzureApplicationGateway**.
 
-Dans l'exemple, *Description*, *InstanceCount* et *GatewaySize* sont des paramètres facultatifs. La valeur par défaut pour *InstanceCount* est 2, avec une valeur maximale de 10. La valeur par défaut pour *GatewaySize* est Medium. Les autres valeurs disponibles sont Small et Large. Les paramètres *VirtualIPs* et *DnsName* sont sans valeur, car la passerelle n’a pas encore démarré. Ces valeurs seront créées une fois la passerelle en cours d'exécution.
+Dans l'exemple, *Description*, *InstanceCount* et *GatewaySize* sont des paramètres facultatifs. La valeur par défaut pour *InstanceCount* est 2, avec une valeur maximale de 10. La valeur par défaut pour *GatewaySize* est Medium. Les autres valeurs disponibles sont Small et Large. Les paramètres *VirtualIPs* et *DnsName* sont sans valeur, car la passerelle n’a pas encore démarré. Ces valeurs seront créées une fois la passerelle en cours d’exécution.
 
-Cet exemple montre l'applet de commande sur la première ligne, suivie de la sortie.
-
-	PS C:\> Get-AzureApplicationGateway AppGwTest
-
-	VERBOSE: 4:39:39 PM - Begin Operation:
-	Get-AzureApplicationGateway VERBOSE: 4:39:40 PM - Completed
-	Operation: Get-AzureApplicationGateway
-	Name: AppGwTest
-	Description:
-	VnetName: testvnet1
-	Subnets: {Subnet-1}
-	InstanceCount: 2
-	GatewaySize: Medium
-	State: Stopped
-	VirtualIPs:
-	DnsName:
-
+	Get-AzureApplicationGateway AppGwTest
 
 ## Télécharger des certificats SSL
 
 Utilisez **Add-AzureApplicationGatewaySslCertificate** pour charger le certificat de serveur au format *pfx* sur la passerelle d’application. Le nom du certificat est choisi par l'utilisateur et doit être unique au sein de la passerelle Application Gateway. Ce certificat est identifié par ce nom dans toutes les opérations de gestion de certificat sur la passerelle Application Gateway.
 
-Cet exemple montre l'applet de commande sur la première ligne, suivie de la sortie. Remplacez les valeurs de l'exemple par les vôtres.
+L’exemple suivant illustre l’applet de commande. Remplacez les valeurs utilisées ici par les vôtres.
 
-	PS C:\> Add-AzureApplicationGatewaySslCertificate  -Name AppGwTest -CertificateName GWCert -Password <password> -CertificateFile <full path to pfx file>
-
-	VERBOSE: 5:05:23 PM - Begin Operation: Get-AzureApplicationGatewaySslCertificate
-	VERBOSE: 5:06:29 PM - Completed Operation: Get-AzureApplicationGatewaySslCertificate
-	Name       HTTP Status Code     Operation ID                             Error
-	----       ----------------     ------------                             ----
-	Successful OK                   21fdc5a0-3bf7-2c12-ad98-192e0dd078ef
+	Add-AzureApplicationGatewaySslCertificate  -Name AppGwTest -CertificateName GWCert -Password <password> -CertificateFile <full path to pfx file>
 
 Ensuite, validez le téléchargement du certificat. Utilisez l’applet de commande **Get-AzureApplicationGatewayCertificate**.
 
 Cet exemple montre l'applet de commande sur la première ligne, suivie de la sortie.
 
-	PS C:\> Get-AzureApplicationGatewaySslCertificate AppGwTest
+	Get-AzureApplicationGatewaySslCertificate AppGwTest
 
 	VERBOSE: 5:07:54 PM - Begin Operation: Get-AzureApplicationGatewaySslCertificate
 	VERBOSE: 5:07:55 PM - Completed Operation: Get-AzureApplicationGatewaySslCertificate
@@ -116,21 +86,20 @@ Les valeurs sont :
 - **Pool de serveurs principaux :** liste des adresses IP des serveurs principaux. Les adresses IP répertoriées doivent appartenir au sous-réseau de réseau virtuel ou doivent correspondre à une adresse IP/VIP publique.
 - **Paramètres du pool de serveurs principaux :** chaque pool comporte des paramètres tels que le port, le protocole et une affinité basée sur des cookies. Ces paramètres sont liés à un pool et sont appliqués à tous les serveurs du pool.
 - **Port frontal :** il s’agit du port public ouvert sur la passerelle Application Gateway. Le trafic atteint ce port, puis il est redirigé vers l’un des serveurs principaux.
-- **Écouteur :** l’écouteur a un port frontal, un protocole (Http ou Https, avec respect de la casse) et le nom du certificat SSL (en cas de configuration du déchargement SSL).
+- **Écouteur :** l’écouteur a un port frontal, un protocole (Http ou Https, avec respect de la casse) et le nom du certificat SSL (en cas de configuration du déchargement SSL).
 - **Règle :** la règle lie l’écouteur et le pool de serveurs principaux et définit vers quel pool de serveurs principaux le trafic doit être dirigé quand il atteint un écouteur spécifique. Actuellement, seule la règle *de base* est prise en charge. La règle de *base* est la distribution de charge par tourniquet.
 
 **Notes de configuration supplémentaires :**
 
-Pour configurer des certificats SSL, le protocole dans **HttpListener** doit passer à *Https* (sensible à la casse). L’élément **SslCert** est ajouté à **HttpListener** avec le même nom que celui utilisé dans le chargement des certificats SSL dans la section ci-dessus. Le port du serveur frontal doit être mis à jour sur 443.
+Pour configurer des certificats SSL, le protocole dans **HttpListener** doit passer à *Https* (sensible à la casse). L’élément **SslCert** est ajouté à **HttpListener** avec le même nom que celui utilisé pour le chargement des certificats SSL dans la section précédente. Le port du serveur frontal doit être mis à jour sur 443.
 
-**Pour activer l’affinité basée sur les cookies** : une passerelle Application Gateway peut être configurée pour garantir qu’une requête d’une session client est toujours dirigée vers la même machine virtuelle dans la batterie de serveurs web. Ceci se fait par l’injection d’un cookie de session qui permet à la passerelle de diriger le trafic de manière appropriée. Pour activer l’affinité basée sur les cookies, définissez **CookieBasedAffinity** sur *Activé* dans l’élément **BackendHttpSettings**.
+**Pour activer l’affinité basée sur les cookies** : une passerelle Application Gateway peut être configurée pour garantir qu’une requête d’une session client est toujours dirigée vers la même machine virtuelle dans la batterie de serveurs web. Ce scénario est réalisé par l’injection d’un cookie de session, qui permet à la passerelle de diriger le trafic de manière appropriée. Pour activer l’affinité basée sur les cookies, définissez **CookieBasedAffinity** sur *Activé* dans l’élément **BackendHttpSettings**.
 
 
 
 Vous pouvez construire votre configuration en créant un objet de configuration ou en utilisant un fichier XML de configuration. Pour construire votre configuration à l’aide d’un fichier XML de configuration, utilisez l’exemple suivant.
 
 **Exemple de configuration XML**
-
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<ApplicationGatewayConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/windowsazure">
@@ -180,16 +149,9 @@ Vous pouvez construire votre configuration en créant un objet de configuration 
 
 ## Définir la configuration de la passerelle
 
-Ensuite, vous allez définir la passerelle Application Gateway. Vous pouvez utiliser l’applet de commande **Set-AzureApplicationGatewayConfig** avec un objet de configuration ou avec un fichier XML de configuration.
+Ensuite, vous définissez la passerelle Application Gateway. Vous pouvez utiliser l’applet de commande **Set-AzureApplicationGatewayConfig** avec un objet de configuration ou avec un fichier XML de configuration.
 
-
-	PS C:\> Set-AzureApplicationGatewayConfig -Name AppGwTest -ConfigFile D:\config.xml
-
-	VERBOSE: 7:54:59 PM - Begin Operation: Set-AzureApplicationGatewayConfig
-	VERBOSE: 7:55:32 PM - Completed Operation: Set-AzureApplicationGatewayConfig
-	Name       HTTP Status Code     Operation ID                             Error
-	----       ----------------     ------------                             ----
-	Successful OK                   9b995a09-66fe-2944-8b67-9bb04fcccb9d
+	Set-AzureApplicationGatewayConfig -Name AppGwTest -ConfigFile D:\config.xml
 
 ## Démarrer la passerelle
 
@@ -198,15 +160,7 @@ Une fois la passerelle configurée, utilisez l’applet de commande **Start-Azur
 
 **Remarque :** l’exécution de l’applet de commande **Start-AzureApplicationGateway** peut prendre jusqu’à 15 à 20 minutes.
 
-
-	PS C:\> Start-AzureApplicationGateway AppGwTest
-
-	VERBOSE: 7:59:16 PM - Begin Operation: Start-AzureApplicationGateway
-	VERBOSE: 8:05:52 PM - Completed Operation: Start-AzureApplicationGateway
-	Name       HTTP Status Code     Operation ID                             Error
-	----       ----------------     ------------                             ----
-	Successful OK                   fc592db8-4c58-2c8e-9a1d-1c97880f0b9b
-
+	Start-AzureApplicationGateway AppGwTest
 
 ## Vérifier l'état de la passerelle
 
@@ -214,7 +168,7 @@ Utilisez l’applet de commande **Get-AzureApplicationGateway** pour vérifier l
 
 Cet exemple montre une passerelle d’application en état de s’exécuter et d’accepter du trafic.
 
-	PS C:\> Get-AzureApplicationGateway AppGwTest
+	Get-AzureApplicationGateway AppGwTest
 
 	Name          : AppGwTest2
 	Description   :
@@ -235,4 +189,4 @@ Si vous souhaitez plus d'informations sur les options d'équilibrage de charge e
 - [Équilibrage de charge Azure](https://azure.microsoft.com/documentation/services/load-balancer/)
 - [Azure Traffic Manager](https://azure.microsoft.com/documentation/services/traffic-manager/)
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

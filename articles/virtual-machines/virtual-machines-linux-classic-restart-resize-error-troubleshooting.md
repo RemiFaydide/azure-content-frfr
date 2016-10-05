@@ -13,7 +13,7 @@
    ms.topic="support-article"
    ms.tgt_pltfrm="vm-linux"
    ms.workload="required"
-   ms.date="06/16/2016"
+   ms.date="09/20/2016"
    ms.devlang="na"
    ms.author="delhan"/>
 
@@ -31,9 +31,9 @@ Lorsque vous essayez de démarrer une machine virtuelle Azure arrêtée ou de re
 
 ## Collecter des journaux d’audit
 
-Pour commencer la résolution des problèmes, collectez les journaux d’audit afin d’identifier l’erreur associée au problème.
+Pour résoudre les problèmes, commencez par collecter les journaux d’audit afin d’identifier l’erreur associée au problème.
 
-Dans le portail Azure, cliquez sur **Parcourir** > **Machines virtuelles** > _votre machine virtuelle Linux_ > **Paramètres** > **Journaux d’audit**.
+Dans le portail Azure, cliquez sur **Parcourir** > **Machines virtuelles** > _votre machine virtuelle Linux_ > **Paramètres** > **Journaux d’audit**.
 
 ## Problème : Erreur lors du démarrage d’une machine virtuelle arrêtée
 
@@ -69,7 +69,7 @@ La demande de redimensionnement de la machine virtuelle doit être exécutée su
 
 Réduisez la taille de la machine virtuelle demandée, puis relancez la demande de redimensionnement.
 
-* Cliquez sur **Parcourir tout** > **Machines virtuelles (classiques)** > _votre machine virtuelle_ > **Paramètres** > **Taille**. Pour connaître la procédure détaillée, consultez [Redimensionner la machine virtuelle](https://msdn.microsoft.com/library/dn168976.aspx).
+* Cliquez sur **Parcourir tout** > **Machines virtuelles (classiques)** > _votre machine virtuelle_ > **Paramètres** > **Taille**. Pour connaître la procédure détaillée, consultez [Redimensionner la machine virtuelle](https://msdn.microsoft.com/library/dn168976.aspx).
 
 S’il est impossible de réduire la taille de la machine virtuelle, procédez comme suit :
 
@@ -85,4 +85,4 @@ Si le service cloud existant n’est pas associé à un réseau virtuel basé su
 
 Si vous rencontrez des problèmes lorsque vous créez une machine virtuelle Linux dans Azure, consultez [Résoudre les problèmes de déploiement liés à la création d’une machine virtuelle Linux dans Azure](../virtual-machines/virtual-machines-linux-troubleshoot-deployment-new-vm.md).
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

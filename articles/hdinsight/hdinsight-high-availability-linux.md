@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="multiple"
 	ms.topic="article"
-	ms.date="07/05/2016"
+	ms.date="09/13/2016"
 	ms.author="larryfr"/>
 
 #Disponibilité et fiabilité des clusters Hadoop dans HDInsight
@@ -41,6 +41,10 @@ Les clusters HDInsight fournissent un nœud principal secondaire, ce qui permet 
 
 > [AZURE.IMPORTANT] Les deux nœuds principaux sont actifs et s'exécutent simultanément sur le cluster. Certains services tels que HDFS ou YARN, ne sont plus « actifs » sur un nœud principal à toute donnée temps (et « En attente » sur le nœud de tête). D'autres services tels que HiveServer2 ou Hive MetaStore sont actifs sur les deux nœuds principaux simultanément.
 
+Les nœuds principaux (et les autres nœuds dans HDInsight) possèdent une valeur numérique comme partie du nom d’hôte du nœud. Par exemple, `hn0-CLUSTERNAME` ou `hn4-CLUSTERNAME`.
+
+> [AZURE.IMPORTANT] N’associez pas la valeur numérique à un nœud si celui-ci est primaire ou secondaire ; la valeur numérique est uniquement présente afin de fournir un nom unique pour chaque nœud.
+
 ###Nœuds Nimbus
 
 Pour les clusters Storm, les nœuds Nimbus offrent des fonctionnalités comparables au service Hadoop JobTracker en distribuant et en surveillant le traitement dans l’ensemble des nœuds de travail. HDInsight fournit 2 nœuds Nimbus pour le type de cluster Storm.
@@ -64,9 +68,9 @@ Le modèle [Create a Linux-based HDInsight cluster with Hue on an Edge Node](htt
 
 ## Accès aux nœuds
 
-L’accès au cluster sur Internet est fourni par le biais d’une passerelle publique et se limite à une connexion aux nœuds principaux et, dans le cas d’un cluster de type R Server sur HDInsight, au nœud de périmètre. L’accès aux services qui s’exécutent sur les nœuds principaux n’est pas affecté par l’existence de plusieurs nœuds principaux, car la passerelle publique achemine les demandes vers le nœud principal qui héberge le service demandé. Par exemple, si Ambari est actuellement hébergé sur le nœud principal 1, la passerelle achemine les demandes entrantes pour Ambari vers ce nœud.
+L’accès au cluster sur Internet est fourni par le biais d’une passerelle publique et se limite à une connexion aux nœuds principaux et, dans le cas d’un cluster de type R Server sur HDInsight, au nœud de périmètre. L’accès aux services qui s’exécutent sur les nœuds principaux n’est pas affecté par l’existence de plusieurs nœuds principaux, car la passerelle publique achemine les demandes vers le nœud principal qui héberge le service demandé. Par exemple, si Ambari est actuellement hébergé sur le nœud principal secondaire, la passerelle achemine les demandes entrantes pour Ambari vers ce nœud.
 
-Lors de l’accès au cluster à l’aide de SSH, la connexion via le port 22 (valeur par défaut pour SSH) entraîne la connexion au nœud principal 0. Une connexion via le port 23 entraîne une connexion au nœud principal 1. Par exemple, `ssh username@mycluster-ssh.azurehdinsight.net` établit une connexion au nœud principal 0 du cluster nommé __mycluster__.
+Lors de l’accès au cluster à l’aide de SSH, la connexion via le port 22 (valeur par défaut pour SSH) entraîne la connexion au nœud principal primaire. Une connexion via le port 23 entraîne une connexion au nœud principal secondaire. Par exemple, `ssh username@mycluster-ssh.azurehdinsight.net` établit une connexion au nœud principal primaire du cluster nommé __mycluster__.
 
 > [AZURE.NOTE] Cela s’applique également aux protocoles basés sur SSH, comme le protocole FTP sécurisé (SFTP).
 
@@ -143,7 +147,7 @@ La réponse ressemblera à ce qui suit :
 	  }
 	}
 
-L’URL indique que le service est en cours d’exécution sur **nœud principal 0**.
+L’URL indique que le service est en cours d’exécution sur un nœud principal nommé __hn0-CLUSTERNAME__.
 
 L'URL indique que le service est en cours d'exécution ou **démarré**.
 
@@ -225,4 +229,4 @@ Dans ce document, vous avez appris comment HDInsight Azure offre une haute dispo
 [azure-powershell]: ../powershell-install-configure.md
 [azure-cli]: ../xplat-cli-install.md
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

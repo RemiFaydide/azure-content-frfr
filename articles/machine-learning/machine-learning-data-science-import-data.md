@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/19/2016"
 	ms.author="garye;bradsev" />
 
 
@@ -53,6 +53,8 @@ Vous pouvez importer un certain nombre de types de données dans votre expérien
 - Texte brut (.txt)
 - Comma-separated values (CSV) avec un en-tête (.csv) ou sans (. nh.csv)
 - Tab-separated values (TSV) avec un en-tête (.tsv) ou sans (. nh.tsv)
+- Fichier Excel
+- Table Azure
 - Table Hive
 - Base de données SQL
 - Valeurs OData
@@ -89,4 +91,4 @@ Au besoin, vous pouvez convertir à nouveau le format de la table de données au
 [edit-metadata]: https://msdn.microsoft.com/library/azure/370b6676-c11c-486f-bf73-35349f842a66/
 [import-data]: https://msdn.microsoft.com/library/azure/4e1b0fe6-aded-4b3f-a36f-39b8862b9004/
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

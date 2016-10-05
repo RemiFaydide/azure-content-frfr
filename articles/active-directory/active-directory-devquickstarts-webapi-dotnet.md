@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="dotnet"
 	ms.topic="article"
-	ms.date="05/16/2016"
+	ms.date="09/16/2016"
 	ms.author="dastrock"/>
 
 
@@ -95,7 +95,7 @@ public class TodoListController : ApiController
 {
 ```
 
-- Lorsqu’un appelant autorisé appelle correctement l’une des API `TodoListController`, l’action peut avoir besoin d’accéder aux informations sur l’appelant. OWIN fournit l’accès aux revendications dans le jeton porteur via l’objet `ClaimsPrincpal`.  
+- Lorsqu’un appelant autorisé appelle correctement l’une des API `TodoListController`, l’action peut avoir besoin d’accéder aux informations sur l’appelant. OWIN fournit l’accès aux revendications dans le jeton porteur via l’objet `ClaimsPrincpal`.
 - Une exigence courante pour les API web consiste à valider les étendues présentes dans le jeton. Cela garantit que l’utilisateur final a octroyé les autorisations requises pour accéder au service To Do List :
 
 ```C#
@@ -139,4 +139,4 @@ Pour référence, l’exemple terminé (sans vos valeurs de configuration) est f
 
 [AZURE.INCLUDE [active-directory-devquickstarts-additional-resources](../../includes/active-directory-devquickstarts-additional-resources.md)]
 
-<!---HONumber=AcomDC_0608_2016-->
+<!---HONumber=AcomDC_0921_2016-->

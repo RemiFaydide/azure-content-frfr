@@ -12,11 +12,15 @@
  ms.tgt_pltfrm="na"
  ms.devlang="multiple"
  ms.topic="article"
- ms.date="08/24/2016"
+ ms.date="09/15/2016"
  ms.author="casoper"/>
 
 
 # Gérer l’expiration du contenu de l’objet BLOB Azure Storage dans Azure CDN
+
+> [AZURE.SELECTOR]
+- [Azure Web Apps/Cloud Services, ASP.NET ou IIS](cdn-manage-expiration-of-cloud-service-content.md)
+- [Service Azure Storage Blob](cdn-manage-expiration-of-blob-content.md)
 
 Le [service BLOB](../storage/storage-introduction.md#blob-storage) dans [Azure Storage](../storage/storage-introduction.md) fait partie des différentes origines Azure intégrées à Azure CDN. Tout contenu d’objet BLOB publiquement accessible peut être mis en cache dans Azure CDN jusqu’à l’expiration de sa durée de vie. La durée de vie est déterminée par l’[en-tête de *contrôle de cache*](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) dans la réponse HTTP d’Azure Storage.
 
@@ -108,4 +112,4 @@ Vous pouvez facilement vérifier la durée de vie de vos objets BLOB. À l’aid
 - [En savoir plus sur les en-têtes *Cache-Control*](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 - [Comment gérer l’expiration des contenus de service cloud dans Azure CDN](./cdn-manage-expiration-of-cloud-service-content.md)
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -12,12 +12,12 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="06/21/2016"
+   ms.date="09/21/2016"
    ms.author="alkohli" />
 
 # Installer Update 2 sur votre appareil StorSimple
 
-## Vue d’ensemble
+## Vue d'ensemble
 
 Ce didacticiel explique comment installer Update 2 sur un appareil StorSimple exécutant une version logicielle antérieure par le biais du portail Azure Classic. Ce didacticiel couvre également les étapes à effectuer pour la mise à jour quand une passerelle est configurée sur une interface réseau différente de DATA 0 de l’appareil StorSimple et que la mise à jour porte sur une version logicielle antérieure à Update 1.
 
@@ -91,4 +91,4 @@ Exécutez la procédure suivante pour appliquer cette mise à jour en tant que c
 
 En savoir plus sur la [version Update 2](storsimple-update2-release-notes.md).
 
-<!---HONumber=AcomDC_0622_2016-->
+<!---HONumber=AcomDC_0921_2016-->

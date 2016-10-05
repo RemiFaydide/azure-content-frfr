@@ -282,4 +282,4 @@ Les configurations requises 1 à 6 (à l’exception de 3) ci-dessus sont limit
 [yellow]: ./media/virtual-network-nsg-overview/yellow.png
 [red]: ./media/virtual-network-nsg-overview/red.png
 
-<!---HONumber=AcomDC_0907_2016-->
+<!-----HONumber=AcomDC_0907_2016-->

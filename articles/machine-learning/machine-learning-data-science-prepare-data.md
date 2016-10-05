@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016" 
+	ms.date="09/19/2016" 
 	ms.author="bradsev" />
 
 
@@ -21,11 +21,11 @@
 
 Le prétraitement et le nettoyage des données sont des tâches importantes qui doivent intervenir avant d'utiliser un jeu de données à des fins d'apprentissage automatique. Les données brutes sont souvent bruyantes, peu fiables et incomplètes. Leur utilisation pour la modélisation peut générer des résultats trompeurs. Ces tâches font partie du processus TDSP (Team Data Science Process) et suivent généralement l'exploration initiale d'un jeu de données utilisé pour découvrir et planifier le traitement préliminaire requis. Pour plus d'instructions sur le processus TDSP, consultez les étapes décrites dans le [processus TDSP (Team Data Science Process)](https://azure.microsoft.com/documentation/learning-paths/cortana-analytics-process/).
 
-Les tâches de traitement préalable et de nettoyage, comme la tâche d'exploration de données, peuvent être exécutées dans une grande variété d'environnements, tels que SQL ou Hive ou Azure Machine Learning Studio et avec différents outils et langages, tels que R ou Python, en fonction de l'emplacement de stockage de vos données et leur mise en forme. Étant donné que le processus CAP est itératif par nature, ces tâches peuvent avoir lieu à diverses étapes du flux de travail du processus.
+Les tâches de traitement préalable et de nettoyage, comme la tâche d'exploration de données, peuvent être exécutées dans une grande variété d'environnements, tels que SQL ou Hive ou Azure Machine Learning Studio et avec différents outils et langages, tels que R ou Python, en fonction de l'emplacement de stockage de vos données et leur mise en forme. Étant donné que le processus TDSP est itératif par nature, ces tâches peuvent avoir lieu à diverses étapes du flux de travail du processus.
 
 Cet article présente différents concepts et tâches de prétraitement des données, à effectuer avant ou après l'intégration de ces données dans Azure Machine Learning.
 
-Pour obtenir un exemple d'exploration de données et de prétraitement effectués dans Azure Machine Learning Studio, consultez la vidéo [Prétraitement des données dans Azure ML Studio](https://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/).
+Pour obtenir un exemple d'exploration de données et de prétraitement effectués dans Azure Machine Learning Studio, consultez la vidéo [Prétraitement des données dans Azure Machine Learning Studio](https://azure.microsoft.com/documentation/videos/preprocessing-data-in-azure-ml-studio/).
 
 
 ## Pourquoi prétraiter et nettoyer les données ?
@@ -54,7 +54,7 @@ Il est possible d’évaluer la qualité globale des données en vérifiant les 
 
 Lorsque vous détectez des problèmes dans les données, des **étapes de traitement** s'imposent : nettoyage des valeurs manquantes, normalisation des données, discrétisation, traitement de texte pour supprimer et/ou remplacer des caractères susceptibles de perturber l'alignement des données, types de données mixtes dans les champs communs, etc.
 
-**Azure Machine Learning n'exploite que les données tabulaires bien formées**. Si les données sont déjà au format tabulaire, Azure Machine Learning peut les prétraiter directement dans ML Studio. Si elles ne sont pas au format tabulaire, comme le format XML, une analyse peut être nécessaire pour les convertir.
+**Azure Machine Learning n'exploite que les données tabulaires bien formées**. Si les données sont déjà au format tabulaire, Azure Machine Learning peut les prétraiter directement dans Machine Learning Studio. Si elles ne sont pas au format tabulaire, comme le format XML, une analyse peut être nécessaire pour les convertir.
 
 ## Quelles sont les principales opérations effectuées lors du prétraitement des données ?
 
@@ -109,4 +109,4 @@ Plusieurs méthodes permettent de réduire la taille des données pour en facili
 
 >*Data Mining : Concepts et Techniques*, 3e édition, Morgan Kaufmann, 2011, Jiawei Han, Micheline Kamber et Jian Pei
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

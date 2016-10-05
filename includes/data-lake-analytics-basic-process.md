@@ -2,9 +2,9 @@
 	
 ![Diagramme du flux de processus Analytique Data Lake Azure](./media/data-lake-analytics-basic-process-include/data-lake-analytics-process.png)
 	
-	1. Create a Data Lake Analytics account.
-	2. Prepare the source data. Data Lake Analytic jobs can read data from either Azure Data Lake Store accounts or Azure Blob storage accounts.   
-	3. Develop a U-SQL script.
-	4. Submit a job (U-SQL script) to the Data Lake Analytics account. The job reads from the source data, process the data as instructed in the U-SQL script, and then save the output to either a Data Lake Store account or a Blob storage account.
+1. Créer un compte Analytique Data Lake.
+2. Préparer les données source. Les travaux Analytique Data Lake peuvent lire les données depuis les comptes Azure Data Store Lake ou les comptes de stockage d’objets blobs Azure.
+3. Développer un script U-SQL.
+4. Envoyer un travail (script U-SQL) vers le compte Analytique Data Lake. Le travail lit les données source, traite les données conformément au script U-SQL, puis enregistre la sortie dans un compte Data Lake Store ou un compte de stockage d’objets Blobs.
 
-<!---HONumber=AcomDC_0427_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -13,8 +13,8 @@
      ms.topic="get-started-article"
      ms.tgt_pltfrm="na"
      ms.workload="na"
-     ms.date="04/20/2016"
-     ms.author="cstreet"/>
+     ms.date="08/25/2016"
+     ms.author="andbuc"/>
 
 
 # Kit de développement logiciel de passerelle IoT (bêta) - Prise en main de Linux
@@ -60,6 +60,13 @@ Avant de commencer, vous devez [configurer votre environnement de développement
           "module path" : "./build/modules/hello_world/libhello_world_hl.so",
           "args" : null
         }
+      ],
+      "links" :
+      [
+        {
+          "source": "hello_world",
+          "sink": "logger_hl"
+        }
       ]
     }
     ```
@@ -76,4 +83,4 @@ Avant de commencer, vous devez [configurer votre environnement de développement
 <!-- Links -->
 [lnk-setupdevbox]: https://github.com/Azure/azure-iot-gateway-sdk/blob/master/doc/devbox_setup.md
 
-<!---HONumber=AcomDC_0720_2016-->
+<!---HONumber=AcomDC_0928_2016-->

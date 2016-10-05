@@ -19,13 +19,13 @@
 
 # Copie de données Blob Storage vers une base de données SQL à l’aide de Data Factory 
 > [AZURE.SELECTOR]
-- [Vue d’ensemble du didacticiel](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
-- [Utilisation de Data Factory Editor](data-factory-copy-activity-tutorial-using-azure-portal.md)
-- [Utiliser PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
-- [Utilisation de Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
-- [Utilisation de l'API REST](data-factory-copy-activity-tutorial-using-rest-api.md)
-- [Utilisation de l’API .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
-- [Utilisation de l’Assistant de copie](data-factory-copy-data-wizard-tutorial.md)
+- [Vue d’ensemble et étapes préalables requises](data-factory-copy-data-from-azure-blob-storage-to-sql-database.md)
+- [Portail Azure](data-factory-copy-activity-tutorial-using-azure-portal.md)
+- [Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md)
+- [PowerShell](data-factory-copy-activity-tutorial-using-powershell.md)
+- [API REST](data-factory-copy-activity-tutorial-using-rest-api.md)
+- [API .NET](data-factory-copy-activity-tutorial-using-dotnet-api.md)
+- [Assistant de copie](data-factory-copy-data-wizard-tutorial.md)
 
 Dans ce didacticiel, vous allez créer une fabrique de données avec un pipeline afin de copier des données entre Blob Storage et la base de données SQL.
 
@@ -62,7 +62,7 @@ Pour réaliser ce didacticiel, vous avez besoin des noms du serveur SQL Azure, d
 5. Fermez tous les panneaux en cliquant sur **X**.
 
 ## Autoriser les services Azure à accéder au serveur 
-Vérifiez que le paramètre **Autoriser l'accès aux services Azure** est **ACTIVÉ** pour votre serveur SQL Azure pour que le service Data Factory puisse accéder à votre serveur SQL Azure. Pour vérifier et activer ce paramètre, procédez comme suit :
+Vérifiez que le paramètre **Autoriser l'accès aux services Azure** est **ACTIVÉ** pour votre serveur SQL Azure pour que le service Data Factory puisse accéder à votre serveur SQL Azure. Pour vérifier et activer ce paramètre, procédez comme suit :
 
 1. Cliquez sur le hub **PARCOURIR** situé à gauche, puis sur **Serveurs SQL**.
 2. Sélectionnez **votre serveur**, puis cliquez sur **PARAMÈTRES** dans le panneau **SQL SERVER**.
@@ -94,20 +94,18 @@ Vérifiez que le paramètre **Autoriser l'accès aux services Azure** est **ACTI
 
 		CREATE CLUSTERED INDEX IX_emp_ID ON dbo.emp (ID);
 
-	**Si SQL Server 2012/2014 est installé sur votre ordinateur :** suivez les instructions de l'[Étape 2 : connexion à la base de données SQL de l'article Gestion de la base de données SQL Azure au moyen de SQL Server Management Studio][sql-management-studio] pour vous connecter à votre serveur SQL Azure et exécuter le script SQL. Cet article utilise le [portail Azure](http://manage.windowsazure.com), et non le [portail Azure](https://portal.azure.com), pour configurer le pare-feu d’un serveur SQL Azure.
+	**Si SQL Server 2012/2014 est installé sur votre ordinateur :** suivez les instructions de l'[Étape 2 : connexion à la base de données SQL de l'article Gestion de la base de données SQL Azure au moyen de SQL Server Management Studio][sql-management-studio] pour vous connecter à votre serveur SQL Azure et exécuter le script SQL. Cet article utilise le [portail Azure Classic](http://manage.windowsazure.com), et non le [nouveau portail Azure](https://portal.azure.com), pour configurer le pare-feu d’un serveur SQL Azure.
 
 	Si votre client n’est pas autorisé à accéder au serveur SQL Azure, vous devez configurer le pare-feu pour votre serveur SQL Azure afin d’autoriser l’accès à partir de votre ordinateur (adresse IP). Consultez [cet article](../sql-database/sql-database-configure-firewall-settings.md) pour savoir comment configurer le pare-feu de votre serveur SQL Azure.
 
+Vous avez terminé les étapes préalables requises. Cliquez sur un onglet en haut pour réaliser le didacticiel à l’aide de l’une de ces options :
 
-Effectuez les actions suivantes :
-
-- Cliquez sur le lien [Utilisation de Data Factory Editor](data-factory-copy-activity-tutorial-using-azure-portal.md) situé dans la partie supérieure pour effectuer le didacticiel à l’aide de Data Factory Editor, qui fait partie du portail Azure.
-- Cliquez sur le lien [Utilisation de PowerShell](data-factory-copy-activity-tutorial-using-powershell.md) situé dans la partie supérieure pour effectuer le didacticiel à l'aide d'Azure PowerShell.
-- Cliquez sur le lien [Utilisation de Visual Studio](data-factory-copy-activity-tutorial-using-visual-studio.md) situé dans la partie supérieure pour suivre le didacticiel à l’aide de Visual Studio 2013.
-
-## activité de copie
-Pour plus d’informations sur l’activité de copie dans Azure Data Factory, consultez l’article [Activités de déplacement des données](data-factory-data-movement-activities.md).
-
+- Portail Azure
+- Visual Studio
+- PowerShell
+- API REST
+- API .NET
+- Assistant de copie
 
 <!--Link references-->
 [azure-free-trial]: http://azure.microsoft.com/pricing/free-trial/
@@ -118,4 +116,4 @@ Pour plus d’informations sur l’activité de copie dans Azure Data Factory, c
 [data-factory-create-storage]: http://azure.microsoft.com/documentation/articles/storage-create-storage-account/#create-a-storage-account
 [data-factory-create-sql-database]: ../sql-database/sql-database-get-started.md
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

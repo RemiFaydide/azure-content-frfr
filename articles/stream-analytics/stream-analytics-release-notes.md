@@ -4,7 +4,7 @@
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
@@ -70,7 +70,7 @@ Cette version contient les mises à jour suivantes.
 Intitulé | Description
 ---|---
 Version préliminaire publique d’IoT Azure Suite | Stream Analytics est inclus dans la version préliminaire publique d’IoT Azure Suite.
-Intégration du portail Azure | En plus de continuer à être présent dans le portail de gestion Azure, Stream Analytics est désormais intégré au [portail Azure](https://azure.microsoft.com/overview/preview-portal/). Notez que la fonctionnalité Stream Analytics dans le portail en version préliminaire correspond actuellement à un sous-ensemble des fonctionnalités fournies dans le portail de gestion Azure, sans prise en charge du test de requête dans un navigateur, de la configuration Power BI et de la possibilité d’accès aux ressources d’entrée et de sortie ou de création de ces ressources dans vos abonnements.
+Intégration du portail Azure | En plus de continuer à être présent dans le portail de gestion Azure, Stream Analytics est désormais intégré au [portail Azure](https://azure.microsoft.com/overview/preview-portal/). Notez que la fonctionnalité Stream Analytics du portail en version préliminaire correspond actuellement à un sous-ensemble des fonctionnalités fournies dans le Portail de gestion Azure, sans prise en charge du test de requête dans un navigateur, de la configuration Power BI et de la possibilité d’accès aux ressources d’entrée et de sortie ou de création de ces ressources dans vos abonnements.
 Prise en charge de la sortie DocumentDB | Les tâches Stream Analytics peuvent désormais générer une sortie vers [DocumentDB](https://azure.microsoft.com/services/documentdb/).
 Prise en charge de l’entrée IoT Hub | Les tâches Stream Analytics peuvent à présent recevoir des données à partir d’IoT Hub.
 TIMESTAMP BY pour les événements hétérogènes | Quand un flux de données unique contient plusieurs types d’événements ayant des horodatages dans différents champs, vous pouvez désormais utiliser [TIMESTAMP BY](http://msdn.microsoft.com/library/mt573293.aspx) avec des expressions pour spécifier différents champs d’horodatage pour chaque cas.
@@ -101,7 +101,7 @@ Intitulé|Description
 ---|---
 ID d’organisation Power BI dissocié de l’ID Azure|Cette fonctionnalité permet une [sortie Power BI](stream-analytics-power-bi-dashboard.md) pour les tâches ASA dans tout type de compte Azure (Live ID ou ID d’organisation). En outre, vous pouvez avoir un ID d’organisation pour votre compte Azure et en utiliser un autre pour autoriser la sortie de Power BI.
 Prise en charge de la sortie de files d’attente de Service Bus|Les sorties de [files d’attente Service Bus](stream-analytics-connect-data-event-outputs.md#service-bus-queues) sont désormais disponibles dans les tâches Stream Analytics.
-Prise en charge de la sortie de rubriques de Service Bus|Les sorties de [rubriques Service Bus](stream-analytics-connect-data-event-outputs.md#service-bus-topics) sont maintenant disponibles dans les tâches Stream Analytics.
+Prise en charge de la sortie de rubriques de Service Bus|Les sorties de [rubriques Service Bus](stream-analytics-connect-data-event-outputs.md#service-bus-topics) sont maintenant disponibles dans les travaux Stream Analytics.
 
 ## Notes relatives à la version du 09/07/2015 de Stream Analytics ##
 
@@ -127,7 +127,7 @@ Format de sortie JSON : Séparé par une ligne ou tableau|Il existe désormais
 
 Intitulé|Description
 ---|---
-Retard dans la configuration du compte Azure Storage|Si vous créez un travail Stream Analytics dans une région pour la première fois, vous devez créer un compte de stockage ou indiquer un compte existant pour la surveillance des travaux Stream Analytics de cette région. En raison d’une latence dans la configuration de la surveillance, la création d’autres travaux Stream Analytics dans la même région dans les 30 minutes entraîne une invitation à indiquer un second compte de stockage au lieu d’afficher celui que vous venez de configurer dans la liste déroulante Surveillance de compte de stockage. Pour éviter la création d’un compte de stockage inutile, attendez 30 minutes après votre première création de travail dans une région, puis procédez à la configuration des travaux supplémentaires dans cette région.
+Retard dans la configuration du compte Azure Storage|Si vous créez un travail Stream Analytics dans une région pour la première fois, vous devez créer un compte de stockage ou indiquer un compte existant pour la surveillance des travaux Stream Analytics de cette région. En raison d’une latence dans la configuration de la surveillance, la création d’autres travaux Stream Analytics dans la même région dans les 30 minutes entraîne une invitation à indiquer un second compte de stockage au lieu d’afficher celui que vous venez de configurer dans la liste déroulante Surveillance de compte de stockage. Pour éviter la création d'un compte de stockage inutile, attendez 30 minutes après votre première création de travail dans une région, puis procédez à la configuration des travaux supplémentaires dans cette région.
 Mise à niveau d’un travail|Pour le moment, Stream Analytics ne prend pas en charge les modifications de définition ou de configuration en direct d’un travail en cours d’exécution. Pour modifier l’entrée, la sortie, la requête, la mise à l’échelle ou la configuration d’un travail en cours d’exécution, vous devez tout d’abord l’arrêter.
 Types de données déduits de la source d’entrée|Si une instruction CRÉER UNE TABLE n’est pas utilisée, le type d’entrée est dérivé du format d’entrée, par exemple tous les champs du CSV sont des chaînes. Les champs doivent être explicitement convertis au type correct à l’aide de la fonction CAST pour éviter les erreurs d’incompatibilité des types.
 Les champs manquants sont renvoyés comme valeurs nulles.|Faire référence à un champ qui n’est pas présent dans la source d’entrée génère des valeurs nulles dans l’événement de sortie.
@@ -149,4 +149,4 @@ Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https:
 - [Références sur l’API REST de gestion d’Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

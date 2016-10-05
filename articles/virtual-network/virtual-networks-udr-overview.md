@@ -94,4 +94,4 @@ La machine virtuelle d’appliance virtuelle doit être capable de recevoir le t
 - Découvrez comment [créer des itinéraires dans le modèle de déploiement du Gestionnaire de ressources](virtual-network-create-udr-arm-template.md) et les associer à des sous-réseaux.
 - Découvrez comment [créer des itinéraires dans le modèle de déploiement classique](virtual-network-create-udr-classic-ps.md) et les associer à des sous-réseaux.
 
-<!---HONumber=AcomDC_0810_2016-->
+<!-----HONumber=AcomDC_0810_2016-->

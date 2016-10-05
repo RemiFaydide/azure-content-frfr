@@ -74,4 +74,4 @@ Pour en savoir plus sur les fonctions de Data Catalog, voir :
 * [Configuration du glossaire métier](data-catalog-how-to-business-glossary.md)
 * [Forum Aux Questions (FAQ)](data-catalog-frequently-asked-questions.md)
 
-<!---HONumber=AcomDC_0921_2016-->
+<!-----HONumber=AcomDC_0921_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article" 
    ms.tgt_pltfrm="na"
    ms.workload="infrastructure-services"
-   ms.date="08/04/2016"
+   ms.date="09/19/2016"
    ms.author="cherylmc"/>
 
 # Forum Aux Questions ExpressRoute
@@ -53,6 +53,7 @@ La plupart des services Azure sont pris en charge via ExpressRoute.
 
 - La connectivité aux machines virtuelles et services cloud déployés dans des réseaux virtuels est prise en charge sur le chemin d’accès d’homologation privée.
 - Sites Web Azure est pris en charge sur le chemin d’accès d’homologation publique.
+- IoT Hub est pris en charge sur le chemin d’accès d’homologation publique.
 - Office 365 est pris en charge sur le chemin d'accès homologation Microsoft.
 - Tous les autres services sont accessibles via le chemin d’accès d’homologation publique. Les exceptions sont les suivantes.
 
@@ -240,4 +241,4 @@ Oui. Les points de terminaison du service Office 365 sont accessibles via Inter
 ### Dynamics AX Online est-il accessible par le biais d’une connexion ExpressRoute ?
 Non, ce n’est pas pris en charge.
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

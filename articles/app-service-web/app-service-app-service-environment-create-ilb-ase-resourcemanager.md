@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="07/20/2016" 
+	ms.date="09/21/2016" 
 	ms.author="stefsch"/>
 
 # Comment créer un ILB ASE à l’aide des modèles Azure Resource Manager
@@ -29,7 +29,7 @@ La création automatisée d’un ILB ASE comporte trois étapes :
 ## Création de l’ILB ASE de base ##
 Un exemple de modèle Azure Resource Manager et de son fichier de paramètres associés, sont disponibles sur GitHub [ici][quickstartilbasecreate].
 
-La plupart des paramètres dans le fichier *azuredeploy.parameters.json* sont communs à la création d’ILB ASE, ainsi que d’ASE liés à une adresse IP virtuelle publique. La liste ci-dessous répertorie les paramètres spécifiques, ou qui sont uniques, lors de la création d’un ILB ASE :
+La plupart des paramètres du fichier *azuredeploy.parameters.json* sont communs à la création d’ASE ILB, ainsi que d’ASE liés à une adresse IP virtuelle publique. La liste ci-dessous répertorie les paramètres spécifiques, ou qui sont uniques, lors de la création d’un ILB ASE :
 
 
 - *interalLoadBalancingMode* : dans la plupart des cas, définissez ce paramètre sur 3, ce qui signifie que le trafic HTTP/HTTPS sur les ports 80/443 ainsi que les ports de canaux de contrôle/données écoutés par le service FTP sur l’ASE seront liés à une adresse interne du réseau virtuel allouée à l’ILB. Si cette propriété a la valeur 2, seuls les ports relatifs au service FTP (canaux de contrôle et de données) seront liés à une adresse d’ILB, tandis que le trafic HTTP/HTTPS restera sur l’adresse IP virtuelle publique.
@@ -43,7 +43,7 @@ Une fois le fichier *azuredeploy.parameters.json* renseigné pour un ILB ASE, ce
     
     New-AzureRmResourceGroupDeployment -Name "CHANGEME" -ResourceGroupName "YOUR-RG-NAME-HERE" -TemplateFile $templatePath -TemplateParameterFile $parameterPath
 
-Une fois le modèle Azure Resource Manager soumis, la création de l’ILB ASE prendra quelques heures. Une fois la création terminée, l’ILB ASE s’affichera sur le portail dans la liste des environnements App Service pour l’abonnement qui a déclenché le déploiement.
+Une fois le modèle Azure Resource Manager soumis, la création de l’ILB ASE prendra quelques heures. Une fois la création terminée, l’ASE ILB s’affichera dans le portail dans la liste des environnements App Service pour l’abonnement qui a déclenché le déploiement.
 
 ## Téléchargement et configuration du certificat SSL « par défaut » ##
 
@@ -81,7 +81,7 @@ Les paramètres du fichier *azuredeploy.parameters.json* sont répertoriés ci-d
 - *pfxBlobString* : représentation sous forme de chaîne codée en Base64 du fichier .pfx. À l’aide de l’extrait de code ci-dessus, copiez la chaîne contenue dans « exportedcert.pfx.b64 » et collez-la en tant que valeur de l’attribut *pfxBlobString*.
 - *password* : mot de passe utilisé pour sécuriser le fichier .pfx.
 - *certificateThumbprint* : empreinte numérique du certificat. Si vous récupérez cette valeur à partir de Powershell (par exemple, *$certificate.Thumbprint* dans l’extrait de code précédent), vous pouvez utiliser la valeur telle quelle. Toutefois, si vous copiez la valeur à partir de la boîte de dialogue de certificat Windows, n’oubliez pas de retirer les espaces superflus. La valeur *certificateThumbprint* doit se présenter sous la forme suivante : AF3143EB61D43F6727842115BB7F17BBCECAECAE.
-- *certificateName* : identificateur de chaîne convivial de votre choix permettant d’identifier le certificat. Ce nom fait partie de l’identificateur Azure Resource Manager unique pour l’entité *Microsoft.Web/certificates* qui représente le certificat SSL.
+- *certificateName* : identificateur de chaîne convivial de votre choix permettant d’identifier le certificat. Ce nom fait partie de l’identificateur Azure Resource Manager unique pour l’entité *Microsoft.Web/certificates* qui représente le certificat SSL. Le nom **doit** se terminer par le suffixe suivant : \_nomdevotreASE\_InternalLoadBalancingASE. Ce suffixe permet au portail d’indiquer que le certificat est utilisé pour sécuriser un ASE avec équilibrage de charge interne.
 
 
 Un exemple abrégé de fichier *azuredeploy.parameters.json* est présenté ci-dessous :
@@ -107,7 +107,7 @@ Un exemple abrégé de fichier *azuredeploy.parameters.json* est présenté ci-d
                    "value": "AF3143EB61D43F6727842115BB7F17BBCECAECAE"
               },
               "certificateName": {
-                   "value": "DefaultCertificateFor_yourASENameHere"
+                   "value": "DefaultCertificateFor_yourASENameHere_InternalLoadBalancingASE"
               }
          }
     }
@@ -121,7 +121,7 @@ Une fois le fichier *azuredeploy.parameters.json* renseigné, le certificat SSL 
 
 Une fois le modèle Azure Resource Manager soumis, cela prendra environ quarante minutes par serveur frontal de l’ASE pour que la modification soit appliquée. Par exemple, avec un ASE par défaut utilisant deux serveurs frontaux, l’application du modèle prendra environ une heure et vingt minutes. Lorsque le modèle est en cours d’exécution, l’ASE ne peut pas être mis à l’échelle.
 
-Une fois le modèle terminé, les applications sur l’ILB ASE sont accessibles via le protocole HTTPS et les connexions sont sécurisées à l’aide du certificat SSL par défaut. Le certificat SSL par défaut est utilisé lorsque les applications sur l’ILB ASE sont gérées à l’aide d’une combinaison du nom de l’application et du nom d’hôte par défaut. Par exemple *https://mycustomapp.internal-contoso.com* utiliserait le certificat SSL par défaut pour **.internal-contoso.com*.
+Une fois le modèle terminé, les applications sur l’ILB ASE sont accessibles via le protocole HTTPS et les connexions sont sécurisées à l’aide du certificat SSL par défaut. Le certificat SSL par défaut est utilisé lorsque les applications sur l’ILB ASE sont gérées à l’aide d’une combinaison du nom de l’application et du nom d’hôte par défaut. Par exemple, *https://mycustomapp.internal-contoso.com* utiliserait le certificat SSL par défaut pour **.internal-contoso.com*.
 
 Toutefois, tout comme les applications qui s’exécutent sur le service public mutualisé, les développeurs peuvent également configurer des noms d’hôte personnalisés pour les applications individuelles, puis configurer des liaisons de certificat SNI SSL uniques pour ces applications individuelles.
 
@@ -142,4 +142,4 @@ Tous les articles et procédures concernant les environnements App Service sont 
 [configuringDefaultSSLCertificate]: https://azure.microsoft.com/documentation/templates/201-web-app-ase-ilb-configure-default-ssl/
  
 
-<!---HONumber=AcomDC_0720_2016-->
+<!---HONumber=AcomDC_0921_2016-->

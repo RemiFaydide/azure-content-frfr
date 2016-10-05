@@ -61,34 +61,30 @@ Nous allons créer une application de base à l’aide de XCode afin d’illustr
 
 	![][3]
 
-6. Pour **XCode 7**, ajoutez `libxml2.tbd` au lieu de `libxml2.dylib`.
-
-7. De retour sur le portail Azure, dans la page **Informations de connexion** de votre application, copiez la chaîne de connexion.
+6. De retour sur le portail Azure, dans la page **Informations de connexion** de votre application, copiez la chaîne de connexion.
 
 	![][4]
 
-8. Dans le fichier **AppDelegate.m**, ajoutez la ligne de code suivante.
+7. Dans le fichier **AppDelegate.m**, ajoutez la ligne de code suivante.
 
 		#import "EngagementAgent.h"
 
-9. Collez la chaîne de connexion dans le délégué `didFinishLaunchingWithOptions`
+8. Collez la chaîne de connexion dans le délégué `didFinishLaunchingWithOptions`
 
 		- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 		{
-  			[...]
-			//[EngagementAgent setTestLogEnabled:YES];
-   
+  			[...]   
   			[EngagementAgent init:@"Endpoint={YOUR_APP_COLLECTION.DOMAIN};SdkKey={YOUR_SDK_KEY};AppId={YOUR_APPID}"];
   			[...]
 		}
 
-10. `setTestLogEnabled` est une instruction facultative qui active les journaux du Kit de développement logiciel (SDK) pour vous permettre d’identifier des problèmes.
+9. `setTestLogEnabled` est une instruction facultative qui active les journaux du Kit de développement logiciel (SDK) pour vous permettre d’identifier des problèmes.
 
 ##<a id="monitor"></a>Activation de l’analyse en temps réel
 
 Pour commencer à envoyer des données et vous assurer que les utilisateurs sont actifs, vous devez envoyer au moins un écran (activité) au serveur principal Mobile Engagement.
 
-1. Ouvrez le fichier **ViewController.h** et importez **EngagementViewController.h** :
+1. Ouvrez le fichier **ViewController.h** et importez **EngagementViewController.h** :
 
     `# import "EngagementViewController.h"`
 
@@ -121,6 +117,7 @@ Mobile Engagement vous permet d’interagir et d’atteindre vos utilisateurs e
 1. Dans le fichier **AppDeletegate.m**, importez le module Couverture d'Engagement.
 
 		#import "AEReachModule.h"
+		#import <UserNotifications/UserNotifications.h>
 
 2. Dans la méthode `application:didFinishLaunchingWithOptions`, créez un module Couverture et passez-le à votre ligne d’initialisation Engagement existante :
 
@@ -135,12 +132,19 @@ Mobile Engagement vous permet d’interagir et d’atteindre vos utilisateurs e
 
 1. Ajoutez la ligne suivante à la méthode `application:didFinishLaunchingWithOptions` :
 
-		if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-			[application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert) categories:nil]];
+		if (NSFoundationVersionNumber >= NSFoundationVersionNumber_iOS_8_0)
+		{
+			if (NSFoundationVersionNumber > NSFoundationVersionNumber_iOS_9_x_Max)
+			{
+				[UNUserNotificationCenter.currentNotificationCenter requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {}];
+			}else
+			{
+				[application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert)   categories:nil]];
+			}
 			[application registerForRemoteNotifications];
 		}
-		else {
-
+		else
+		{
 			[application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
 		}
 
@@ -178,4 +182,4 @@ Mobile Engagement vous permet d’interagir et d’atteindre vos utilisateurs e
 [3]: ./media/mobile-engagement-ios-get-started/xcode-build-phases.png
 [4]: ./media/mobile-engagement-ios-get-started/app-connection-info-page.png
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

@@ -12,7 +12,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="TBD"
-   ms.date="05/09/2016"
+   ms.date="09/21/2016"
    ms.author="alkohli" />
 
 # Utilisation du tableau de bord d’appareil StorSimple Manager
@@ -100,4 +100,4 @@ Vous aurez peut-être besoin de l'IQN cible au moment de configurer le protocole
 - En savoir plus sur le [tableau de bord du service StorSimple Manager](storsimple-service-dashboard.md).
 - En savoir plus sur [l’utilisation du service StorSimple Manager pour gérer votre appareil StorSimple](storsimple-manager-service-administration.md).
 
-<!---HONumber=AcomDC_0601_2016-->
+<!---HONumber=AcomDC_0921_2016-->

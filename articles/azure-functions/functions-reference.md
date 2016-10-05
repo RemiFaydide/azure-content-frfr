@@ -145,8 +145,9 @@ Voici un tableau de toutes les liaisons prises en charge.
 Pour plus d’informations, consultez les ressources suivantes :
 
 * [Informations de référence pour les développeurs C# sur Azure Functions](functions-reference-csharp.md)
+* [Informations de référence pour les développeurs F# sur Azure Functions](functions-reference-fsharp.md)
 * [Azure Functions NodeJS developer reference (Référence pour les développeurs NodeJS Azure Functions)](functions-reference-node.md)
 * [Déclencheurs et liaisons Azure Functions](functions-triggers-bindings.md)
 * [Azure Functions : The Journey](https://blogs.msdn.microsoft.com/appserviceteam/2016/04/27/azure-functions-the-journey/) (Découverte d’Azure Functions) sur le blog d’Azure App Service. Un historique sur le développement d’Azure Functions.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

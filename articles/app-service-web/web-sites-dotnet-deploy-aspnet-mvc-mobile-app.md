@@ -49,7 +49,7 @@ Configurez l’environnement de développement en installant le Kit de développ
 
 Vous aurez également besoin d'un émulateur de navigateur mobile. Vous pouvez utiliser l'un des émulateurs suivants :
 
--   Émulateur de navigateur dans les [outils de développement F12 d’Internet Explorer 11][EmulatorIE11] (utilisés dans toutes les captures d’écran de navigateur mobile). Il dispose de présélections de chaîne d'agent utilisateur pour Windows Phone 8, Windows Phone 7 et l'iPad d'Apple.
+-   Émulateur de navigateur dans les [outils de développement F12 d’Internet Explorer 11][EmulatorIE11] \(utilisés dans toutes les captures d’écran de navigateur mobile). Il dispose de présélections de chaîne d'agent utilisateur pour Windows Phone 8, Windows Phone 7 et l'iPad d'Apple.
 -	Émulateur de navigateur de [Google Chrome DevTools][EmulatorChrome]. Il inclut des présélections pour de nombreux périphériques Android, ainsi que pour l'iPhone d'Apple, l'iPad d'Apple et le Kindle Fire d'Amazon. Il émule également des événements tactiles.
 -   [Émulateur mobile Opera][EmulatorOpera]
 

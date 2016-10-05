@@ -5,7 +5,7 @@
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
@@ -27,7 +27,7 @@ Bien qu’Azure Stream Analytics ne prenne pas en charge la reprise d’une tâc
 ##Partie 1 – Préparation du nouveau jeu d’informations d’identification :
 Cette partie concerne les entrées/sorties suivantes :
 
-* Stockage d'objets blob
+* Stockage d’objets blob
 * Hubs d'événements
 * Base de données SQL
 * Stockage de tables
@@ -93,7 +93,7 @@ Pour les autres entrées/sorties, passez à la partie 2.
 3.	Un test de connexion démarre automatiquement lorsque vous enregistrez vos modifications ; assurez-vous qu’il a réussi.
 4.	Passez à la partie 4.
 
-###Event Hubs
+###Hubs d’événements
 1.	Recherchez le champ Clé de la stratégie du hub d’événements et collez votre nouvelle clé dans ce dernier : ![graphic33][graphic33]
 2.	Cliquez sur la commande Enregistrer et confirmez l’enregistrement de vos modifications : ![graphic34][graphic34]
 3.	Un test de connexion démarre automatiquement lorsque vous enregistrez vos modifications ; assurez-vous qu’il a réussi.
@@ -122,7 +122,7 @@ Pour les autres entrées/sorties, passez à la partie 2.
 
 ##Partie 5 – Suppression de l’ancien jeu d’informations d’identification
 Cette partie concerne les entrées/sorties suivantes :
-* Stockage d'objets blob
+* Stockage d’objets blob
 * Hubs d'événements
 * Base de données SQL
 * Stockage de tables
@@ -141,7 +141,7 @@ Le message de confirmation suivant s’affiche.
 
 	Command(s) completed successfully.
 
-## Obtenir de l'aide
+## Obtenir de l’aide
 Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https://social.msdn.microsoft.com/Forums/fr-FR/home?forum=AzureStreamAnalytics)
 
 ## Étapes suivantes
@@ -198,4 +198,4 @@ Pour obtenir une assistance, essayez notre [forum Azure Stream Analytics](https:
 [graphic43]: ./media/stream-analytics-login-credentials-inputs-outputs/43-stream-analytics-login-credentials-inputs-outputs.png
  
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

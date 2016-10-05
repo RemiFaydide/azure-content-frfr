@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article"
-	ms.date="08/10/2016"
+	ms.date="09/22/2016"
 	ms.author="curtand"/>
 
 
@@ -77,6 +77,8 @@ Nous décrivons ici les tâches effectuées dans le Portail Azure Classic. Pour 
 
 Dans Azure AD, vous pouvez très facilement définir une règle simple pour déterminer les utilisateurs qui sont membres du groupe. Une règle simple est une règle qui ne fait qu’une seule comparaison. Par exemple, si un groupe est affecté à une application SaaS, vous pouvez définir une règle pour ajouter des utilisateurs ayant la fonction « Représentant ». Cette règle accorde ensuite l’accès à cette application SaaS à tous les utilisateurs ayant ce poste dans votre annuaire.
 
+Lorsqu’un attribut d’un utilisateur change, le système évalue toutes les règles de groupe dynamique d’un annuaire pour voir si la modification de l’attribut de l’utilisateur déclenche des ajouts ou suppressions de groupe. Si un utilisateur respecte une règle d’un groupe, il est ajouté en tant que membre de ce groupe. S’il ne respecte plus la règle d’un groupe dont il est membre, il est supprimé de ce groupe.
+
 > [AZURE.NOTE] Vous pouvez définir une règle d’appartenance dynamique sur les groupes de sécurité ou Office 365. Les appartenances à des groupes imbriquées ne sont pas prises en charge pour l’affectation basée sur le groupe à des applications.
 >
 > L’appartenance dynamique à des groupes nécessite qu’une licence Azure AD Premium soit affectée à
@@ -114,4 +116,4 @@ Ces articles fournissent des informations supplémentaires sur Azure Active Dire
 
 * [Intégration des identités locales dans Azure Active Directory](active-directory-aadconnect.md)
 
-<!---HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0928_2016-->

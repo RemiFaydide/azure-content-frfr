@@ -13,13 +13,13 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/14/2016" 
+	ms.date="09/19/2016" 
 	ms.author="bradsev" />
 
 
 # Comment identifier les scénarios et planifier le traitement des données d’analyse avancée
 
-Quelles ressources devez-vous inclure lors de la configuration d’un environnement à des fins de traitement des analyses avancées sur un jeu de données ? Cet article propose une série de questions qui permettront d’identifier les tâches et les ressources pertinentes pour votre scénario. L’ordre des étapes principales pour l’analyse prédictive est défini dans le document [Qu’est-ce que le processus TDSP (Team Data Science Process) ?](data-science-process-overview.md). Chacune de ces étapes nécessite des ressources spécifiques pour les tâches correspondant à votre scénario. Les principales questions pour identifier votre scénario concernent la logistique de données, leurs caractéristiques, la qualité des jeux de données, ainsi que les outils et les langues à utiliser pour effectuer l’analyse.
+Quelles ressources devez-vous inclure lors de la configuration d’un environnement à des fins de traitement des analyses avancées sur un jeu de données ? Cet article propose une série de questions qui permettront d’identifier les tâches et les ressources pertinentes pour votre scénario. L’ordre des étapes principales pour l’analyse prédictive est défini dans [Qu’est-ce que le processus TDSP (Team Data Science Process) ?](data-science-process-overview.md). Chacune de ces étapes nécessite des ressources spécifiques pour les tâches correspondant à votre scénario. Les principales questions pour identifier votre scénario concernent la logistique de données, leurs caractéristiques, la qualité des jeux de données, ainsi que les outils et les langues à utiliser pour effectuer l’analyse.
 
 [AZURE.INCLUDE [machine-learning-free-trial](../../includes/machine-learning-free-trial.md)]
 
@@ -114,4 +114,4 @@ Une fois que vous avez répondu aux questions de la section précédente, vous �
 
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

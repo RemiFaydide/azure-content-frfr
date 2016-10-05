@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/06/2016"
+	ms.date="09/16/2016"
 	ms.author="garye"/>
 
 
@@ -39,7 +39,8 @@ Nous pouvons choisir parmi de nombreux modèles. Pour connaître les modèles di
 
 > [AZURE.TIP] Pour déterminer facilement l’algorithme Machine Learning le mieux adapté au problème à résoudre, consultez [Comment choisir les algorithmes dans Microsoft Azure Machine Learning](machine-learning-algorithm-choice.md).
 
-##Formation des modèles
+## Formation des modèles
+
 Configurons d'abord le modèle Arbre de décision optimisé :
 
 1.	Recherchez le module [Arbre de décision optimisé à deux classes][two-class-boosted-decision-tree] dans la palette des modules et faites-le glisser sur le canevas.
@@ -60,7 +61,7 @@ Cette partie de l'expérience ressemble alors à ce qui suit :
 
 Nous allons ensuite configurer le modèle SVM.
 
-Tout d’abord, une petite explication sur SVM. Les arbres de décision optimisés fonctionnent bien avec tout type de caractéristique. Toutefois, le module SVM générant un classifieur linéaire, le modèle qu'il génère obtient la meilleure erreur de test quand toutes les caractéristiques numériques sont à la même échelle. Ainsi, pour convertir toutes les caractéristiques numériques à la même échelle, nous allons utiliser une transformation « Tanh » (avec le module [Normaliser les données][normalize-data]) qui transforme les nombres en la plage [0,1] \(les caractéristiques de chaîne étant converties par le module SVM en caractéristiques de catégorie, puis en caractéristiques binaires 0/1, nous n’avons pas besoin de les transformer manuellement). De même, nous ne voulons pas transformer la colonne Risque du crédit (colonne 21). Elle est numérique et contient la valeur que nous apprenons à prédire au modèle ; nous devons donc la laisser seule.
+Tout d’abord, une petite explication sur SVM. Les arbres de décision optimisés fonctionnent bien avec tout type de caractéristique. Toutefois, le module SVM générant un classifieur linéaire, le modèle qu'il génère obtient la meilleure erreur de test quand toutes les caractéristiques numériques sont à la même échelle. Ainsi, pour convertir toutes les caractéristiques numériques à la même échelle, nous allons utiliser une transformation « Tanh » (avec le module [Normaliser les données][normalize-data]) qui transforme les nombres en la plage [0,1] \(les caractéristiques de chaîne étant converties par le module SVM en caractéristiques de catégorie, puis en caractéristiques binaires 0/1, nous n’avons pas besoin de les transformer manuellement). De même, nous ne voulons pas transformer la colonne Risque du crédit (colonne 21). Elle est numérique et contient la valeur que nous apprenons à prédire au modèle ; nous devons donc la laisser seule.
 
 Pour configurer le modèle SVM, procédez comme suit :
 
@@ -82,7 +83,8 @@ Cette partie de l'expérience ressemble alors à ceci :
 
 ![Training the second model][2]
 
-##Notation et évaluation des modèles
+## Notation et évaluation des modèles
+
 Nous allons utiliser les données de test séparées par le module [Fractionner les données][split] pour noter nos modèles formés. Nous pouvons ensuite comparer les résultats des deux modèles pour savoir lequel donne les meilleurs résultats.
 
 1.	Recherchez le module [Noter le modèle][score-model] et faites-le glisser sur le canevas.
@@ -143,4 +145,4 @@ En examinant ces valeurs, vous pouvez décider quel modèle est le plus suscepti
 [two-class-support-vector-machine]: https://msdn.microsoft.com/library/azure/12d8479b-74b4-4e67-b8de-d32867380e20/
 [split]: https://msdn.microsoft.com/library/azure/70530644-c97a-4ab6-85f7-88bf30a8be5f/
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

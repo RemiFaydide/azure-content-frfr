@@ -54,4 +54,4 @@ Définissez le nombre d’instances sur 10000000 pour que chaque fois qu’un no
 
 Une fois le package installé, revenez à l’IU Sysdig. Vous devez être en mesure d’explorer les différentes mesures d’utilisation pour les conteneurs de votre cluster.
 
-<!---HONumber=AcomDC_0810_2016-->
+<!-----HONumber=AcomDC_0810_2016-->

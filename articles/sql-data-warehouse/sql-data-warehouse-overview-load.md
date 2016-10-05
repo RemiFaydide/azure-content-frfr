@@ -22,7 +22,7 @@ Résumé des options de scénario et des recommandations applicables au chargeme
 
 L’étape la plus difficile du chargement de données consiste généralement en la préparation des données à charger. Azure simplifie le processus de chargement en utilisant Azure Blob Storage comme magasin de données commun pour la plupart des services, et en utilisant Azure Data Factory pour orchestrer la communication et le déplacement des données entre les services Azure. Ces processus sont intégrés à la technologie PolyBase qui utilise le traitement massivement parallèle (MPP) pour charger des données en parallèle dans SQL Data Warehouse à partir d’Azure Blob Storage.
 
-Pour accéder à des didacticiels décrivant le chargement d’exemples de bases de données, consultez l’article [Load sample data into SQL Data Warehouse][] (Chargement d’exemples de données dans SQL Data Warehouse).
+Pour accéder à des didacticiels décrivant le chargement d’exemples de bases de données, consultez l’article [Load sample data into SQL Data Warehouse][] \(Chargement d’exemples de données dans SQL Data Warehouse).
 
 ## Chargement à partir d’Azure Blob Storage
 Le moyen le plus rapide d’importer des données dans SQL Data Warehouse consiste à utiliser PolyBase pour charger des données à partir d’Azure Blob Storage. PolyBase utilise le traitement massivement parallèle (MPP) de SQL Data Warehouse pour charger des données en parallèle à partir d’Azure Blob Storage. Pour utiliser PolyBase, vous pouvez faire appel aux commandes T-SQL ou à un pipeline Azure Data Factory.

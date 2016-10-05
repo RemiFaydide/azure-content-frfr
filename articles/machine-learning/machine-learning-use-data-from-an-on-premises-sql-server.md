@@ -13,7 +13,7 @@ ms.workload="data-services"
 ms.tgt_pltfrm="na"
 ms.devlang="na"
 ms.topic="article"
-ms.date="06/14/2016"
+ms.date="09/16/2016"
 ms.author="garye;krishnan"/>
 
 # Effectuer des analyses avancées avec Azure Machine Learning en utilisant les données d’une base de données SQL Server locale
@@ -70,49 +70,49 @@ Dans cette procédure pas à pas, vous allez configurer une passerelle de gestio
 
 La première étape consiste à créer et à configurer la passerelle pour accéder à votre base de données SQL locale.
 
-1.  Connectez-vous à [Azure Machine Learning Studio](https://studio.azureml.net/Home/) et sélectionnez l’espace de travail dans lequel vous souhaitez travailler.
+1. Connectez-vous à [Azure Machine Learning Studio](https://studio.azureml.net/Home/) et sélectionnez l’espace de travail dans lequel vous souhaitez travailler.
 
-2.  Cliquez sur le panneau **PARAMÈTRES** sur la gauche, puis cliquez sur l’onglet **PASSERELLES DE DONNÉES** en haut.
+2. Cliquez sur le panneau **PARAMÈTRES** sur la gauche, puis cliquez sur l’onglet **PASSERELLES DE DONNÉES** en haut.
 
-3.  Cliquez sur **NOUVELLE PASSERELLE DE DONNÉES** en bas de l’écran.
+3. Cliquez sur **NOUVELLE PASSERELLE DE DONNÉES** en bas de l’écran.
 
     ![](media/machine-learning-use-data-from-an-on-premises-sql-server/new-data-gateway-button.png)
 
-4.  Dans la boîte de dialogue **Nouvelle passerelle de données**, entrez le **Nom de la passerelle** et ajoutez éventuellement une **Description**. Cliquez sur la flèche située dans l’angle inférieur droit pour accéder à l’étape suivante de la configuration.
+4. Dans la boîte de dialogue **Nouvelle passerelle de données**, entrez le **Nom de la passerelle** et ajoutez éventuellement une **Description**. Cliquez sur la flèche située dans l’angle inférieur droit pour accéder à l’étape suivante de la configuration.
 
     ![](media/machine-learning-use-data-from-an-on-premises-sql-server/new-data-gateway-dialog-enter-name.png)
 
-5.  Dans la boîte de dialogue Télécharger et inscrire une passerelle de données, copiez la CLÉ D’INSCRIPTION DE LA PASSERELLE dans le presse-papiers.
+5. Dans la boîte de dialogue Télécharger et inscrire une passerelle de données, copiez la CLÉ D’INSCRIPTION DE LA PASSERELLE dans le presse-papiers.
 
     ![](media/machine-learning-use-data-from-an-on-premises-sql-server/download-and-register-data-gateway.png)
 
-6.  <span id="note-1" class="anchor"></span>Si vous n’avez pas encore téléchargé et installé la passerelle de gestion des données de Microsoft, cliquez sur **Télécharger la passerelle de gestion des données**. Vous accéderez au Centre de téléchargement Microsoft, où vous pourrez sélectionner la version de la passerelle dont vous avez besoin, la télécharger et l’installer. Vous trouverez des informations détaillées sur les conditions préalables à l’installation, des étapes d’installation et des conseils de dépannage dans les sections du début de l’article [Déplacer des données entre des sources locales et le cloud à l’aide de la passerelle de gestion des données](../data-factory/data-factory-move-data-between-onprem-and-cloud.md).
+6. <span id="note-1" class="anchor"></span>Si vous n’avez pas encore téléchargé et installé la passerelle de gestion des données de Microsoft, cliquez sur **Télécharger la passerelle de gestion des données**. Vous accéderez au Centre de téléchargement Microsoft, où vous pourrez sélectionner la version de la passerelle dont vous avez besoin, la télécharger et l’installer. Vous trouverez des informations détaillées sur les conditions préalables à l’installation, des étapes d’installation et des conseils de dépannage dans les sections du début de l’article [Déplacer des données entre des sources locales et le cloud à l’aide de la passerelle de gestion des données](../data-factory/data-factory-move-data-between-onprem-and-cloud.md).
 
-7.  Une fois la passerelle installée, le Gestionnaire de configuration de la passerelle de gestion des données s’ouvre et la boîte de dialogue **Inscrire la passerelle** s’affiche. Collez la **Clé d’inscription de la passerelle** que vous avez copiée dans le presse-papiers et cliquez sur **Inscrire**.
+7. Une fois la passerelle installée, le Gestionnaire de configuration de la passerelle de gestion des données s’ouvre et la boîte de dialogue **Inscrire la passerelle** s’affiche. Collez la **Clé d’inscription de la passerelle** que vous avez copiée dans le presse-papiers et cliquez sur **Inscrire**.
 
-8.  Si vous disposez déjà d’une passerelle installée, exécutez le Gestionnaire de configuration de la passerelle de gestion des données, cliquez sur **Modifier la clé**, collez la **Clé d’inscription de la passerelle** que vous avez copiée dans le Presse-papiers et cliquez sur **OK**.
+8. Si vous disposez déjà d’une passerelle installée, exécutez le Gestionnaire de configuration de la passerelle de gestion des données, cliquez sur **Modifier la clé**, collez la **Clé d’inscription de la passerelle** que vous avez copiée dans le Presse-papiers et cliquez sur **OK**.
 
-9.  Une fois l’installation terminée, la boîte de dialogue **Inscrire la passerelle** du Gestionnaire de configuration de la passerelle de gestion des données de Microsoft s’affiche. Collez la CLÉ D’INSCRIPTION DE LA PASSERELLE que vous avez copiée dans le presse-papiers ci-dessus et cliquez sur **Inscrire**.
+9. Une fois l’installation terminée, la boîte de dialogue **Inscrire la passerelle** du Gestionnaire de configuration de la passerelle de gestion des données de Microsoft s’affiche. Collez la CLÉ D’INSCRIPTION DE LA PASSERELLE que vous avez copiée dans le presse-papiers ci-dessus et cliquez sur **Inscrire**.
 
     ![](media/machine-learning-use-data-from-an-on-premises-sql-server/data-gateway-configuration-manager-register-gateway.png)
 
-10.  La configuration de la passerelle est terminée lorsque les valeurs suivantes sont définies sur l’onglet **Accueil** dans le Gestionnaire de configuration de la passerelle de gestion des données de Microsoft :
+10. La configuration de la passerelle est terminée lorsque les valeurs suivantes sont définies sur l’onglet **Accueil** dans le Gestionnaire de configuration de la passerelle de gestion des données de Microsoft :
 
-    -   **Nom de la passerelle** et **Nom de l’instance** sont définis sur le nom de la passerelle.
+    - **Nom de la passerelle** et **Nom de l’instance** sont définis sur le nom de la passerelle.
 
-    -   **Inscription** est défini sur **Inscrit**.
+    - **Inscription** est défini sur **Inscrit**.
 
-    -   **État** est défini sur **Démarré**.
+    - **État** est défini sur **Démarré**.
 
-    -   La barre d’état située au bas de l’écran affiche le message **Connecté au service cloud de la passerelle de gestion des données** accompagné d’une coche verte.
+    - La barre d’état située au bas de l’écran affiche le message **Connecté au service cloud de la passerelle de gestion des données** accompagné d’une coche verte.
 
-    ![](media/machine-learning-use-data-from-an-on-premises-sql-server/data-gateway-configuration-manager-registered.png)
+     ![](media/machine-learning-use-data-from-an-on-premises-sql-server/data-gateway-configuration-manager-registered.png)
 
-    Azure Machine Learning Studio se met également à jour lorsque l’inscription réussit.
+     Azure Machine Learning Studio se met également à jour lorsque l’inscription réussit.
 
     ![](media\machine-learning-use-data-from-an-on-premises-sql-server\gateway-registered.png)
 
-11.  Dans la boîte de dialogue **Télécharger et inscrire la passerelle de données**, cliquez sur la coche pour terminer l’installation. La page **Paramètres** affiche l’état « En ligne » pour la passerelle. Dans le volet de droite, vous trouverez l’état et autres informations utiles.
+11. Dans la boîte de dialogue **Télécharger et inscrire la passerelle de données**, cliquez sur la coche pour terminer l’installation. La page **Paramètres** affiche l’état « En ligne » pour la passerelle. Dans le volet de droite, vous trouverez l’état et autres informations utiles.
 
     ![](media\machine-learning-use-data-from-an-on-premises-sql-server\gateway-status.png)
 
@@ -162,4 +162,4 @@ Une fois l’expérience terminée, vous pouvez visualiser les données que vous
 
 Une fois que vous avez terminé le développement de votre expérience, vous pouvez déployer et opérationnaliser votre modèle. Grâce au service d’exécution de lots, les données de la base de données SQL Server locale configurées dans le module **Importer des données** seront lues et utilisées pour l’évaluation. Vous pouvez utiliser le service de réponse aux demandes pour l’évaluation des données locales, mais Microsoft recommande d’utiliser plutôt le [complément Excel](machine-learning-excel-add-in-for-web-services.md). Actuellement, l’écriture dans une base de données SQL Server locale avec **Exporter des données** n’est pas prise en charge dans vos expériences ou dans les services web publiés.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

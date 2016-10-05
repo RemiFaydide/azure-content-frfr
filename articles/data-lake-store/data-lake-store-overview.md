@@ -110,4 +110,4 @@ Si vous préférez apprendre en regardant des vidéos, Data Lake Store contient 
 * [Data Orchestration using Azure Data Factory for Azure Data Lake Store (Orchestration de données pour Azure Data Lake Store à l’aide d’Azure Data Factory)](https://mix.office.com/watch/1oa7le7t2u4ka)
 * [Securing Data in the Azure Data Lake Store (Sécurisation des données dans Azure Data Lake Store)](https://mix.office.com/watch/1q2mgzh9nn5lx)
 
-<!---HONumber=AcomDC_0914_2016-->
+<!-----HONumber=AcomDC_0914_2016-->

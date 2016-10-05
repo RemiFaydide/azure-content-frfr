@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="07/06/2016"
+	ms.date="09/21/2016"
 	ms.author="daleche"/>
 
 # Erreur « La base de données sur le serveur n’est pas disponible actuellement » lors de la connexion à SQL Database
@@ -40,4 +40,4 @@ Cette erreur se produit lorsque la base de données Azure est déplacée (ou rec
 - Si vous recevez une erreur différente, consultez le [message d’erreur](sql-database-develop-error-messages.md) pour obtenir des indices sur la cause.
 - Si le problème persiste, consultez les instructions dans [Résoudre des problèmes de connexion à Azure SQL Database](sql-database-troubleshoot-common-connection-issues.md).
 
-<!---HONumber=AcomDC_0713_2016-->
+<!---HONumber=AcomDC_0921_2016-->

@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="NA"
-   ms.date="06/14/2016"
+   ms.date="09/19/2016"
    ms.author="lemai"/>
    
 # Comment appeler la perte des données sur des services
@@ -232,4 +232,4 @@ Dès qu’une commande a atteint un état terminal, ses métadonnées resteront 
 [cancelps]: https://msdn.microsoft.com/library/mt697566.aspx
 [fte]: https://msdn.microsoft.com/library/azure/system.fabric.fabrictransientexception.aspx
 
-<!---HONumber=AcomDC_0810_2016-->
+<!---HONumber=AcomDC_0921_2016-->

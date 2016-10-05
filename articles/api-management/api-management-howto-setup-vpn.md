@@ -24,7 +24,7 @@ La prise en charge du VPN par Gestion des API vous permet de connecter votre pas
 
 ## <a name="enable-vpn"> </a>Activer les connexions VPN
 
->La connexion VPN est disponible uniquement dans le niveau **Premium**. Pour passer à cette connexion, ouvrez votre service Gestion des API dans le [portail Azure Classic][], puis ouvrez l’onglet **Mettre à l’échelle**. Dans la section **Général**, sélectionnez le niveau Premium et cliquez sur Enregistrer.
+>La connexion VPN est disponible uniquement dans les niveaux **Premium** et **Développeur**. Pour passer à cette connexion, ouvrez votre service Gestion des API dans le [portail Azure Classic][], puis ouvrez l’onglet **Mettre à l’échelle**. Dans la section **Général**, sélectionnez le niveau Premium et cliquez sur Enregistrer.
 
 Pour activer la connectivité VPN, ouvrez votre service Gestion des API dans le [portail Azure Classic][] et passez à l’onglet **Configurer**.
 
@@ -85,4 +85,4 @@ La gestion des API dépend de plusieurs services Azure. Lorsqu’une instance de
 [Créer un réseau virtuel avec une connexion VPN site à site à l’aide du Portail Azure Classic]: ../vpn-gateway/vpn-gateway-site-to-site-create.md
 [Utilisation de l’inspecteur d’API pour le suivi des appels dans Gestion des API Azure]: api-management-howto-api-inspector.md
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

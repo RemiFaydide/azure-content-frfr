@@ -13,8 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="07/07/2016"
-   ms.author="seanmck"/>
+   ms.date="09/09/2016"
+   ms.author="seanmck;mikhegn"/>
 
 # Utilisation de Visual Studio pour simplifier l'écriture et la gestion des applications Service Fabric
 
@@ -34,22 +34,28 @@ Dans Visual Studio, vous pouvez aussi appuyer sur **F5** pour déployer votre a
 
 ### Mode de débogage d’application
 
-Par défaut, Visual Studio supprime les instances existantes de votre type d’application quand vous arrêtez le débogage ou (si vous avez déployé l’application sans attacher le débogueur) quand vous redéployez l’application. Dans ce cas, toutes les données de l’application sont supprimées. Lors du débogage local, vous souhaiterez peut-être conserver les données que vous avez déjà créées lors du test d’une nouvelle version de l’application. Les outils Service Fabric de Visual Studio fournissent une propriété appelée **Mode de débogage d’application** qui vérifie si **F5** doit désinstaller l’application ou la conserver après une session de débogage.
+Par défaut, Visual Studio supprime les instances existantes de votre type d’application quand vous arrêtez le débogage ou (si vous avez déployé l’application sans attacher le débogueur) quand vous redéployez l’application. Dans ce cas, toutes les données de l’application sont supprimées. Lors du débogage en local, vous pouvez souhaiter conserver les données que vous avez déjà créées lorsque vous testez une nouvelle version de l’application, vous souhaitez que l’application continue à s’exécuter ou vous souhaitez que les sessions de débogage suivantes mettent l’application à niveau. Les outils Service Fabric de Visual Studio fournissent une propriété appelée **Mode de débogage d’application** qui vérifie si **F5** doit désinstaller l’application, la conserver après une session de débogage ou permettre à l’application d’être mise à niveau lors de sessions de débogage suivantes, plutôt que d’être supprimée et redéployée.
 
 #### Pour définir la propriété Mode de débogage d’application
 
 1. Dans le menu contextuel du projet d’application, cliquez sur **Propriétés** (ou appuyez sur la touche **F4**).
-2. Dans la fenêtre **Propriétés**, affectez la valeur **Supprimer** ou **Mise à niveau automatique** à la propriété **Mode de débogage d’application**.
+2. Dans la fenêtre **Propriétés**, définissez la propriété **Mode de débogage d’application**.
 
     ![Définir la propriété Mode de débogage d’application][debugmodeproperty]
 
-La valeur **Mise à niveau automatique** a pour effet de laisser l’application s’exécuter sur le cluster local. Le **F5** suivant traite le déploiement comme une mise à niveau, en utilisant le mode automatique non contrôlé pour mettre rapidement à niveau l’application vers une version plus récente avec une chaîne de date ajoutée. Le processus de mise à niveau conserve les données que vous avez saisies au cours de la précédente session de débogage.
+Il s’agit des options disponibles pour le **Mode de débogage d’application**.
 
-![Exemple d’une nouvelle version d’application à laquelle date1 est ajouté][preservedate]
+1. **Mise à niveau automatique** : l’application continue à s’exécuter lorsque la session de débogage se termine. Le **F5** suivant traite le déploiement comme une mise à niveau, en utilisant le mode automatique non contrôlé pour mettre rapidement à niveau l’application vers une version plus récente avec une chaîne de date ajoutée. Le processus de mise à niveau conserve les données que vous avez saisies au cours de la précédente session de débogage.
 
-Les données sont conservées en tirant parti des fonctionnalités de mise à niveau d’application de Service Fabric, mais avec une optimisation des performances plutôt que de la sécurité. Pour plus d’informations sur la mise à niveau des applications et sur la façon d’effectuer une mise à niveau dans un environnement réel, consultez [Mise à niveau d’application Service Fabric](service-fabric-application-upgrade.md).
+2. **Conserver l’application** : l’application continue à s’exécuter dans le cluster lorsque la session de débogage se termine. Le **F5** suivant supprime l’application et l’application nouvellement créée sera déployée sur le cluster.
 
->[AZURE.NOTE] Cette propriété n’existe pas avant la version 1.1 des outils Service Fabric pour Visual Studio. Avant la version 1.1, veuillez utiliser la propriété **Conserver les données au démarrage** pour obtenir le même comportement.
+3. L’option **Supprimer l’application** entraîne la suppression de l’application lorsque la session de débogage se termine.
+
+Avec l’option **Mise à niveau automatique**, les données sont conservées en appliquant les fonctionnalités de mise à niveau d’application de Service Fabric, mais avec une optimisation des performances plutôt que de la sécurité. Pour plus d’informations sur la mise à niveau des applications et sur la façon d’effectuer une mise à niveau dans un environnement réel, consultez [Mise à niveau d’application Service Fabric](service-fabric-application-upgrade.md).
+
+![Exemple d’une nouvelle version de l'application avec une date ajoutée][preservedata]
+
+>[AZURE.NOTE] Cette propriété n’existe pas avant la version 1.1 des outils Service Fabric pour Visual Studio. Avant la version 1.1, veuillez utiliser la propriété **Conserver les données au démarrage** pour obtenir le même comportement. L’option « Conserver l’application » a été introduite dans la version 1.2 des outils Service Fabric pour Visual Studio.
 
 ## Ajouter un service à votre application Service Fabric
 
@@ -93,7 +99,6 @@ Vous pouvez effectuer des opérations de gestion de cluster de base à partir de
 [newservice]: ./media/service-fabric-manage-application-in-visual-studio/newservice.png
 [newserviceapplicationmanifest]: ./media/service-fabric-manage-application-in-visual-studio/newserviceapplicationmanifest.png
 [preservedata]: ./media/service-fabric-manage-application-in-visual-studio/preservedata.png
-[preservedate]: ./media/service-fabric-manage-application-in-visual-studio/preservedate.png
 [debugmodeproperty]: ./media/service-fabric-manage-application-in-visual-studio/debugmodeproperty.png
 
-<!---HONumber=AcomDC_0713_2016-->
+<!---HONumber=AcomDC_0921_2016-->

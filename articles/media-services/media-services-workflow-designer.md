@@ -1,10 +1,10 @@
 <properties 
-	pageTitle="Créer des flux de travail d’encodage avancé avec le Concepteur de flux de travail" 
+	pageTitle="Créer des flux de travail d’encodage avancé avec le Concepteur de flux de travail | Microsoft Azure" 
 	description="Découvrez comment créer des flux de travail d’encodage avancé avec le Concepteur de flux de travail." 
 	services="media-services" 
 	documentationCenter="" 
-	authors="juliako,johndeu,anilmur" 
-	manager="dwrede" 
+	authors="anilmur" 
+	manager="erikre" 
 	editor=""/>
 
 <tags 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016"
-	ms.author="juliako"/>
+	ms.date="09/15/2016"
+	ms.author="juliako;johndeu;anilmur"/>
 
 
 #Créer des flux de travail d’encodage avancé avec le Concepteur de flux de travail
@@ -74,8 +74,9 @@ La vidéo du jour 3 présente :
 > [AZURE.VIDEO azure-premium-encoder-workflow-designer-training-videos-day-3]
 
 
+## Étape suivante
 
-##Parcours d’apprentissage de Media Services
+Consultez les parcours d’apprentissage de Media Services.
 
 [AZURE.INCLUDE [media-services-learning-paths-include](../../includes/media-services-learning-paths-include.md)]
 
@@ -90,4 +91,4 @@ Si vous avez besoin d'aide ou si vous avez des questions à propos de la créati
 
 [Vidéos de formation pour le Concepteur de flux de travail Azure Premium Encoder](http://johndeutscher.com/2015/07/06/azure-premium-encoder-workflow-designer-training-videos/)
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

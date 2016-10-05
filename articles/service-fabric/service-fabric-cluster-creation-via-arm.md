@@ -63,7 +63,7 @@ La première étape consiste à créer un nouveau groupe de ressources spécifiq
 
 ```powershell
 
-	PS C:\Users\vturecek> New-AzureRmResourceGroup -Name mycluster-keyvault -Location 'West US'
+	New-AzureRmResourceGroup -Name mycluster-keyvault -Location 'West US'
 	WARNING: The output object type of this cmdlet will be modified in a future release.
 	
 	ResourceGroupName : mycluster-keyvault
@@ -80,7 +80,7 @@ Créez un coffre de clés dans le nouveau groupe de ressources. Le coffre de cl�
 
 ```powershell
 
-	PS C:\Users\vturecek> New-AzureRmKeyVault -VaultName 'myvault' -ResourceGroupName 'mycluster-keyvault' -Location 'West US' -EnabledForDeployment
+	New-AzureRmKeyVault -VaultName 'myvault' -ResourceGroupName 'mycluster-keyvault' -Location 'West US' -EnabledForDeployment
 	
 	
 	Vault Name                       : myvault
@@ -156,7 +156,7 @@ Pour faciliter ce processus, un module PowerShell est [disponible sur GitHub][se
 La commande `Invoke-AddCertToKeyVault` dans ce module PowerShell met automatiquement en forme une clé privée de certificat dans une chaîne JSON et la charge vers Key Vault. Il permet d’ajouter le certificat de cluster et tous les certificats d’application supplémentaires à Key Vault. Répétez simplement cette étape pour tous les certificats supplémentaires à installer dans votre cluster.
 
 ```powershell
-PS C:\Users\vturecek> Invoke-AddCertToKeyVault -SubscriptionId <guid> -ResourceGroupName mycluster-keyvault -Location "West US" -VaultName myvault -CertificateName mycert -Password "<password>" -UseExistingCertificate -ExistingPfxFilePath "C:\path\to\mycertkey.pfx"
+ Invoke-AddCertToKeyVault -SubscriptionId <guid> -ResourceGroupName mycluster-keyvault -Location "West US" -VaultName myvault -CertificateName mycert -Password "<password>" -UseExistingCertificate -ExistingPfxFilePath "C:\path\to\mycertkey.pfx"
 	
 	Switching context to SubscriptionId <guid>
 	Ensuring ResourceGroup mycluster-keyvault in West US
@@ -488,4 +488,4 @@ Une fois que vous avez créé les applications pour représenter votre cluster, 
 [assign-users-to-roles-button]: ./media/service-fabric-cluster-creation-via-arm/assign-users-to-roles-button.png
 [assign-users-to-roles-dialog]: ./media/service-fabric-cluster-creation-via-arm/assign-users-to-roles.png
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

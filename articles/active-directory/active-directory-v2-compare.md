@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="05/31/2016"
+	ms.date="09/16/2016"
 	ms.author="dastrock"/>
 
 # Quelles sont les particularités du point de terminaison v2.0 ?
@@ -132,4 +132,4 @@ Pour en savoir plus sur les demandes spécifiques émises dans les jetons v2.0, 
 ## Limites
 Il existe quelques restrictions à connaître lors de l’utilisation du point v2.0. Consultez le [document relatif aux limites v2.0](active-directory-v2-limitations.md) pour voir si ces restrictions s’appliquent à votre scénario particulier.
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

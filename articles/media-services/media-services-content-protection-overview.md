@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Vue d’ensemble de la protection du contenu" 
+	pageTitle="Vue d’ensemble de la protection du contenu | Microsoft Azure" 
 	description="Cet article donne une vue d’ensemble de la protection du contenu avec Media Services." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="06/22/2016" 
+	ms.date="09/19/2016" 
 	ms.author="juliako"/>
 
 #Vue d’ensemble de la protection du contenu
@@ -36,13 +36,13 @@ Microsoft Azure Media Services vous permet de sécuriser votre contenu multiméd
 
 Selon le type de contenu que vous souhaitez télécharger, stocker et remettre, Media Services met à votre disposition différentes options de chiffrement.
 
-###Aucun 
+###Aucun
 
 Aucun chiffrement n’est utilisé. Il s’agit de la valeur par défaut. Quand vous utilisez cette option, votre contenu n'est pas protégé pendant le transit ou le repos dans le stockage.
 
 Si vous prévoyez de remettre du contenu MP4 via un téléchargement progressif, utilisez cette option pour télécharger votre contenu.
 
-###StorageEncrypted 
+###StorageEncrypted
 
 Utilisez **StorageEncrypted** pour chiffrer votre contenu localement à l’aide du chiffrement AES 256 bits, puis chargez-le vers Azure Storage où il est stocké au repos sous forme chiffrée. Les éléments multimédias protégés par le chiffrement de stockage sont automatiquement déchiffrés et placés dans un système de fichiers chiffré avant d’être encodés, puis éventuellement rechiffrés avant d’être rechargés sous la forme d’un nouvel élément multimédia de sortie. Le principal cas d’utilisation du chiffrement de stockage concerne la sécurisation des fichiers multimédias d’entrée de haute qualité avec un chiffrement renforcé au repos sur le disque.
 
@@ -58,7 +58,7 @@ Si vous voulez voir comment fonctionne l'algorithme de base, consultez l'implém
 - [AesCtr](https://github.com/Azure/azure-sdk-for-media-services/blob/dev/src/net/Client/Common/Common.FileEncryption/FileEncryptionTransform.cs)
 
 
-###CommonEncryptionProtected 
+###CommonEncryptionProtected
 
 Utilisez **CommonEncryptionProtected** si vous souhaitez chiffrer du contenu (ou charger du contenu déjà chiffré) avec Common Encryption. PlayReady et Widewine sont chiffrés conformément à la spécification de chiffrement commun (CENC) et sont pris en charge par AMS.
 
@@ -78,7 +78,7 @@ Vous devez également configurer la stratégie de remise de l’élément multim
 
 Lorsqu’un lecteur demande un flux de données, Media Services utilise la clé spécifiée pour chiffrer dynamiquement votre contenu à l’aide du chiffrement AES ou du chiffrement commun. Pour déchiffrer le flux de données, le lecteur demande la clé au service de remise de clé. Pour déterminer si l’utilisateur est autorisé à obtenir la clé, le service évalue les stratégies d’autorisation que vous avez spécifiées pour la clé.
 
->[AZURE.NOTE]Pour tirer parti du chiffrement dynamique, vous devez d’abord obtenir au moins une unité de diffusion en continu à la demande pour le point de terminaison de diffusion en continu à partir duquel vous envisagez de distribuer votre contenu chiffré. Pour plus d’informations, voir [Mise à l’échelle de Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
+>[AZURE.NOTE]Pour tirer parti du chiffrement dynamique, vous devez d’abord obtenir au moins une unité de diffusion en continu à la demande pour le point de terminaison de diffusion en continu à partir duquel vous envisagez de distribuer votre contenu chiffré. Pour plus d’informations, voir [Mise à l’échelle de Media Services](media-services-portal-manage-streaming-endpoints.md).
 
 ##Service de remise de licences et de clés
 
@@ -86,9 +86,9 @@ Media Services fournit un service de remise de licences DRM (PlayReady et Widevi
 
 Notez que si vous utilisez le portail, vous pouvez configurer une stratégie AES (qui sera appliquée à tout le contenu chiffré AES) et une stratégie PlayReady (qui sera appliquée à tout le contenu chiffré PlayReady). Utilisez le kit SDK Media Services pour .NET si vous souhaitez bénéficier d’un contrôle accru sur les configurations.
 
-##Licences DRM 
+##Licences DRM
 
-###Licence PlayReady 
+###Licence PlayReady
 
 Media Services fournit un service de remise de licences PlayReady. Lorsque le lecteur de l’utilisateur final (par exemple Silverlight) tente de lire votre contenu PlayReady protégé, une demande est envoyée au service de remise de licence pour obtenir une licence. Si le service de licence approuve la demande, il émet la licence, qui est envoyée au client et peut être utilisée pour déchiffrer et lire le contenu spécifié.
 
@@ -155,4 +155,4 @@ Pour plus d’informations, consultez la page [Intégration du service de remise
 
 [content-protection]: ./media/media-services-content-protection-overview/media-services-content-protection.png
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

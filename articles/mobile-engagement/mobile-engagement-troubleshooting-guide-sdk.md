@@ -58,7 +58,7 @@ Les éléments suivants sont des problèmes potentiels liés à la façon dont A
 **Voir aussi :**
 
 - [Documentation du Kit de développement logiciel (SDK) - Notes de publication](http://go.microsoft.com/fwlink/?LinkId= 525554)
-- [Documentation du Kit de développement logiciel (SDK) - Guides de mise à niveau] (http://go.microsoft.com/fwlink/?LinkId= 525554)
+- [Documentation du Kit de développement logiciel (SDK) - Guides de mise à niveau](http://go.microsoft.com/fwlink/?LinkId= 525554)
 
 #### Kit de développement logiciel (SDK), autres :
 

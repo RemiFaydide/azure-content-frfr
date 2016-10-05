@@ -14,11 +14,11 @@
 	ms.tgt_pltfrm="vm-windows"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="09/01/2016"
+	ms.date="09/18/2016"
 	ms.author="glimoli;genli"/>
 
 # Préparer un disque dur virtuel Windows à charger sur Azure
-Pour charger une machine virtuelle Windows locale sur Azure, vous devez préparer correctement le disque dur virtuel (VHD). Avant de charger un disque dur virtuel sur Azure, vous devez suivre une série d’étapes recommandées. L’exécution de `sysprep` est un processus courant, mais elle ne constitue qu’une seule étape de la généralisation d’une image. Cet article vous indique comment préparer un disque dur virtuel Windows à charger sur Microsoft Azure.
+Pour charger une machine virtuelle Windows locale sur Azure, vous devez préparer correctement le disque dur virtuel (VHD). Avant de charger un disque dur virtuel sur Azure, vous devez suivre une série d’étapes recommandées. Cet article vous indique comment préparer un disque dur virtuel Windows à charger sur Microsoft Azure, ainsi que [quand et comment utiliser Sysprep](#step23).
 
 ## Préparer le disque virtuel
 
@@ -248,8 +248,8 @@ Si vous disposez d’une image de machine virtuelle Windows au [format de fichie
 
 14. Supprimez tous les filtres de TDI (Transport Driver Interface) supplémentaires, tels que les logiciels qui analysent les paquets TCP.
 15. Pour vérifier que le disque est sain et cohérent, exécutez la commande `CHKDSK /f`.
-16.	Désinstallez tous les autres pilotes et logiciels tiers.
-17. Vérifiez qu’aucune application tierce n’utilise le port 3389. Ce port est utilisé pour le service RDP dans Azure.
+16.	Désinstallez tous les autres logiciels et pilotes tiers liés aux composants physiques ou toute autre technologie de virtualisation.
+17. Vérifiez qu’aucune application tierce n’utilise le port 3389. Ce port est utilisé pour le service RDP dans Azure. Vous pouvez utiliser la commande `netstat -anob` pour vérifier les ports utilisés par les applications.
 18.	Si le disque dur virtuel Windows à charger est un contrôleur de domaine, suivez [ces étapes supplémentaires](https://support.microsoft.com/kb/2904015) pour le préparer.
 19.	Redémarrez la machine virtuelle pour vous assurer que Windows est toujours sain et qu’il est accessible par le biais de la connexion RDP.
 20.	Réinitialisez le mot de passe administrateur local actuel et vérifiez que vous pouvez utiliser ce compte pour vous connecter à Windows par le biais de la connexion RDP. Cette autorisation d’accès est contrôlée par l’objet de stratégie « Autoriser l’ouverture de session par les services Bureau à distance ». Cet objet se trouve à l’emplacement « Computer Configuration\\Windows Settings\\Security Settings\\Local Policies\\User Rights Assignment ».
@@ -279,13 +279,13 @@ Si vous disposez d’une image de machine virtuelle Windows au [format de fichie
 	- [KB3140410](https://support.microsoft.com/kb/3140410) MS16-031 : Mise à jour de sécurité pour Microsoft Windows afin de résoudre un problème d’élévation de privilèges : 8 mars 2016
 
 	- [KB3146723](https://support.microsoft.com/kb/3146723) MS16-048 : Description de la mise à jour de sécurité pour CSRSS : 12 avril 2016
-	- [KB2904100](https://support.microsoft.com/kb/2904100) Le système se fige pendant des opérations d’E/S sur disque dans Windows
-
-23. Pour créer une image permettant de déployer plusieurs ordinateurs, vous devez généraliser l’image en exécutant `sysprep` avant de charger le disque dur virtuel sur Azure. Pour plus d’informations sur la création d’une image généralisée, consultez les articles suivants :
+	- [KB2904100](https://support.microsoft.com/kb/2904100) Le système se fige pendant des opérations d’E/S sur disque dans Windows <a id="step23"></a>
+23. Pour créer une image permettant de déployer plusieurs ordinateurs, vous devez généraliser l’image en exécutant `sysprep` avant de charger le disque dur virtuel sur Azure. Vous n’avez pas besoin exécuter `sysprep` pour utiliser un disque dur virtuel spécialisé. Pour plus d’informations sur la création d’une image généralisée, consultez les articles suivants :
 
 	- [Create a VM image from an existing Azure VM using the Resource Manager deployment model (Créer une image de machine virtuelle à partir d’une machine virtuelle Azure existante en utilisant le modèle de déploiement Resource Manager)](virtual-machines-windows-capture-image.md)
 	- [Create a VM image from an existing Azure VM using the Classic deployment model (Créer une image de machine virtuelle à partir d’une machine virtuelle Azure existante en utilisant le modèle de déploiement Classic)](virtual-machines-windows-classic-capture-image.md)
 	- [Prise en charge de Sysprep pour les rôles de serveur](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles)
+
 
 
 ## Configurations supplémentaires suggérées
@@ -319,4 +319,4 @@ Les paramètres suivants n’affectent pas le chargement du disque dur virtuel. 
 
 - [Télécharger une image de machine virtuelle Windows dans Azure pour des déploiements Resource Manager](virtual-machines-windows-upload-image.md)
 
-<!---HONumber=AcomDC_0907_2016-->
+<!---HONumber=AcomDC_0921_2016-->

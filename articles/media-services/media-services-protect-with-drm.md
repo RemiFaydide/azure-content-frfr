@@ -3,7 +3,7 @@
 	description="Microsoft Azure Media Services vous permet de fournir des flux MPEG-DASH, Smooth Streaming et HLS (Http-Live-Streaming) protégés par Microsoft PlayReady DRM. Vous pouvez également l’utiliser pour diffuser du contenu DASH chiffré avec Widevine DRM. Cette rubrique montre comment chiffrer dynamiquement avec PlayReady et Widevine DRM."
 	services="media-services"
 	documentationCenter=""
-	authors="Mingfeiy"
+	authors="juliako"
 	manager="erikre"
 	editor=""/>
 
@@ -13,8 +13,8 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="get-started-article" 
-	ms.date="09/19/2016"
-	ms.author="juliako;mingfeiy"/>
+	ms.date="09/27/2016"
+	ms.author="juliako"/>
 
 
 #Utilisation du chiffrement commun dynamique PlayReady et/ou Widevine
@@ -329,7 +329,7 @@ L’exemple suivant illustre la fonctionnalité présentée dans le kit de déve
 		
 		        static public IContentKey CreateCommonTypeContentKey(IAsset asset)
 		        {
-		            // Create envelope encryption content key
+		            
 		            Guid keyId = Guid.NewGuid();
 		            byte[] contentKey = GetRandomBuffer(16);
 		
@@ -544,6 +544,8 @@ L’exemple suivant illustre la fonctionnalité présentée dans le kit de déve
 		
 		                };
 		
+					// In this case we only specify Dash streaming protocol in the delivery policy,
+					// All other protocols will be blocked from streaming.
 		            var assetDeliveryPolicy = _context.AssetDeliveryPolicies.Create(
 		                    "AssetDeliveryPolicy",
 		                AssetDeliveryPolicyType.DynamicCommonEncryption,
@@ -628,4 +630,4 @@ Consultez les parcours d’apprentissage de Media Services.
 
 [Annonce des services de distribution de licence Google Widevine dans Azure Media Services](https://azure.microsoft.com/blog/announcing-general-availability-of-google-widevine-license-services/)
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Vue d’ensemble de l’empaquetage dynamique"
+	pageTitle="Vue d’ensemble de l’empaquetage dynamique | Microsoft Azure"
 	description="Cette rubrique donne une vue d'ensemble de l'empaquetage dynamique."
 	authors="Juliako"
 	manager="erikre"
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/22/2016" 
+	ms.date="09/19/2016" 
 	ms.author="juliako"/>
 
 
@@ -34,7 +34,7 @@ Le diagramme suivant illustre le flux d'empaquetage dynamique.
 ![Encodage dynamique](./media/media-services-dynamic-packaging-overview/media-services-dynamic-packaging.png)
 
 
->[AZURE.NOTE]Pour tirer parti de l'empaquetage dynamique, vous devez d'abord obtenir au moins une unité de diffusion en continu à la demande pour le point de terminaison de diffusion en continu à partir duquel vous envisagez de distribuer votre contenu. Pour plus d'informations, consultez [Mise à l'échelle de Media Services](media-services-manage-origins.md#scale_streaming_endpoints).
+>[AZURE.NOTE]Pour tirer parti de l'empaquetage dynamique, vous devez d'abord obtenir au moins une unité de diffusion en continu à la demande pour le point de terminaison de diffusion en continu à partir duquel vous envisagez de distribuer votre contenu. Pour plus d'informations, consultez [Mise à l'échelle de Media Services](media-services-portal-manage-streaming-endpoints.md).
 
 ##Scénario courant
 
@@ -56,11 +56,11 @@ Pour préparer un élément multimédia pour sa diffusion en continu dynamique, 
 3. [Diffusez votre contenu](media-services-deliver-content-overview.md).
 
 OU
- 
+
 1. Chargez des fichiers MP4 pré-encodés.
 
-	>[AZURE.NOTE] Cette option n’est pas recommandée.
-	
+>[AZURE.NOTE] Cette option n’est pas recommandée.
+
 2. [Validez vos fichiers pré-encodés](media-services-static-packaging.md#validating-adaptive-bitrate-mp4s-encoded-with-external-encoders).
 3. [Diffusez votre contenu](media-services-deliver-content-overview.md).
 
@@ -80,4 +80,4 @@ Les formats de fichiers sources suivants ne sont pas pris en charge par l'empaqu
 
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

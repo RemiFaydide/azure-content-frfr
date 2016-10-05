@@ -1,20 +1,20 @@
 <properties
-   pageTitle="Didacticiel : Chiffrement et déchiffrement d’objets blob dans Microsoft Azure Storage à l’aide d’Azure Key Vault | Microsoft Azure"
-   description="Ce didacticiel vous explique comment chiffrer et déchiffrer un objet blob en utilisant le chiffrement côté client pour Microsoft Azure Storage avec Azure Key Vault."
-   services="storage"
-   documentationCenter=""
-   authors="adhurwit"
-   manager=""
-   editor="tysonn"/>
+	pageTitle="Didacticiel : Chiffrement et déchiffrement d’objets blob dans Microsoft Azure Storage à l’aide d’Azure Key Vault | Microsoft Azure"
+	description="Ce didacticiel vous explique comment chiffrer et déchiffrer un objet blob en utilisant le chiffrement côté client pour Microsoft Azure Storage avec Azure Key Vault."
+	services="storage"
+	documentationCenter=""
+	authors="adhurwit"
+	manager=""
+	editor="tysonn"/>
 
 <tags
-   ms.service="storage"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="required"
-   ms.date="03/31/2016"
-   ms.author="lakasa"/>
+	ms.service="storage"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="required"
+	ms.date="09/20/2016"
+	ms.author="lakasa;robinsh"/>
 
 # Didacticiel : Chiffrement et déchiffrement d’objets blob dans Microsoft Azure Storage à l'aide d'Azure Key Vault
 
@@ -29,13 +29,13 @@ Pour plus d’informations générales sur Azure Key Vault, consultez la page [P
 Pour plus d’informations générales sur le chiffrement côté client d’Azure Storage, consultez [Chiffrement côté client et Azure Key Vault pour Microsoft Azure Storage](storage-client-side-encryption.md)
 
 
-## Configuration requise
+## Composants requis
 
 Pour suivre ce didacticiel, vous avez besoin des éléments suivants :
 
 - Un compte Azure Storage
 - Visual Studio 2013 ou une version ultérieure
-- Azure PowerShell
+- Azure PowerShell
 
 
 ## Vue d’ensemble du chiffrement côté client
@@ -235,4 +235,4 @@ Pour obtenir les dernières informations sur Microsoft Azure Storage, consulte
 <!--Image references-->
 [1]: ./media/storage-encrypt-decrypt-blobs-key-vault/blobmetadata.png
 
-<!---HONumber=AcomDC_0406_2016-->
+<!---HONumber=AcomDC_0921_2016-->

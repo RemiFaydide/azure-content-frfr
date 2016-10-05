@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Insights : Utiliser les journaux d’audit pour envoyer des notifications webhook et par courrier électronique dans Azure Insights | Microsoft Azure"
-	description="Découvrez comment utiliser les entrées des journaux d’audit pour appeler des URL web ou envoyer des notifications par courrier électronique dans Azure Insights. "
+	pageTitle="Configurer des webhooks sur des alertes de journal d’activité Azure | Microsoft Azure"
+	description="Découvrez comment utiliser des alertes de journal d’activité pour appeler des webhooks. "
 	authors="kamathashwin"
 	manager=""
 	editor=""
@@ -13,33 +13,25 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="03/30/2016"
+	ms.date="09/15/2016"
 	ms.author="ashwink"/>
 
-# Utiliser les journaux d’audit pour envoyer des notifications webhook et par courrier électronique dans Azure Insights
+# Configurer un webhook sur une alerte de journal d’activité Azure
 
-Cet article vous montre le schéma de la charge utile lorsqu’un événement de journal d’audit déclenche un webhook. Il décrit aussi comment vous pouvez envoyer des courriers électroniques à l’aide de ce même événement.
+Les webhooks vous permettent d’acheminer une notification d’alerte Azure vers d’autres systèmes à des fins de post-traitement ou d’exécution d’actions personnalisées. Vous pouvez utiliser un webhook sur une alerte pour acheminer cette dernière vers des services qui envoient un SMS, consignent les bogues, avertissent une équipe par le biais de services de conversation instantanée/messagerie ou exécutent diverses autres actions. Cet article décrit la procédure de définition d’un webhook sur une alerte de journal d’activité Azure, ainsi que l’aspect de la charge utile de la requête HTTP POST vers un webhook. Pour plus d’informations sur la configuration et le schéma d’une alerte de métrique Azure, [consultez plutôt cette page](./insights-webhooks-alerts.md). Vous pouvez également configurer une alerte de journal d’activité pour l’envoi d’un e-mail lors de l’activation.
 
->[AZURE.NOTE] Actuellement, cette fonctionnalité est uniquement disponible en tant que version préliminaire. Dans les prochains mois, l’infrastructure et les performances des alertes sur les événements et les performances seront améliorées. Dans cette version préliminaire, cette fonctionnalité est uniquement accessible avec Azure PowerShell et l’interface CLI. L’accès à cette fonctionnalité à partir du portail Azure sera disponible ultérieurement.
+>[AZURE.NOTE] Cette fonctionnalité n’étant pour l’instant disponible qu’à titre d’évaluation, elle offre une qualité et des performances variables.
 
-## Webhooks
-Les webhooks vous permettent d’acheminer les notifications d’alerte Azure vers d’autres systèmes afin qu’elles soient traitées ou personnalisées. À titre d’exemple, citons l’acheminement de l’alerte vers des services qui peuvent gérer une demande web entrante pour envoyer des SMS, consigner des bogues ou informer un utilisateur par le biais de services de conversation ou de messagerie. L’URI du webhook doit être un point de terminaison HTTP ou HTTPS valide.
+Vous pouvez configurer une alerte de journal d’activité à l’aide des [applets de commande Azure PowerShell](./insights-powershell-samples.md#create-alert-rules), de [l’interface de ligne de commande multiplateforme](./insights-cli-samples.md#work-with-alerts) ou de [l’API REST Insights](https://msdn.microsoft.com/library/azure/dn933805.aspx).
 
-## Email
-Les courriers électroniques peuvent être envoyés à n’importe quelle adresse électronique valide. Les administrateurs et les coadministrateurs de l’abonnement dans lequel la règle est exécutée seront également avertis.
+## Authentification du webhook
+Le webhook peut s’authentifier à l’aide de l’une des méthodes suivantes :
 
-### Exemple de règle de courrier électronique
-Vous devez définir une règle de courrier électronique, une règle webhook, puis demander ensuite aux règles de démarrer lorsque l’événement du journal d’audit se produit. Vous pouvez voir un exemple d’utilisation de PowerShell dans [Exemples de démarrage rapide Azure Insights PowerShell](insights-powershell-samples.md#alert-on-audit-log-event).
+1. **Autorisation par jeton** : l’URI du webhook est enregistré avec un ID de jeton, par exemple `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`
+2.	**Autorisation de base** : l’URI du webhook est enregistré avec un nom d’utilisateur et un mot de passe, par exemple `https://userid:password@mysamplealert/webcallback?someparamater=somevalue&foo=bar`
 
-
-## Authentification
-Il existe deux formes d’URI d’authentification :
-
-1. L’authentification par jeton en enregistrant l’URI du webhook avec un ID de jeton comme paramètre de requête. Par exemple, https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue
-2. L’authentification de base avec un ID utilisateur et un mot de passe. Par exemple, https://userid:password@mysamplealert/webcallback?someparamater=somevalue&parameter=value
-
-## Schéma de la charge utile du webhook de notification d’événements dans le journal d’audit
-Lorsqu’un nouvel événement est disponible, l’alerte sur les événements du journal d’audit exécute le webhook configuré avec les métadonnées d’événements dans la charge utile du webhook. L’exemple suivant montre le schéma de la charge utile du webhook :
+## Schéma de la charge utile
+L’opération POST contient le schéma et la charge utile JSON ci-après pour toutes les alertes basées sur un journal d’activité. Ce schéma est semblable à celui utilisé par les alertes basées sur des métriques.
 
 ```
 {
@@ -91,32 +83,39 @@ Lorsqu’un nouvel événement est disponible, l’alerte sur les événements d
 
 |Nom de l’élément|	Description|
 |---|---|
-|status |Toujours défini sur « activated »|
-|context|Contexte de l’événement|
-|resourceProviderName|Fournisseur de la ressource affectée|
-|conditionType |« Event »|
-|name |nom de la règle d’alerte.|
-|id |ID de ressource de l’alerte|
-|description|	Description définie dans l’alerte par le créateur de l’alerte|
-|subscriptionId |GUID d’abonnement Azure|
-|timestamp|	Horodatage lorsque l’événement a été généré par le service Azure qui a traité la demande correspondant à l’événement|
-|resourceId |URI d’ID de ressource qui identifie la ressource de façon unique|
-|resourceGroupName|Nom du groupe de ressources de la ressource affectée|
-|properties |Ensemble de paires <Clé, Valeur> (c’est-à-dire Dictionary<String, String>) incluant des détails sur l’événement|
-|event|Élément qui contient des métadonnées relatives à l’événement|
-|autorisation|Capture les propriétés RBAC de l’événement. Il s’agit généralement de « action », « role » et « scope ».|
-|category | Catégorie de l’événement. Les valeurs prises en charge sont : Administrative, Alert, Security, ServiceHealth, Recommendation|
-|caller|Adresse électronique de l’utilisateur qui a effectué l’opération, la revendication UPN ou la revendication SPN basée sur la disponibilité. Peut être null pour certains appels système.|
-|correlationId|	Généralement un GUID au format chaîne. Les événements avec correlationId appartiennent à la même action et partagent généralement le même correlationId.|
-|eventDescription |Texte statique décrivant un événement|
-|eventDataId|Identificateur unique d’un élément|
-|eventSource |Nom de l’infrastructure ou du service Azure qui a généré l’événement|
+|status |Utilisé pour les alertes de métrique. Toujours défini sur « activated » pour les alertes de journal d’activité.|
+|context|Contexte de l’événement.|
+|resourceProviderName|Fournisseur de la ressource affectée.|
+|conditionType |Toujours défini sur « Event ».|
+|name |Nom de la règle d’alerte.|
+|id |ID de ressource de l’alerte.|
+|description|	Description de l’alerte telle que définie lors de la création de l’alerte.|
+|subscriptionId |ID d’abonnement Azure.|
+|timestamp|	Heure à laquelle l’événement a été généré par le service Azure qui a traité la demande.|
+|resourceId |ID de ressource de la ressource affectée.|
+|resourceGroupName|Nom du groupe de ressources de la ressource affectée.|
+|properties |Ensemble de paires `<Key, Value>` (par exemple, `Dictionary<String, String>`) incluant des détails sur l’événement.|
+|event|Élément contenant des métadonnées relatives à l’événement.|
+|autorisation|Propriétés de contrôle d’accès en fonction du rôle (RBAC) de l’événement. Il s’agit généralement des propriétés « action », « role » et « scope ».|
+|category | Catégorie de l’événement. Les valeurs prises en charge sont : Administrative, Alert, Security, ServiceHealth, Recommendation.|
+|caller|Adresse e-mail de l’utilisateur ayant effectué l’opération, la revendication de nom d’utilisateur principal (UPN) ou la revendication de nom de principal du service (SPN) basée sur la disponibilité. Peut être null pour certains appels système.|
+|correlationId|	Généralement un GUID au format chaîne. Les événements avec correlationId appartiennent à la même action et partagent généralement un correlationId.|
+|eventDescription |Description textuelle statique de l’événement.|
+|eventDataId|Identificateur unique de l’événement.|
+|eventSource |Nom de l’infrastructure ou du service Azure ayant généré l’événement.|
 |httpRequest|	Inclut généralement clientRequestId, clientIpAddress et la méthode (méthode HTTP PUT, par exemple).|
-|level|Une des valeurs suivantes : Critical, Error, Warning, Informational et Verbose|
-|operationId|Généralement, un GUID partagé par les événements correspondant à une opération unique|
-|operationName|Nom de l’opération|
-|properties |L’élément dans l’élément d’événement contient les propriétés de l’événement.|
-|status|Chaîne décrivant l’état de l’opération. Les valeurs courantes sont : Started, In Progress, Succeeded, Failed, Active, Resolved|
-|subStatus|	Inclut généralement le code d’état HTTP de l’appel REST correspondant. Il peut également inclure d’autres chaînes décrivant un sous-état. Les valeurs courantes sont : OK (Code d’état HTTP : 200), Created (Code d’état HTTP : 201), Accepted (Code d’état HTTP : 202), No content (Code d’état HTTP : 204), Bad Request (Code d’état HTTP : 400), Not found (Code d’état HTTP : 404), Conflict (Code d’état HTTP : 409), Internal Server Error (Code d’état HTTP : 500), Service unavailable (Code d’état HTTP : 503), Gateway Timeout (Code d’état HTTP : 504)|
+|level|L’une des valeurs suivantes : « Critical », « Error », « Warning », « Informational » et « Verbose ».|
+|operationId|Généralement, GUID partagé par les événements correspondant à une opération unique.|
+|operationName|Nom de l’opération.|
+|properties |Les propriétés de l’événement.|
+|status|Chaîne. État de l’opération. Les valeurs courantes sont : « Started », « In Progress », « Succeeded », « Failed », « Active », « Resolved ».|
+|subStatus|	Inclut généralement le code d’état HTTP de l’appel REST correspondant. Il peut également inclure d’autres chaînes décrivant un sous-état. Les valeurs courantes sont : OK (Code d’état HTTP : 200), Created (Code d’état HTTP : 201), Accepted (Code d’état HTTP : 202), No Content (Code d’état HTTP : 204), Bad Request (Code d’état HTTP : 400), Not Found (Code d’état HTTP : 404), Conflict (Code d’état HTTP : 409), Internal Server Error (Code d’état HTTP : 500), Service Unavailable (Code d’état HTTP : 503), Gateway Timeout (Code d’état HTTP : 504).|
 
-<!---HONumber=AcomDC_0810_2016-->
+## Étapes suivantes
+- [En savoir plus sur le journal d’activité](./monitoring-overview-activity-logs.md)
+- [Exécuter des scripts Azure Automation (Runbooks) sur des alertes Azure](http://go.microsoft.com/fwlink/?LinkId=627081)
+- [Utiliser une application logique pour envoyer un SMS par le biais de Twilio à partir d’une alerte Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app). Cet exemple s’applique aux alertes de métrique, mais peut être modifié pour fonctionner avec une alerte de journal d’activité.
+- [Utiliser une application logique pour envoyer un message Slack à partir d’une alerte Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app). Cet exemple s’applique aux alertes de métrique, mais peut être modifié pour fonctionner avec une alerte de journal d’activité.
+- [Utiliser une application logique pour envoyer un message à une file d’attente Azure à partir d’une alerte Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app). Cet exemple s’applique aux alertes de métrique, mais peut être modifié pour fonctionner avec une alerte de journal d’activité.
+
+<!---HONumber=AcomDC_0921_2016-->

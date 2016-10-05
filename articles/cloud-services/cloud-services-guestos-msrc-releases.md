@@ -20,6 +20,25 @@
 
 Les tableaux suivants indiquent les mises à jour de Microsoft Security Response Center (MSRC) appliquées au SE invité d'Azure. Parcourez cet article pour déterminer si une mise à jour spécifique s'applique au SE invité que vous utilisez. Les mises à jour vont toujours de l'avant pour la [famille][family-explain] spécifique avec laquelle elles ont été présentées.
 
+## SE invité septembre 
+
+| ID de bulletin | Article de la base de connaissances parent | Description de la vulnérabilité | SE invité | Date de première présentation |
+| ----------- | ------------------- | --------------------------------------------------------------------------- | ---------------- | --------------------- |
+| MS16-104 | [3183038] | Mise à jour de sécurité cumulative pour Internet Explorer | 4\.36, 3.43, 2.55 | 13 septembre 2016 |
+| MS16-106 | [3185848] | Mise à jour de sécurité pour le composant graphique Microsoft | 4\.36, 3.43, 2.55 | 13 septembre 2016 |
+| MS16-110 | [3178467] | Mise à jour de sécurité pour Windows | 4\.36, 3.43, 2.55 | 13 septembre 2016 |
+| MS16-111 | [3186973] | Mise à jour de sécurité pour le noyau Windows | 4\.36, 3.43, 2.55 | 13 septembre 2016 |
+| MS16-112 | [3178469] | Mise à jour de sécurité pour l’écran de verrouillage Windows | 4\.36 | 13 septembre 2016 |
+| MS16-114 | [3185879] | Mise à jour de sécurité pour Windows SMB Server | 4\.36, 3.43, 2.55 | 13 septembre 2016 |
+| MS16-115 | [3188733] | Mise à jour de sécurité pour PDF | 4\.35, 3.43 | 13 septembre 2016 |
+| MS16-116 | [3188724] | Mise à jour de sécurité dans OLE Automation pour le moteur de script VBScript | 4\.36, 3.43, 2.55 | 13 septembre 2016 |
+| | [3174644] | Mise à jour de la prise en charge pour l’échange de clés Diffie-Hellman | 4\.36, 3.43, 2.55 | 13 septembre 2016 |
+| | [3177723] | Mise à jour de fuseau horaire : l’Égypte annule l’heure d’été | 4\.36, 3.43, 2.55 | 13 septembre 2016 |
+| | [3179573] | Correctif cumulatif d’août 2016 pour Windows 7 SP1 et Windows Server 2008 R2 SP1 | 2\.55 | 13 septembre 2016 |
+| | [3179575] | Correctif cumulatif d’août 2016 pour Windows Server 2012 | 3\.43 | 13 septembre 2016 |
+| | [3179574] | Correctif cumulatif d’août 2016 pour Windows RT 8.1, Windows 8.1 et Windows Server 2012 R2 | 4\.36 | 13 septembre 2016 |
+
+
 ## SE invité août 
 
 | ID de bulletin | Article de la base de connaissances parent | Description de la vulnérabilité | SE invité | Date de première présentation |
@@ -349,6 +368,19 @@ Les tableaux suivants indiquent les mises à jour de Microsoft Security Response
 | N/A | [2999802][2999802] | Des lignes pleines sont imprimées dans Windows au lieu de lignes en pointillés | 4\.15, 3.22, 2.34 | 13 janvier 2015 |
 | N/A | [2896881][2896881] | Durée d'ouverture de session importante lorsque vous utilisez la commande AddPrinterConnection VBScript pour mapper des imprimantes pour les utilisateurs lors du processus d'ouverture de session dans Windows | 4\.15, 3.22, 2.34 | 13 janvier 2015 |
 
+[3183038]: http://support.microsoft.com/kb/3183038
+[3185848]: http://support.microsoft.com/kb/3185848
+[3178467]: http://support.microsoft.com/kb/3178467
+[3186973]: http://support.microsoft.com/kb/3186973
+[3178469]: http://support.microsoft.com/kb/3178469
+[3185879]: http://support.microsoft.com/kb/3185879
+[3188733]: http://support.microsoft.com/kb/3188733
+[3188724]: http://support.microsoft.com/kb/3188724
+[3174644]: http://support.microsoft.com/kb/3174644
+[3177723]: http://support.microsoft.com/kb/3177723
+[3179573]: http://support.microsoft.com/kb/3179573
+[3179575]: http://support.microsoft.com/kb/3179575
+[3179574]: http://support.microsoft.com/kb/3179574
 
 [3177356]: http://support.microsoft.com/kb/3177356
 [3177393]: http://support.microsoft.com/kb/3177393
@@ -602,4 +634,4 @@ Les tableaux suivants indiquent les mises à jour de Microsoft Security Response
 [family-explain]: cloud-services-guestos-update-matrix.md#guest-os-family-version-and-release-explanation
  
 
-<!---HONumber=AcomDC_0817_2016-->
+<!---HONumber=AcomDC_0921_2016-->

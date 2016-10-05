@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Notes de publication de Media Services" 
+	pageTitle="Notes de publication Media Services | Microsoft Azure" 
 	description="Notes de publication de Media Services" 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="media" 
 	ms.devlang="dotnet" 
 	ms.topic="article" 
-	ms.date="07/14/2016"
+	ms.date="09/19/2016"
 	ms.author="juliako"/>
 
 # Notes de publication d'Azure Media Services
@@ -150,7 +150,7 @@ Azure Media Services (AMS) est désormais également disponible dans les centres
 
 - Annonce de la disponibilité générale de Media Encoder Standard. Pour plus d’informations, consultez [ce billet de blog](https://azure.microsoft.com/blog/2015/07/16/announcing-the-general-availability-of-media-encoder-standard/)
 
-	Media Encoder Standard utilise les présélections décrites dans [cette](http://go.microsoft.com/fwlink/?LinkId=618336) section. Notez que, lorsque vous utilisez une présélection pour les encodages 4K, vous devez obtenir le type d’unité réservée **Premium**. Pour plus d’informations, consultez [Mise à l’échelle de l’encodage](media-services-portal-encoding-units).
+	Media Encoder Standard utilise les présélections décrites dans [cette](http://go.microsoft.com/fwlink/?LinkId=618336) section. Notez que, lorsque vous utilisez une présélection pour les encodages 4K, vous devez obtenir le type d’unité réservée **Premium**. Pour plus d’informations, consultez [Mise à l’échelle de l’encodage](media-services-scale-media-processing-overview.md).
 - Légendes en temps réel en direct avec Azure Media Services et Azure Media Player. Pour plus d’informations, consultez [ce billet de blog](https://azure.microsoft.com/blog/2015/07/08/live-real-time-captions-with-azure-media-services-and-player/).
 
 ###Mises à jour du Kit de développement logiciel (SDK) .NET de Media Services
@@ -261,12 +261,12 @@ Cette version a marqué le constructeur Microsoft.WindowsAzure.MediaServices.Cli
 
 ##<a id="november_changes_14"></a>Version de novembre 2014
 
-- Media Services vous permet désormais de recevoir du contenu de diffusion en continu lisse (FMP4) sur une connexion SSL. Pour assurer la réception via SSL, veillez à mettre à jour l’URL de réception pour HTTPS. Pour plus d’informations sur la diffusion en continu en direct, consultez la page [Utilisation de la diffusion en continu Azure Media Services].
-- Notez qu'actuellement, vous ne pouvez pas recevoir un flux RTMP en direct sur une connexion SSL.
-- Vous pouvez aussi diffuser votre contenu via une connexion SSL. Pour ce faire, assurez-vous que votre URL de diffusion commence par HTTPS.
-- Notez que vous pouvez uniquement transmettre en continu via le protocole SSL si le point de terminaison à partir duquel vous distribuez votre contenu a été créé après le 10 septembre 2014. Si vos URL de diffusion sont basées sur des points de terminaison créés après le 10 septembre, l’URL contient « streaming.mediaservices.windows.net » (le nouveau format). Les URL de diffusion qui contiennent « origin.mediaservices.windows.net » (ancien format) ne sont pas compatibles avec le protocole SSL. Si votre URL suit l’ancien format et que vous souhaitez être en mesure de diffuser via le protocole SSL, [créez un point de terminaison](media-services-manage-origins.md). L’utilisation d’URL créées à partir du nouveau point de terminaison permet de diffuser votre contenu via le protocole SSL.
-   
-##<a id="october_changes_14"></a>Version d’octobre 2014
+        - Media Services now enables you to ingest a live Smooth Streaming (FMP4) content over an SSL connection. To ingest over SSL, make sure to update the ingest URL to HTTPS.  For more information about live streaming, see [Working with Azure Media Services Live Streaming].
+        - Note that currently, you cannot ingest an RTMP live stream over an SSL connection.
+        - You can also stream your content over an SSL connection. To do this, make sure your streaming URLs start with HTTPS.
+        - Note that you can only stream over SSL if the streaming endpoint from which you deliver your content was created after September 10th, 2014. If your streaming URLs are based on the streaming endpoints created after September 10th, the URL contains “streaming.mediaservices.windows.net” (the new format). Streaming URLs that contain “origin.mediaservices.windows.net” (the old format) do not support SSL. If your URL is in the old format and you want to be able to stream over SSL, [create a new streaming endpoint](media-services-portal-manage-streaming-endpoints.md). Use URLs created based on the new streaming endpoint to stream your content over SSL.
+
+        ##<a id="october_changes_14"></a>October 2014 Release
 
 ### <a id="new_encoder_release"></a>Version de l’encodeur Media Services
 
@@ -647,4 +647,4 @@ La fonctionnalité suivante est une nouveauté de la version de novembre du Kit 
 [Gestion des notifications de travaux de Media Services]: http://msdn.microsoft.com/library/azure/dn261241.aspx
  
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

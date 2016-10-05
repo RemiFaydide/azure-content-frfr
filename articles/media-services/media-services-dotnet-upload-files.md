@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Charger des fichiers dans un compte Media Services à l’aide de .NET" 
+	pageTitle="Charger des fichiers dans un compte Media Services à l’aide de .NET | Microsoft Azure" 
 	description="Apprenez à obtenir du contenu multimédia dans Media Services en créant et en chargeant des ressources." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="na" 
 	ms.topic="article" 
- 	ms.date="08/30/2016" 
+ 	ms.date="09/19/2016" 
 	ms.author="juliako"/>
 
 
@@ -28,6 +28,12 @@
 Dans Media Services, vous téléchargez (ou réceptionnez) vos fichiers numériques dans un élément multimédia. L'entité **Asset** peut contenir des fichiers vidéo et audio, des images, des collections de miniatures, des pistes textuelles et des légendes (et les métadonnées concernant ces fichiers). Une fois les fichiers téléchargés, votre contenu est stocké en toute sécurité dans le cloud et peut faire l’objet d’un traitement et d’une diffusion en continu.
 
 Les fichiers de l'élément multimédia sont appelés **fichiers d'élément multimédia**. L'instance **AssetFile** et le fichier multimédia réel sont deux objets distincts. L’instance AssetFile contient des métadonnées concernant le fichier multimédia, tandis que le fichier multimédia contient le contenu multimédia réel.
+
+>[AZURE.NOTE]Les considérations suivantes s’appliquent lorsque vous choisissez un nom de fichier multimédia :
+>
+>- Media Services utilise la valeur de la propriété IAssetFile.Name au moment de la génération des URL pour le contenu de diffusion en continu (par exemple, http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Pour cette raison, l'encodage par pourcentage n'est pas autorisé. La valeur de la propriété **Name** ne peut pas comprendre un des [caractères réservés à l’encodage par pourcentage](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters) suivants : !*'();:@&=+$,/?%#". En outre, il ne peut exister qu’un ’.’ pour l’extension de nom de fichier.
+>
+>- La longueur du nom ne doit pas dépasser 260 caractères.
 
 Lorsque vous créez des éléments multimédias, vous pouvez spécifier les options de chiffrement suivantes :
 
@@ -44,7 +50,6 @@ Si votre élément multimédia est chiffré avec l'option **CommonEncrypted** ou
 
 Si votre élément multimédia est chiffré avec l'option **StorageEncrypted**, le Kit de développement logiciel (SDK) Media Services pour .NET crée une **ContentKey** **StorateEncrypted** pour votre élément multimédia.
 
->[AZURE.NOTE]Media Services utilise la valeur de la propriété IAssetFile.Name au moment de la génération des URL pour le contenu de diffusion en continu (par exemple, http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters.). Pour cette raison, l'encodage par pourcentage n'est pas autorisé. La valeur de la propriété **Name** ne peut pas comprendre un des [caractères réservés à l’encodage par pourcentage](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters) suivants : !*'();:@&=+$,/?%#". En outre, il ne peut exister qu’un « . » pour l’extension de nom de fichier.
 
 Cette rubrique montre comment utiliser le Kit de développement logiciel (SDK) Media Services pour .NET, ainsi que les extensions du SDK Media Services pour .NET, pour charger des fichiers vers un élément multimédia Media Services.
 
@@ -311,11 +316,11 @@ L’exemple suivant appelle la fonction UploadFile et spécifie le chiffrement d
 [AZURE.INCLUDE [media-services-user-voice-include](../../includes/media-services-user-voice-include.md)]
 
 
+##Étape suivante
 
-##Étapes suivantes
 Maintenant que vous avez chargé un élément multimédia dans Media Services, consultez la rubrique [Obtention d’un processeur multimédia][].
 
 [Obtention d’un processeur multimédia]: media-services-get-media-processor.md
  
 
-<!---HONumber=AcomDC_0831_2016-->
+<!---HONumber=AcomDC_0921_2016-->

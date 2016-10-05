@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Vue d’ensemble de la vidéo en flux continu à l’aide d’Azure Media Services" 
+	pageTitle="Vue d’ensemble de la vidéo en flux continu à l’aide d’Azure Media Services | Microsoft Azure" 
 	description="Cette rubrique fournit une vue d’ensemble de la vidéo en flux continu à l’aide d’Azure Media Services." 
 	services="media-services" 
 	documentationCenter="" 
@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="na" 
 	ms.devlang="ne" 
 	ms.topic="article" 
-	ms.date="06/22/2016"
+	ms.date="09/19/2016"
 	ms.author="juliako"/>
 
 #Vue d’ensemble de la vidéo en flux continu à l’aide d’Azure Media Services
@@ -43,7 +43,7 @@ Dans Azure Media Sercices, les **canaux**, les **programmes** et le **point de t
 
 Un **canal** représente un pipeline de traitement du contenu vidéo en flux continu. Un canal peut recevoir des flux d’entrée live de l’une des manières suivantes :
 
-- Un encodeur live local envoie au canal un paquet **RTMP** ou **Smooth Streaming** (MP4 fragmenté) à débit binaire multiple, configuré pour une remise **pass-through** (directe). Avec la remise **pass-through**, les flux ingérés transitent par les **canaux** sans traitement supplémentaire. Vous pouvez utiliser les encodeurs live suivants qui produisent un flux Smooth Streaming à débit binaire multiple : Elemental, Envivio, Cisco. Les encodeurs live suivants produisent un flux au format RTMP : Adobe Flash Live, Telestream Wirecast et transcodeurs Tricaster. Un encodeur live peut également envoyer un flux à débit binaire unique vers un canal qui n’est pas activé pour le Live Encoding, mais ce n’est pas recommandé. Lorsqu’il y est invité, Media Services fournit le flux aux clients.
+- Un encodeur en direct local envoie au canal un paquet **RTMP** ou **Smooth Streaming** (MP4 fragmenté) à débit binaire multiple, configuré pour un envoi **direct**. L’envoi **direct** correspond aux flux reçus qui transitent par les **canaux** sans traitement supplémentaire. Vous pouvez utiliser les encodeurs live suivants qui produisent un flux Smooth Streaming à débit binaire multiple : Elemental, Envivio, Cisco. Les encodeurs live suivants produisent un flux au format RTMP : Adobe Flash Live, Telestream Wirecast et transcodeurs Tricaster. Un encodeur live peut également envoyer un flux à débit binaire unique vers un canal qui n’est pas activé pour le Live Encoding, mais ce n’est pas recommandé. Lorsqu’il y est invité, Media Services fournit le flux aux clients.
 
 	>[AZURE.NOTE] La méthode pass-through est le moyen le plus économique de diffuser des vidéos en continu si plusieurs événements vous concernent sur une longue période, et si vous avez déjà investi dans des encodeurs locaux. Consultez les détails de la [tarification](/pricing/details/media-services/).
 	
@@ -55,7 +55,7 @@ Un **canal** représente un pipeline de traitement du contenu vidéo en flux con
 
 - **Aucun** (pass-through) : indiquez cette valeur si vous envisagez d’utiliser un encodeur live local qui produira des flux à débit binaire multiple (un flux pass-through). Le cas échéant, le flux entrant est transmis à la sortie sans encodage. Il s’agit du comportement d’un canal avant la version 2.10.
 
-- **Standard** : choisissez cette valeur si vous envisagez d’utiliser Media Services pour encoder votre flux live à débit binaire unique en flux à débit binaire multiple. Cette méthode est plus économique pour une mise à l’échelle rapide pour les événements peu fréquents. N'oubliez pas qu'il existe un impact sur la facturation pour le codage en direct et que laisser un canal d'encodage en temps réel dans l'état « Actif » occasionne des frais de facturation. Il est recommandé d'arrêter immédiatement vos canaux en cours d'exécution une fois votre événement de diffusion en continu en temps réel terminé pour éviter des frais horaires supplémentaires.
+- **Standard** : choisissez cette valeur si vous envisagez d’utiliser Media Services pour encoder votre flux live à débit binaire unique en flux à débit binaire multiple. Cette méthode est plus économique pour une mise à l’échelle rapide pour les événements peu fréquents. N'oubliez pas qu'il existe un impact sur la facturation pour le codage en direct et que laisser un canal d'encodage en temps réel dans l'état « Actif » occasionne des frais de facturation. Il est recommandé d'arrêter immédiatement vos canaux en cours d'exécution une fois votre événement de diffusion en continu en temps réel terminé pour éviter des frais horaires supplémentaires.
 
 ##Comparaison des types de canaux
 
@@ -78,11 +78,11 @@ Auto-fermeture des canaux en cas de perte du flux d’entrée|Non|Après 12 heur
 
 ##Utilisation de canaux recevant un flux continu à débit binaire multiple provenant d’encodeurs locaux (pass-through)
 
-Le diagramme suivant présente les principaux composants de la plateforme AMS impliqués dans ce flux de travail **pass-through**.
+Le diagramme suivant présente les principaux composants de la plateforme AMS impliqués dans ce flux de travail de **méthode directe**.
 
 ![Flux de travail live](./media/media-services-live-streaming-workflow/media-services-live-streaming-current.png)
 
-Pour plus d’informations, consultez [Utilisation de canaux recevant un flux continu à débit binaire multiple provenant d’encodeurs locaux](media-services-live-streaming-with-onprem-encoders.md).
+Pour plus d’informations, consultez [Utilisation des canaux recevant un flux dynamique à débit binaire multiple provenant d’encodeurs locaux](media-services-live-streaming-with-onprem-encoders.md).
 
 ##Utilisation de canaux activés pour effectuer un encodage en temps réel avec Azure Media Services
 
@@ -138,7 +138,7 @@ Le tableau suivant montre comment les états du canal sont mappés au mode de fa
  
 État du canal|Indicateurs de l’interface utilisateur du portail|Existe-t-il une facturation ?
 ---|---|---
-Démarrage en cours|Démarrage en cours|Aucun (état transitoire)
+Démarrage en cours|Starting|Aucun (état transitoire)
 Exécution|Prêt (aucun programme en cours d'exécution)<br/>ou<br/> Diffusion en continu (au moins un programme en cours d'exécution)|OUI
 En cours d’arrêt|En cours d’arrêt|Aucun (état transitoire)
 Arrêté|Arrêté|Non
@@ -166,4 +166,4 @@ Arrêté|Arrêté|Non
 
 [Concepts Azure Media Services](media-services-concepts.md)
 
-<!---HONumber=AcomDC_0629_2016-->
+<!---HONumber=AcomDC_0921_2016-->

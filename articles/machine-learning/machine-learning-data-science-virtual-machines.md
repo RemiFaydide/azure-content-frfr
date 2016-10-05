@@ -13,14 +13,14 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/14/2016"
+	ms.date="09/19/2016"
 	ms.author="xibingao;bradsev" />
 
 # Machine virtuelle pour la science des données dans Azure
 
 Les instructions fournies ici décrivent la procédure de configuration d'une machine virtuelle Azure et d'une machine virtuelle Azure équipée du service SQL en tant que serveurs Notebook IPython. La machine virtuelle Windows est configurée avec des outils connexes, tels que Notebook IPython, l’Explorateur de stockage Azure et AzCopy, ainsi que d’autres utilitaires utiles pour les projets de science des données. Par exemple, l’Explorateur de stockage Azure et AzCopy facilitent le chargement de données dans le stockage Azure depuis votre ordinateur local ou le téléchargement de ces données vers votre ordinateur local à partir du stockage.
 
-Ce menu pointe vers des rubriques qui décrivent comment configurer les différents environnements de science de données utilisés par le processus TDSP (Team Data Science Process).
+Ce menu pointe vers des rubriques qui décrivent comment configurer les différents environnements de science de données utilisés par le [processus TDSP (Team Data Science Process)](data-science-process-overview.md).
 
 [AZURE.INCLUDE [data-science-environment-setup](../../includes/cap-setup-environments.md)]
 
@@ -41,4 +41,4 @@ Une fois approvisionnées et configurées, ces machines virtuelles sont utilisab
 > [AZURE.NOTE] Le service Azure Virtual Machines est facturé au tarif du **paiement à l’utilisation**. Pour vous assurer de ne pas être facturé lorsque vous n’utilisez pas votre machine virtuelle, elle doit être définie sur l’état **Arrêté (désalloué)** à partir du [Portail Azure Classic](http://manage.windowsazure.com/). Pour obtenir des instructions détaillées sur la libération de votre machine virtuelle, consultez la page [Arrêter et libérer une machine virtuelle inutilisée](machine-learning-data-science-setup-virtual-machine.md#shutdown)
  
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

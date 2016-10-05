@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="na"
    ms.workload="identity"
-   ms.date="09/12/2016"
+   ms.date="09/25/2016"
    ms.author="markvi"/>
 
 # Création de rapports Azure Active Directory - version préliminaire
@@ -26,7 +26,7 @@ La création de rapports couvre principalement deux domaines :
 
 - **Activités de connexion** – Informations sur l’utilisation des applications gérées et les activités de connexion des utilisateurs
 
-- **Activités du système** - Informations d’audit sur les utilisateurs et la gestion des groupes, vos applications gérées et les activités de répertoire
+- **Activités du système** – Informations sur les activités du système liées aux utilisateurs et à la gestion des groupes, à vos applications gérées et aux activités de répertoire
 
 Selon l’étendue des données que vous recherchez, vous pouvez accéder à ces rapports en cliquant sur **Utilisateurs et groupes** ou **Applications d’entreprise** dans la liste des services au sein du [portail Azure](https://portal.azure.com).
 
@@ -118,7 +118,7 @@ Une autre méthode de filtrage des entrées des activités de connexion consiste
 
 ![Reporting](./media/active-directory-reporting-azure-portal/84.png "Reporting")
 
-## Activités du système
+## Journaux d’audit
 
 Les journaux d’audit dans Azure Active Directory fournissent des enregistrements des activités du système pour la conformité.
 
@@ -216,4 +216,4 @@ Une autre méthode de filtrage des entrées d’un journal d’audit consiste à
 
 Consultez le [Guide Azure Active Directory Reporting Guide](active-directory-reporting-guide.md).
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0928_2016-->

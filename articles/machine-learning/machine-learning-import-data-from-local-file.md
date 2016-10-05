@@ -14,7 +14,7 @@
 	ms.tgt_pltfrm="na"
 	ms.devlang="na"
 	ms.topic="article"
-	ms.date="06/17/2016"
+	ms.date="09/16/2016"
 	ms.author="garye;bradsev" />
 
 
@@ -38,6 +38,6 @@ Vous pouvez télécharger des données à partir d’un disque dur local en proc
 
 Pendant le téléchargement, vous verrez un message indiquant que votre fichier est en cours de téléchargement. Le temps de téléchargement dépend de la taille de vos données et de la vitesse de votre connexion au service. Si vous savez que le fichier prendra du temps, vous pouvez faire autre chose dans Machine Learning Studio en attendant. Cependant, la fermeture du navigateur entraîne l’échec du téléchargement.
 
-Une fois que vos données sont téléchargées, elles sont stockées dans un module de jeu de données et sont disponibles pour n'importe quelle expérience dans votre espace de travail. Vous trouverez le jeu de données ainsi que tous les exemples de jeu de données préchargés dans la liste des **Jeux de données enregistrés** dans la palette des modules lorsque vous éditez une expérience. Vous pouvez glisser-déplacer le jeu de données dans le canevas de l’expérience en vue d’affiner une analyse et l’apprentissage automatique.
+Une fois que vos données sont téléchargées, elles sont stockées dans un module de jeu de données et sont disponibles pour n'importe quelle expérience dans votre espace de travail. Lorsque vous éditez une expérience, les jeux de données que vous avez créés apparaissent sous **Mes jeux de données** dans la liste **Jeux de données enregistrés** de la palette des modules. Vous pouvez glisser-déplacer le jeu de données dans le canevas de l’expérience en vue d’affiner une analyse et l’apprentissage automatique.
 
-<!---HONumber=AcomDC_0914_2016-->
+<!---HONumber=AcomDC_0921_2016-->

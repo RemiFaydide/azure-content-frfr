@@ -13,7 +13,7 @@
    ms.topic="get-started-article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-services"
-   ms.date="07/23/2016"
+   ms.date="09/27/2016"
    ms.author="lodipalm;barbkess;mausher;jrj;sonyama;kevin"/>
 
 
@@ -49,7 +49,7 @@ Le diagramme suivant illustre l’architecture plus en détail.
 
 **Nœuds de calcul :** les nœuds de calcul alimentent SQL Data Warehouse. Il s’agit de bases de données SQL qui stockent vos données et traitent votre requête. Lors de l’ajout de données, SQL Data Warehouse distribue les lignes à vos nœuds de calcul. Les nœuds de calcul sont les travaux qui exécutent les requêtes parallèles sur vos données. Après traitement, ils renvoient les résultats au nœud de contrôle. Pour terminer la requête, le nœud de contrôle rassemble les résultats et renvoie le résultat final.
 
-**Stockage :** les données sont stockées dans Azure Blob Storage. Lorsque les nœuds de calcul interagissent avec vos données, la lecture et l’écriture s’effectuent directement vers et depuis le stockage d’objets blob. Dans la mesure où le stockage Azure se développe de manière transparente et sans limite, SQL Data Warehouse peut faire de même. Étant donné que le calcul et le stockage sont indépendants, SQL Data Warehouse peut automatiquement mettre à l’échelle le stockage séparément du calcul de mise à l’échelle et inversement. Azure Blob Storage offre également une tolérance complète aux pannes et rationalise le processus de sauvegarde et de restauration.
+**Stockage :** les données sont stockées dans Azure Blob Storage. Lorsque les nœuds de calcul interagissent avec vos données, la lecture et l’écriture s’effectuent directement vers et depuis le stockage d’objets blob. Dans la mesure où le stockage Azure se développe de manière transparente et à grande échelle, SQL Data Warehouse peut en faire de même. Étant donné que le calcul et le stockage sont indépendants, SQL Data Warehouse peut automatiquement mettre à l’échelle le stockage séparément du calcul de mise à l’échelle et inversement. Azure Blob Storage offre également une tolérance complète aux pannes et rationalise le processus de sauvegarde et de restauration.
 
 **Service de déplacement de données :** DMS déplace les données entre les nœuds. DMS permet aux nœuds de calcul d’accéder aux données dont ils ont besoin pour les jonctions et les agrégations. DMS n’est pas un service Azure. C’est un service Windows qui s’exécute en même temps que la base de données SQL sur tous les nœuds. Dans la mesure où DMS s’exécute en arrière-plan, aucune interaction directe avec ce service n’est possible. Toutefois, en examinant les plans de requête, vous remarquerez qu’ils comprennent certaines opérations DMS, dans la mesure où le déplacement des données est nécessaire pour exécuter chaque requête en parallèle.
 
@@ -148,10 +148,11 @@ PolyBase vous permet de valoriser vos données de différentes sources en appliq
 
 À présent que vous en savez un peu plus sur SQL Data Warehouse, découvrez comment [créer rapidement un SQL Data Warehouse][] et [charger des exemples de données][]. Si vous n’êtes pas encore familiarisé avec Azure, vous pouvez vous appuyer sur le [Glossaire Azure][] lorsque vous rencontrez de nouveaux termes. Ou bien, examinons ces autres ressources de SQL Data Warehouse.
 
+- [Témoignages de clients]
 - [Blogs]
 - [Demandes de fonctionnalités]
 - [Vidéos]
-- [Blogs de l’équipe CAT (Customer Advisory Team)]
+- [Blogs de l’équipe de conseil clientèle]
 - [Création d’un ticket de support]
 - [Forum MSDN]
 - [Forum Stack Overflow]
@@ -162,24 +163,25 @@ PolyBase vous permet de valoriser vos données de différentes sources en appliq
 [1]: ./media/sql-data-warehouse-overview-what-is/dwarchitecture.png
 
 <!--Article references-->
-[Création d’un ticket de support]: sql-data-warehouse-get-started-create-support-ticket.md
-[charger des exemples de données]: sql-data-warehouse-load-sample-databases.md
-[créer rapidement un SQL Data Warehouse]: sql-data-warehouse-get-started-provision.md
-[documentation relative à la migration]: sql-data-warehouse-overview-migrate.md
-[Partenaires de solutions SQL Data Warehouse]: sql-data-warehouse-partner-business-intelligence.md
-[Vue d’ensemble des outils intégrés]: sql-data-warehouse-overview-integrate.md
-[vue d’ensemble des fonctionnalités de sauvegarde et de restauration]: sql-data-warehouse-restore-database-overview.md
+[Création d’un ticket de support]: ./sql-data-warehouse-get-started-create-support-ticket.md
+[charger des exemples de données]: ./sql-data-warehouse-load-sample-databases.md
+[créer rapidement un SQL Data Warehouse]: ./sql-data-warehouse-get-started-provision.md
+[documentation relative à la migration]: ./sql-data-warehouse-overview-migrate.md
+[Partenaires de solutions SQL Data Warehouse]: ./sql-data-warehouse-partner-business-intelligence.md
+[Vue d’ensemble des outils intégrés]: ./sql-data-warehouse-overview-integrate.md
+[vue d’ensemble des fonctionnalités de sauvegarde et de restauration]: ./sql-data-warehouse-restore-database-overview.md
 [Glossaire Azure]: ../azure-glossary-cloud-terminology.md
 
 <!--MSDN references-->
 
 <!--Other Web references-->
+[Témoignages de clients]: https://customers.microsoft.com/search?sq=&ff=story_products_services%26%3EAzure%2FAzure%2FAzure%20SQL%20Data%20Warehouse%26%26story_product_families%26%3EAzure%2FAzure%26%26story_product_categories%26%3EAzure&p=0
 [Blogs]: https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/
-[Blogs de l’équipe CAT (Customer Advisory Team)]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
+[Blogs de l’équipe de conseil clientèle]: https://blogs.msdn.microsoft.com/sqlcat/tag/sql-dw/
 [Demandes de fonctionnalités]: https://feedback.azure.com/forums/307516-sql-data-warehouse
 [Forum MSDN]: https://social.msdn.microsoft.com/Forums/azure/fr-FR/home?forum=AzureSQLDataWarehouse
 [Forum Stack Overflow]: http://stackoverflow.com/questions/tagged/azure-sqldw
 [Twitter]: https://twitter.com/hashtag/SQLDW
 [Vidéos]: https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0928_2016-->

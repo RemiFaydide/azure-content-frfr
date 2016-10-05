@@ -87,11 +87,11 @@ Les certificats clients sont requis pour authentifier les demandes au service. C
 8.    [Configuration des clients autorisés dans le fichier de configuration de service](#Configure-Allowed-Clients-in-the-Service-Configuration-File)
 
 ### Utilisation de certificats clients existants
-1.    [Recherche de la clé publique de l’autorité de certification] (#Find-CA-Public Key)
+1.    [Recherche de la clé publique de l’autorité de certification](#Find-CA-Public Key)
 2.    [Téléchargement du certificat CA vers le service cloud](#Upload-CA-certificate-to-cloud-service)
 3.    [Mise à jour du certificat CA dans le fichier de configuration de service](#Update-CA-Certificate-in-Service-Configuration-File)
 4.    [Copie des empreintes numériques des certificats clients](#Copy-Client-Certificate-Thumbprints)
-5.    [Configuration des clients autorisés dans le fichier de configuration de service] (#Configure-Allowed-Clients-in-the-Service-Configuration File)
+5.    [Configuration des clients autorisés dans le fichier de configuration de service](#Configure-Allowed-Clients-in-the-Service-Configuration File)
 6.    [Configuration de la vérification de révocation des certificats clients](#Configure-Client-Certificate-Revocation-Check)
 
 ## Adresses IP autorisées

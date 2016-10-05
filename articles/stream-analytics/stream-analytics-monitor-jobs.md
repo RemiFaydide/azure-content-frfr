@@ -5,7 +5,7 @@
 	services="stream-analytics" 
 	documentationCenter="" 
 	authors="jeffstokes72" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
 <tags 
@@ -23,7 +23,7 @@
 
 ![Onglet Surveiller les tâches](./media/stream-analytics-monitor-jobs/stream-analytics-monitor-jobs-tab.png)
 
-## Configuration requise
+## Composants requis
 Avant de commencer cet article, vous devez disposer des éléments suivants :
 
 - Visual Studio 2012 ou 2013.
@@ -146,7 +146,7 @@ Si vous avez déjà activé la surveillance pour une tâche Stream Analytics di
 > 
 > Toutes les tâches Stream Analytics (et l’ensemble des autres ressources Microsoft Azure) d’une même région partagent ce compte de stockage afin d’y consigner les données de surveillance. Si vous communiquez un compte de stockage différent, cela peut entraîner des effets collatéraux imprévus sur la surveillance de vos autres tâches Stream Analytics et/ou autres ressources Microsoft Azure.
 > 
-> Le compte de stockage utilisé pour remplacer la désignation ```“<YOUR STORAGE ACCOUNT NAME>”``` ci-dessous doit se trouver dans l’abonnement de la tâche Stream Analytics pour laquelle vous avez activé la surveillance.
+> Le compte de stockage utilisé pour remplacer la désignation ```“<YOUR STORAGE ACCOUNT NAME>”``` ci-dessous doit se trouver dans l’abonnement du travail Stream Analytics pour lequel vous avez activé la surveillance.
 
     // Get an existing Stream Analytics job
     JobGetParameters jobGetParameters = new JobGetParameters()
@@ -180,4 +180,4 @@ Pour obtenir une assistance, consultez le [forum Azure Stream Analytics](https:/
 - [Références sur l’API REST de gestion d’Azure Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx)
  
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

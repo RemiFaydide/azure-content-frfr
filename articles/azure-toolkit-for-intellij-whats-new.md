@@ -13,7 +13,7 @@
 	ms.tgt_pltfrm="multiple"
 	ms.devlang="Java"
 	ms.topic="article"
-	ms.date="07/07/2016" 
+	ms.date="09/20/2016" 
 	ms.author="robmcm;asirveda"/>
 
 # Nouveautés du Kit de ressources Azure pour IntelliJ
@@ -56,7 +56,7 @@ Pour plus d’informations sur les boîtes à outils Azure pour les environnemen
   - [Créer une application web « Hello World » pour Azure dans IntelliJ]
   - *Nouveautés du kit de ressources Azure pour IntelliJ (cet article)*
 
-Pour plus d'informations sur l'utilisation d'Azure avec Java, consultez le [Centre de développement Java].
+Pour plus d’informations sur l’utilisation d’Azure avec Java, consultez le [Centre de développement Java pour Azure].
 
 <!-- URL List -->
 
@@ -69,8 +69,8 @@ Pour plus d'informations sur l'utilisation d'Azure avec Java, consultez le [Cent
 [Nouveautés du kit de ressources Azure pour Eclipse]: ./azure-toolkit-for-eclipse-whats-new.md
 [What's New in the Azure Toolkit for IntelliJ]: ./azure-toolkit-for-intellij-whats-new.md
 
-[Centre de développement Java]: http://go.microsoft.com/fwlink/?LinkID=699547
+[Centre de développement Java pour Azure]: http://go.microsoft.com/fwlink/?LinkID=699547
 
 [Plug-in Outils HDInsight pour IntelliJ]: ./hdinsight/hdinsight-apache-spark-intellij-tool-plugin.md
 
-<!---HONumber=AcomDC_0727_2016-->
+<!---HONumber=AcomDC_0921_2016-->

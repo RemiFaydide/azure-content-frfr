@@ -13,7 +13,7 @@
    ms.topic="article"
    ms.tgt_pltfrm="NA"
    ms.workload="data-catalog"
-   ms.date="05/11/2016"
+   ms.date="09/21/2016"
    ms.author="maroche"/>
 
 # Notes de publication sur Azure Data Catalog
@@ -58,23 +58,19 @@ Au moment de l’ouverture des ressources de données dans Microsoft Excel à p
 
 Pour plus d’informations, consultez [Activer ou désactiver les alertes de sécurité relatives aux liens et aux fichiers de sites web suspects](https://support.office.com/article/Enable-or-disable-security-alerts-about-links-and-files-from-suspicious-websites-A1AC6AE9-5C4A-4EB3-B3F8-143336039BBE).
 
-### Colonnes BLOB et UDT manquantes dans les versions préliminaires
-
-Lors de l’inscription des tables et des vues contenant des colonnes d’objets binaires volumineux (BLOB) et de types de données définies par l'utilisateur (UDT), et de l’installation d’une version préliminaire des ressources de données, ces colonnes ne seront pas incluses dans la version préliminaire.
-
 ### Configuration du proxy et de la stratégie, et inscription de la source de données
 
 Les utilisateurs parviennent parfois à se connecter au portail d’Azure Data Catalog, mais lorsqu'ils tentent de se connecter à l'outil de référencement de la source de données, un message d'erreur s’affiche et les empêche de se connecter.
 
 Deux causes possibles à ce problème de comportement :
 
-**Cause n°1 : configuration d’Active Directory Federation Services** L’outil de référencement de la source de données utilise l’authentification par formulaire pour valider les connexions utilisateur avec Active Directory. Pour une ouverture de session réussie, l'authentification par formulaire doit être activée dans la stratégie d'authentification globale par un administrateur Active Directory.
+**Cause n°1 : configuration d’Active Directory Federation Services** L’outil d’inscription de la source de données utilise l’authentification par formulaire pour valider les connexions utilisateur avec Active Directory. Pour une ouverture de session réussie, l'authentification par formulaire doit être activée dans la stratégie d'authentification globale par un administrateur Active Directory.
 
 Cette erreur peut également survenir lorsque l'utilisateur est connecté au réseau d'entreprise ou lorsque l'utilisateur se connecte en dehors du réseau d'entreprise. La stratégie d'authentification globale permet d’activer séparément des méthodes d'authentification pour les connexions intranet et extranet. Des erreurs de connexion peuvent survenir si l'authentification par formulaire n'est pas activée pour le réseau à partir duquel l'utilisateur se connecte.
 
 Pour plus d’informations, consultez [Configuration des stratégies d’authentification](https://technet.microsoft.com/library/dn486781.aspx).
 
-**Cause n°2 : configuration du proxy réseau** Si le réseau d’entreprise utilise un serveur proxy, l’outil de référencement ne peut peut-être pas se connecter à Azure Active Directory via le proxy. Les utilisateurs peuvent s’assurer de l'outil d'inscription en modifiant le fichier de configuration de l'outil, et en ajoutant au fichier la section suivante :
+**Cause n°2 : configuration du proxy réseau** Si le réseau d’entreprise utilise un serveur proxy, l’outil d’inscription ne peut peut-être pas se connecter à Azure Active Directory via le proxy. Les utilisateurs peuvent s’assurer de l'outil d'inscription en modifiant le fichier de configuration de l'outil, et en ajoutant au fichier la section suivante :
 
 
 	  <system.net>
@@ -88,4 +84,4 @@ Pour plus d’informations, consultez [Configuration des stratégies d’authent
 
 Pour localiser le fichier RegistrationTool.exe.config, lancez l'outil d'inscription, puis ouvrez l'utilitaire Gestionnaire des tâches de Windows. Sous l'onglet Détails du Gestionnaire des tâches, cliquez avec le bouton droit sur RegistrationTool.exe et choisissez Ouvrir l'emplacement du fichier dans le menu contextuel.
 
-<!---HONumber=AcomDC_0518_2016-->
+<!---HONumber=AcomDC_0921_2016-->

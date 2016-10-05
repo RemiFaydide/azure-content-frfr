@@ -76,7 +76,7 @@ L’IoT Hub met les données de télémétrie qu’il reçoit à disposition via
 
 ## Azure Stream Analytics
 
-La solution préconfigurée utilise trois tâches [Azure Stream Analytics][lnk-asa] (ASA) pour filtrer le flux de télémétrie en provenance des appareils :
+La solution préconfigurée utilise trois tâches [Azure Stream Analytics][lnk-asa] \(ASA) pour filtrer le flux de télémétrie en provenance des appareils :
 
 
 - *Tâche DeviceInfo* : génère des données vers un hub d'événements qui envoie des messages relatifs à l’instruction de l’inscription de l’appareil, envoyés lorsqu'un périphérique se connecte d'abord ou en réponse à une commande **Modifier l'état de l'appareil**, dans le registre d’appareils de la solution (une base de données DocumentDB).

@@ -13,7 +13,7 @@
    ms.topic="hero-article"
    ms.tgt_pltfrm="na"
    ms.workload="na"
-   ms.date="08/26/2016"
+   ms.date="09/22/2016"
    ms.author="yurid"/>
 
 # Définir des stratégies de sécurité dans Azure Security Center
@@ -64,7 +64,7 @@ Vous pouvez configurer des stratégies de sécurité pour chaque abonnement ou g
 
 9. Dans le panneau **Stratégie de sécurité**, cliquez sur **Activé** pour activer les recommandations de sécurité que vous voulez utiliser pour cet abonnement. Cliquez sur **Stratégie de prévention** pour afficher des options similaires à celles de la capture d’écran suivante :
 
-	![Sélection des stratégies de sécurité](./media/security-center-policies/security-center-policies-fig4-ga.png)
+	![Sélection des stratégies de sécurité](./media/security-center-policies/security-center-policies-fig4-ga-new.png)
 
 Le tableau ci-dessous explique à quoi sert chaque option :
 
@@ -77,8 +77,9 @@ Le tableau ci-dessous explique à quoi sert chaque option :
 | groupes de sécurité réseau ; | Recommande la configuration de [Groupes de sécurité réseau](../virtual-network/virtual-networks-nsg.md) pour contrôler le trafic entrant et sortant vers les machines virtuelles dotées de points de terminaison publics. Les groupes de sécurité réseau configurés pour un sous-réseau sont hérités par toutes les interfaces réseau de machine virtuelle, sauf indication contraire. En plus de vérifier qu’un groupe de sécurité réseau a été configuré, cette stratégie évalue les règles de sécurité de trafic entrant afin d’identifier les règles autorisant le trafic entrant. |
 | Pare-feu d’application web | Recommande l’approvisionnement d’un pare-feu d’applications web sur les machines virtuelles lorsque l’une des conditions suivantes est remplie :</br></br>Une [adresse IP publique de niveau d’instance](../virtual-network/virtual-networks-instance-level-public-ip.md) (ILPIP) est utilisée et les règles de sécurité de trafic entrant du groupe de sécurité réseau associé sont configurées pour autoriser l’accès au port 80 ou 443.</br></br>Une adresse IP à équilibrage de charge est utilisée et les règles associées d’équilibrage de charge et NAT (Network Access Translation) de trafic entrant sont configurées pour autoriser l’accès au port 80 ou 443. Pour plus d’informations, consultez [Prise en charge d’un équilibrage de charge par Azure Resource Manager](../load-balancer/load-balancer-arm.md). |
 | Pare-feu de nouvelle génération | Étend les protections du réseau au-delà des groupes de sécurité réseau intégrés à Azure. Security Center détecte les déploiements pour lesquels un pare-feu de nouvelle génération est recommandé et vous permet d’approvisionner une appliance virtuelle. |
-| Audit SQL | Recommande l’activation de l’audit de l’accès à Azure SQL Database à des fins de conformité, de détection avancée et d’examen. |
+| Audit SQL et détection des menaces | Recommande l’activation de l’audit de l’accès à Azure SQL Database à des fins de conformité, mais également de détection avancée des menaces et d’examen. |
 | Chiffrement transparent des données SQL | Recommande l’activation du chiffrement au repos pour votre base de données Azure SQL Database, ainsi que pour les sauvegardes associées et les fichiers journaux de transaction. Même si vos données font l’objet d’une violation de sécurité, elles ne seront pas lisibles. |
+| Évaluation des vulnérabilités | Recommande d’installer une solution d’évaluation des vulnérabilités sur votre machine virtuelle. |
 
 Après avoir configuré toutes les options, cliquez sur **OK** dans le panneau **Stratégie de sécurité** contenant les recommandations, puis cliquez sur **Enregistrer** dans le panneau **Stratégie de sécurité** contenant les paramètres initiaux.
 
@@ -106,4 +107,4 @@ Dans ce document, vous avez appris à configurer des stratégies de sécurité d
 - [FAQ d’Azure Security Center](security-center-faq.md) : forum aux questions concernant l’utilisation de ce service.
 - [Blog sur la sécurité Azure](http://blogs.msdn.com/b/azuresecurity/) : accédez à des billets de blog sur la sécurité et la conformité Azure.
 
-<!---HONumber=AcomDC_0921_2016-->
+<!---HONumber=AcomDC_0928_2016-->

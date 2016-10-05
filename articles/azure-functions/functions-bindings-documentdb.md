@@ -68,6 +68,29 @@ En fonction de l’exemple de fichier function.json ci-dessus, la liaison d’en
 	    document.text = "This has changed.";
 	}
 
+#### Exemple de code d’entrée Azure DocumentDB pour un déclencheur de file d’attente F#
+
+En fonction de l’exemple de fichier function.json ci-dessus, la liaison d’entrée DocumentDB récupérera le document dont l’ID correspond à la chaîne de message de file d’attente et le transmettra au paramètre "document". Si ce document est introuvable, le paramètre "document" présentera la valeur Null. Le document sera ensuite mis à jour avec la nouvelle valeur de texte une fois la fonction terminée.
+
+	open FSharp.Interop.Dynamic
+	let Run(myQueueItem: string, document: obj) =
+	    document?text <- "This has changed."
+
+Vous avez besoin d’un fichier `project.json` qui utilise NuGet pour spécifier les packages `FSharp.Interop.Dynamic` et `Dynamitey` en tant que dépendances de packages, comme suit :
+
+	{
+	  "frameworks": {
+	    "net46": {
+	      "dependencies": {
+	        "Dynamitey": "1.0.2",
+	        "FSharp.Interop.Dynamic": "3.0.0"
+	      }
+	    }
+	  }
+	}
+
+Ce code utilisera NuGet pour extraire vos dépendances et les référencera dans votre script.
+
 #### Exemple de code d’entrée Azure DocumentDB pour un déclencheur de file d’attente Node.js
  
 En fonction de l’exemple de fichier function.json ci-dessus, la liaison d’entrée DocumentDB récupérera le document dont l’ID correspond à la chaîne de message de file d’attente, et le transmettra à la propriété de liaison `documentIn`. Dans les fonctions Node.js, les documents mis à jour ne sont pas renvoyés à la collection. Toutefois, vous pouvez transmettre directement la liaison d’entrée à une liaison de sortie DocumentDB nommée `documentOut` pour prendre en charge les mises à jour. Cet exemple de code met à jour la propriété de texte du document d’entrée et définit cet élément comme document de sortie.
@@ -131,6 +154,12 @@ Document de sortie :
 	}
  
 
+#### Exemple de code de sortie Azure DocumentDB pour un déclencheur de file d’attente F#
+
+	open FSharp.Interop.Dynamic
+	let Run(myQueueItem: string, document: obj) =
+	    document?text <- (sprintf "I'm running in an F# function! %s" myQueueItem)
+
 #### Exemple de code de sortie Azure DocumentDB pour un déclencheur de file d’attente C#
 
 
@@ -178,6 +207,27 @@ Vous pourriez utiliser le code C# suivant dans une fonction de déclencheur de f
 	    };
 	}
 
+Ou le code F # équivalent :
+
+	open FSharp.Interop.Dynamic
+	open Newtonsoft.Json
+
+	type Employee = {
+	    id: string
+	    name: string
+	    employeeId: string
+	    address: string
+	}
+
+	let Run(myQueueItem: string, employeeDocument: byref<obj>, log: TraceWriter) =
+	    log.Info(sprintf "F# Queue trigger function processed: %s" myQueueItem)
+	    let employee = JObject.Parse(myQueueItem)
+	    employeeDocument <-
+	        { id = sprintf "%s-%s" employee?name employee?employeeId
+	          name = employee?name
+	          employeeId = employee?id
+	          address = employee?address }
+
 Exemple de sortie :
 
 	{
@@ -191,4 +241,4 @@ Exemple de sortie :
 
 [AZURE.INCLUDE [Étapes suivantes](../../includes/functions-bindings-next-steps.md)]
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->

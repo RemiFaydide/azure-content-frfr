@@ -461,6 +461,21 @@ public class Person
 }
 ```
 
+L’exemple de code F# ci-après fonctionne également avec le fichier *function.json* précédent pour lire une entité de table unique.
+
+```fsharp
+[<CLIMutable>]
+type Person = {
+  PartitionKey: string
+  RowKey: string
+  Name: string
+}
+
+let Run(myQueueItem: string, personEntity: Person) =
+    log.Info(sprintf "F# Queue trigger function processed: %s" myQueueItem)
+    log.Info(sprintf "Name in Person entity: %s" personEntity.Name)
+```
+
 L’exemple de code Node ci-après fonctionne également avec le fichier *function.json* précédent pour lire une entité de table unique.
 
 ```javascript
@@ -567,6 +582,47 @@ public class Person
 
 ```
 
+#### Exemple de tables de stockage : créer des entités de table en F#
+
+Les exemples de fichiers *function.json* et *run.csx* ci-après montrent comment écrire des entités de table en F#.
+
+```json
+{
+  "bindings": [
+    {
+      "name": "input",
+      "type": "manualTrigger",
+      "direction": "in"
+    },
+    {
+      "tableName": "Person",
+      "connection": "MyStorageConnection",
+      "name": "tableBinding",
+      "type": "table",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
+```
+
+```fsharp
+[<CLIMutable>]
+type Person = {
+  PartitionKey: string
+  RowKey: string
+  Name: string
+}
+
+let Run(input: string, tableBinding: ICollector<Person>, log: TraceWriter) =
+    for i = 1 to 10 do
+        log.Info(sprintf "Adding Person entity %d" i)
+        tableBinding.Add(
+            { PartitionKey = "Test"
+              RowKey = i.ToString()
+              Name = "Name" + i.ToString() })
+```
+
 #### Exemple de tables de stockage : créer une entité de table en Node
 
 Les exemples de fichiers *function.json* et *run.csx* ci-après indiquent comment écrire une entité de table en Node.
@@ -607,4 +663,4 @@ module.exports = function (context, myQueueItem) {
 
 [AZURE.INCLUDE [Étapes suivantes](../../includes/functions-bindings-next-steps.md)]
 
-<!---HONumber=AcomDC_0824_2016-->
+<!---HONumber=AcomDC_0921_2016-->
