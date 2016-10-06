@@ -3,7 +3,7 @@
 	description="Découvrez comment créer un ASE d’équilibrage de charge interne à l’aide des modèles Azure Resource Manager." 
 	services="app-service" 
 	documentationCenter="" 
-	authors="stefsch" 
+	authors="cherylmc" 
 	manager="nirma" 
 	editor=""/>
 
@@ -14,7 +14,7 @@
 	ms.devlang="na" 
 	ms.topic="article" 
 	ms.date="09/21/2016" 
-	ms.author="stefsch"/>
+	ms.author="cherylmc"/>
 
 # Comment créer un ILB ASE à l’aide des modèles Azure Resource Manager
 
